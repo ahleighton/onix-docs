@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>libonix &#8212; ONI-X Docs  documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/onix.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/getting_started.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/default.js"></script>
+    <script src="../../_static/wavedrom.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="API Reference" href="libonix-ref.html" />
+    <link rel="prev" title="API Reference" href="../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../_static/oe_logo_in_line.svg" class="logo" alt="logo">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../About/index.html">About</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../Hardware Guide/index.html">Hardware Guide</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../Software Guide/index.html">Software Guides</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://open-ephys.org">open-ephys<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/jonnew/open-ephys-pcie" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/openephys" target="_blank" rel="noopener">
+              <span><i class="fab fa-twitter-square"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+        
+          
+
+              <li class="active">
+                  <a href="">libonix</a>
+                  <ul>
+                  
+                      <li class="">
+                          <a href="libonix-ref.html">API Reference</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="libonix-example.html">Example Use</a>
+                      </li>
+                  
+                  </ul>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../cpponix/index.html">cpponix</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../clronix/index.html">clronix</a>
+              </li>
+          
+        
+      
+      
+      
+      
+    </ul>
+
+</nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#scope-and-external-dependencies" class="nav-link">Scope and External Dependencies</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#license" class="nav-link">License</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#build-in-linux" class="nav-link">Build in Linux</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#performance-testing" class="nav-link">Performance Testing</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#memory-testing" class="nav-link">Memory Testing</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#build-in-windows" class="nav-link">Build in Windows</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="libonix">
+<span id="id1"></span><h1><code class="docutils literal notranslate"><span class="pre">libonix</span></code><a class="headerlink" href="#libonix" title="Permalink to this headline">¶</a></h1>
+<p>ANSI C implementation of the <a class="reference external" href="https://github.com/open-ephys/ONI">Open Neuro Interface API Specification</a></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="libonix-ref.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libonix-example.html">Example Use</a></li>
+</ul>
+</div>
+<div class="section" id="scope-and-external-dependencies">
+<h2>Scope and External Dependencies<a class="headerlink" href="#scope-and-external-dependencies" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">libonix</span></code> is a C library that implements the <a class="reference external" href="https://github.com/open-ephys/ONI">ONI API Specification</a>. It is written in C to facilitate cross
+platform and cross-language use.It is composed of the following files:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">oni.h</span></code> and <code class="docutils literal notranslate"><span class="pre">oni.c</span></code>: core API implementation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">onidevice.h</span></code> and <code class="docutils literal notranslate"><span class="pre">onidevices.c</span></code>: Open Ephys supported device and
+register definitions. This file can be ignored for projects that do not wish
+to conform to the official device specification. the core API implementation
+is not dependent on it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ondriverloader.h</span></code> and <code class="docutils literal notranslate"><span class="pre">onidriverloader.c</span></code>: functions for dynamically
+loading hardware translation driver.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">onidriver.h</span></code>: hardware translation driver header that must be implemented
+for a particular host hardware connection and firmware.</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">libonix</span></code> is a low level library intended for use by high-level language
+binding and/or software plugin developers. It is not meant to be used by
+neuroscientists directly. The only external dependency aside from the C
+standard library and dynamic library loading functions is is a hardware
+translation driver (“driver”) that fulfills the requirements of the ONI Host
+Interconnect Specification.  This implementation contains drivers for</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/KastnerRG/riffa">RIFFA</a> is a free and open-source,
+FPGA IP core and device driver that allows the ONI communication channels to
+be implemented using the PCIe bus. <strong>Open Ephys hardware uses RIFFA.</strong></p></li>
+<li><p><a class="reference external" href="http://xillybus.com/">Xillybus</a> is a proprietary FPGA IP cores and free
+and open source device drivers to allow the communication channels to be
+implemented using the PCIe bus. The licensing terms for the FPGA core are
+extremely unclear, although “trial” use is allowed. Use at your own risk.</p></li>
+<li><p>FTDI USB3.0: TODO</p></li>
+<li><p>Opal-Kelly USB3.0: TODO</p></li>
+</ol>
+<p>From the API’s perspective, hardware communication abstracted to IO system
+calls (<code class="docutils literal notranslate"><span class="pre">open</span></code>, <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">write</span></code>, etc.) on file descriptors. File descriptor
+semantics and behavior are identical to either normal files (configuration
+channel) or named pipes (signal, data input, and data output channels).
+Importantly, the low-level synchronization, resource allocation, and logic
+required to use the hardware communication backend is implicit to <code class="docutils literal notranslate"><span class="pre">libonix</span></code> API
+function calls. Orchestration of the communication backend is not directly
+managed by the library user.</p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/MIT_License">MIT</a></p>
+</div>
+<div class="section" id="build-in-linux">
+<h2>Build in Linux<a class="headerlink" href="#build-in-linux" title="Permalink to this headline">¶</a></h2>
+<p>For build options, look at the top level <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>. To build and install:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> make &lt;options&gt;
+<span class="gp">$</span> make install <span class="nv">PREFIX</span><span class="o">=</span>/path/to/install
+</pre></div>
+</div>
+<p>to place headers in whatever path is specified by <code class="docutils literal notranslate"><span class="pre">PREFIX</span></code>. <code class="docutils literal notranslate"><span class="pre">PREFIX</span></code> defaults to
+<code class="docutils literal notranslate"><span class="pre">/usr/lib/include</span></code>. You can uninstall (delete headers and libraries) via</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> make uninstall <span class="nv">PREFIX</span><span class="o">=</span>/path/to/uninstall
+</pre></div>
+</div>
+<p>To make a particular driver, navigate to its location within the <code class="docutils literal notranslate"><span class="pre">drivers</span></code>
+subdirectory and:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> make &lt;options&gt;
+<span class="gp">$</span> make install <span class="nv">PREFIX</span><span class="o">=</span>/path/to/install
+</pre></div>
+</div>
+<p>Then update dynamic library cache via:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ldconfig
+</pre></div>
+</div>
+<div class="section" id="performance-testing">
+<h3>Performance Testing<a class="headerlink" href="#performance-testing" title="Permalink to this headline">¶</a></h3>
+<p>Install google perftools:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt-get install google-perftools
+</pre></div>
+</div>
+<p>Check what library is installed:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ldconfig -p <span class="p">|</span> grep profiler
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">libprofiler.so</span></code> is not there, but <code class="docutils literal notranslate"><span class="pre">libprofiler.so.x</span></code> exists, create a softlink:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo ln -rs /path/to/libprofiler.so.x /path/to/libprofiler.so
+</pre></div>
+</div>
+<p>Link test programs against the CPU profiler:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> libonix-test
+<span class="gp">$</span> make profile
+</pre></div>
+</div>
+<p>Run the <cite>firmware</cite> program to serve fake data. Provide a numerical argument
+specifying the number of fake frames to produce. It will tell you how long it
+takes <cite>host</cite> to sink all these frames. This is host processing time + UNIX pipe
+read/write.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> bin
+<span class="gp">$</span> ./firmware 10e6
+</pre></div>
+</div>
+<p>Run the <cite>host</cite> program while dumping profile info:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> env <span class="nv">CPUPROFILE</span><span class="o">=</span>/tmp/host.prof ./host
+</pre></div>
+</div>
+<p>Examine output</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pprof ./host /tmp/host.prof
+</pre></div>
+</div>
+</div>
+<div class="section" id="memory-testing">
+<h3>Memory Testing<a class="headerlink" href="#memory-testing" title="Permalink to this headline">¶</a></h3>
+<p>Run the <cite>host</cite> program with valgrind using full leak check</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> valgrind --leak-check<span class="o">=</span>full ./host
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="build-in-windows">
+<h2>Build in Windows<a class="headerlink" href="#build-in-windows" title="Permalink to this headline">¶</a></h2>
+<p>Open the included <a class="reference external" href="https://visualstudio.microsoft.com/vs/community/">Visual Studio
+Coummunity</a> solution and
+press play. For whatever reason, it seems that the startup project is not
+consistently saved with the solution.  So make sure that is set to
+<code class="docutils literal notranslate"><span class="pre">libonix-test</span></code> in the solution properties.</p>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">API Reference</a>
+    <a class='right-next' id="next-link" href="libonix-ref.html" title="next page">API Reference</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2010-2020, Open Ephys &amp; Contributors.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
