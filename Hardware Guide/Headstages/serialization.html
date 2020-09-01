@@ -5,13 +5,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Data Serialization &amp; Power &#8212; ONI-X Docs  documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Serialization &amp; Power &#8212; ONIX Docs 0.0.0 documentation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/onix.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/getting_started.css" />
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
@@ -19,6 +19,7 @@
     <script src="../../_static/language_data.js"></script>
     <script src="../../_static/default.js"></script>
     <script src="../../_static/wavedrom.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Making Coaxial Tethers" href="tethers.html" />
@@ -33,7 +34,7 @@
 
     
     <a class="navbar-brand" href="../../index.html">
-      <img src="../../_static/oe_logo_in_line.svg" class="logo" alt="logo">
+      <img src="../../_static/oe_logo_circle.svg" class="logo" alt="logo">
     </a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,16 +54,16 @@
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../../API Reference/index.html">API Reference</a>
+            <a class="nav-link" href="../../API%20Reference/index.html">API Reference</a>
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../../Software Guide/index.html">Software Guides</a>
+            <a class="nav-link" href="../../Software%20Guide/index.html">Software Guides</a>
         </li>
         
         
         <li class="nav-item">
-            <a class="nav-link nav-external" href="https://open-ephys.org">open-ephys<i class="fas fa-external-link-alt"></i></a>
+            <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
         </li>
         
       </ul>
@@ -73,7 +74,7 @@
       <ul class="navbar-nav">
         
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/jonnew/open-ephys-pcie" target="_blank" rel="noopener">
+            <a class="nav-link" href="https://github.com/open-ephys/ONI" target="_blank" rel="noopener">
               <span><i class="fab fa-github-square"></i></span>
             </a>
           </li>
@@ -115,13 +116,13 @@
         
           
               <li class="">
-                  <a href="../hw-compatibility.html">Version Compatibility</a>
+                  <a href="../hw-repo-info.html">Repository Information</a>
               </li>
           
         
           
               <li class="">
-                  <a href="../hw-repo-info.html">Repository Information</a>
+                  <a href="../hw-compatibility.html">Version Compatibility</a>
               </li>
           
         
@@ -137,6 +138,10 @@
                   
                       <li class="">
                           <a href="tethers.html">Making Coaxial Tethers</a>
+                      </li>
+                  
+                      <li class="">
+                          <a href="commutators.html">Headstage Commutators</a>
                       </li>
                   
                       <li class="">
@@ -159,19 +164,25 @@
         
           
               <li class="">
-                  <a href="../Adapters & EIBs/index.html">Adapters & EIBs</a>
+                  <a href="../Adapters%20%26%20EIBs/index.html">Adapters & EIBs</a>
               </li>
           
         
           
               <li class="">
-                  <a href="../Breakout Boards/index.html">Breakout Boards</a>
+                  <a href="../Breakout%20Boards/index.html">Breakout Boards</a>
               </li>
           
         
           
               <li class="">
                   <a href="../Hosts/index.html">Hosts</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../Datasheets/index.html">Device Datasheets</a>
               </li>
           
         
@@ -206,7 +217,7 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#ds90ub9x3-communication-protocols" class="nav-link">DS90UB9x3 Communication Protocols</a><ul class="nav section-nav flex-column">
+            <a href="#ds90ub933-4-communication-protocols" class="nav-link">DS90UB933/4 Communication Protocols</a><ul class="nav section-nav flex-column">
                 
         <li class="nav-item toc-entry toc-h3">
             <a href="#data-serialization" class="nav-link">Data Serialization</a>
@@ -214,6 +225,14 @@
     
         <li class="nav-item toc-entry toc-h3">
             <a href="#register-configuration" class="nav-link">Register Configuration</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#protocol-transactions-definitions" class="nav-link">Protocol Transactions Definitions:</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#course-grained-states-machine" class="nav-link">Course-grained States Machine</a>
         </li>
     
             </ul>
@@ -258,13 +277,11 @@ flexible. We generally use cables that are 0.2-0.38 mm in diameter.</p>
 <p>Have a look at the <a class="reference internal" href="tethers.html#tethers"><span class="std std-ref">Making Coaxial Tethers</span></a> page for more detials on mirco-coax
 headstage tethers</p>
 </div>
-<p>ONIX headstages use an FPGA to control peripheral devices
-and stitch together their data streams prior to serialization. For instance,
-<a class="reference internal" href="headstage-64_1r3.html#headstage-64-1r3"><span class="std std-ref">headstage-64 v1.3</span></a> and <a class="reference internal" href="headstage-neuropix_1r2.html#headstage-neuropix-1r2"><span class="std std-ref">headstage-neuropix v1.2</span></a> use an <a class="reference external" href="https://www.intel.com/content/www/us/en/products/programmable/fpga/max-10.html">Intel MAX10
-FPGA</a>.
-The exact FPGA is not important because every ONI-compliant headstage is
-uses very similar gateware (FPGA-based firmware) that performs three major
-functions</p>
+<p>ONIX headstages use an FPGA to control peripheral devices and combine their
+data streams prior to serialization. For instance, <a class="reference internal" href="headstage-64_1r3.html#headstage-64-1r3"><span class="std std-ref">headstage-64 v1.3</span></a> and
+<a class="reference internal" href="headstage-neuropix_1r2.html#headstage-neuropix-1r2"><span class="std std-ref">headstage-neuropix v1.2</span></a> use an <a class="reference external" href="https://www.intel.com/content/www/us/en/products/programmable/fpga/max-10.html">Intel MAX10 FPGA</a>.
+The exact FPGA is not important because every ONI-compliant headstage is uses
+very similar gateware (FPGA-based firmware) that performs three major functions</p>
 <ol class="arabic simple">
 <li><p><strong>Local Hardware Control</strong> Provides hardware controllers (SPI, I2C, etc),
 timing, and control logic for each of the sensors and actuators on the
@@ -282,9 +299,9 @@ at the host and recovered at the headstage via a second, inductive DC path.
 This “T-network” provides a low impedance path for the DC portion of the signal
 (power) and rejects the RF components so that they are preserved for
 communication between the SERDES pair.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id4">
 <img alt="../../_images/rf-t.png" src="../../_images/rf-t.png" />
-<p class="caption"><span class="caption-text">LC-network for combining power and data on the coaxial cable.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">LC-network for combining power and data on the coaxial cable.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Its important to note that this circuit is completely passive. Therefore
 whatever voltage is supplied at the host side will end up at the input to the
@@ -302,23 +319,28 @@ wire can accumulate, resulting in a significant voltage drop across the cable.</
 <p class="admonition-title">Note</p>
 <p>Long, thin tethers can have a significant series resistance that
 results in a voltage drop across the length of the tether. This may have to be
-compensated for by tuning the host input voltage to account for the drop. See
-<a class="reference internal" href="../Hosts/fmc-host_1r3.html#fmc-host-1r3"><span class="std std-ref">fmc-host v1.3</span></a> for how.</p>
+compensated for by tuning the host input voltage to account for the drop. ONIX
+host boards have this ability (e.g. see <a class="reference internal" href="../Hosts/fmc-host_1r3.html#fmc-host-1r3"><span class="std std-ref">fmc-host v1.3</span></a>).</p>
 </div>
 </div>
-<div class="section" id="ds90ub9x3-communication-protocols">
-<h2>DS90UB9x3 Communication Protocols<a class="headerlink" href="#ds90ub9x3-communication-protocols" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ds90ub933-4-communication-protocols">
+<h2>DS90UB933/4 Communication Protocols<a class="headerlink" href="#ds90ub933-4-communication-protocols" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://www.ti.com/product/DS90UB933-Q1">DS90UB933</a>/<a class="reference external" href="https://www.ti.com/product/DS90UB934-Q1">DS90UB934</a> are a coaxial SERDES pair used on
+several ONIX headstages and host modules:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="headstage-64_1r3.html#headstage-64-1r3"><span class="std std-ref">headstage-64 v1.3</span></a> (DS90UB933 Serilizer)</p></li>
+<li><p><a class="reference internal" href="headstage-neuropix_1r2.html#headstage-neuropix-1r2"><span class="std std-ref">headstage-neuropix v1.2</span></a> (DS90UB933 Serilizer)</p></li>
+<li><p><a class="reference internal" href="../Hosts/fmc-host_1r3.html#fmc-host-1r3"><span class="std std-ref">fmc-host v1.3</span></a> (DS90UB934 Deserilizer)</p></li>
+</ul>
+<p>This section describes how this SERDES pair is used for control of and
+communication with headstages.</p>
 <div class="section" id="data-serialization">
 <h3>Data Serialization<a class="headerlink" href="#data-serialization" title="Permalink to this headline">¶</a></h3>
-<p>Applicable headstages:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="headstage-64_1r3.html#headstage-64-1r3"><span class="std std-ref">headstage-64 v1.3</span></a></p></li>
-<li><p><a class="reference internal" href="headstage-neuropix_1r2.html#headstage-neuropix-1r2"><span class="std std-ref">headstage-neuropix v1.2</span></a></p></li>
-</ul>
 <p>The <a class="reference external" href="https://www.ti.com/product/DS90UB933-Q1">DS90UB933</a> is a 100 MHz
 parallel to coaxial serializer that is typically used for streaming camera
-data. We have created gateware that adapts this chip to talk to any number of
-heterogeneous data sources using the following serialization protocol</p>
+data. ONIX headsrages use an intermediate FPGA to translate data from any
+number of heterogeneous data sources to the serializer input using the
+following simple protocol</p>
 
 <div style="overflow-x:auto">
 <script type="WaveDrom">
@@ -327,7 +349,7 @@ signal: [
   {name: 'pclk', wave: 'P.....|.....'},
   {name: 'hsync', wave: '0.10..|.....', },
   {name: 'vsync', wave: '0.....|.10..', data: ['head', 'body', 'tail', 'data']},
-  {name: 'data', wave: 'x.35..|.4x..', data: ['ID', 'data', 'CRC', 'data']},
+  {name: 'data', wave: 'x.35..|.4x..', data: ['ID', 'frame', 'CRC', 'data']},
 ],
 config: { hscale: 1},
 head: {
@@ -340,8 +362,7 @@ head: {
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>These signals are present on the FPGA-sides of the serializer and deserializer,
-prior to headstage serialization and after host deserialization, respectively.</p>
+<p>where the signal lines are defined as follows:</p>
 <dl class="field-list simple">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">plck</span></code></dt>
 <dd class="field-odd"><p>The serializers pixel clock, repurposed for generic data
@@ -362,7 +383,16 @@ headstages</p>
 depending on the states of <code class="docutils literal notranslate"><span class="pre">hsync</span></code> and <code class="docutils literal notranslate"><span class="pre">vsync</span></code></p>
 </dd>
 </dl>
-<p>Following serialization, these data are transmitted over the coaxial cable
+<p>The <code class="docutils literal notranslate"><span class="pre">ID</span></code> is the device index within the host device table, <code class="docutils literal notranslate"><span class="pre">frame</span></code> is a
+device’s frame data, and <code class="docutils literal notranslate"><span class="pre">CRC</span></code> is a <a class="reference external" href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check">CRC-12</a> of the <code class="docutils literal notranslate"><span class="pre">ID</span></code> and
+<code class="docutils literal notranslate"><span class="pre">frame</span></code> elements.  See the  <a class="reference external" href="https://github.com/open-ephys/ONI">ONI Specification</a> for detailed descriptions of these
+elements meaning.</p>
+<p>These signal lines are present on the FPGA-side of both the serializer and
+deserializer, prior to headstage serialization and after host deserialization,
+respectively. This means that the serializer link is effectively “invisible”
+from the host’s perspective, and the headstage can be treated as if it was just
+a module on the host itself.</p>
+<p>During serialization, data are transmitted over the coaxial cable
 using an RF-encoding scheme called <a class="reference external" href="https://en.wikipedia.org/wiki/FPD-Link">FDP Link III</a> which embeds the clock in the data
 stream and allows for active equalization to compensate for imperfections in
 the cable. This link uses and 700 MHz carrier for high speed data and provides
@@ -371,7 +401,143 @@ headstage.</p>
 </div>
 <div class="section" id="register-configuration">
 <h3>Register Configuration<a class="headerlink" href="#register-configuration" title="Permalink to this headline">¶</a></h3>
-<p>TODO</p>
+<p>The <a class="reference external" href="https://www.ti.com/product/DS90UB933-Q1">DS90UB933</a>/<a class="reference external" href="https://www.ti.com/product/DS90UB934-Q1">DS90UB934</a> SERDES pair have a I2C-based
+backchannel for bidirectional communication. This channel is used for two
+purposes in ONIX hardware.</p>
+<ol class="arabic simple">
+<li><p>Device configuration via register writing and reading. e.g. setting and
+bandwidth of the filters on the Intan chip.</p></li>
+<li><p>Flashing the headstage FPGA’s non-volatile memory with updated firmware.</p></li>
+</ol>
+<p>The <a class="reference external" href="https://github.com/open-ephys/ONI">ONI Specification</a> describes a
+register programming protocol that is very similar to a simple wishbone bus.
+This bus need to be transmitted over the DS90UB933/4 I2C backchannel to be used
+to configure headstage devices. The following protocol describes how this is
+accomplished.</p>
+</div>
+<div class="section" id="protocol-transactions-definitions">
+<h3>Protocol Transactions Definitions:<a class="headerlink" href="#protocol-transactions-definitions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p>[ : I2C start</p></li>
+<li><p>] : I2C stop</p></li>
+<li><p>W : slave device address + I2C write bit</p></li>
+<li><p>R : slave device address + I2C read bit</p></li>
+<li><dl class="simple">
+<dt>Status_result:</dt><dd><ul class="simple">
+<li><p>[X, w_busy, w_complete, w_error, r_busy, r_complete, r_error, seq_error]</p></li>
+<li><p>seq_error always reset after successful “atomic” sequence</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Command words:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>0x00 WRITE_ENABLE</p></li>
+<li><p>0x01 READ_REQUEST</p></li>
+<li><p>0x02 READ_ENABLE_0</p></li>
+<li><p>0x03 READ_ENABLE_1</p></li>
+<li><p>0x04 READ_ENABLE_2</p></li>
+<li><p>0x05 READ_ENABLE_3</p></li>
+<li><p>0x06 READ_ENABLE_4</p></li>
+<li><p>0x07 STATUS_0</p></li>
+<li><p>0x08 STATUS_1</p></li>
+<li><p>0xFF INVALID</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="course-grained-states-machine">
+<h3>Course-grained States Machine<a class="headerlink" href="#course-grained-states-machine" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>IDLE:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>if reg_tx.cyc = ‘1’ and reg_tx.we = ‘1’ then</dt><dd><p>goto WRITE_REGISTER</p>
+</dd>
+<dt>else if reg_tx.cyc = ‘1’ and reg_tx.we = ‘0’ then</dt><dd><p>goto READ_REGISTER</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>WRITE_REGISTER:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>[W, WRITE_ENABLE, dev_idx]</p></li>
+<li><p>[W, reg_tx.addr(15:8), reg_tx.addr(7:0)]</p></li>
+<li><p>[W, reg_tx.val(31:24), reg_tx.val(23:16)]</p></li>
+<li><p>[W, reg_tx.val(15:08), reg_tx.val(07:00)]</p></li>
+<li><p>[W, STATUS_0, reg_tx.idx]</p></li>
+<li><p>[W, STATUS_1, [R, status_result]</p></li>
+</ol>
+<ul class="simple">
+<li><p>Repeat 5 &amp; 6 repeat until status_result(5) = 1</p></li>
+<li><p>reg_rx.err &lt;= status_result(4) or status_result(0)</p></li>
+<li><p>reg_rx.ack &lt;= ‘1’</p></li>
+<li><p>goto CYC_WAIT</p></li>
+</ul>
+</div></blockquote>
+<p>READ_REGISTER:</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><ol class="arabic simple">
+<li><p>[W, READ_REQUEST, reg_tx.idx]</p></li>
+<li><p>[W, reg_tx.addr(15:8), reg_tx.addr(7:0)]</p></li>
+<li><p>[W, STATUS_0, reg_tx.idx]</p></li>
+<li><p>[W, STATUS_1, [R, status_result]</p></li>
+</ol>
+<ul class="simple">
+<li><p>Repeat 3 &amp; 4 until status_result(5) = 1</p></li>
+<li><dl class="simple">
+<dt>if status_result(0) or status_result(4)</dt><dd><p>reg_rx.ack &lt;= ‘1’
+reg_rx.err &lt;= ‘1’
+goto CYC_WAIT</p>
+</dd>
+<dt>else</dt><dd><p>continue</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>[W, READ_ENABLE_0, reg_tx.idx]</p></li>
+<li><p>[W, READ_ENABLE_1, [R, reg_rx.val(31:24)]</p></li>
+<li><p>[W, READ_ENABLE_2, [R, reg_rx.val(23:16)]</p></li>
+<li><p>[W, READ_ENABLE_3, [R, reg_rx.val(15:08)]</p></li>
+<li><p>[W, READ_ENABLE_4, [R, reg_rx.val(07:00)]</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li><p>[W, STATUS_0, reg_tx.idx]</p></li>
+<li><p>[W, STATUS_1, [R, status_result]</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>reg_rx.err &lt;= status_result(0) or status_result(1)</p></li>
+<li><p>reg_rx.ack &lt;= ‘1’</p></li>
+<li><p>goto CYC_WAIT</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>CYC_WAIT:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>reg_rx_o.ack &lt;= ‘0’;</p></li>
+<li><p>reg_rx_o.err &lt;= ‘0’;</p></li>
+<li><dl class="simple">
+<dt>if reg_tx.cyc = 0</dt><dd><p>goto IDLE</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -404,7 +570,7 @@ headstage.</p>
   <div class="container">
     <p>
           &copy; Copyright 2010-2020, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.0.<br/>
     </p>
   </div>
 </footer>

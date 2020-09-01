@@ -5,13 +5,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Repository Information &#8212; ONI-X Docs  documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repository Information &#8212; ONIX Docs 0.0.0 documentation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/onix.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/getting_started.css" />
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -19,10 +19,11 @@
     <script src="../_static/language_data.js"></script>
     <script src="../_static/default.js"></script>
     <script src="../_static/wavedrom.min.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Headstages" href="Headstages/index.html" />
-    <link rel="prev" title="Version Compatibility" href="hw-compatibility.html" />
+    <link rel="next" title="Version Compatibility" href="hw-compatibility.html" />
+    <link rel="prev" title="Hardware Guide" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
   </head>
@@ -33,7 +34,7 @@
 
     
     <a class="navbar-brand" href="../index.html">
-      <img src="../_static/oe_logo_in_line.svg" class="logo" alt="logo">
+      <img src="../_static/oe_logo_circle.svg" class="logo" alt="logo">
     </a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,16 +54,16 @@
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../API Reference/index.html">API Reference</a>
+            <a class="nav-link" href="../API%20Reference/index.html">API Reference</a>
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../Software Guide/index.html">Software Guides</a>
+            <a class="nav-link" href="../Software%20Guide/index.html">Software Guides</a>
         </li>
         
         
         <li class="nav-item">
-            <a class="nav-link nav-external" href="https://open-ephys.org">open-ephys<i class="fas fa-external-link-alt"></i></a>
+            <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
         </li>
         
       </ul>
@@ -73,7 +74,7 @@
       <ul class="navbar-nav">
         
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/jonnew/open-ephys-pcie" target="_blank" rel="noopener">
+            <a class="nav-link" href="https://github.com/open-ephys/ONI" target="_blank" rel="noopener">
               <span><i class="fab fa-github-square"></i></span>
             </a>
           </li>
@@ -114,14 +115,14 @@
       
         
           
-              <li class="">
-                  <a href="hw-compatibility.html">Version Compatibility</a>
+              <li class="active">
+                  <a href="">Repository Information</a>
               </li>
           
         
           
-              <li class="active">
-                  <a href="">Repository Information</a>
+              <li class="">
+                  <a href="hw-compatibility.html">Version Compatibility</a>
               </li>
           
         
@@ -139,19 +140,25 @@
         
           
               <li class="">
-                  <a href="Adapters & EIBs/index.html">Adapters & EIBs</a>
+                  <a href="Adapters%20%26%20EIBs/index.html">Adapters & EIBs</a>
               </li>
           
         
           
               <li class="">
-                  <a href="Breakout Boards/index.html">Breakout Boards</a>
+                  <a href="Breakout%20Boards/index.html">Breakout Boards</a>
               </li>
           
         
           
               <li class="">
                   <a href="Hosts/index.html">Hosts</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="Datasheets/index.html">Device Datasheets</a>
               </li>
           
         
@@ -208,7 +215,8 @@
                 
   <div class="section" id="repository-information">
 <span id="hardware-repo-info"></span><h1>Repository Information<a class="headerlink" href="#repository-information" title="Permalink to this headline">¶</a></h1>
-<p>ONIX hardware designs follow some convetions, which are described below.</p>
+<p>ONIX hardware design repositories follow some conventions that are described
+below.</p>
 <div class="section" id="pcb-design-files">
 <h2>PCB Design Files<a class="headerlink" href="#pcb-design-files" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.autodesk.com/products/eagle/overview">Autodesk EAGLE</a> PCB Design
@@ -222,14 +230,16 @@ files are located at the top directory of each hardware project:</p>
 <p><a class="reference external" href="https://kicad-pcb.org/">KiCad</a> now includes native EAGLE to KiCad conversion
 if you wish to use that instead of EAGLE.</p>
 </div>
-<p>A PDF version of the schematic is also located at the top level of the top directory.</p>
+<p>A PDF version of the schematic is also located at the top level of the top
+directory:</p>
 <ul class="simple">
 <li><p>*_schematic.pdf = board layout</p></li>
 </ul>
 </div>
 <div class="section" id="pcb-fabrication-files">
 <h2>PCB Fabrication Files<a class="headerlink" href="#pcb-fabrication-files" title="Permalink to this headline">¶</a></h2>
-<p>PCB <a class="reference external" href="https://en.wikipedia.org/wiki/Gerber_format">gerber files</a> are defined as follows:</p>
+<p>PCB <a class="reference external" href="https://en.wikipedia.org/wiki/Gerber_format">gerber files</a> are defined
+as follows:</p>
 <ul class="simple">
 <li><p>*.GKO = board outline</p></li>
 <li><p>*.GTS = top solder mask</p></li>
@@ -243,7 +253,8 @@ if you wish to use that instead of EAGLE.</p>
 specify start (xx) and end (yy) layers as additional extension.</p></li>
 <li><p>*.gvp = <a class="reference external" href="http://gerbv.geda-project.org/">gerbv</a> project file.</p></li>
 </ul>
-<p>Gerber files for a board will be located in the <code class="docutils literal notranslate"><span class="pre">gerber</span></code> folder next to the board design.</p>
+<p>Gerber files for a board will be located in the <code class="docutils literal notranslate"><span class="pre">gerber</span></code> folder next to the
+board design.</p>
 <p>If available, solder stencil gerber files are located in the <code class="docutils literal notranslate"><span class="pre">sencil</span></code>
 folder. Files within this folder are defined as follows:</p>
 <ul class="simple">
@@ -251,16 +262,36 @@ folder. Files within this folder are defined as follows:</p>
 <li><p>*.SST = bottom-side stencil</p></li>
 </ul>
 <p>For example, <a class="reference external" href="https://github.com/jonnew/open-ephys-pcie/tree/master/eib-64/revisions/rev-1.2/gerber">here</a>
-are the gerber files needed to create <a class="reference internal" href="Adapters &amp; EIBs/eib-64_1r2.html#eib-64-1r2"><span class="std std-ref">eib-64 v1.2</span></a>. In some cases, panelized versions of
-the PCB will be avaiable in the <code class="docutils literal notranslate"><span class="pre">gerber-panel</span></code> and <code class="docutils literal notranslate"><span class="pre">stencil-panel</span></code> folders.</p>
+are the gerber files needed to create <a class="reference internal" href="Adapters%20%26%20EIBs/eib-64_1r2.html#eib-64-1r2"><span class="std std-ref">eib-64 v1.2</span></a>. In some cases, panelized versions of
+the PCB will be available in the <code class="docutils literal notranslate"><span class="pre">gerber-panel</span></code> and <code class="docutils literal notranslate"><span class="pre">stencil-panel</span></code> folders.</p>
 </div>
 <div class="section" id="bills-of-materials">
 <h2>Bills of Materials<a class="headerlink" href="#bills-of-materials" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<p>Each peice of hardware will have a bill of materials available on a google
+sheet, which includes schematic-linked designators, quantities, manufacturer
+part numbers, vendor part numbers. For instance, here is the <a class="reference external" href="https://docs.google.com/spreadsheets/d/1F-KWcdvH_63iXjZf0cgCfDiFX6XXW3qw6rlR8DZrFpQ/edit#gid=138167638">BOM for
+headstage-64 v1.3</a></p>
+<p>Aside from a spreadsheet of electronic components, some boards may include the
+following other materials information</p>
+<ul class="simple">
+<li><p>An interactive electronics BOM (e.g. like <a class="reference external" href="../_static/headstage-64_1r3_bom.html">this one</a> for <a class="reference internal" href="Headstages/headstage-64_1r3.html#headstage-64-1r3"><span class="std std-ref">headstage-64 v1.3</span></a>)</p></li>
+<li><p>Lists of mechanical components that need to be machined, 3D-printed, and/or
+assembled (e.g. for breakout boards)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Common parts (e.g. standard surface mount resistors and capacitors)
+may lack manufacturer and vendor part numbers. This is because the distribution
+turnover of these kinds of parts is so high that maintaining part numbers is a
+fools errand.</p>
+</div>
 </div>
 <div class="section" id="pcb-assembly-files">
 <h2>PCB Assembly Files<a class="headerlink" href="#pcb-assembly-files" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Document</p>
+</div>
 </div>
 </div>
 
@@ -276,8 +307,8 @@ the PCB will be avaiable in the <code class="docutils literal notranslate"><span
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="hw-compatibility.html" title="previous page">Version Compatibility</a>
-    <a class='right-next' id="next-link" href="Headstages/index.html" title="next page">Headstages</a>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Hardware Guide</a>
+    <a class='right-next' id="next-link" href="hw-compatibility.html" title="next page">Version Compatibility</a>
 
               </div>
               
@@ -292,7 +323,7 @@ the PCB will be avaiable in the <code class="docutils literal notranslate"><span
   <div class="container">
     <p>
           &copy; Copyright 2010-2020, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.0.<br/>
     </p>
   </div>
 </footer>

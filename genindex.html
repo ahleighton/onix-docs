@@ -1,18 +1,17 @@
 
 
-
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Index &#8212; ONI-X Docs  documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; ONIX Docs 0.0.0 documentation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/onix.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/getting_started.css" />
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -20,6 +19,7 @@
     <script src="_static/language_data.js"></script>
     <script src="_static/default.js"></script>
     <script src="_static/wavedrom.min.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +32,7 @@
 
     
     <a class="navbar-brand" href="index.html">
-      <img src="_static/oe_logo_in_line.svg" class="logo" alt="logo">
+      <img src="_static/oe_logo_circle.svg" class="logo" alt="logo">
     </a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,20 +48,20 @@
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="Hardware Guide/index.html">Hardware Guide</a>
+            <a class="nav-link" href="Hardware%20Guide/index.html">Hardware Guide</a>
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="API Reference/index.html">API Reference</a>
+            <a class="nav-link" href="API%20Reference/index.html">API Reference</a>
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="Software Guide/index.html">Software Guides</a>
+            <a class="nav-link" href="Software%20Guide/index.html">Software Guides</a>
         </li>
         
         
         <li class="nav-item">
-            <a class="nav-link nav-external" href="https://open-ephys.org">open-ephys<i class="fas fa-external-link-alt"></i></a>
+            <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
         </li>
         
       </ul>
@@ -72,7 +72,7 @@
       <ul class="navbar-nav">
         
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/jonnew/open-ephys-pcie" target="_blank" rel="noopener">
+            <a class="nav-link" href="https://github.com/open-ephys/ONI" target="_blank" rel="noopener">
               <span><i class="fab fa-github-square"></i></span>
             </a>
           </li>
@@ -147,6 +147,7 @@
 
 <div class="genindex-jumpbox">
  <a href="#Symbols"><strong>Symbols</strong></a>
+ | <a href="#O"><strong>O</strong></a>
  
 </div>
 <h2 id="Symbols">Symbols</h2>
@@ -156,13 +157,201 @@
 </li>
       <li><a href="About/faq.html#term-2.-Is-ONIX-hardware-available-for-purchase"><strong>2. Is ONIX hardware available for purchase?</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="About/faq.html#term-3.-Where-do-I-get-help-when-using-the-system"><strong>3. Where do I get help when using the system?</strong></a>
 </li>
       <li><a href="About/faq.html#term-4.-Can-I-use-headstage-64-with-a-silicon-probe-instead-of-tetrodes"><strong>4. Can I use headstage-64 with a silicon probe instead of tetrodes?</strong></a>
 </li>
       <li><a href="About/faq.html#term-5.-Can-I-use-my-older-SPI-based-Intan-headstages-with-the-system"><strong>5. Can I use my older, SPI-based Intan headstages with the system?</strong></a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum">[anonymous] (C enum)</a>, <a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum">[1]</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EBADALLOC">[anonymous].ONI_EBADALLOC (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EBADDEVTABLE">[anonymous].ONI_EBADDEVTABLE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EBUFFERSIZE">[anonymous].ONI_EBUFFERSIZE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_ECLOSEFAIL">[anonymous].ONI_ECLOSEFAIL (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_ECOBSPACK">[anonymous].ONI_ECOBSPACK (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EDEVID">[anonymous].ONI_EDEVID (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EDEVIDX">[anonymous].ONI_EDEVIDX (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EDEVIDXREPEAT">[anonymous].ONI_EDEVIDXREPEAT (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EINIT">[anonymous].ONI_EINIT (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EINVALARG">[anonymous].ONI_EINVALARG (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EINVALOPT">[anonymous].ONI_EINVALOPT (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EINVALREADSIZE">[anonymous].ONI_EINVALREADSIZE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EINVALSTATE">[anonymous].ONI_EINVALSTATE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EINVALWRITESIZE">[anonymous].ONI_EINVALWRITESIZE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_ENOREADDEV">[anonymous].ONI_ENOREADDEV (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_ENOTWRITEDEV">[anonymous].ONI_ENOTWRITEDEV (C macro)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_ENULLCTX">[anonymous].ONI_ENULLCTX (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EPATHINVALID">[anonymous].ONI_EPATHINVALID (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EREADFAILURE">[anonymous].ONI_EREADFAILURE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EREADONLY">[anonymous].ONI_EREADONLY (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_ERETRIG">[anonymous].ONI_ERETRIG (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_ESEEKFAILURE">[anonymous].ONI_ESEEKFAILURE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_ESUCCESS">[anonymous].ONI_ESUCCESS (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EUNIMPL">[anonymous].ONI_EUNIMPL (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EWRITEFAILURE">[anonymous].ONI_EWRITEFAILURE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EWRITEONLY">[anonymous].ONI_EWRITEONLY (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EWRITESIZE">[anonymous].ONI_EWRITESIZE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_ACQCLKHZ">[anonymous].ONI_OPT_ACQCLKHZ (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_BLOCKREADSIZE">[anonymous].ONI_OPT_BLOCKREADSIZE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_BLOCKWRITESIZE">[anonymous].ONI_OPT_BLOCKWRITESIZE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_DEVICETABLE">[anonymous].ONI_OPT_DEVICETABLE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_HWADDRESS">[anonymous].ONI_OPT_HWADDRESS (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_MAXREADFRAMESIZE">[anonymous].ONI_OPT_MAXREADFRAMESIZE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_MAXWRITEFRAMESIZE">[anonymous].ONI_OPT_MAXWRITEFRAMESIZE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_NUMDEVICES">[anonymous].ONI_OPT_NUMDEVICES (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_RESET">[anonymous].ONI_OPT_RESET (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_RESETACQCOUNTER">[anonymous].ONI_OPT_RESETACQCOUNTER (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_RUNNING">[anonymous].ONI_OPT_RUNNING (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum.ONI_OPT_SYSCLKHZ">[anonymous].ONI_OPT_SYSCLKHZ (C macro)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_ACQCLKHZ">ONI_CONFIG_ACQCLKHZ (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_DEV_IDX">ONI_CONFIG_DEV_IDX (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_HWADDRESS">ONI_CONFIG_HWADDRESS (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_REG_ADDR">ONI_CONFIG_REG_ADDR (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_REG_VALUE">ONI_CONFIG_REG_VALUE (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_RESET">ONI_CONFIG_RESET (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_RESETACQCOUNTER">ONI_CONFIG_RESETACQCOUNTER (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_RUNNING">ONI_CONFIG_RUNNING (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_RW">ONI_CONFIG_RW (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_SYSCLKHZ">ONI_CONFIG_SYSCLKHZ (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.oni_config_t">oni_config_t (C enum)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_TRIG">ONI_CONFIG_TRIG (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_create_ctx">oni_create_ctx (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_create_frame">oni_create_frame (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_ctx">oni_ctx (C type)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_destroy_ctx">oni_destroy_ctx (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_destroy_frame">oni_destroy_frame (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.oni_dev_id_t">oni_dev_id_t (C type)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.oni_dev_idx_t">oni_dev_idx_t (C type)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_device_t">oni_device_t (C struct)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_device_t.id">oni_device_t.id (C member)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_device_t.idx">oni_device_t.idx (C member)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_device_t.read_size">oni_device_t.read_size (C member)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_device_t.write_size">oni_device_t.write_size (C member)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_error_str">oni_error_str (C function)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.oni_fifo_dat_t">oni_fifo_dat_t (C type)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.oni_fifo_time_t">oni_fifo_time_t (C type)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_frame_t">oni_frame_t (C struct)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_frame_t.data">oni_frame_t.data (C member)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_frame_t.data_sz">oni_frame_t.data_sz (C member)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_frame_t.dev_idx">oni_frame_t.dev_idx (C member)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_frame_t.time">oni_frame_t.time (C member)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_get_driver_opt">oni_get_driver_opt (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_get_opt">oni_get_opt (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_init_ctx">oni_init_ctx (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.ONI_MAKE_VERSION">ONI_MAKE_VERSION (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_read_frame">oni_read_frame (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_read_reg">oni_read_reg (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.oni_reg_addr_t">oni_reg_addr_t (C type)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.oni_reg_val_t">oni_reg_val_t (C type)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_set_driver_opt">oni_set_driver_opt (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_set_opt">oni_set_opt (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onidefs.html#c.oni_size_t">oni_size_t (C type)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_version">oni_version (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.ONI_VERSION">ONI_VERSION (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.ONI_VERSION_MAJOR">ONI_VERSION_MAJOR (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.ONI_VERSION_MINOR">ONI_VERSION_MINOR (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.ONI_VERSION_PATCH">ONI_VERSION_PATCH (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_write_frame">oni_write_frame (C function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/oni.html#c.oni_write_reg">oni_write_reg (C function)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -188,7 +377,7 @@
   <div class="container">
     <p>
           &copy; Copyright 2010-2020, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.0.<br/>
     </p>
   </div>
 </footer>

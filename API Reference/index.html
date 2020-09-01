@@ -5,13 +5,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>API Reference &#8212; ONI-X Docs  documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Reference &#8212; ONIX Docs 0.0.0 documentation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/onix.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/getting_started.css" />
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -19,10 +19,11 @@
     <script src="../_static/language_data.js"></script>
     <script src="../_static/default.js"></script>
     <script src="../_static/wavedrom.min.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="libonix" href="libonix/index.html" />
-    <link rel="prev" title="Numato Nereid" href="../Hardware Guide/Hosts/pcie-host-nereid.html" />
+    <link rel="next" title="liboni" href="liboni/index.html" />
+    <link rel="prev" title="BNO055" href="../Hardware%20Guide/Datasheets/BNO055.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
   </head>
@@ -33,7 +34,7 @@
 
     
     <a class="navbar-brand" href="../index.html">
-      <img src="../_static/oe_logo_in_line.svg" class="logo" alt="logo">
+      <img src="../_static/oe_logo_circle.svg" class="logo" alt="logo">
     </a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +50,7 @@
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../Hardware Guide/index.html">Hardware Guide</a>
+            <a class="nav-link" href="../Hardware%20Guide/index.html">Hardware Guide</a>
         </li>
         
         <li class="nav-item active">
@@ -57,12 +58,12 @@
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../Software Guide/index.html">Software Guides</a>
+            <a class="nav-link" href="../Software%20Guide/index.html">Software Guides</a>
         </li>
         
         
         <li class="nav-item">
-            <a class="nav-link nav-external" href="https://open-ephys.org">open-ephys<i class="fas fa-external-link-alt"></i></a>
+            <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
         </li>
         
       </ul>
@@ -73,7 +74,7 @@
       <ul class="navbar-nav">
         
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/jonnew/open-ephys-pcie" target="_blank" rel="noopener">
+            <a class="nav-link" href="https://github.com/open-ephys/ONI" target="_blank" rel="noopener">
               <span><i class="fab fa-github-square"></i></span>
             </a>
           </li>
@@ -117,19 +118,25 @@
         
           
               <li class="">
-                  <a href="libonix/index.html">libonix</a>
+                  <a href="liboni/index.html">liboni</a>
               </li>
           
         
           
               <li class="">
-                  <a href="cpponix/index.html">cpponix</a>
+                  <a href="cpponi/index.html">cpponi</a>
               </li>
           
         
           
               <li class="">
-                  <a href="clronix/index.html">clronix</a>
+                  <a href="clroni/index.html">clroni</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="drivers/index.html">ONIX Driver Implementations</a>
               </li>
           
         
@@ -174,11 +181,12 @@ These APIs are simple and has minimal external dependencies. Therefore, they
 are aimed at the creation of higher level language bindings and/or integration
 into existing acqusition software.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="libonix/index.html#libonix"><span class="std std-ref">libonix</span></a> is an ANSI-C implementation of the <a class="reference external" href="https://github.com/jonnew/ONI">ONI API Specificaiton</a> It contains functions for configuring
+<li><p><a class="reference internal" href="liboni/index.html#liboni"><span class="std std-ref">liboni</span></a> is an ANSI-C implementation of the <a class="reference external" href="https://github.com/jonnew/ONI">ONI API Specificaiton</a> It contains functions for configuring
 hardware, streaming data to and from hardware, and controlling hardware
 during operation.</p></li>
-<li><p><a class="reference internal" href="cpponix/index.html#cpponix"><span class="std std-ref">cpponix</span></a> are C++14 bindings for <a class="reference internal" href="libonix/index.html#libonix"><span class="std std-ref">libonix</span></a>.</p></li>
-<li><p><a class="reference internal" href="clronix/index.html#clronix"><span class="std std-ref">clronix</span></a> are CLR/.NET bindings for <a class="reference internal" href="libonix/index.html#libonix"><span class="std std-ref">libonix</span></a>.</p></li>
+<li><p><a class="reference internal" href="cpponi/index.html#cpponi"><span class="std std-ref">cpponi</span></a> are C++14 bindings for <a class="reference internal" href="liboni/index.html#liboni"><span class="std std-ref">liboni</span></a>.</p></li>
+<li><p><a class="reference internal" href="clroni/index.html#clroni"><span class="std std-ref">clroni</span></a> are CLR/.NET bindings for <a class="reference internal" href="liboni/index.html#liboni"><span class="std std-ref">liboni</span></a>.</p></li>
+<li><p><a class="reference internal" href="drivers/index.html#drivers"><span class="std std-ref">ONIX Driver Implementations</span></a> are ONIX device driver implementations</p></li>
 </ul>
 </div>
 
@@ -194,8 +202,8 @@ during operation.</p></li>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="../Hardware Guide/Hosts/pcie-host-nereid.html" title="previous page">Numato Nereid</a>
-    <a class='right-next' id="next-link" href="libonix/index.html" title="next page"><code class="docutils literal notranslate"><span class="pre">libonix</span></code></a>
+    <a class='left-prev' id="prev-link" href="../Hardware%20Guide/Datasheets/BNO055.html" title="previous page">BNO055</a>
+    <a class='right-next' id="next-link" href="liboni/index.html" title="next page">liboni</a>
 
               </div>
               
@@ -210,7 +218,7 @@ during operation.</p></li>
   <div class="container">
     <p>
           &copy; Copyright 2010-2020, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.0.<br/>
     </p>
   </div>
 </footer>

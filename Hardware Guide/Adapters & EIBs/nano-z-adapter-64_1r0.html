@@ -5,13 +5,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>nano-z-adapter-64 v1.0 &#8212; ONI-X Docs  documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nano-z-adapter-64 v1.0 &#8212; ONIX Docs 0.0.0 documentation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/onix.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/getting_started.css" />
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
@@ -19,9 +19,10 @@
     <script src="../../_static/language_data.js"></script>
     <script src="../../_static/default.js"></script>
     <script src="../../_static/wavedrom.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Breakout Boards" href="../Breakout Boards/index.html" />
+    <link rel="next" title="nano-z-adapter-64 v1.1" href="nano-z-adapter-64_1r1.html" />
     <link rel="prev" title="omnetics-adapter-64 v1.0" href="omnetics-adapter-64_1r0.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -33,7 +34,7 @@
 
     
     <a class="navbar-brand" href="../../index.html">
-      <img src="../../_static/oe_logo_in_line.svg" class="logo" alt="logo">
+      <img src="../../_static/oe_logo_circle.svg" class="logo" alt="logo">
     </a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,16 +54,16 @@
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../../API Reference/index.html">API Reference</a>
+            <a class="nav-link" href="../../API%20Reference/index.html">API Reference</a>
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../../Software Guide/index.html">Software Guides</a>
+            <a class="nav-link" href="../../Software%20Guide/index.html">Software Guides</a>
         </li>
         
         
         <li class="nav-item">
-            <a class="nav-link nav-external" href="https://open-ephys.org">open-ephys<i class="fas fa-external-link-alt"></i></a>
+            <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
         </li>
         
       </ul>
@@ -73,7 +74,7 @@
       <ul class="navbar-nav">
         
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/jonnew/open-ephys-pcie" target="_blank" rel="noopener">
+            <a class="nav-link" href="https://github.com/open-ephys/ONI" target="_blank" rel="noopener">
               <span><i class="fab fa-github-square"></i></span>
             </a>
           </li>
@@ -115,13 +116,13 @@
         
           
               <li class="">
-                  <a href="../hw-compatibility.html">Version Compatibility</a>
+                  <a href="../hw-repo-info.html">Repository Information</a>
               </li>
           
         
           
               <li class="">
-                  <a href="../hw-repo-info.html">Repository Information</a>
+                  <a href="../hw-compatibility.html">Version Compatibility</a>
               </li>
           
         
@@ -148,6 +149,10 @@
                       </li>
                   
                       <li class="">
+                          <a href="eib-64_1r3.html">eib-64 v1.3</a>
+                      </li>
+                  
+                      <li class="">
                           <a href="eib-64-large_1r0.html">eib-64-large v1.0</a>
                       </li>
                   
@@ -159,19 +164,29 @@
                           <a href="">nano-z-adapter-64 v1.0</a>
                       </li>
                   
+                      <li class="">
+                          <a href="nano-z-adapter-64_1r1.html">nano-z-adapter-64 v1.1</a>
+                      </li>
+                  
                   </ul>
               </li>
           
         
           
               <li class="">
-                  <a href="../Breakout Boards/index.html">Breakout Boards</a>
+                  <a href="../Breakout%20Boards/index.html">Breakout Boards</a>
               </li>
           
         
           
               <li class="">
                   <a href="../Hosts/index.html">Hosts</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../Datasheets/index.html">Device Datasheets</a>
               </li>
           
         
@@ -190,9 +205,24 @@
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
               
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#bill-of-materials" class="nav-link">Bill of Materials</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#electrode-mapping" class="nav-link">Electrode Mapping</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#license" class="nav-link">License</a>
+        </li>
     
     </ul>
 </nav>
@@ -209,15 +239,40 @@
                 
   <div class="section" id="nano-z-adapter-64-v1-0">
 <span id="nano-z-adapter-64-1r0"></span><h1>nano-z-adapter-64 v1.0<a class="headerlink" href="#nano-z-adapter-64-v1-0" title="Permalink to this headline">¶</a></h1>
-<p>Compatible with:</p>
-<ol class="arabic simple">
+<p><strong>nano-z-adapter-64 v1.0</strong> is an adapter board that allows ONIX electrode
+interface and adapter boards to be used with the  <a class="reference external" href="http://www.white-matter.com/nanoz/">nanoZ</a> electrode impedance tester and plating
+device. This adapter is compatible with:</p>
+<ul class="simple">
 <li><p><a class="reference internal" href="eib-64_1r2.html#eib-64-1r2"><span class="std std-ref">eib-64 v1.2</span></a></p></li>
 <li><p><a class="reference internal" href="eib-64-large_1r0.html#eib-64-large-1r0"><span class="std std-ref">eib-64-large v1.0</span></a></p></li>
 <li><p><a class="reference internal" href="omnetics-adapter-64_1r0.html#omnetics-adapter-64-1r0"><span class="std std-ref">omnetics-adapter-64 v1.0</span></a></p></li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>TODO</p>
+</ul>
+<div class="figure align-center" id="id1">
+<img alt="../../_images/nanoz-adapter-64_1r0.png" src="../../_images/nanoz-adapter-64_1r0.png" />
+<p class="caption"><span class="caption-text">nano-z-adapter-64 v1.0.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="bill-of-materials">
+<h2>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h2>
+<p>The BOM is located on <a class="reference external" href="https://docs.google.com/spreadsheets/d/1F-KWcdvH_63iXjZf0cgCfDiFX6XXW3qw6rlR8DZrFpQ/edit#gid=889124438">this google sheet</a>.</p>
+</div>
+<div class="section" id="electrode-mapping">
+<h2>Electrode Mapping<a class="headerlink" href="#electrode-mapping" title="Permalink to this headline">¶</a></h2>
+<p>The nano-z internal channel number mapping for various EIBS are</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="eib-64_1r2.html#eib-64-1r2"><span class="std std-ref">eib-64 v1.2</span></a> - <a class="reference external" href="https://docs.google.com/spreadsheets/d/11wRDYOqHN5lPb03yUdfXfK0zvaDYsVetplaNK-R90Gg/edit#gid=0">this google sheet</a></p></li>
+<li><p><a class="reference internal" href="omnetics-adapter-64_1r0.html#omnetics-adapter-64-1r0"><span class="std std-ref">omnetics-adapter-64 v1.0</span></a> - <a class="reference external" href="https://docs.google.com/spreadsheets/d/11wRDYOqHN5lPb03yUdfXfK0zvaDYsVetplaNK-R90Gg/edit#gid=1490495645">this google sheet</a></p></li>
+</ul>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>Copyright Jonathan P. Newman 2020</p>
+<p>This documentation describes Open Hardware and is licensed under the
+CERN OHL v.1.2.</p>
+<p>You may redistribute and modify this documentation under the terms of the CERN
+OHL v.1.2. (<a class="reference external" href="http://ohwr.org/cernohl">http://ohwr.org/cernohl</a>). This documentation is distributed WITHOUT
+ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY
+QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN OHL v.1.2 for
+applicable conditions</p>
 </div>
 </div>
 
@@ -234,7 +289,7 @@
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="omnetics-adapter-64_1r0.html" title="previous page">omnetics-adapter-64 v1.0</a>
-    <a class='right-next' id="next-link" href="../Breakout Boards/index.html" title="next page">Breakout Boards</a>
+    <a class='right-next' id="next-link" href="nano-z-adapter-64_1r1.html" title="next page">nano-z-adapter-64 v1.1</a>
 
               </div>
               
@@ -249,7 +304,7 @@
   <div class="container">
     <p>
           &copy; Copyright 2010-2020, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.0.<br/>
     </p>
   </div>
 </footer>
