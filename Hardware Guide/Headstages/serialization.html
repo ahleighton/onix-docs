@@ -227,14 +227,6 @@
             <a href="#register-configuration" class="nav-link">Register Configuration</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#protocol-transactions-definitions" class="nav-link">Protocol Transactions Definitions:</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#course-grained-states-machine" class="nav-link">Course-grained States Machine</a>
-        </li>
-    
             </ul>
         </li>
     
@@ -411,133 +403,9 @@ bandwidth of the filters on the Intan chip.</p></li>
 </ol>
 <p>The <a class="reference external" href="https://github.com/open-ephys/ONI">ONI Specification</a> describes a
 register programming protocol that is very similar to a simple wishbone bus.
-This bus need to be transmitted over the DS90UB933/4 I2C backchannel to be used
-to configure headstage devices. The following protocol describes how this is
-accomplished.</p>
-</div>
-<div class="section" id="protocol-transactions-definitions">
-<h3>Protocol Transactions Definitions:<a class="headerlink" href="#protocol-transactions-definitions" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul>
-<li><p>[ : I2C start</p></li>
-<li><p>] : I2C stop</p></li>
-<li><p>W : slave device address + I2C write bit</p></li>
-<li><p>R : slave device address + I2C read bit</p></li>
-<li><dl class="simple">
-<dt>Status_result:</dt><dd><ul class="simple">
-<li><p>[X, w_busy, w_complete, w_error, r_busy, r_complete, r_error, seq_error]</p></li>
-<li><p>seq_error always reset after successful “atomic” sequence</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>Command words:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>0x00 WRITE_ENABLE</p></li>
-<li><p>0x01 READ_REQUEST</p></li>
-<li><p>0x02 READ_ENABLE_0</p></li>
-<li><p>0x03 READ_ENABLE_1</p></li>
-<li><p>0x04 READ_ENABLE_2</p></li>
-<li><p>0x05 READ_ENABLE_3</p></li>
-<li><p>0x06 READ_ENABLE_4</p></li>
-<li><p>0x07 STATUS_0</p></li>
-<li><p>0x08 STATUS_1</p></li>
-<li><p>0xFF INVALID</p></li>
-</ol>
-</div></blockquote>
-</li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="course-grained-states-machine">
-<h3>Course-grained States Machine<a class="headerlink" href="#course-grained-states-machine" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>IDLE:</p>
-<blockquote>
-<div><ul class="simple">
-<li><dl class="simple">
-<dt>if reg_tx.cyc = ‘1’ and reg_tx.we = ‘1’ then</dt><dd><p>goto WRITE_REGISTER</p>
-</dd>
-<dt>else if reg_tx.cyc = ‘1’ and reg_tx.we = ‘0’ then</dt><dd><p>goto READ_REGISTER</p>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
-<p>WRITE_REGISTER:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>[W, WRITE_ENABLE, dev_idx]</p></li>
-<li><p>[W, reg_tx.addr(15:8), reg_tx.addr(7:0)]</p></li>
-<li><p>[W, reg_tx.val(31:24), reg_tx.val(23:16)]</p></li>
-<li><p>[W, reg_tx.val(15:08), reg_tx.val(07:00)]</p></li>
-<li><p>[W, STATUS_0, reg_tx.idx]</p></li>
-<li><p>[W, STATUS_1, [R, status_result]</p></li>
-</ol>
-<ul class="simple">
-<li><p>Repeat 5 &amp; 6 repeat until status_result(5) = 1</p></li>
-<li><p>reg_rx.err &lt;= status_result(4) or status_result(0)</p></li>
-<li><p>reg_rx.ack &lt;= ‘1’</p></li>
-<li><p>goto CYC_WAIT</p></li>
-</ul>
-</div></blockquote>
-<p>READ_REGISTER:</p>
-<blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><ol class="arabic simple">
-<li><p>[W, READ_REQUEST, reg_tx.idx]</p></li>
-<li><p>[W, reg_tx.addr(15:8), reg_tx.addr(7:0)]</p></li>
-<li><p>[W, STATUS_0, reg_tx.idx]</p></li>
-<li><p>[W, STATUS_1, [R, status_result]</p></li>
-</ol>
-<ul class="simple">
-<li><p>Repeat 3 &amp; 4 until status_result(5) = 1</p></li>
-<li><dl class="simple">
-<dt>if status_result(0) or status_result(4)</dt><dd><p>reg_rx.ack &lt;= ‘1’
-reg_rx.err &lt;= ‘1’
-goto CYC_WAIT</p>
-</dd>
-<dt>else</dt><dd><p>continue</p>
-</dd>
-</dl>
-</li>
-</ul>
-<ol class="arabic simple" start="5">
-<li><p>[W, READ_ENABLE_0, reg_tx.idx]</p></li>
-<li><p>[W, READ_ENABLE_1, [R, reg_rx.val(31:24)]</p></li>
-<li><p>[W, READ_ENABLE_2, [R, reg_rx.val(23:16)]</p></li>
-<li><p>[W, READ_ENABLE_3, [R, reg_rx.val(15:08)]</p></li>
-<li><p>[W, READ_ENABLE_4, [R, reg_rx.val(07:00)]</p></li>
-</ol>
-</div></blockquote>
-<ol class="arabic simple" start="10">
-<li><p>[W, STATUS_0, reg_tx.idx]</p></li>
-<li><p>[W, STATUS_1, [R, status_result]</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li><p>reg_rx.err &lt;= status_result(0) or status_result(1)</p></li>
-<li><p>reg_rx.ack &lt;= ‘1’</p></li>
-<li><p>goto CYC_WAIT</p></li>
-</ul>
-</div></blockquote>
-</div></blockquote>
-<p>CYC_WAIT:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>reg_rx_o.ack &lt;= ‘0’;</p></li>
-<li><p>reg_rx_o.err &lt;= ‘0’;</p></li>
-<li><dl class="simple">
-<dt>if reg_tx.cyc = 0</dt><dd><p>goto IDLE</p>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
+This bus needs to be transmitted over the DS90UB933/4 I2C backchannel to be used
+to configure headstage devices. We have developed a simple Wishbone over I2C
+module to accomplish this .</p>
 </div>
 </div>
 </div>
