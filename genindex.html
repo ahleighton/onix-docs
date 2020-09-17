@@ -92,7 +92,7 @@
       <ul class="navbar-nav">
         
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/open-ephys/ONI" target="_blank" rel="noopener">
+            <a class="nav-link" href="https://github.com/open-ephys/onix-docs" target="_blank" rel="noopener">
               <span><i class="fab fa-github-square"></i></span>
             </a>
           </li>
@@ -167,6 +167,8 @@
 
 <div class="genindex-jumpbox">
  <a href="#Symbols"><strong>Symbols</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#M"><strong>M</strong></a>
  | <a href="#O"><strong>O</strong></a>
  
 </div>
@@ -182,6 +184,8 @@
       <li><a href="About/faq.html#term-4.-Can-I-use-headstage-64-with-a-silicon-probe-instead-of-tetrodes"><strong>4. Can I use headstage-64 with a silicon probe instead of tetrodes?</strong></a>
 </li>
       <li><a href="About/faq.html#term-5.-Can-I-use-my-older-SPI-based-Intan-headstages-with-the-system"><strong>5. Can I use my older, SPI-based Intan headstages with the system?</strong></a>
+</li>
+      <li><a href="About/faq.html#term-6.-Why-is-there-no-Open-Ephys-GUI-plugin-for-ONIX-hardware"><strong>6. Why is there no Open Ephys GUI plugin for ONIX hardware?</strong></a>
 </li>
       <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum">[anonymous] (C enum)</a>, <a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum">[1]</a>
 </li>
@@ -268,9 +272,79 @@
   </ul></td>
 </tr></table>
 
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_MAKE_VERSION">CPPONI_MAKE_VERSION (C macro)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_VERSION">CPPONI_VERSION (C macro)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_VERSION_MAJOR">CPPONI_VERSION_MAJOR (C macro)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_VERSION_MINOR">CPPONI_VERSION_MINOR (C macro)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_VERSION_PATCH">CPPONI_VERSION_PATCH (C macro)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="API%20Reference/liboni/onix.html#c.MAXDEVID">MAXDEVID (C macro)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni3oni9context_tE">oni::oni::context_t (C++ class)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni3oni9context_t9context_tEPKci">oni::oni::context_t::context_t (C++ function)</a>, <a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni3oni9context_t9context_tERR9context_t">[1]</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4NK3oni3oni9context_t10device_mapEv">oni::oni::context_t::device_map (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4I0ENK3oni3oni9context_t14get_driver_optE5opt_ti">oni::oni::context_t::get_driver_opt (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti">oni::oni::context_t::get_opt (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni3oni9context_taSERR9context_t">oni::oni::context_t::operator= (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4NK3oni3oni9context_t10read_frameEv">oni::oni::context_t::read_frame (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t">oni::oni::context_t::read_reg (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4I0EN3oni3oni9context_t14set_driver_optEviRK5opt_t">oni::oni::context_t::set_driver_opt (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4I0EN3oni3oni9context_t7set_optEviRK5opt_t">oni::oni::context_t::set_opt (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4I0ENK3oni3oni9context_t5writeEv6size_tNSt4spanIK6data_tEE">oni::oni::context_t::write (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t">oni::oni::context_t::write_reg (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni3oni12device_map_tE">oni::oni::device_map_t (C++ type)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni3oni8device_tE">oni::oni::device_t (C++ type)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni3oni7error_tE">oni::oni::error_t (C++ class)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni3oni7error_t7error_tEi">oni::oni::error_t::error_t (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4NK3oni3oni7error_t4whatEv">oni::oni::error_t::what (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni3oni7frame_tE">oni::oni::frame_t (C++ class)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv">oni::oni::frame_t::data (C++ function)</a>, <a href="API%20Reference/cpponi/oni.html#_CPPv4NK3oni3oni7frame_t4dataEv">[1]</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4NK3oni3oni7frame_t12device_indexEv">oni::oni::frame_t::device_index (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4NK3oni3oni7frame_t4timeEv">oni::oni::frame_t::time (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#_CPPv4N3oni7versionEv">oni::version (C++ function)</a>
+</li>
       <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_ACQCLKHZ">ONI_CONFIG_ACQCLKHZ (C macro)</a>
 </li>
       <li><a href="API%20Reference/liboni/onidefs.html#c.ONI_CONFIG_DEV_IDX">ONI_CONFIG_DEV_IDX (C macro)</a>
@@ -321,14 +395,14 @@
 </li>
       <li><a href="API%20Reference/liboni/oni.html#c.oni_error_str">oni_error_str (C function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="API%20Reference/liboni/onidefs.html#c.oni_fifo_dat_t">oni_fifo_dat_t (C type)</a>
 </li>
       <li><a href="API%20Reference/liboni/onidefs.html#c.oni_fifo_time_t">oni_fifo_time_t (C type)</a>
 </li>
       <li><a href="API%20Reference/liboni/oni.html#c.oni_frame_t">oni_frame_t (C struct)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="API%20Reference/liboni/oni.html#c.oni_frame_t.data">oni_frame_t.data (C member)</a>
 </li>
       <li><a href="API%20Reference/liboni/oni.html#c.oni_frame_t.data_sz">oni_frame_t.data_sz (C member)</a>
@@ -372,6 +446,64 @@
       <li><a href="API%20Reference/liboni/oni.html#c.oni_write_frame">oni_write_frame (C function)</a>
 </li>
       <li><a href="API%20Reference/liboni/oni.html#c.oni_write_reg">oni_write_reg (C function)</a>
+</li>
+      <li><a href="API%20Reference/cpponi/onix.html#_CPPv4N4onix10device_strEi">onix::device_str (C++ function)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t">onix_device_id_t (C enum)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_AD51X2">onix_device_id_t.ONIX_AD51X2 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_AD576X">onix_device_id_t.ONIX_AD576X (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_AD7617">onix_device_id_t.ONIX_AD7617 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_BNO055">onix_device_id_t.ONIX_BNO055 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_BREAKDIG1R3">onix_device_id_t.ONIX_BREAKDIG1R3 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_DINPUT32">onix_device_id_t.ONIX_DINPUT32 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_DOUTPUT32">onix_device_id_t.ONIX_DOUTPUT32 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_DS90UB9RAW">onix_device_id_t.ONIX_DS90UB9RAW (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_ESTIM">onix_device_id_t.ONIX_ESTIM (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_FMCANALOG1R3">onix_device_id_t.ONIX_FMCANALOG1R3 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_FMCCLKIN1R3">onix_device_id_t.ONIX_FMCCLKIN1R3 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_FMCCLKOUT1R3">onix_device_id_t.ONIX_FMCCLKOUT1R3 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_FMCLINKCTRL">onix_device_id_t.ONIX_FMCLINKCTRL (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_FMCVCTRL">onix_device_id_t.ONIX_FMCVCTRL (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_HEARTBEAT">onix_device_id_t.ONIX_HEARTBEAT (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_INFO">onix_device_id_t.ONIX_INFO (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_MAXDEVICEID">onix_device_id_t.ONIX_MAXDEVICEID (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_NEUROPIX1R0">onix_device_id_t.ONIX_NEUROPIX1R0 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_NULL">onix_device_id_t.ONIX_NULL (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_OSTIM">onix_device_id_t.ONIX_OSTIM (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_RHD2132">onix_device_id_t.ONIX_RHD2132 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_RHD2164">onix_device_id_t.ONIX_RHD2164 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_TEST0">onix_device_id_t.ONIX_TEST0 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_TESTREG0">onix_device_id_t.ONIX_TESTREG0 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_TS4231">onix_device_id_t.ONIX_TS4231 (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_TS4231V2ARR">onix_device_id_t.ONIX_TS4231V2ARR (C macro)</a>
+</li>
+      <li><a href="API%20Reference/liboni/onix.html#c.onix_device_str">onix_device_str (C function)</a>
 </li>
   </ul></td>
 </tr></table>
