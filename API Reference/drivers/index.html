@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ONIX Driver Implementations &#8212; ONIX Docs 0.0.0 documentation</title>
+    <title>Hardware Translation Layers &#8212; ONIX Docs 0.0.0 documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,25 +25,24 @@
     href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/copyURLToClipboard.js"></script>
     <script src="../../_static/default.js"></script>
     <script src="../../_static/wavedrom.min.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ONIX RIFFA Driver" href="riffa.html" />
-    <link rel="prev" title="clroni" href="../clroni/index.html" />
+    <link rel="next" title="Test" href="test.html" />
+    <link rel="prev" title="ONIException" href="../clroni/oniexception.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -52,11 +51,11 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
 <div class="container-xl">
 
-    
     <a class="navbar-brand" href="../../index.html">
-      <img src="../../_static/onix_open_ephys_logo.svg" class="logo" alt="logo">
-    </a>
     
+      <img src="../../_static/onix_open_ephys_logo.svg" class="logo" alt="logo" />
+    
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -70,15 +69,15 @@
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../../Hardware%20Guide/index.html">Hardware Guide</a>
+            <a class="nav-link" href="../../Hardware%20Guide/index.html"> Hardware Guide</a>
         </li>
         
         <li class="nav-item active">
-            <a class="nav-link" href="../index.html">API Reference</a>
+            <a class="nav-link" href="../index.html"> API Reference</a>
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../../Software%20Guide/index.html">Software Guides</a>
+            <a class="nav-link" href="../../Software%20Guide/index.html"> Software Guide</a>
         </li>
         
         
@@ -115,66 +114,70 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
 
-  <div class="bd-toc-item active">
+    <div class="bd-toc-item active">
+    
   
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
         
           
-              <li class="">
-                  <a href="../liboni/index.html">liboni</a>
-              </li>
+            
+                <li class="">
+                    <a href="../liboni/index.html">liboni</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../cpponi/index.html">cpponi</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../clroni/index.html">clroni</a>
+                </li>
+            
+          
+            
+  
+                <li class="active">
+                    <a href="">Hardware Translation Layers</a>
+                    <ul>
+                    
+                        <li class="">
+                            <a href="test.html">Test</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="riffa.html">RIFFA</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="xillybus.html">Xillybus</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
           
         
-          
-              <li class="">
-                  <a href="../cpponi/index.html">cpponi</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../clroni/index.html">clroni</a>
-              </li>
-          
         
-          
-
-              <li class="active">
-                  <a href="">ONIX Driver Implementations</a>
-                  <ul>
-                  
-                      <li class="">
-                          <a href="riffa.html">ONIX RIFFA Driver</a>
-                      </li>
-                  
-                  </ul>
-              </li>
-          
         
-      
-      
-      
-      
-    </ul>
-
-</nav>
+      </ul>
+  
+  </nav>
           </div>
           
 
@@ -205,13 +208,37 @@
               
               <div>
                 
-  <div class="section" id="onix-driver-implementations">
-<span id="drivers"></span><h1>ONIX Driver Implementations<a class="headerlink" href="#onix-driver-implementations" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="hardware-translation-layers">
+<span id="drivers"></span><h1>Hardware Translation Layers<a class="headerlink" href="#hardware-translation-layers" title="Permalink to this headline">¶</a></h1>
+<p>There are a many existing <a class="reference external" href="https://en.wikipedia.org/wiki/Device_driver">device drivers</a> that are designed to support
+hardware for data acquisition. Some of these are appropriate to be used as a
+hardware backend for ONI-compliant APIs. Specifically, this is true if they
+provide some means to support the required hardware communication channels:</p>
+<ul class="simple">
+<li><p>High-speed data in</p></li>
+<li><p>High-speed data out</p></li>
+<li><p>Low speed signal In</p></li>
+<li><p>Register Programming</p></li>
+</ul>
+<p>Have a look at the <a class="reference external" href="https://github.com/open-ephys/ONI">ONI Spec</a> for more
+exact specifications of these communication channels.</p>
+<p>An ONI translation layers implement <a class="reference external" href="https://github.com/jonnew/liboni/blob/main/api/liboni/onidriver.h">onidriver.h</a> to
+convert routines in existing, potentially proprietary, device drivers (and
+corresponding hardware) into a user space library that can be consumed by
+ONI-compliant APIs. These are loaded by the API dynamically at runtime and
+therefore are separate form the API both in terms of development and licensing
+requirements. The APIs agnosticism to hardware its most powerful features
+because it means it can be use for third party hardware without reinventing the
+wheel.</p>
+<p>ONIX hardware translation layer implementations are documented here. Have a
+look at the following links for more information on each. <a class="reference internal" href="../../About/support.html#support"><span class="std std-ref">Get in touch</span></a> if you want to write a driver to give your hardware automatic access
+to our API and software.</p>
 <div class="toctree-wrapper compound">
-</div>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Document</p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="test.html">Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="riffa.html">RIFFA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xillybus.html">Xillybus</a></li>
+</ul>
 </div>
 </div>
 
@@ -227,8 +254,8 @@
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="../clroni/index.html" title="previous page"><code class="docutils literal notranslate"><span class="pre">clroni</span></code></a>
-    <a class='right-next' id="next-link" href="riffa.html" title="next page">ONIX RIFFA Driver</a>
+    <a class='left-prev' id="prev-link" href="../clroni/oniexception.html" title="previous page">ONIException</a>
+    <a class='right-next' id="next-link" href="test.html" title="next page">Test</a>
 
               </div>
               
@@ -239,14 +266,14 @@
     </div>
 
     
-  <script src="../../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
-          &copy; Copyright 2010-2020, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+          &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>

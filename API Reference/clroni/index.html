@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>clroni &#8212; ONIX Docs 0.0.0 documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,24 +25,23 @@
     href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/copyURLToClipboard.js"></script>
     <script src="../../_static/default.js"></script>
     <script src="../../_static/wavedrom.min.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ONIX Driver Implementations" href="../drivers/index.html" />
+    <link rel="next" title="Context" href="context.html" />
     <link rel="prev" title="onix.hpp" href="../cpponi/onix.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -52,11 +51,11 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
 <div class="container-xl">
 
-    
     <a class="navbar-brand" href="../../index.html">
-      <img src="../../_static/onix_open_ephys_logo.svg" class="logo" alt="logo">
-    </a>
     
+      <img src="../../_static/onix_open_ephys_logo.svg" class="logo" alt="logo" />
+    
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -70,15 +69,15 @@
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../../Hardware%20Guide/index.html">Hardware Guide</a>
+            <a class="nav-link" href="../../Hardware%20Guide/index.html"> Hardware Guide</a>
         </li>
         
         <li class="nav-item active">
-            <a class="nav-link" href="../index.html">API Reference</a>
+            <a class="nav-link" href="../index.html"> API Reference</a>
         </li>
         
         <li class="nav-item ">
-            <a class="nav-link" href="../../Software%20Guide/index.html">Software Guides</a>
+            <a class="nav-link" href="../../Software%20Guide/index.html"> Software Guide</a>
         </li>
         
         
@@ -115,67 +114,110 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
 
-  <div class="bd-toc-item active">
+    <div class="bd-toc-item active">
+    
   
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
         
           
-              <li class="">
-                  <a href="../liboni/index.html">liboni</a>
-              </li>
+            
+                <li class="">
+                    <a href="../liboni/index.html">liboni</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../cpponi/index.html">cpponi</a>
+                </li>
+            
+          
+            
+  
+                <li class="active">
+                    <a href="">clroni</a>
+                    <ul>
+                    
+                        <li class="">
+                            <a href="context.html">Context</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="device.html">Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="frame.html">Frame</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="oniexception.html">ONIException</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../drivers/index.html">Hardware Translation Layers</a>
+                </li>
+            
           
         
-          
-              <li class="">
-                  <a href="../cpponi/index.html">cpponi</a>
-              </li>
-          
         
-          
-              <li class="active">
-                  <a href="">clroni</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../drivers/index.html">ONIX Driver Implementations</a>
-              </li>
-          
         
-      
-      
-      
-      
-    </ul>
-
-</nav>
+      </ul>
+  
+  </nav>
           </div>
           
 
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
               
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#building-the-library" class="nav-link">Building the library</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#windows" class="nav-link">Windows</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#mono" class="nav-link">Mono</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#test-programs" class="nav-link">Test Programs</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#license" class="nav-link">License</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
     
     </ul>
 </nav>
@@ -198,10 +240,58 @@
               <div>
                 
   <div class="section" id="clroni">
-<span id="id1"></span><h1><code class="docutils literal notranslate"><span class="pre">clroni</span></code><a class="headerlink" href="#clroni" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>Document.</p>
+<span id="id1"></span><h1>clroni<a class="headerlink" href="#clroni" title="Permalink to this headline">¶</a></h1>
+<p>CLR/.NET bindings for <a class="reference internal" href="../liboni/index.html#liboni"><span class="std std-ref">liboni</span></a>. Documentation for the public interface is
+provided below:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frame.html">Frame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oniexception.html">ONIException</a></li>
+</ul>
+</div>
+<div class="section" id="building-the-library">
+<h2>Building the library<a class="headerlink" href="#building-the-library" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open the <code class="code docutils literal notranslate"><span class="pre">clroni.sln</span></code> solution in visual studio 2019 or newer.</p></li>
+<li><p>“Running” the solution will compile the library and test program, and then
+run the test program</p></li>
+<li><p>The Nuget package can be built by right clicking the clroni project and
+clicking “pack”.</p></li>
+</ol>
+</div>
+<div class="section" id="mono">
+<h3>Mono<a class="headerlink" href="#mono" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/mono/mono">Mono</a> is an open source .NET implementation.
+<cite>mcs</cite> is the mono C# compiler.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd clroepcie
+$ make
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-programs">
+<h3>Test Programs<a class="headerlink" href="#test-programs" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="code docutils literal notranslate"><span class="pre">clroepcie-test</span></code> directory contains minimal working programs that use this
+library</p>
+<ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Host.exe</span></code> : Basic data acquisition loop. Communicate with
+emmulated (e.g. <a class="reference internal" href="../drivers/test.html#test-driver"><span class="std std-ref">Test</span></a>) or actual (e.g. <a class="reference internal" href="../drivers/riffa.html#riffa"><span class="std std-ref">RIFFA</span></a>)
+hardware.</p></li>
+</ol>
+<p>This will be automatically built when the visual studio solution is built. It
+can also be built using mono via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd clroni-test
+$ make
+</pre></div>
+</div>
+<div class="section" id="license">
+<h4>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/MIT_License">MIT</a></p>
+</div>
+</div>
 </div>
 </div>
 
@@ -218,7 +308,7 @@
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="../cpponi/onix.html" title="previous page">onix.hpp</a>
-    <a class='right-next' id="next-link" href="../drivers/index.html" title="next page">ONIX Driver Implementations</a>
+    <a class='right-next' id="next-link" href="context.html" title="next page">Context</a>
 
               </div>
               
@@ -229,14 +319,14 @@
     </div>
 
     
-  <script src="../../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
-          &copy; Copyright 2010-2020, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+          &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>
