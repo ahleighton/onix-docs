@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Context &#8212; ONIX Docs 0.0.0 documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -29,19 +29,20 @@
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/copyURLToClipboard.js"></script>
-    <script src="../../_static/default.js"></script>
-    <script src="../../_static/wavedrom.min.js"></script>
+    <script src="http://wavedrom.com/skins/default.js"></script>
+    <script src="http://wavedrom.com/wavedrom.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Device" href="device.html" />
+    <link rel="next" title="Hub" href="hub.html" />
     <link rel="prev" title="clroni" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -154,6 +155,10 @@
                         </li>
                     
                         <li class="">
+                            <a href="hub.html">Hub</a>
+                        </li>
+                    
+                        <li class="">
                             <a href="device.html">Device</a>
                         </li>
                     
@@ -216,7 +221,7 @@
 <span id="context-cs"></span><h1>Context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h1>
 <dl class="cs class">
 <dt id="class-oni.Context">
-<span class="target" id="classoni_1_1_context"></span><em class="property">class </em><code class="sig-name descname">oni.Context</code> : <em class="property">public</em> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.IDisposable" title="type: msdn ~&gt; System.IDisposable">IDisposable</a><a class="headerlink" href="#class-oni.Context" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="classoni_1_1_context"></span><em class="property">class </em><code class="sig-name descname">oni.Context</code> : <em class="property">public</em> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.IDisposable" title="type: msdn ~&gt; System.IDisposable">IDisposable</a>, <em class="property">public</em> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.IDisposable" title="type: msdn ~&gt; System.IDisposable">IDisposable</a><a class="headerlink" href="#class-oni.Context" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open Neuro Interface (ONI) compliant acquisition context. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
@@ -226,18 +231,13 @@
 <dd><p>Initializes a new instance of <a class="reference internal" href="#classoni_1_1_context"><span class="std std-ref">Context</span></a> with the specified hardware translation driver and host hardware index. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">driver</span></code>: A string specifying the device driver used by the context to control hardware. This string corresponds a compiled implementation of onidriver.h that has the name onidriver_&lt;drv_name&gt;.&lt;so/dll&gt;. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist">
+<li><p><code class="docutils literal notranslate"><span class="pre">driver</span></code>: A string specifying the device driver used by the context to control hardware. This string corresponds a compiled implementation of onidriver.h that has the name onidriver_&lt;drv_name&gt;.so/dll.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: An index specifying the physical location within the host that the host hardware resides. A value of -1 will use the default location.</p></li>
 </ul>
 </dd>
-<dt><strong>Exceptions</strong></dt><dd><ul class="breatheparameterlist">
+<dt><strong>Exceptions</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">System.InvalidProgramException</span></code>: Thrown when the specified driver cannot be found or is invalid.</p></li>
 <li><p><code class="docutils literal notranslate"><a class="reference internal" href="oniexception.html#classoni_1_1_o_n_i_exception"><span class="std std-ref"><span class="pre">ONIException</span></span></a></code>: Thrown when there is an error during hardware initialization (e.g. an invalid device table).</p></li>
-</ul>
-</dd>
-</dl>
-</p></li>
 </ul>
 </dd>
 </dl>
@@ -349,7 +349,7 @@
 <dt><strong>Return</strong></dt><dd><p>A device data frame.</p>
 </dd>
 <dt><strong>Exceptions</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><a class="reference internal" href="oniexception.html#classoni_1_1_o_n_i_exception"><span class="std std-ref"><span class="pre">ONIException</span></span></a></code>: Thrown if their is an error reading a frame.</p></li>
+<li><p><code class="docutils literal notranslate"><a class="reference internal" href="oniexception.html#classoni_1_1_o_n_i_exception"><span class="std std-ref"><span class="pre">ONIException</span></span></a></code>: Thrown if there is an error reading a frame.</p></li>
 </ul>
 </dd>
 </dl>
@@ -408,11 +408,11 @@
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">dev_index</span></code>: Fully-qualified device index within the <a class="reference internal" href="#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: Pointer to data to write to the device.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data_size</span></code>: Size of data pointed to by data in bytes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data_size</span></code>: Size of data pointed to by <em>data</em>  in bytes.</p></li>
 </ul>
 </dd>
 <dt><strong>Exceptions</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><a class="reference internal" href="oniexception.html#classoni_1_1_o_n_i_exception"><span class="std std-ref"><span class="pre">ONIException</span></span></a></code>: Throw if data_size is an invalid size or the selected device does not accept write data.</p></li>
+<li><p><code class="docutils literal notranslate"><a class="reference internal" href="oniexception.html#classoni_1_1_o_n_i_exception"><span class="std std-ref"><span class="pre">ONIException</span></span></a></code>: Throw if <em>data_size</em>  is an invalid size or the selected device does not accept write data.</p></li>
 </ul>
 </dd>
 </dl>
@@ -420,14 +420,20 @@
 </dd></dl>
 
 <dl class="cs function">
-<dt id="function-oni.Context.HubDataClock">
-<span class="target" id="classoni_1_1_context_1aabb6e3bc160a36625a2d54e3e21f4843"></span>uint <code class="sig-name descname">HubDataClock</code> <span class="sig-paren">(</span>uint <em>hub_index</em><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.HubDataClock" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieve the local clock rate for a particular hub in the acquisition hierarchy. </p>
+<dt id="function-oni.Context.Dispose">
+<span class="target" id="classoni_1_1_context_1a45ad882d26de9399b8e738e5feeabcba"></span>void <code class="sig-name descname">Dispose</code> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.Dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispose this <a class="reference internal" href="#classoni_1_1_context"><span class="std std-ref">Context</span></a>. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt id="function-oni.Context.GetHub">
+<span class="target" id="classoni_1_1_context_1a2643f7175d845603a43db8a2c9c4dc56"></span><a class="reference internal" href="hub.html#class-oni.Hub" title="class: oni.Hub">Hub</a> <code class="sig-name descname">GetHub</code> <span class="sig-paren">(</span>uint <em>device_address</em><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.GetHub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the hub that a given <a class="reference internal" href="device.html#structoni_1_1_device"><span class="std std-ref">Device</span></a> resides in. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>The clock rate of the hub at hub_index in Hz. </p>
+<dt><strong>Return</strong></dt><dd><p>A <a class="reference internal" href="hub.html#classoni_1_1_hub"><span class="std std-ref">Hub</span></a>containing hub metadata.</p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">hub_index</span></code>: The index specifying the hub to retrieve the clock rate for.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">device_address</span></code>: The fully specified <a class="reference internal" href="device.html#structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120"><span class="std std-ref">Device.Address</span></a> to retrieve the hub for.</p></li>
 </ul>
 </dd>
 </dl>
@@ -464,7 +470,7 @@
 <dl class="cs var">
 <dt id="var-oni.Context.DeviceTable">
 <span class="target" id="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"></span><em class="property">readonly</em> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2" title="type: msdn ~&gt; System.Collections.Generic.Dictionary">Dictionary</a>&lt;uint, <a class="reference internal" href="device.html#struct-oni.Device" title="struct: oni.Device">Device</a>&gt; <code class="sig-name descname">DeviceTable</code><a class="headerlink" href="#var-oni.Context.DeviceTable" title="Permalink to this definition">¶</a></dt>
-<dd><p>ONI specified device table containing the full device hierarchy governed by this acquisition context. </p>
+<dd><p>ONI specified device table containing the full device hierarchy governed by this acquisition context. This IDictionary maps a fully-qualified <a class="reference internal" href="device.html#structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120"><span class="std std-ref">Device.Address</span></a> to a <a class="reference internal" href="device.html#structoni_1_1_device"><span class="std std-ref">Device</span></a> instance. </p>
 </dd></dl>
 
 </div>
@@ -512,7 +518,7 @@
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="index.html" title="previous page">clroni</a>
-    <a class='right-next' id="next-link" href="device.html" title="next page">Device</a>
+    <a class='right-next' id="next-link" href="hub.html" title="next page">Hub</a>
 
               </div>
               
@@ -523,7 +529,7 @@
     </div>
 
     
-  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">

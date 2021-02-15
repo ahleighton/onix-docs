@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BNO055 &#8212; ONIX Docs 0.0.0 documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -29,20 +29,21 @@
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/copyURLToClipboard.js"></script>
-    <script src="../../_static/default.js"></script>
-    <script src="../../_static/wavedrom.min.js"></script>
+    <script src="http://wavedrom.com/skins/default.js"></script>
+    <script src="http://wavedrom.com/wavedrom.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="API Reference" href="../../API%20Reference/index.html" />
-    <link rel="prev" title="ONI Device Datasheets" href="index.html" />
+    <link rel="next" title="RHD2164" href="rhd2164.html" />
+    <link rel="prev" title="FMC Host Analog IO Device" href="onix-fmc-analog-io.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -183,8 +184,16 @@
                     <a href="index.html">ONI Device Datasheets</a>
                     <ul>
                     
+                        <li class="">
+                            <a href="onix-fmc-analog-io.html">FMC Host Analog IO Device</a>
+                        </li>
+                    
                         <li class="active">
                             <a href="">BNO055</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="rhd2164.html">RHD2164</a>
                         </li>
                     
                     </ul>
@@ -206,9 +215,28 @@
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
               
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#description" class="nav-link">Description</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#register-programming" class="nav-link">Register Programming</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#device-to-host-data-frames" class="nav-link">Device To Host Data Frames</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#host-to-device-data-frames" class="nav-link">Host To Device Data Frames</a>
+        </li>
     
     </ul>
 </nav>
@@ -216,7 +244,7 @@
 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/open-ephys/onix-docs/edit/master/source/Hardware Guide/Datasheets/BNO055.rst">
+    <a href="https://github.com/open-ephys/onix-docs/edit/master/source/Hardware Guide/Datasheets/bno055.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -231,10 +259,125 @@
               <div>
                 
   <div class="section" id="bno055">
-<h1>BNO055<a class="headerlink" href="#bno055" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Docmument</p>
+<span id="onidatasheet-bno055"></span><h1>BNO055<a class="headerlink" href="#bno055" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Authors</dt>
+<dd class="field-odd"><p>Jonathan P. Newman</p>
+</dd>
+<dt class="field-even">IO</dt>
+<dd class="field-even"><p>Frame Source</p>
+</dd>
+<dt class="field-odd">ONIX ID</dt>
+<dd class="field-odd"><p>9</p>
+</dd>
+<dt class="field-even">ONIX Hubs</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Headstages/headstage-64_1r3.html#headstage-64-1r3"><span class="std std-ref">headstage-64 v1.3</span></a>, <a class="reference internal" href="../Headstages/headstage-neuropix_1r2.html#headstage-neuropix-1r2"><span class="std std-ref">headstage-neuropix v1.2</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>BNO055</strong> ONIX device is a 9-axis intertial measurement unit (IMU) that provides
+orientation and acceleration information. At is core, this device corresponds
+to a single chip:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.bosch-sensortec.com/products/smart-sensors/bno055.html">BNO055</a> 9-Axis IMU</p></li>
+</ul>
+<p>This device implemtation has hardcoded all of the configuration required to
+operate the BNO055 with the following properties:</p>
+<ul class="simple">
+<li><p>100 Hz update rate</p></li>
+<li><p>Full on-chip sensor fusion (“NDOF” mode)</p></li>
+<li><p>Hardcoded axis map (orientation depends on the headstage)</p></li>
+</ul>
+</div>
+<div class="section" id="register-programming">
+<h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
+<p>This device does not permit register access. All requests will NAK.</p>
+</div>
+<div class="section" id="device-to-host-data-frames">
+<h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
+<p>Each frame transmitted to the host is structured as follows:</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    reg: [
+      {bits: 64, name: "Acquisition Clock Counter", type: 0},
+      {bits: 32, name: "Device Address", type: 0},
+      {bits: 32, name: "Data Size", type: 0, attr: 36},
+
+      {bits: 64, name: "Hub Clock Counter", type: 3},
+
+      {bits: 16, name: "Euler Angle Yaw", type: 4},
+      {bits: 16, name: "Euler Angle Roll", type: 4},
+      {bits: 16, name: "Euler Angle Pitch", type: 4},
+
+      {bits: 16, name: "Quaternion X", type: 5},
+      {bits: 16, name: "Quaternion Y", type: 5},
+      {bits: 16, name: "Quaternion Z", type: 5},
+      {bits: 16, name: "Quaternion W", type: 5},
+
+      {bits: 16, name: "Linear Acceleration X", type: 6},
+      {bits: 16, name: "Linear Acceleration Y", type: 6},
+      {bits: 16, name: "Linear Acceleration Z", type: 6},
+
+      {bits: 16, name: "Gravity Vector X", type: 7},
+      {bits: 16, name: "Gravity Vector Y", type: 7},
+      {bits: 16, name: "Gravity Vector Z", type: 7},
+
+      {bits: 8, name: "Temperature", type: 2},
+
+      {bits: 2, name: "Sys. Cal.", type: 2},
+      {bits: 2, name: "Gyro. Cal.", type: 2},
+      {bits: 2, name: "Accel. Cal.", type: 2},
+      {bits: 2, name: "Mag. Cal.", type: 2},
+    ],
+    config: {bits: 416, lanes: 13, vflip: true, hflip: true, fontsize: 11}
+}
+</script>
+</div>
+<p>All IMU data is signed with the exception of the calibration status bits (last
+byte in the frame). The unit conversions for each of these measurements are as
+follows:</p>
+<ul class="simple">
+<li><p>Euler angle (Tait-Bryan formalism)</p>
+<ul>
+<li><p>Yaw: 0 to 360 degrees</p></li>
+<li><p>Roll: -180 to 180 degrees</p></li>
+<li><p>Pitch: -90 to 90 degrees</p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[1^{\circ} = 16\ LSB\]</div>
+<ul class="simple">
+<li><p>Quaternion</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[1 = 2^{14}\  LSB\]</div>
+<ul class="simple">
+<li><p>Acceleration &amp; Gravity Vector</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[1\ m/s^2 = 100\ LSB\]</div>
+<ul class="simple">
+<li><p>Temperature</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[1^{\circ}C = 1\ LSB\]</div>
+<ul class="simple">
+<li><p>Calibration Status</p>
+<ul>
+<li><p>0: not calibrated</p></li>
+<li><p>3: fully calibrated</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="host-to-device-data-frames">
+<h2>Host To Device Data Frames<a class="headerlink" href="#host-to-device-data-frames" title="Permalink to this headline">¶</a></h2>
+<p>This device does not accept input frames. All write attempts will fail with an
+error.</p>
 </div>
 </div>
 
@@ -250,8 +393,8 @@
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">ONI Device Datasheets</a>
-    <a class='right-next' id="next-link" href="../../API%20Reference/index.html" title="next page"> API Reference</a>
+    <a class='left-prev' id="prev-link" href="onix-fmc-analog-io.html" title="previous page">FMC Host Analog IO Device</a>
+    <a class='right-next' id="next-link" href="rhd2164.html" title="next page">RHD2164</a>
 
               </div>
               
@@ -262,7 +405,7 @@
     </div>
 
     
-  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
