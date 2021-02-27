@@ -43,7 +43,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="RHD2164" href="rhd2164.html" />
-    <link rel="prev" title="FMC Host Analog IO Device" href="onix-fmc-analog-io.html" />
+    <link rel="prev" title="FMC Link Controller" href="fmc-link-control.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -181,11 +181,31 @@
             
   
                 <li class="active">
-                    <a href="index.html">ONI Device Datasheets</a>
+                    <a href="index.html">ONIX Device Datasheets</a>
                     <ul>
                     
                         <li class="">
-                            <a href="onix-fmc-analog-io.html">FMC Host Analog IO Device</a>
+                            <a href="heartbeat.html">Heartbeat</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="load-test.html">Load Test Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="memory-usage.html">Memory Usage Monitor</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="fmc-analog-io.html">FMC Host Analog IO Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="fmc-clock-out.html">FMC Host Clock Output Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="fmc-link-control.html">FMC Link Controller</a>
                         </li>
                     
                         <li class="active">
@@ -194,6 +214,22 @@
                     
                         <li class="">
                             <a href="rhd2164.html">RHD2164</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="neuropixels-v1.html">Neuropixels V1</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="estim-hs64.html">HS64 Electrical Stimulator</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="ostim-hs64.html">HS64 Optical Stimulator</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="ts4231-v1-array.html">TS4231 Array for V1 Base Stations</a>
                         </li>
                     
                     </ul>
@@ -265,7 +301,7 @@
 <dd class="field-odd"><p>Jonathan P. Newman</p>
 </dd>
 <dt class="field-even">IO</dt>
-<dd class="field-even"><p>Frame Source</p>
+<dd class="field-even"><p>Frame Source, Register Access</p>
 </dd>
 <dt class="field-odd">ONIX ID</dt>
 <dd class="field-odd"><p>9</p>
@@ -276,13 +312,13 @@
 </dl>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>BNO055</strong> ONIX device is a 9-axis intertial measurement unit (IMU) that provides
-orientation and acceleration information. At is core, this device corresponds
-to a single chip:</p>
+<p>The <strong>BNO055</strong> is a 9-axis inertial measurement unit (IMU) that
+provides orientation and acceleration information. At is core, this device
+corresponds to a single chip:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.bosch-sensortec.com/products/smart-sensors/bno055.html">BNO055</a> 9-Axis IMU</p></li>
 </ul>
-<p>This device implemtation has hardcoded all of the configuration required to
+<p>This device implementation has hard-coded all of the configuration required to
 operate the BNO055 with the following properties:</p>
 <ul class="simple">
 <li><p>100 Hz update rate</p></li>
@@ -292,7 +328,35 @@ operate the BNO055 with the following properties:</p>
 </div>
 <div class="section" id="register-programming">
 <h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
-<p>This device does not permit register access. All requests will NAK.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Address</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Time of Effect</p></th>
+<th class="head"><p>POR Value</p></th>
+<th class="head"><p>Reset Action</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x00</p></td>
+<td><p>ENABLE</p></td>
+<td><p>R/W</p></td>
+<td><p>On Reset</p></td>
+<td><p>Implementation dependent, see hub documentation</p></td>
+<td><p>None</p></td>
+<td><p>The LSB is used to enable or disable the device data stream:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0x0: data output disabled</p></li>
+<li><p>0x1: data output enabled</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="device-to-host-data-frames">
 <h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
@@ -330,7 +394,7 @@ operate the BNO055 with the following properties:</p>
       {bits: 2, name: "Sys. Cal.", type: 2},
       {bits: 2, name: "Gyro. Cal.", type: 2},
       {bits: 2, name: "Accel. Cal.", type: 2},
-      {bits: 2, name: "Mag. Cal.", type: 2},
+      {bits: 2, name: "Mag. Cal.", type: 2}
     ],
     config: {bits: 416, lanes: 13, vflip: true, hflip: true, fontsize: 11}
 }
@@ -393,7 +457,7 @@ error.</p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="onix-fmc-analog-io.html" title="previous page">FMC Host Analog IO Device</a>
+    <a class='left-prev' id="prev-link" href="fmc-link-control.html" title="previous page">FMC Link Controller</a>
     <a class='right-next' id="next-link" href="rhd2164.html" title="next page">RHD2164</a>
 
               </div>

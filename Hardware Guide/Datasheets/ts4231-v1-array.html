@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TS4231 Array for V1 Base Stations &#8212; ONIX Docs 0.0.0 documentation</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copyURLToClipboard.js"></script>
+    <script src="../../_static/default.js"></script>
+    <script src="../../_static/wavedrom.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="API Reference" href="../../API%20Reference/index.html" />
+    <link rel="prev" title="HS64 Optical Stimulator" href="ostim-hs64.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../../index.html">
+    
+      <img src="../../_static/onix_open_ephys_logo.svg" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../About/index.html">About</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../index.html"> Hardware Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../API%20Reference/index.html"> API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../Software%20Guide/index.html"> Software Guide</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/open-ephys/onix-docs" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/openephys" target="_blank" rel="noopener">
+              <span><i class="fab fa-twitter-square"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+          
+            
+                <li class="">
+                    <a href="../hw-repo-info.html">Hardware Repository Information</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../hw-compatibility.html">Version Compatibility</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../hw-setup.html">Hardware Setup Guide</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Headstages/index.html">Headstages</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Miniscopes/index.html">Miniscopes</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Adapters%20%26%20EIBs/index.html">Adapters & EIBs</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Breakout%20Boards/index.html">Breakout Boards</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Hosts/index.html">Hosts</a>
+                </li>
+            
+          
+            
+  
+                <li class="active">
+                    <a href="index.html">ONIX Device Datasheets</a>
+                    <ul>
+                    
+                        <li class="">
+                            <a href="heartbeat.html">Heartbeat</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="load-test.html">Load Test Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="memory-usage.html">Memory Usage Monitor</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="fmc-analog-io.html">FMC Host Analog IO Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="fmc-clock-out.html">FMC Host Clock Output Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="fmc-link-control.html">FMC Link Controller</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="bno055.html">BNO055</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="rhd2164.html">RHD2164</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="neuropixels-v1.html">Neuropixels V1</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="estim-hs64.html">HS64 Electrical Stimulator</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="ostim-hs64.html">HS64 Optical Stimulator</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="">TS4231 Array for V1 Base Stations</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#description" class="nav-link">Description</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#register-programming" class="nav-link">Register Programming</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#device-to-host-data-frames" class="nav-link">Device To Host Data Frames</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#host-to-device-data-frames" class="nav-link">Host To Device Data Frames</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/onix-docs/edit/master/source/Hardware Guide/Datasheets/ts4231-v1-array.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="ts4231-array-for-v1-base-stations">
+<span id="onidatasheet-ts4231-v1-array"></span><h1>TS4231 Array for V1 Base Stations<a class="headerlink" href="#ts4231-array-for-v1-base-stations" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Authors</dt>
+<dd class="field-odd"><p>Jonathan P. Newman</p>
+</dd>
+<dt class="field-even">IO</dt>
+<dd class="field-even"><p>Frame Source, Register Access</p>
+</dd>
+<dt class="field-odd">ONIX ID</dt>
+<dd class="field-odd"><p>25</p>
+</dd>
+<dt class="field-even">ONIX Hubs</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Headstages/headstage-64_1r3.html#headstage-64-1r3"><span class="std std-ref">headstage-64 v1.3</span></a>, <a class="reference internal" href="../Headstages/headstage-neuropix_1r2.html#headstage-neuropix-1r2"><span class="std std-ref">headstage-neuropix v1.2</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>TS4231 Array for V1 Base Stations</strong>  ONIX device is a localization unit
+that provides 3D position information. At is core, this device comprises an
+array of optical to digital converters that work with both V1 and V2 (“Index”)
+and Steam/HTC base stations:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://triadsemi.com/product/ts4231/">TS4231</a> Optical to digital converter</p></li>
+</ul>
+<p>This device transmits data every time one of the sensors in the array receives
+and optical signal. The host computer must perform the mathematics in order to
+calculate positional information using these data.</p>
+</div>
+<div class="section" id="register-programming">
+<h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Address</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Time of Effect</p></th>
+<th class="head"><p>POR Value</p></th>
+<th class="head"><p>Reset Action</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x00</p></td>
+<td><p>ENABLE</p></td>
+<td><p>R/W</p></td>
+<td><p>On Reset</p></td>
+<td><p>Implementation dependent, see hub documentation</p></td>
+<td><p>None</p></td>
+<td><p>The LSB is used to enable or disable the device data stream:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0x0: data output disabled</p></li>
+<li><p>0x1: data output enabled</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="device-to-host-data-frames">
+<h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
+<p>Each frame transmitted to the host is structured as follows:</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    reg: [
+      {bits: 64, name: "Acquisition Clock Counter", type: 0},
+      {bits: 32, name: "Device Address", type: 0},
+      {bits: 32, name: "Data Size", type: 0, attr: 16},
+
+      {bits: 64, name: "Hub Clock Counter at Envelope Start", type: 3},
+
+      {bits: 16, name: "Sensor Index", type: 4},
+
+      {bits: 32, name: "Envelope Width (Hub Clock Cycles)", type: 5},
+
+      {bits: 16, name: "Classified Envelope Code", type: 6}
+
+    ],
+    config: {bits: 256, lanes: 8, vflip: true, hflip: true, fontsize: 11}
+}
+</script>
+</div>
+<p>Each frame encodes a single optical detection from a single TS4231 and
+photodiode</p>
+<div class="figure align-center" id="id1">
+<img alt="../../_images/ts4231-v1-waveforms.png" src="../../_images/ts4231-v1-waveforms.png" />
+<p class="caption"><span class="caption-text">Optical waveforms detected by the photodiode and the envelope output used
+for sweep classification.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Envelope codes are defined based on their width as follows:</p>
+<ul class="simple">
+<li><p>SWEEP &lt;= 50.0 μS</p></li>
+<li><p>J0 &lt;= 62.5 μS</p></li>
+<li><p>K0 &lt;= 72.9 μS</p></li>
+<li><p>J1 &lt;= 83.3 μS</p></li>
+<li><p>K1 &lt;= 93.8 μS</p></li>
+<li><p>J2 &lt;= 104.0 μS</p></li>
+<li><p>K2 &lt;= 115.0 μS</p></li>
+</ul>
+<p>Where SWEEP is a light-sheet sweep and Jx/Kx are synchronization flashes. See
+the <a class="reference external" href="https://github.com/nairol/LighthouseRedox/blob/master/docs/Light%20Emissions.md">Lighthouse Redox Project</a>
+for more information.</p>
+</div>
+<div class="section" id="host-to-device-data-frames">
+<h2>Host To Device Data Frames<a class="headerlink" href="#host-to-device-data-frames" title="Permalink to this headline">¶</a></h2>
+<p>This device does not accept input frames. All write attempts will fail with an
+error.</p>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="ostim-hs64.html" title="previous page">HS64 Optical Stimulator</a>
+    <a class='right-next' id="next-link" href="../../API%20Reference/index.html" title="next page"> API Reference</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

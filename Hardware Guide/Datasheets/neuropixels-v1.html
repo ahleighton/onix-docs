@@ -1,0 +1,687 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neuropixels V1 &#8212; ONIX Docs 0.0.0 documentation</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copyURLToClipboard.js"></script>
+    <script src="../../_static/default.js"></script>
+    <script src="../../_static/wavedrom.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HS64 Electrical Stimulator" href="estim-hs64.html" />
+    <link rel="prev" title="RHD2164" href="rhd2164.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../../index.html">
+    
+      <img src="../../_static/onix_open_ephys_logo.svg" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../About/index.html">About</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../index.html"> Hardware Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../API%20Reference/index.html"> API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../Software%20Guide/index.html"> Software Guide</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/open-ephys/onix-docs" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/openephys" target="_blank" rel="noopener">
+              <span><i class="fab fa-twitter-square"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+          
+            
+                <li class="">
+                    <a href="../hw-repo-info.html">Hardware Repository Information</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../hw-compatibility.html">Version Compatibility</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../hw-setup.html">Hardware Setup Guide</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Headstages/index.html">Headstages</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Miniscopes/index.html">Miniscopes</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Adapters%20%26%20EIBs/index.html">Adapters & EIBs</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Breakout%20Boards/index.html">Breakout Boards</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Hosts/index.html">Hosts</a>
+                </li>
+            
+          
+            
+  
+                <li class="active">
+                    <a href="index.html">ONIX Device Datasheets</a>
+                    <ul>
+                    
+                        <li class="">
+                            <a href="heartbeat.html">Heartbeat</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="load-test.html">Load Test Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="memory-usage.html">Memory Usage Monitor</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="fmc-analog-io.html">FMC Host Analog IO Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="fmc-clock-out.html">FMC Host Clock Output Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="fmc-link-control.html">FMC Link Controller</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="bno055.html">BNO055</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="rhd2164.html">RHD2164</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="">Neuropixels V1</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="estim-hs64.html">HS64 Electrical Stimulator</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="ostim-hs64.html">HS64 Optical Stimulator</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="ts4231-v1-array.html">TS4231 Array for V1 Base Stations</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#description" class="nav-link">Description</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#register-programming" class="nav-link">Register Programming</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#managed-registers" class="nav-link">Managed Registers</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#unmanaged-registers" class="nav-link">Unmanaged Registers</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#device-to-host-data-frames" class="nav-link">Device To Host Data Frames</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#host-to-device-data-frames" class="nav-link">Host To Device Data Frames</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/onix-docs/edit/master/source/Hardware Guide/Datasheets/neuropixels-v1.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="neuropixels-v1">
+<span id="onidatasheet-neuropixels-v1"></span><h1>Neuropixels V1<a class="headerlink" href="#neuropixels-v1" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Authors</dt>
+<dd class="field-odd"><p>Jonathan P. Newman</p>
+</dd>
+<dt class="field-even">IO</dt>
+<dd class="field-even"><p>Frame Source, Register Access</p>
+</dd>
+<dt class="field-odd">ONIX ID</dt>
+<dd class="field-odd"><p>11</p>
+</dd>
+<dt class="field-even">ONIX Hubs</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Headstages/headstage-neuropix_1r2.html#headstage-neuropix-1r2"><span class="std std-ref">headstage-neuropix v1.2</span></a></p>
+</dd>
+</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Neuropixels V1 Device</strong> acquires data from <a class="reference external" href="https://www.neuropixels.org/">Neuropixels V1 probes</a>.</p>
+</div>
+<div class="section" id="register-programming">
+<h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="managed-registers">
+<h3>Managed Registers<a class="headerlink" href="#managed-registers" title="Permalink to this headline">¶</a></h3>
+<p>Managed register access is provided at offset 0x10000.</p>
+<table class="colwidths-auto table" id="id1">
+<caption><span class="caption-text">Managed Registers</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Address</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Time of Effect</p></th>
+<th class="head"><p>POR Value</p></th>
+<th class="head"><p>Reset Action</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x10000</p></td>
+<td><p>ENABLE</p></td>
+<td><p>R/W</p></td>
+<td><p>On Reset</p></td>
+<td><p>Implementation dependent, see hub documentation</p></td>
+<td><p>None</p></td>
+<td><p>The LSB is used to enable or disable the device data stream:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0x0: data output disabled</p></li>
+<li><p>0x1: data output enabled</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="unmanaged-registers">
+<h3>Unmanaged Registers<a class="headerlink" href="#unmanaged-registers" title="Permalink to this headline">¶</a></h3>
+<p>Direct, unmanaged read and write access is provided to the Neuropixels V1
+registers, which are reproduced here for clarity. The time of effect of changes
+to these registers are defined by the probe. Complete documentation is
+available only through IMEC.</p>
+<table class="colwidths-auto table" id="id2">
+<caption><span class="caption-text">Unmanaged Registers</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Address</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Time of Effect</p></th>
+<th class="head"><p>POR Value</p></th>
+<th class="head"><p>Reset Action</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x00</p></td>
+<td><p>OP_MODE</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Operation mode register.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x01</p></td>
+<td><p>REC_MOD</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Recording flags register.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x02</p></td>
+<td><p>CAL_MOD</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Calibration flags register.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x03</p></td>
+<td><p>TEST_CONFIG1</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Test configuration register 1.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x04</p></td>
+<td><p>TEST_CONFIG2</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Test configuration register 2.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x05</p></td>
+<td><p>TEST_CONFIG3</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Test configuration register 3.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x06</p></td>
+<td><p>TEST_CONFIG4</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Test configuration register 4.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x07</p></td>
+<td><p>TEST_CONFIG5</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Test configuration register 5.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x08</p></td>
+<td><p>STATUS</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Shift register error status.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x09</p></td>
+<td><p>SYNC</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Sync code for delineating data frames.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0a</p></td>
+<td><p>SR_CHAIN5</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Shift register chain 5.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0b</p></td>
+<td><p>SR_CHAIN4</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Shift register chain 4.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0c</p></td>
+<td><p>SR_CHAIN3</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Shift register chain 3.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0d</p></td>
+<td><p>SR_CHAIN2</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Shift register chain 2.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0e</p></td>
+<td><p>SR_CHAIN1</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Shift register chain 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0f</p></td>
+<td><p>SR_LENGTH2</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Shift register read length 2. 16-bit integer formed with SR_LENGTH1
+indicates number of bytes to read into shift register.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x10</p></td>
+<td><p>SR_LENGTH1</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Shift register read length 1. 16-bit integer formed with SR_LENGTH2
+indicates number of bytes to read into shift register.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x11</p></td>
+<td><p>SOFT_RESET</p></td>
+<td><p>R/W</p></td>
+<td><p>See IMEC docs</p></td>
+<td><p>“00000000”</p></td>
+<td><p>None</p></td>
+<td><p>Software issued synchronous reset.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="device-to-host-data-frames">
+<h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
+<p>Each frame transmitted to the host consists of a single “super frame”
+containing all 384 AP channels and a single set of 32 LFP channels. Twelve of
+these “super frames” are required to construct a single “ultra frame” which
+contains 12 samples from each the 384 AP channels and a single sample from each
+of the 384 LFP channels.</p>
+<p>Each Frame is organized as follows:</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    reg: [
+      {bits: 64, name: "Acquisition Clock Counter", type: 0},
+      {bits: 32, name: "Device Address", type: 0},
+      {bits: 32, name: "Data Size", type: 0, attr: 944},
+
+      {bits: 64, name: "Hub Clock Counter", type: 3},
+
+      {bits: 32, name: "LFP Frame N", type: 4},
+
+      {bits: 32, name: "AP Frame 0", type: 6},
+      {bits: 32, name: "AP Frame 1", type: 6},
+      {bits: 32, name: "AP Frame 2", type: 6},
+      {bits: 32, name: "AP Frame 3", type: 6},
+      {bits: 32, name: "AP Frame 4", type: 6},
+      {bits: 32, name: "AP Frame 5", type: 6},
+      {bits: 32, name: "AP Frame 6", type: 6},
+      {bits: 32, name: "AP Frame 7", type: 6},
+      {bits: 32, name: "AP Frame 8", type: 6},
+      {bits: 32, name: "AP Frame 9", type: 6},
+      {bits: 32, name: "AP Frame 10", type: 6},
+      {bits: 32, name: "AP Frame 11", type: 6}
+    ],
+    config: {bits: 608, lanes: 19, vflip: true, hflip: true, fontsize: 11}
+}
+</script>
+</div>
+<p>Here, LFP and AP “Frames” are not actually 32-bits words but full, 32-ADC
+sample blocks. Each one of these blocks is organized as follows:</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    reg: [
+
+      {bits: 16, name: "Sync Type", type: 3, attr: [207, 816]},
+
+      {bits: 16, name: "ADC 00 Voltage", type: 6},
+      {bits: 16, name: "ADC 05 Voltage", type: 6},
+      {bits: 16, name: "ADC 10 Voltage", type: 6},
+      {bits: 16, name: "ADC 15 Voltage", type: 6},
+      {bits: 16, name: "ADC 20 Voltage", type: 6},
+      {bits: 16, name: "ADC 25 Voltage", type: 6},
+      {bits: 16, name: "ADC 30 Voltage", type: 6},
+
+      {bits: 16, name: "ADC 01 Voltage", type: 6},
+      {bits: 16, name: "ADC 06 Voltage", type: 6},
+      {bits: 16, name: "ADC 11 Voltage", type: 6},
+      {bits: 16, name: "ADC 16 Voltage", type: 6},
+      {bits: 16, name: "ADC 21 Voltage", type: 6},
+      {bits: 16, name: "ADC 26 Voltage", type: 6},
+      {bits: 16, name: "ADC 31 Voltage", type: 6},
+
+      {bits: 16, name: "ADC 02 Voltage", type: 6},
+      {bits: 16, name: "ADC 07 Voltage", type: 6},
+      {bits: 16, name: "ADC 12 Voltage", type: 6},
+      {bits: 16, name: "ADC 17 Voltage", type: 6},
+      {bits: 16, name: "ADC 22 Voltage", type: 6},
+      {bits: 16, name: "ADC 27 Voltage", type: 6},
+      {bits: 16, name: "Reserved", type: 0},
+
+      {bits: 16, name: "ADC 03 Voltage", type: 6},
+      {bits: 16, name: "ADC 08 Voltage", type: 6},
+      {bits: 16, name: "ADC 13 Voltage", type: 6},
+      {bits: 16, name: "ADC 18 Voltage", type: 6},
+      {bits: 16, name: "ADC 23 Voltage", type: 6},
+      {bits: 16, name: "ADC 28 Voltage", type: 6},
+      {bits: 8, name: "Reserved", type: 0},
+      {bits: 8, name: "Frame Counter MSB", type: 7},
+
+      {bits: 16, name: "ADC 04 Voltage", type: 6},
+      {bits: 16, name: "ADC 09 Voltage", type: 6},
+      {bits: 16, name: "ADC 14 Voltage", type: 6},
+      {bits: 16, name: "ADC 19 Voltage", type: 6},
+      {bits: 16, name: "ADC 24 Voltage", type: 6},
+      {bits: 16, name: "ADC 29 Voltage", type: 6},
+      {bits: 16, name: "Frame Counter LSB", type: 7}
+
+    ],
+    config: {bits: 576, lanes: 18, vflip: true, hflip: true, fontsize: 11}
+}
+</script>
+</div>
+<p>Definitions for each of these fields are as follows:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Sync Type</dt><dd><p>Fixed word indicating the frame type</p>
+<ul class="simple">
+<li><p>207: Normal frame. Frame contains AP data.</p></li>
+<li><p>816: Super frame start. Frame contains LFP data.</p></li>
+</ul>
+</dd>
+<dt>ADC Voltage</dt><dd><p>Unsigned integer. Only the 10 LSBs are valid.</p>
+</dd>
+<dt>Frame Counter</dt><dd><p>A looping 24-bit frame counter produced by the probe to detect dropped
+frames and to ensure proper reset sequence that results in a count of 0
+at the start of transmission.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="host-to-device-data-frames">
+<h2>Host To Device Data Frames<a class="headerlink" href="#host-to-device-data-frames" title="Permalink to this headline">¶</a></h2>
+<p>This device does not accept input frames. All write attempts will fail with an
+error.</p>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="rhd2164.html" title="previous page">RHD2164</a>
+    <a class='right-next' id="next-link" href="estim-hs64.html" title="next page">HS64 Electrical Stimulator</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
