@@ -391,7 +391,7 @@ available only through IMEC.</p>
 <td><p>REC_MOD</p></td>
 <td><p>R/W</p></td>
 <td><p>See IMEC docs</p></td>
-<td><p>“00000000”</p></td>
+<td><p>“11000000”</p></td>
 <td><p>None</p></td>
 <td><p>Recording flags register.</p></td>
 </tr>
@@ -505,8 +505,7 @@ available only through IMEC.</p>
 <td><p>See IMEC docs</p></td>
 <td><p>“00000000”</p></td>
 <td><p>None</p></td>
-<td><p>Shift register read length 2. 16-bit integer formed with SR_LENGTH1
-indicates number of bytes to read into shift register.</p></td>
+<td><p>Shift register byte read length 2.</p></td>
 </tr>
 <tr class="row-even"><td><p>0x10</p></td>
 <td><p>SR_LENGTH1</p></td>
@@ -514,8 +513,7 @@ indicates number of bytes to read into shift register.</p></td>
 <td><p>See IMEC docs</p></td>
 <td><p>“00000000”</p></td>
 <td><p>None</p></td>
-<td><p>Shift register read length 1. 16-bit integer formed with SR_LENGTH2
-indicates number of bytes to read into shift register.</p></td>
+<td><p>Shift register byte read length 1.</p></td>
 </tr>
 <tr class="row-odd"><td><p>0x11</p></td>
 <td><p>SOFT_RESET</p></td>
@@ -531,12 +529,12 @@ indicates number of bytes to read into shift register.</p></td>
 </div>
 <div class="section" id="device-to-host-data-frames">
 <h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
-<p>Each frame transmitted to the host consists of a single “super frame”
-containing all 384 AP channels and a single set of 32 LFP channels. Twelve of
-these “super frames” are required to construct a single “ultra frame” which
+<p>Each frame transmitted to the host consists of a single Neuropixels V1 “Super
+Frame” containing all 384 AP channels and a single set of 32 LFP channels.
+Twelve of Super Frames are required to construct a single “Ultra Frame” which
 contains 12 samples from each the 384 AP channels and a single sample from each
 of the 384 LFP channels.</p>
-<p>Each Frame is organized as follows:</p>
+<p>Each ONIX frame is organized as follows:</p>
 
 <div style="overflow-x:auto">
 <script type="WaveDrom">
