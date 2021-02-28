@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test &#8212; ONIX Docs 0.0.0 documentation</title>
+    <title>Test Driver &#8212; ONIX Docs 0.0.0 documentation</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -157,7 +157,7 @@
                     <ul>
                     
                         <li class="active">
-                            <a href="">Test</a>
+                            <a href="">Test Driver</a>
                         </li>
                     
                         <li class="">
@@ -185,9 +185,26 @@
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
               
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#building-the-library" class="nav-link">Building the library</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#linux" class="nav-link">Linux</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#windows" class="nav-link">Windows</a>
+        </li>
+    
+            </ul>
+        </li>
     
     </ul>
 </nav>
@@ -209,8 +226,36 @@
               
               <div>
                 
-  <div class="section" id="test">
-<span id="test-driver"></span><h1>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="test-driver">
+<span id="id1"></span><h1>Test Driver<a class="headerlink" href="#test-driver" title="Permalink to this headline">¶</a></h1>
+<p><strong>Test Driver</strong> is a very simple hardware emulation driver that is used for
+testing the API and software. It has the following limitations:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../liboni/onidefs.html#c.&#64;ctx_opts_enum.ONI_OPT_RUNNING" title="ONI_OPT_RUNNING"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_RUNNING</span></code></a> does nothing.</p></li>
+<li><p>It only supports a device table with containing devices with a fixed read/write size</p></li>
+<li><p>The driver is single threaded and synchronous with API function calls and
+therefore quite limited. This means that the asynchronous nature of real
+hardware is not emulated or tested by this driver.</p></li>
+<li><p><a class="reference internal" href="../liboni/onidefs.html#c.&#64;ctx_opts_enum.ONI_OPT_BLOCKREADSIZE" title="ONI_OPT_BLOCKREADSIZE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_BLOCKREADSIZE</span></code></a> must be set to an integer multiple of the frame
+size, which is 28 bytes.</p></li>
+</ol>
+<p>Its only dependency is the C standard library.</p>
+<div class="section" id="building-the-library">
+<h2>Building the library<a class="headerlink" href="#building-the-library" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span>                <span class="c1"># Build without debug symbols</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>   <span class="c1"># Install in /usr/local and run ldconfig to update library cache</span>
+<span class="n">make</span> <span class="n">help</span>           <span class="c1"># list all make options</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p>Run the project in Visual Studio. It can be included as a dependency in other
+projects.</p>
+</div>
+</div>
 </div>
 
     <script type="text/javascript">
