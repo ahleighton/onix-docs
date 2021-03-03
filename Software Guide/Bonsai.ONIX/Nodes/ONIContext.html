@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bonsai.ONIX Reference &#8212; ONIX Docs 0.0.0 documentation</title>
+    <title>ONIContext &#8212; ONIX Docs 0.0.0 documentation</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -42,8 +42,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="ONIContext" href="ONIContext.html" />
-    <link rel="prev" title="Bonsai.ONIX" href="../index.html" />
+    <link rel="next" title="Heartbeat" href="Heartbeat.html" />
+    <link rel="prev" title="Bonsai.ONIX Reference" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -141,7 +141,7 @@
                     <ul>
                     
                         <li class="active">
-                            <a href="">Bonsai.ONIX Reference</a>
+                            <a href="index.html">Bonsai.ONIX Reference</a>
                         </li>
                     
                         <li class="">
@@ -169,9 +169,24 @@
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
               
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#inputs" class="nav-link">Inputs</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#outputs" class="nav-link">Outputs</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#configuration" class="nav-link">Configuration</a>
+        </li>
     
     </ul>
 </nav>
@@ -179,7 +194,7 @@
 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/open-ephys/onix-docs/edit/master/source/Software Guide/Bonsai.ONIX/Nodes/index.rst">
+    <a href="https://github.com/open-ephys/onix-docs/edit/master/source/Software Guide/Bonsai.ONIX/Nodes/ONIContext.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -193,13 +208,47 @@
               
               <div>
                 
-  <div class="section" id="bonsai-onix-reference">
-<h1>Bonsai.ONIX Reference<a class="headerlink" href="#bonsai-onix-reference" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+  <div class="section" id="onicontext">
+<span id="bonsai-onicontex"></span><h1>ONIContext<a class="headerlink" href="#onicontext" title="Permalink to this headline">¶</a></h1>
+<p>A Bonsai Source that manages the acquisition context and allows basic
+acquisition parameterization.  There must be at least one of these in every
+workflow that uses ONIX hardware.</p>
+        <div class="bonsai-workflow-container">
+    <div class="filler"></div>
+    <div class="workflow-name"><b>&nbsp&nbspONIContext.bonsai&nbsp&nbsp </b></div>
+    <div class="copy-button"><img class="copy-img" src="../../../_static/copy.svg" onclick="copyUrlToClipboard('../../../_static/workflows/ONIContext.bonsai')" width=20px /></div>
+    <div class="bonsai-workflow"><img src="../../../_static/workflows/ONIContext.svg" alt="ONIContext" /></div>
+</div><div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<p>None</p>
+</div>
+<div class="section" id="outputs">
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<p>A single <code class="docutils literal notranslate"><span class="pre">ONIContextTask</span></code> followed by <a class="reference external" href="http://reactivex.io/documentation/operators/empty-never-throw.html">Never</a>.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ONIContext</span></code> configuration is performed using a GUI provided in the
+Bonsai.ONIX.Design library. It can be opened by double clicking on the
+<code class="docutils literal notranslate"><span class="pre">ONIContext</span></code> node if Bonsai.ONIX.Design has been installed.</p>
+<img alt="../../../_images/ONIContext_configuration.png" class="align-center" src="../../../_images/ONIContext_configuration.png" />
+<p>This GUI gives access to basic ONI Context configuration such as</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ONIContext.html">ONIContext</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Heartbeat.html">Heartbeat</a></li>
+<li><p>Driver</p></li>
+<li><p>Hardware Slot</p></li>
+<li><p>Read Block Size</p></li>
+<li><p>Write Block Size</p></li>
+<li><p>ONIX-specific hub options such as access to raw deserializer data streams:</p>
+<blockquote>
+<div><img alt="../../../_images/ONIContext_hub-configuration.png" class="align-center" src="../../../_images/ONIContext_hub-configuration.png" />
+</div></blockquote>
+</li>
 </ul>
+<p>as well as the complete device table. Devices within the table are available
+for immediate configuration. Note that changes to device registers using the
+<code class="docutils literal notranslate"><span class="pre">ONIContext</span></code> GUI will not be saved in the workflow file. To save device
+register values to file, device configuration must be performed using dedicated
+device nodes.</p>
 </div>
 </div>
 
@@ -215,8 +264,8 @@
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Bonsai.ONIX</a>
-    <a class='right-next' id="next-link" href="ONIContext.html" title="next page">ONIContext</a>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Bonsai.ONIX Reference</a>
+    <a class='right-next' id="next-link" href="Heartbeat.html" title="next page">Heartbeat</a>
 
               </div>
               

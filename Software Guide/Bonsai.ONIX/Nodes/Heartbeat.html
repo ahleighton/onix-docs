@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ONIXController &#8212; ONIX Docs 0.0.0 documentation</title>
+    <title>Heartbeat &#8212; ONIX Docs 0.0.0 documentation</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -43,7 +43,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Example Workflows" href="../Examples/index.html" />
-    <link rel="prev" title="Bonsai.ONIX Reference" href="index.html" />
+    <link rel="prev" title="ONIContext" href="ONIContext.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -194,7 +194,7 @@
 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/open-ephys/onix-docs/edit/master/source/Software Guide/Bonsai.ONIX/Nodes/ONIXController.rst">
+    <a href="https://github.com/open-ephys/onix-docs/edit/master/source/Software Guide/Bonsai.ONIX/Nodes/Heartbeat.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -208,36 +208,28 @@
               
               <div>
                 
-  <div class="section" id="onixcontroller">
-<span id="id1"></span><h1>ONIXController<a class="headerlink" href="#onixcontroller" title="Permalink to this headline">¶</a></h1>
-      <table>
-  <thead>
-    <tr>
-      <th>ONIXController</th>
-      <th style="text-align: center">
-          <img class="copy_img" src="../../../_static/copy.svg" onclick="copyUrlToClipboard('../../../_static/workflows/ONIXController.bonsai')" width=20px />
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="2">
-          <img src="../../../_static/workflows/ONIXController.svg" alt="ONIXController" />
-      </td>
-    </tr>
-  </tbody>
-</table><p>Manages the acquisition context and allows basic acquisition parameterization.
-There must be at least one of these in every workflow that uses ONIX hardware.</p>
-<div class="section" id="inputs">
+  <div class="section" id="heartbeat">
+<span id="bonsai-heartbeat"></span><h1>Heartbeat<a class="headerlink" href="#heartbeat" title="Permalink to this headline">¶</a></h1>
+<p>A Bonsai Source that wraps a <a class="reference internal" href="../../../Hardware%20Guide/Datasheets/heartbeat.html#onidatasheet-heartbeat"><span class="std std-ref">Heartbeat</span></a> device.</p>
+        <div class="bonsai-workflow-container">
+    <div class="filler"></div>
+    <div class="workflow-name"><b>&nbsp&nbspHeartbeat.bonsai&nbsp&nbsp </b></div>
+    <div class="copy-button"><img class="copy-img" src="../../../_static/copy.svg" onclick="copyUrlToClipboard('../../../_static/workflows/Heartbeat.bonsai')" width=20px /></div>
+    <div class="bonsai-workflow"><img src="../../../_static/workflows/Heartbeat.svg" alt="Heartbeat" /></div>
+</div><div class="section" id="inputs">
 <h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
 <p>None</p>
 </div>
 <div class="section" id="outputs">
 <h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
-<p><cite>ONIXContext</cite></p>
+<p>A single <code class="docutils literal notranslate"><span class="pre">HearbeatFrame</span></code> every time one is produced by hardware. This type is
+a direct wrapper around the Device To Host Data Frame specified on the
+<a class="reference internal" href="../../../Hardware%20Guide/Datasheets/heartbeat.html#onidatasheet-heartbeat"><span class="std std-ref">Heartbeat</span></a> device datasheet.</p>
 </div>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Configuration of <code class="docutils literal notranslate"><span class="pre">Heartbeat</span></code> is performed using its property pane. Parameter
+explanations are provided there.</p>
 </div>
 </div>
 
@@ -253,7 +245,7 @@ There must be at least one of these in every workflow that uses ONIX hardware.</
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Bonsai.ONIX Reference</a>
+    <a class='left-prev' id="prev-link" href="ONIContext.html" title="previous page">ONIContext</a>
     <a class='right-next' id="next-link" href="../Examples/index.html" title="next page">Example Workflows</a>
 
               </div>
