@@ -38,7 +38,6 @@
     <script src="../../_static/copyURLToClipboard.js"></script>
     <script src="../../_static/default.js"></script>
     <script src="../../_static/wavedrom.min.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -221,13 +220,13 @@
 <span id="device-cs"></span><h1>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h1>
 <dl class="cs struct">
 <dt id="struct-oni.Device">
-<span class="target" id="structoni_1_1_device"></span><em class="property">struct </em><code class="sig-name descname">oni.Device</code><a class="headerlink" href="#struct-oni.Device" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="structoni_1_1_device"></span><em class="property"><span class="pre">struct</span> </em><code class="sig-name descname"><span class="pre">oni.Device</span></code><a class="headerlink" href="#struct-oni.Device" title="Permalink to this definition">¶</a></dt>
 <dd><p>Managed wrapper for the native API’s oni_device_t. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="cs var">
 <dt id="var-oni.Device.Address">
-<span class="target" id="structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120"></span><em class="property">readonly</em> uint <code class="sig-name descname">Address</code><a class="headerlink" href="#var-oni.Device.Address" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <code class="sig-name descname"><span class="pre">Address</span></code><a class="headerlink" href="#var-oni.Device.Address" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fully-qualified <strong>RSV.RSV.HUB.IDX</strong> <a class="reference internal" href="context.html#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a> device table address. </p>
 <p><ul class="simple">
 <li><p><strong>RSV</strong>: 8-bit unsigned integer (reserved)</p></li>
@@ -239,25 +238,25 @@
 
 <dl class="cs var">
 <dt id="var-oni.Device.ID">
-<span class="target" id="structoni_1_1_device_1a1bb38ab58eeb2110ba7f6c3a3896d690"></span><em class="property">readonly</em> int <code class="sig-name descname">ID</code><a class="headerlink" href="#var-oni.Device.ID" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="structoni_1_1_device_1a1bb38ab58eeb2110ba7f6c3a3896d690"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">ID</span></code><a class="headerlink" href="#var-oni.Device.ID" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#structoni_1_1_device"><span class="std std-ref">Device</span></a> ID </p>
 </dd></dl>
 
 <dl class="cs var">
 <dt id="var-oni.Device.Version">
-<span class="target" id="structoni_1_1_device_1a383a45d17c98b5dc774c5c4e1560227f"></span><em class="property">readonly</em> uint <code class="sig-name descname">Version</code><a class="headerlink" href="#var-oni.Device.Version" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="structoni_1_1_device_1a383a45d17c98b5dc774c5c4e1560227f"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <code class="sig-name descname"><span class="pre">Version</span></code><a class="headerlink" href="#var-oni.Device.Version" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#structoni_1_1_device"><span class="std std-ref">Device</span></a> firmware version </p>
 </dd></dl>
 
 <dl class="cs var">
 <dt id="var-oni.Device.ReadSize">
-<span class="target" id="structoni_1_1_device_1ad106399633977d21d05a2d9f91706826"></span><em class="property">readonly</em> uint <code class="sig-name descname">ReadSize</code><a class="headerlink" href="#var-oni.Device.ReadSize" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="structoni_1_1_device_1ad106399633977d21d05a2d9f91706826"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <code class="sig-name descname"><span class="pre">ReadSize</span></code><a class="headerlink" href="#var-oni.Device.ReadSize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Input <a class="reference internal" href="frame.html#classoni_1_1_frame"><span class="std std-ref">Frame</span></a> read size </p>
 </dd></dl>
 
 <dl class="cs var">
 <dt id="var-oni.Device.WriteSize">
-<span class="target" id="structoni_1_1_device_1a94a09f74de8de3da1ee4c4c0e512fc81"></span><em class="property">readonly</em> uint <code class="sig-name descname">WriteSize</code><a class="headerlink" href="#var-oni.Device.WriteSize" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="structoni_1_1_device_1a94a09f74de8de3da1ee4c4c0e512fc81"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <code class="sig-name descname"><span class="pre">WriteSize</span></code><a class="headerlink" href="#var-oni.Device.WriteSize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output <a class="reference internal" href="frame.html#classoni_1_1_frame"><span class="std std-ref">Frame</span></a> write size. </p>
 </dd></dl>
 
@@ -266,7 +265,7 @@
 <p class="breathe-sectiondef-title rubric">Properties</p>
 <dl class="cs property">
 <dt id="property-oni.Device.Description">
-<span class="target" id="structoni_1_1_device_1a3cdad05e0e2ed0be20578d049ad8458a"></span>string <code class="sig-name descname">Description</code> { <em class="property"></em> }<a class="headerlink" href="#property-oni.Device.Description" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="structoni_1_1_device_1a3cdad05e0e2ed0be20578d049ad8458a"></span><span class="pre">string</span> <code class="sig-name descname"><span class="pre">Description</span></code> <span class="pre">{</span> <em class="property"></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Device.Description" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieve a human readable description of the <a class="reference internal" href="#structoni_1_1_device_1a1bb38ab58eeb2110ba7f6c3a3896d690"><span class="std std-ref">Device.ID</span></a>. </p>
 </dd></dl>
 
@@ -306,7 +305,7 @@
   <div class="container">
     <p>
           &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
     </p>
   </div>
 </footer>

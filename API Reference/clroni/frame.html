@@ -38,7 +38,6 @@
     <script src="../../_static/copyURLToClipboard.js"></script>
     <script src="../../_static/default.js"></script>
     <script src="../../_static/wavedrom.min.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -221,13 +220,13 @@
 <span id="frame-cs"></span><h1>Frame<a class="headerlink" href="#frame" title="Permalink to this headline">¶</a></h1>
 <dl class="cs class">
 <dt id="class-oni.Frame">
-<span class="target" id="classoni_1_1_frame"></span><em class="property">class </em><code class="sig-name descname">oni.Frame</code> : <em class="property">public</em> SafeHandleZeroOrMinusOneIsInvalid<a class="headerlink" href="#class-oni.Frame" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="classoni_1_1_frame"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">oni.Frame</span></code> <span class="pre">:</span> <em class="property"><span class="pre">public</span></em> <span class="pre">SafeHandleZeroOrMinusOneIsInvalid</span><a class="headerlink" href="#class-oni.Frame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Managed wrapper for an ONI-compliant data frame implementation. Produced by calls to <a class="reference internal" href="context.html#classoni_1_1_context_1a2774341ba95650f63722dfbcbc2ddd77"><span class="std std-ref">Context.ReadFrame</span></a> . </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="cs function">
-<dt id="function-oni.Frame.Data">
-<span class="target" id="classoni_1_1_frame_1a510ff01fdc78605acf16ac9f3bce5ef9"></span>T[] <code class="sig-name descname">Data</code>&lt;T&gt; <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Frame.Data" title="Permalink to this definition">¶</a></dt>
+<dt>
+<span class="target" id="classoni_1_1_frame_1a510ff01fdc78605acf16ac9f3bce5ef9"></span><code class="sig-name descname"><span class="pre">inline</span> <span class="pre">T[]</span> <span class="pre">Data&lt;</span> <span class="pre">T</span> <span class="pre">&gt;</span> <span class="pre">()</span></code></dt>
 <dd><p>Retrieve a managed copy of the <a class="reference internal" href="#classoni_1_1_frame"><span class="std std-ref">Frame</span></a> data. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>Array containing the <a class="reference internal" href="#classoni_1_1_frame"><span class="std std-ref">Frame</span></a> data.</p>
@@ -241,13 +240,13 @@
 <p class="breathe-sectiondef-title rubric">Properties</p>
 <dl class="cs property">
 <dt id="property-oni.Frame.Clock">
-<span class="target" id="classoni_1_1_frame_1a0aff172fa3f011329b5f732343456552"></span>ulong <code class="sig-name descname">Clock</code> { <em class="property"></em> }<a class="headerlink" href="#property-oni.Frame.Clock" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="classoni_1_1_frame_1a0aff172fa3f011329b5f732343456552"></span><span class="pre">ulong</span> <code class="sig-name descname"><span class="pre">Clock</span></code> <span class="pre">{</span> <em class="property"></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Frame.Clock" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieve the host acquisition clock counter value at frame creation. See <a class="reference internal" href="context.html#classoni_1_1_context_1a163ec1e876f6981496f53b63e6192854"><span class="std std-ref">Context.AcquisitionClockHz</span></a> and <a class="reference internal" href="context.html#classoni_1_1_context_1ad5a5c9afef192fb9c9ded5d2adf951c0"><span class="std std-ref">Context.ResetFrameClock</span></a>. </p>
 </dd></dl>
 
 <dl class="cs property">
 <dt id="property-oni.Frame.DeviceAddress">
-<span class="target" id="classoni_1_1_frame_1a1779272d47dd6013cc8ba980c6e9bf86"></span>uint <code class="sig-name descname">DeviceAddress</code> { <em class="property"></em> }<a class="headerlink" href="#property-oni.Frame.DeviceAddress" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="classoni_1_1_frame_1a1779272d47dd6013cc8ba980c6e9bf86"></span><span class="pre">uint</span> <code class="sig-name descname"><span class="pre">DeviceAddress</span></code> <span class="pre">{</span> <em class="property"></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Frame.DeviceAddress" title="Permalink to this definition">¶</a></dt>
 <dd><p>The fully qualified <a class="reference internal" href="device.html#structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120"><span class="std std-ref">Device.Address</span></a> of the device within the current <a class="reference internal" href="context.html#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a> that produced this frame. </p>
 </dd></dl>
 
@@ -287,7 +286,7 @@
   <div class="container">
     <p>
           &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
     </p>
   </div>
 </footer>

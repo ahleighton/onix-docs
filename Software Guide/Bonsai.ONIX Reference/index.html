@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bonsai.ONIX &#8212; ONIX Docs 0.0.0 documentation</title>
+    <title>Bonsai.ONIX Reference &#8212; ONIX Docs 0.0.0 documentation</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -38,11 +38,10 @@
     <script src="../../_static/copyURLToClipboard.js"></script>
     <script src="../../_static/default.js"></script>
     <script src="../../_static/wavedrom.min.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bonsai.ONIX Reference" href="Nodes/index.html" />
+    <link rel="next" title="ONIContext" href="ONIContext.html" />
     <link rel="prev" title="Software Guide" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -137,18 +136,24 @@
             
   
                 <li class="active">
-                    <a href="">Bonsai.ONIX</a>
+                    <a href="">Bonsai.ONIX Reference</a>
                     <ul>
                     
                         <li class="">
-                            <a href="Nodes/index.html">Bonsai.ONIX Reference</a>
+                            <a href="ONIContext.html">ONIContext</a>
                         </li>
                     
                         <li class="">
-                            <a href="Examples/index.html">Example Workflows</a>
+                            <a href="HeartbeatDevice.html">HeartbeatDevice</a>
                         </li>
                     
                     </ul>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Bonsai.ONIX%20Examples/index.html">Example Bonsai Workflows</a>
                 </li>
             
           
@@ -169,9 +174,16 @@
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
               
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#using-this-documentation" class="nav-link">Using this Documentation</a>
+        </li>
     
     </ul>
 </nav>
@@ -179,7 +191,7 @@
 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/open-ephys/onix-docs/edit/master/source/Software Guide/Bonsai.ONIX/index.rst">
+    <a href="https://github.com/open-ephys/onix-docs/edit/master/source/Software Guide/Bonsai.ONIX Reference/index.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -193,19 +205,39 @@
               
               <div>
                 
-  <div class="section" id="bonsai-onix">
-<span id="id1"></span><h1>Bonsai.ONIX<a class="headerlink" href="#bonsai-onix" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://bonsai-rx.org/">Bonsai</a> library for ONIX hardware.</p>
+  <div class="section" id="bonsai-onix-reference">
+<span id="bonsai-onixref"></span><h1>Bonsai.ONIX Reference<a class="headerlink" href="#bonsai-onix-reference" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Nodes/index.html">Bonsai.ONIX Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Examples/index.html">Example Workflows</a></li>
-</ul>
 </div>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>Document.</p>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">Bonsai.ONIX</span></code> is a <a class="reference external" href="https://bonsai-rx.org/">Bonsai</a> library for ONIX
+hardware. This library contains <a class="reference external" href="https://bonsai-rx.org/docs/operators/">Bonsai Operators</a> for acquiring and sending data to
+ONIX hardware. An additional library, <code class="docutils literal notranslate"><span class="pre">Bonsai.ONIX.Design</span></code>, contains GUI
+elements for the core library. Although it is possible to use <code class="docutils literal notranslate"><span class="pre">Bonsai.ONIX</span></code>
+without the GUI library, it is not recommended. There are three major classes
+of operators in the library:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="ONIContext.html#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> - This operator wraps an
+<a class="reference internal" href="../../API%20Reference/liboni/oni.html#oni-h-acquisition-context"><span class="std std-ref">Acquisition Context</span></a> and provides access to the device table for
+a hardware slot. At least one of these operators is required in every
+workflow.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;Some&gt;Device</span></code> - These operators wrap individual <a class="reference internal" href="../../Hardware%20Guide/Datasheets/index.html#onidatasheets"><span class="std std-ref">ONI Device</span></a>’s and provide access to their data IO and configuration
+registers.</p></li>
+<li><p>Various helper operators that provide data conditioning functionality. E.g.
+for converting raw sensor data into 3D positions, etc.</p></li>
+</ol>
+<div class="section" id="using-this-documentation">
+<h2>Using this Documentation<a class="headerlink" href="#using-this-documentation" title="Permalink to this headline">¶</a></h2>
+<p>This documentation contains functional workflows and operators. You can
+download workflows by clicking the <a class="reference internal" href="../../_images/download.svg"><img alt="download_image" height="18" src="../../_images/download.svg" /></a> icon.  Alternatively, you
+can copy and paste them into the <a class="reference external" href="https://bonsai-rx.org/docs/editor/">Bonsai Workflow Editor</a> by clicking the <a class="reference internal" href="../../_images/copy.svg"><img alt="copy_image" height="18" src="../../_images/copy.svg" /></a> icon and
+using <code class="docutils literal notranslate"><span class="pre">Ctrl+v</span></code> or equivalent in the editor:</p>
+        <div class="bonsai-workflow-container">
+    <div class="workflow-filler"></div>
+    <div class="workflow-download"><img class="copy-img" src="../../_static/download.svg" onclick="getTextFromURL('../../_static/workflows/HelloWorld.bonsai', true)" width=18px download/></div>
+    <div class="workflow-copy"><img class="copy-img" src="../../_static/copy.svg" onclick="getTextFromURL('../../_static/workflows/HelloWorld.bonsai')" width=18px /></div>
+    <div class="workflow-name"><b>HelloWorld.bonsai</b></div>
+    <div class="workflow-image"><img src="../../_static/workflows/HelloWorld.svg" alt="HelloWorld" /></div>
+</div></div>
 </div>
 
     <script type="text/javascript">
@@ -221,7 +253,7 @@
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="../index.html" title="previous page"> Software Guide</a>
-    <a class='right-next' id="next-link" href="Nodes/index.html" title="next page">Bonsai.ONIX Reference</a>
+    <a class='right-next' id="next-link" href="ONIContext.html" title="next page">ONIContext</a>
 
               </div>
               
@@ -239,7 +271,7 @@
   <div class="container">
     <p>
           &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
     </p>
   </div>
 </footer>

@@ -38,7 +38,6 @@
     <script src="../../_static/copyURLToClipboard.js"></script>
     <script src="../../_static/default.js"></script>
     <script src="../../_static/wavedrom.min.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -256,43 +255,43 @@ future API revisions to handle drivers with different channel bit widths</p>
 </div>
 <dl class="c type">
 <dt id="c.oni_size_t">
-<em class="property">typedef </em>uint32_t <code class="sig-name descname">oni_size_t</code><a class="headerlink" href="#c.oni_size_t" title="Permalink to this definition">¶</a><br /></dt>
+<em class="property"><span class="pre">typedef</span> </em><span class="pre">uint32_t</span> <code class="sig-name descname"><span class="pre">oni_size_t</span></code><a class="headerlink" href="#c.oni_size_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Data sizes are 32-bit uints</p>
 </dd></dl>
 
 <dl class="c type">
 <dt id="c.oni_dev_id_t">
-<em class="property">typedef </em>uint32_t <code class="sig-name descname">oni_dev_id_t</code><a class="headerlink" href="#c.oni_dev_id_t" title="Permalink to this definition">¶</a><br /></dt>
+<em class="property"><span class="pre">typedef</span> </em><span class="pre">uint32_t</span> <code class="sig-name descname"><span class="pre">oni_dev_id_t</span></code><a class="headerlink" href="#c.oni_dev_id_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Device IDs are 32-bit values</p>
 </dd></dl>
 
 <dl class="c type">
 <dt id="c.oni_dev_idx_t">
-<em class="property">typedef </em>uint32_t <code class="sig-name descname">oni_dev_idx_t</code><a class="headerlink" href="#c.oni_dev_idx_t" title="Permalink to this definition">¶</a><br /></dt>
+<em class="property"><span class="pre">typedef</span> </em><span class="pre">uint32_t</span> <code class="sig-name descname"><span class="pre">oni_dev_idx_t</span></code><a class="headerlink" href="#c.oni_dev_idx_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Device idx are 32-bit, byte.byte.btye.byte addresses</p>
 </dd></dl>
 
 <dl class="c type">
 <dt id="c.oni_reg_addr_t">
-<em class="property">typedef </em>uint32_t <code class="sig-name descname">oni_reg_addr_t</code><a class="headerlink" href="#c.oni_reg_addr_t" title="Permalink to this definition">¶</a><br /></dt>
+<em class="property"><span class="pre">typedef</span> </em><span class="pre">uint32_t</span> <code class="sig-name descname"><span class="pre">oni_reg_addr_t</span></code><a class="headerlink" href="#c.oni_reg_addr_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Registers use a 32-bit address</p>
 </dd></dl>
 
 <dl class="c type">
 <dt id="c.oni_reg_val_t">
-<em class="property">typedef </em>uint32_t <code class="sig-name descname">oni_reg_val_t</code><a class="headerlink" href="#c.oni_reg_val_t" title="Permalink to this definition">¶</a><br /></dt>
+<em class="property"><span class="pre">typedef</span> </em><span class="pre">uint32_t</span> <code class="sig-name descname"><span class="pre">oni_reg_val_t</span></code><a class="headerlink" href="#c.oni_reg_val_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Registers have 32-bit values</p>
 </dd></dl>
 
 <dl class="c type">
 <dt id="c.oni_fifo_dat_t">
-<em class="property">typedef </em>uint32_t <code class="sig-name descname">oni_fifo_dat_t</code><a class="headerlink" href="#c.oni_fifo_dat_t" title="Permalink to this definition">¶</a><br /></dt>
+<em class="property"><span class="pre">typedef</span> </em><span class="pre">uint32_t</span> <code class="sig-name descname"><span class="pre">oni_fifo_dat_t</span></code><a class="headerlink" href="#c.oni_fifo_dat_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>FIFOs use 32-bit words</p>
 </dd></dl>
 
 <dl class="c type">
 <dt id="c.oni_fifo_time_t">
-<em class="property">typedef </em>uint64_t <code class="sig-name descname">oni_fifo_time_t</code><a class="headerlink" href="#c.oni_fifo_time_t" title="Permalink to this definition">¶</a><br /></dt>
+<em class="property"><span class="pre">typedef</span> </em><span class="pre">uint64_t</span> <code class="sig-name descname"><span class="pre">oni_fifo_time_t</span></code><a class="headerlink" href="#c.oni_fifo_time_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>FIFO bound timers use 64-bit words</p>
 </dd></dl>
 
@@ -304,10 +303,10 @@ future API revisions to handle drivers with different channel bit widths</p>
 corresponding context option type used during calls to these functions.</p>
 <dl class="c enum">
 <dt id="c.&#64;ctx_opts_enum">
-<em class="property">enum </em><strong>[anonymous]</strong><a class="headerlink" href="#c.@ctx_opts_enum" title="Permalink to this definition">¶</a><br /></dt>
+<em class="property"><span class="pre">enum</span> </em><strong><span class="pre">[anonymous]</span></strong><a class="headerlink" href="#c.@ctx_opts_enum" title="Permalink to this definition">¶</a><br /></dt>
 <dd><dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_DEVICETABLE">
-<code class="sig-name descname">ONI_OPT_DEVICETABLE</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_DEVICETABLE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_DEVICETABLE</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_DEVICETABLE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">0</span></code>)
 Device table.</p>
 <table class="table">
@@ -337,7 +336,7 @@ Device table.</p>
 
 <dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_NUMDEVICES">
-<code class="sig-name descname">ONI_OPT_NUMDEVICES</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_NUMDEVICES" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_NUMDEVICES</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_NUMDEVICES" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">1</span></code>)
 Number of devices in the device table.</p>
 <table class="table">
@@ -367,7 +366,7 @@ Number of devices in the device table.</p>
 
 <dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_RUNNING">
-<code class="sig-name descname">ONI_OPT_RUNNING</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_RUNNING" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_RUNNING</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_RUNNING" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">2</span></code>)
 Set/clear data input gate. Any value greater than 0 will turn data
 acquisition on.  Writing 0 to this option will stop acquisition, but will
@@ -402,7 +401,7 @@ start acqusition sychronously with a clock reset.</p>
 
 <dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_RESET">
-<code class="sig-name descname">ONI_OPT_RESET</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_RESET" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_RESET</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_RESET" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">3</span></code>)
 Trigger global hardware reset. Any value great than 0 will trigger a
 hardware reset. In this case, acquisition is stopped and resets are issued
@@ -434,7 +433,7 @@ to all devices in the device table. Following a</p>
 
 <dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_SYSCLKHZ">
-<code class="sig-name descname">ONI_OPT_SYSCLKHZ</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_SYSCLKHZ" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_SYSCLKHZ</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_SYSCLKHZ" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">4</span></code>)
 Host system clock frequency in Hz. This describes the frequency of the
 clock governing the host hardware.</p>
@@ -465,7 +464,7 @@ clock governing the host hardware.</p>
 
 <dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_ACQCLKHZ">
-<code class="sig-name descname">ONI_OPT_ACQCLKHZ</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_ACQCLKHZ" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_ACQCLKHZ</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_ACQCLKHZ" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">5</span></code>)
 Host system acqusition clock frequency in Hz, derived from
 <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_SYSCLKHZ" title="ONI_OPT_SYSCLKHZ"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_SYSCLKHZ</span></code></a>. This describes the frequency of the clock used
@@ -497,7 +496,7 @@ to drive the acqusition counter which is used timestamp data frames.</p>
 
 <dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_RESETACQCOUNTER">
-<code class="sig-name descname">ONI_OPT_RESETACQCOUNTER</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_RESETACQCOUNTER" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_RESETACQCOUNTER</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_RESETACQCOUNTER" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">6</span></code>)
 Trigger a reset of the acqusition clock counter. A value of 1 will trigger
 an acqusition clock counter reset. A value of 2 or greater will trigger
@@ -530,7 +529,7 @@ to 1.</p>
 
 <dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_HWADDRESS">
-<code class="sig-name descname">ONI_OPT_HWADDRESS</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_HWADDRESS" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_HWADDRESS</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_HWADDRESS" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">7</span></code>)
 The address of the host hardware within the acqusition computer. Determines
 the sychronization role of the hardware in multi-host systems.</p>
@@ -561,7 +560,7 @@ the sychronization role of the hardware in multi-host systems.</p>
 
 <dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_MAXREADFRAMESIZE">
-<code class="sig-name descname">ONI_OPT_MAXREADFRAMESIZE</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_MAXREADFRAMESIZE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_MAXREADFRAMESIZE</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_MAXREADFRAMESIZE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">8</span></code>)
 The maximal size of a frame produced by a call to <code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code> in
 bytes.  This number is the maximum sized frame that can be produced across
@@ -593,7 +592,7 @@ every device within the device table that generates read data.</p>
 
 <dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_MAXWRITEFRAMESIZE">
-<code class="sig-name descname">ONI_OPT_MAXWRITEFRAMESIZE</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_MAXWRITEFRAMESIZE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_MAXWRITEFRAMESIZE</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_MAXWRITEFRAMESIZE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">9</span></code>)
 The maximal size of a (single-packet) <a class="reference internal" href="oni.html#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a> comsumed by a
 call to <a class="reference internal" href="oni.html#c.oni_write_frame" title="oni_write_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_write_frame()</span></code></a> in bytes.  This number is the maximum sized
@@ -626,7 +625,7 @@ that accepts write data.</p>
 
 <dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_BLOCKREADSIZE">
-<code class="sig-name descname">ONI_OPT_BLOCKREADSIZE</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_BLOCKREADSIZE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_BLOCKREADSIZE</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_BLOCKREADSIZE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">10</span></code>)
 Number of bytes read during each driver access to the high-bandwidth read
 channel using <a class="reference internal" href="oni.html#c.oni_read_frame" title="oni_read_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_read_frame()</span></code></a>. This option allows control over a
@@ -662,7 +661,7 @@ of this option is determined by <a class="reference internal" href="#c.&#64;ctx_
 
 <dl class="c macro">
 <dt id="c.&#64;ctx_opts_enum.ONI_OPT_BLOCKWRITESIZE">
-<code class="sig-name descname">ONI_OPT_BLOCKWRITESIZE</code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_BLOCKWRITESIZE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_OPT_BLOCKWRITESIZE</span></code><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_BLOCKWRITESIZE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">11</span></code>)
 Number of bytes pre-allocated to create frames using
 <a class="reference internal" href="oni.html#c.oni_create_frame" title="oni_create_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_create_frame()</span></code></a>. A larger size will reduce the amount of dynamic
@@ -702,192 +701,192 @@ calls. The minimum size of this option is determined by
 <p>Return codes for functions in the API.</p>
 <dl class="c enum">
 <dt id="c.&#64;oni_error_enum">
-<em class="property">enum </em><strong>[anonymous]</strong><a class="headerlink" href="#c.@oni_error_enum" title="Permalink to this definition">¶</a><br /></dt>
+<em class="property"><span class="pre">enum</span> </em><strong><span class="pre">[anonymous]</span></strong><a class="headerlink" href="#c.@oni_error_enum" title="Permalink to this definition">¶</a><br /></dt>
 <dd><dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_ESUCCESS">
-<code class="sig-name descname">ONI_ESUCCESS</code><a class="headerlink" href="#c.@oni_error_enum.ONI_ESUCCESS" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_ESUCCESS</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_ESUCCESS" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">0</span></code>)
 Success</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EPATHINVALID">
-<code class="sig-name descname">ONI_EPATHINVALID</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EPATHINVALID" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EPATHINVALID</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EPATHINVALID" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-1</span></code>)
 Invalid stream path, fail on open</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EDEVID">
-<code class="sig-name descname">ONI_EDEVID</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EDEVID" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EDEVID</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EDEVID" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-2</span></code>)
 Invalid device ID</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EDEVIDX">
-<code class="sig-name descname">ONI_EDEVIDX</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EDEVIDX" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EDEVIDX</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EDEVIDX" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-3</span></code>)
 Invalid device index</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EWRITESIZE">
-<code class="sig-name descname">ONI_EWRITESIZE</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EWRITESIZE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EWRITESIZE</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EWRITESIZE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-4</span></code>)
 Data size is not an integer multiple of the write size for the designated device</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EREADFAILURE">
-<code class="sig-name descname">ONI_EREADFAILURE</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EREADFAILURE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EREADFAILURE</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EREADFAILURE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-5</span></code>)
 Failure to read from a stream/register</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EWRITEFAILURE">
-<code class="sig-name descname">ONI_EWRITEFAILURE</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EWRITEFAILURE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EWRITEFAILURE</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EWRITEFAILURE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-6</span></code>)
 Failure to write to a stream/register</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_ENULLCTX">
-<code class="sig-name descname">ONI_ENULLCTX</code><a class="headerlink" href="#c.@oni_error_enum.ONI_ENULLCTX" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_ENULLCTX</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_ENULLCTX" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-7</span></code>)
 Attempt to use a NULL context</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_ESEEKFAILURE">
-<code class="sig-name descname">ONI_ESEEKFAILURE</code><a class="headerlink" href="#c.@oni_error_enum.ONI_ESEEKFAILURE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_ESEEKFAILURE</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_ESEEKFAILURE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-8</span></code>)
 Failure to seek on stream</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EINVALSTATE">
-<code class="sig-name descname">ONI_EINVALSTATE</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALSTATE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EINVALSTATE</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALSTATE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-9</span></code>)
 Invalid operation for the current context run state</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EINVALOPT">
-<code class="sig-name descname">ONI_EINVALOPT</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALOPT" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EINVALOPT</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALOPT" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-10</span></code>)
 Invalid context option</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EINVALARG">
-<code class="sig-name descname">ONI_EINVALARG</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALARG" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EINVALARG</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALARG" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-11</span></code>)
 Invalid function arguments</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_ECOBSPACK">
-<code class="sig-name descname">ONI_ECOBSPACK</code><a class="headerlink" href="#c.@oni_error_enum.ONI_ECOBSPACK" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_ECOBSPACK</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_ECOBSPACK" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-12</span></code>)
 Invalid COBS packet</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_ERETRIG">
-<code class="sig-name descname">ONI_ERETRIG</code><a class="headerlink" href="#c.@oni_error_enum.ONI_ERETRIG" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_ERETRIG</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_ERETRIG" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-13</span></code>)
 Attempt to trigger an already triggered operation</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EBUFFERSIZE">
-<code class="sig-name descname">ONI_EBUFFERSIZE</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EBUFFERSIZE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EBUFFERSIZE</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EBUFFERSIZE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-14</span></code>)
 Supplied buffer is too small</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EBADDEVTABLE">
-<code class="sig-name descname">ONI_EBADDEVTABLE</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EBADDEVTABLE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EBADDEVTABLE</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EBADDEVTABLE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-15</span></code>)
 Badly formatted device table supplied by firmware</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EBADALLOC">
-<code class="sig-name descname">ONI_EBADALLOC</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EBADALLOC" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EBADALLOC</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EBADALLOC" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-16</span></code>)
 Bad dynamic memory allocation</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_ECLOSEFAIL">
-<code class="sig-name descname">ONI_ECLOSEFAIL</code><a class="headerlink" href="#c.@oni_error_enum.ONI_ECLOSEFAIL" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_ECLOSEFAIL</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_ECLOSEFAIL" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-17</span></code>)
 File descriptor close failure (check errno)</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EREADONLY">
-<code class="sig-name descname">ONI_EREADONLY</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EREADONLY" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EREADONLY</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EREADONLY" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-18</span></code>)
 Attempted write to read only object (register, context option, etc)</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EUNIMPL">
-<code class="sig-name descname">ONI_EUNIMPL</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EUNIMPL" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EUNIMPL</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EUNIMPL" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-19</span></code>)
 Specified, but unimplemented, feature</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EINVALREADSIZE">
-<code class="sig-name descname">ONI_EINVALREADSIZE</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALREADSIZE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EINVALREADSIZE</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALREADSIZE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-20</span></code>)
 Block read size is smaller than the maximal read frame size</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_ENOREADDEV">
-<code class="sig-name descname">ONI_ENOREADDEV</code><a class="headerlink" href="#c.@oni_error_enum.ONI_ENOREADDEV" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_ENOREADDEV</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_ENOREADDEV" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-21</span></code>)
 Frame read attempted when there are no readable devices in the device table</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EINIT">
-<code class="sig-name descname">ONI_EINIT</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINIT" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EINIT</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINIT" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-22</span></code>)
 Hardware initialization failed</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EWRITEONLY">
-<code class="sig-name descname">ONI_EWRITEONLY</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EWRITEONLY" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EWRITEONLY</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EWRITEONLY" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-23</span></code>)
 Attempted to read from a write only object (register, context option, etc)</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EINVALWRITESIZE">
-<code class="sig-name descname">ONI_EINVALWRITESIZE</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALWRITESIZE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EINVALWRITESIZE</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALWRITESIZE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-24</span></code>)
 Write buffer pre-allocation size is smaller than the maximal write frame size</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_ENOTWRITEDEV">
-<code class="sig-name descname">ONI_ENOTWRITEDEV</code><a class="headerlink" href="#c.@oni_error_enum.ONI_ENOTWRITEDEV" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_ENOTWRITEDEV</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_ENOTWRITEDEV" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-25</span></code>)
 Frame allocation attempted for a non-writable device</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt id="c.&#64;oni_error_enum.ONI_EDEVIDXREPEAT">
-<code class="sig-name descname">ONI_EDEVIDXREPEAT</code><a class="headerlink" href="#c.@oni_error_enum.ONI_EDEVIDXREPEAT" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_EDEVIDXREPEAT</span></code><a class="headerlink" href="#c.@oni_error_enum.ONI_EDEVIDXREPEAT" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">-26</span></code>)
 Device table contains repeated device indices</p>
 </dd></dl>
@@ -905,62 +904,62 @@ register programming interface.</p>
 </div>
 <dl class="c enum">
 <dt id="c.oni_config_t">
-<em class="property">enum </em><code class="sig-name descname">oni_config_t</code><a class="headerlink" href="#c.oni_config_t" title="Permalink to this definition">¶</a><br /></dt>
+<em class="property"><span class="pre">enum</span> </em><code class="sig-name descname"><span class="pre">oni_config_t</span></code><a class="headerlink" href="#c.oni_config_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c macro">
 <dt id="c.ONI_CONFIG_DEV_IDX">
-<code class="sig-name descname">ONI_CONFIG_DEV_IDX</code><a class="headerlink" href="#c.ONI_CONFIG_DEV_IDX" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_CONFIG_DEV_IDX</span></code><a class="headerlink" href="#c.ONI_CONFIG_DEV_IDX" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c macro">
 <dt id="c.ONI_CONFIG_REG_ADDR">
-<code class="sig-name descname">ONI_CONFIG_REG_ADDR</code><a class="headerlink" href="#c.ONI_CONFIG_REG_ADDR" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_CONFIG_REG_ADDR</span></code><a class="headerlink" href="#c.ONI_CONFIG_REG_ADDR" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c macro">
 <dt id="c.ONI_CONFIG_REG_VALUE">
-<code class="sig-name descname">ONI_CONFIG_REG_VALUE</code><a class="headerlink" href="#c.ONI_CONFIG_REG_VALUE" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_CONFIG_REG_VALUE</span></code><a class="headerlink" href="#c.ONI_CONFIG_REG_VALUE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c macro">
 <dt id="c.ONI_CONFIG_RW">
-<code class="sig-name descname">ONI_CONFIG_RW</code><a class="headerlink" href="#c.ONI_CONFIG_RW" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_CONFIG_RW</span></code><a class="headerlink" href="#c.ONI_CONFIG_RW" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c macro">
 <dt id="c.ONI_CONFIG_TRIG">
-<code class="sig-name descname">ONI_CONFIG_TRIG</code><a class="headerlink" href="#c.ONI_CONFIG_TRIG" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_CONFIG_TRIG</span></code><a class="headerlink" href="#c.ONI_CONFIG_TRIG" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c macro">
 <dt id="c.ONI_CONFIG_RUNNING">
-<code class="sig-name descname">ONI_CONFIG_RUNNING</code><a class="headerlink" href="#c.ONI_CONFIG_RUNNING" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_CONFIG_RUNNING</span></code><a class="headerlink" href="#c.ONI_CONFIG_RUNNING" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c macro">
 <dt id="c.ONI_CONFIG_RESET">
-<code class="sig-name descname">ONI_CONFIG_RESET</code><a class="headerlink" href="#c.ONI_CONFIG_RESET" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_CONFIG_RESET</span></code><a class="headerlink" href="#c.ONI_CONFIG_RESET" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c macro">
 <dt id="c.ONI_CONFIG_SYSCLKHZ">
-<code class="sig-name descname">ONI_CONFIG_SYSCLKHZ</code><a class="headerlink" href="#c.ONI_CONFIG_SYSCLKHZ" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_CONFIG_SYSCLKHZ</span></code><a class="headerlink" href="#c.ONI_CONFIG_SYSCLKHZ" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c macro">
 <dt id="c.ONI_CONFIG_ACQCLKHZ">
-<code class="sig-name descname">ONI_CONFIG_ACQCLKHZ</code><a class="headerlink" href="#c.ONI_CONFIG_ACQCLKHZ" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_CONFIG_ACQCLKHZ</span></code><a class="headerlink" href="#c.ONI_CONFIG_ACQCLKHZ" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c macro">
 <dt id="c.ONI_CONFIG_RESETACQCOUNTER">
-<code class="sig-name descname">ONI_CONFIG_RESETACQCOUNTER</code><a class="headerlink" href="#c.ONI_CONFIG_RESETACQCOUNTER" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_CONFIG_RESETACQCOUNTER</span></code><a class="headerlink" href="#c.ONI_CONFIG_RESETACQCOUNTER" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="c macro">
 <dt id="c.ONI_CONFIG_HWADDRESS">
-<code class="sig-name descname">ONI_CONFIG_HWADDRESS</code><a class="headerlink" href="#c.ONI_CONFIG_HWADDRESS" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">ONI_CONFIG_HWADDRESS</span></code><a class="headerlink" href="#c.ONI_CONFIG_HWADDRESS" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -997,7 +996,7 @@ register programming interface.</p>
   <div class="container">
     <p>
           &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
     </p>
   </div>
 </footer>

@@ -38,7 +38,6 @@
     <script src="../../_static/copyURLToClipboard.js"></script>
     <script src="../../_static/default.js"></script>
     <script src="../../_static/wavedrom.min.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -296,7 +295,7 @@ distinct signal streams. Any high-quality 50-Ohm characteristic impedance cable
 with low loss in the GHz frequency range can be used to make this connection
 (e.g. SMA cables). However, the connection to the headstage is usually
 accomplished using specialized micro-coax cable that is extremely thin and
-flexible. We generally use cables that are 0.2-0.38 mm in diameter.</p>
+flexible. We generally use cables that are 150-300 μm in diameter.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Have a look at the <a class="reference internal" href="tethers.html#tethers"><span class="std std-ref">Making Coaxial Tethers</span></a> page for more detials on mirco-coax
@@ -363,7 +362,7 @@ SERDES pair is used for control of and communication with headstages.</p>
 <h3>Data Serialization<a class="headerlink" href="#data-serialization" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://www.ti.com/product/DS90UB933-Q1">DS90UB933</a> is a 100 MHz
 parallel to coaxial serializer that is typically used for streaming camera
-data. ONIX headsrages use an intermediate FPGA to translate data from any
+data. ONIX headstages use an intermediate FPGA to translate data from any
 number of heterogeneous data sources to the serializer input using the
 following simple protocol</p>
 
@@ -390,16 +389,16 @@ head: {
 <p>where the signal lines are defined as follows:</p>
 <dl class="field-list simple">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">plck</span></code></dt>
-<dd class="field-odd"><p>The serializers pixel clock, repurposed for generic data
+<dd class="field-odd"><p>The serializer’s pixel clock, repurposed for generic data
 transmission for ONIX headstages.</p>
 </dd>
 <dt class="field-even"><code class="docutils literal notranslate"><span class="pre">hsync</span></code></dt>
-<dd class="field-even"><p>The horizontal synchronization signal, repurposed on ONIX
+<dd class="field-even"><p>The horizontal synchronization signal, re-purposed on ONIX
 headstages to indicate the <code class="docutils literal notranslate"><span class="pre">data</span></code> bus contains a device ID on
 ONIX headstages</p>
 </dd>
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">vsync</span></code></dt>
-<dd class="field-odd"><p>The vertical synchronization signal, repurposed to indicate the
+<dd class="field-odd"><p>The vertical synchronization signal, re-purposed to indicate the
 <code class="docutils literal notranslate"><span class="pre">data</span></code> bus a CRC value for the preceeding packet on ONIX
 headstages</p>
 </dd>
@@ -474,7 +473,7 @@ module to accomplish this .</p>
   <div class="container">
     <p>
           &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
     </p>
   </div>
 </footer>
