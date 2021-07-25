@@ -36,8 +36,8 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/copyURLToClipboard.js"></script>
-    <script src="../../_static/default.js"></script>
-    <script src="../../_static/wavedrom.min.js"></script>
+    <script src="http://wavedrom.com/skins/default.js"></script>
+    <script src="http://wavedrom.com/wavedrom.min.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -131,7 +131,7 @@
           
             
                 <li class="">
-                    <a href="../hw-repo-info.html">Hardware Repository Information</a>
+                    <a href="../hw-repo-info.html">Repository Information</a>
                 </li>
             
           
@@ -143,13 +143,13 @@
           
             
                 <li class="">
-                    <a href="../hw-setup.html">Hardware Setup Guide</a>
+                    <a href="../Datasheets/index.html">Device Datasheets</a>
                 </li>
             
           
             
                 <li class="">
-                    <a href="../Headstages/index.html">Headstages</a>
+                    <a href="../Coaxial%20Headstages/index.html">Coaxial Headstages</a>
                 </li>
             
           
@@ -185,13 +185,7 @@
           
             
                 <li class="">
-                    <a href="../Hosts/index.html">Hosts</a>
-                </li>
-            
-          
-            
-                <li class="">
-                    <a href="../Datasheets/index.html">ONIX Device Datasheets</a>
+                    <a href="../PCIe%20Host/index.html">PCIe Host</a>
                 </li>
             
           
@@ -250,7 +244,7 @@
 <p><strong>breakout v1.4</strong> allows bench access to the IO provided by the
 following host boards</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../Hosts/fmc-host_1r3.html#fmc-host-1r3"><span class="std std-ref">fmc-host v1.3</span></a></p></li>
+<li><p><a class="reference internal" href="../PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a></p></li>
 </ul>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
@@ -259,7 +253,7 @@ following host boards</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>There may be more IO present on the breakout board than is available
-on a particular host board. For instance, <a class="reference internal" href="../Hosts/fmc-host_1r3.html#fmc-host-1r3"><span class="std std-ref">fmc-host v1.3</span></a> has two coaxial
+on a particular host board. For instance, <a class="reference internal" href="../PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a> has two coaxial
 links, but the breakout board provides four. This is is by design. The breakout
 is compatible with all host configurations.</p>
 </div>
@@ -282,6 +276,8 @@ inputs. These are 5V compliant.</p></li>
 <li><p>Rugged M6 and 1/4-20 mounting holes for both metric and imperial optical
 tables</p></li>
 <li><p>19” rack compatibility</p></li>
+<li><p>Fully open-source gateware and made using an open-source FPGA toolchain
+(<a class="reference external" href="http://www.clifford.at/yosys/">yosys</a> &amp; <a class="reference external" href="https://github.com/YosysHQ/nextpnr">nextpnr</a>)</p></li>
 </ul>
 <p>This board is essentially passive. It works in coordination with a host board
 which determines its detailed functionality via its connectivity with the

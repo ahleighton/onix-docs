@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ONIX Device Datasheets &#8212; ONIX Docs 0.0.0 documentation</title>
+    <title>Device Datasheets &#8212; ONIX Docs 0.0.0 documentation</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -36,13 +36,13 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/copyURLToClipboard.js"></script>
-    <script src="../../_static/default.js"></script>
-    <script src="../../_static/wavedrom.min.js"></script>
+    <script src="http://wavedrom.com/skins/default.js"></script>
+    <script src="http://wavedrom.com/wavedrom.min.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Heartbeat" href="heartbeat.html" />
-    <link rel="prev" title="Numato Nereid" href="../Hosts/pcie-host-nereid.html" />
+    <link rel="prev" title="Version Compatibility" href="../hw-compatibility.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -131,7 +131,7 @@
           
             
                 <li class="">
-                    <a href="../hw-repo-info.html">Hardware Repository Information</a>
+                    <a href="../hw-repo-info.html">Repository Information</a>
                 </li>
             
           
@@ -142,45 +142,9 @@
             
           
             
-                <li class="">
-                    <a href="../hw-setup.html">Hardware Setup Guide</a>
-                </li>
-            
-          
-            
-                <li class="">
-                    <a href="../Headstages/index.html">Headstages</a>
-                </li>
-            
-          
-            
-                <li class="">
-                    <a href="../Miniscopes/index.html">Miniscopes</a>
-                </li>
-            
-          
-            
-                <li class="">
-                    <a href="../Adapters%20%26%20EIBs/index.html">Adapters & EIBs</a>
-                </li>
-            
-          
-            
-                <li class="">
-                    <a href="../Breakout%20Boards/index.html">Breakout Boards</a>
-                </li>
-            
-          
-            
-                <li class="">
-                    <a href="../Hosts/index.html">Hosts</a>
-                </li>
-            
-          
-            
   
                 <li class="active">
-                    <a href="">ONIX Device Datasheets</a>
+                    <a href="">Device Datasheets</a>
                     <ul>
                     
                         <li class="">
@@ -197,6 +161,10 @@
                     
                         <li class="">
                             <a href="fmc-analog-io.html">FMC Host Analog IO Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="fmc-digital-io.html">FMC Host Digital IO Device</a>
                         </li>
                     
                         <li class="">
@@ -231,7 +199,41 @@
                             <a href="ts4231-v1-array.html">TS4231 Array for V1 Base Stations</a>
                         </li>
                     
+                        <li class="">
+                            <a href="ds90ub9x-raw.html">DS90UB9X Raw Device</a>
+                        </li>
+                    
                     </ul>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Coaxial%20Headstages/index.html">Coaxial Headstages</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Miniscopes/index.html">Miniscopes</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Adapters%20%26%20EIBs/index.html">Adapters & EIBs</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Breakout%20Boards/index.html">Breakout Boards</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../PCIe%20Host/index.html">PCIe Host</a>
                 </li>
             
           
@@ -274,14 +276,19 @@
               
               <div>
                 
-  <div class="section" id="onix-device-datasheets">
-<span id="onidatasheets"></span><h1>ONIX Device Datasheets<a class="headerlink" href="#onix-device-datasheets" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="device-datasheets">
+<span id="onidatasheets"></span><h1>Device Datasheets<a class="headerlink" href="#device-datasheets" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://github.com/open-ephys/ONI">ONI spec</a> requires a simple
+datasheet for each leaf device that provides information on register
+programming and data IO. These datasheets are provided here for each device
+available in the ONIX system.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="heartbeat.html">Heartbeat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="load-test.html">Load Test Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="memory-usage.html">Memory Usage Monitor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fmc-analog-io.html">FMC Host Analog IO Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fmc-digital-io.html">FMC Host Digital IO Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fmc-clock-out.html">FMC Host Clock Output Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fmc-link-control.html">FMC Link Controller</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bno055.html">BNO055</a></li>
@@ -290,12 +297,9 @@
 <li class="toctree-l1"><a class="reference internal" href="estim-hs64.html">HS64 Electrical Stimulator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ostim-hs64.html">HS64 Optical Stimulator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ts4231-v1-array.html">TS4231 Array for V1 Base Stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ds90ub9x-raw.html">DS90UB9X Raw Device</a></li>
 </ul>
 </div>
-<p>The <a class="reference external" href="https://github.com/open-ephys/ONI">ONI spec</a> requires a simple
-datasheet for each leaf device that provides basic information on register
-programming and data IO. These datasheets are provided here for each device
-available in the ONIX system.</p>
 </div>
 
     <script type="text/javascript">
@@ -310,7 +314,7 @@ available in the ONIX system.</p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="../Hosts/pcie-host-nereid.html" title="previous page">Numato Nereid</a>
+    <a class='left-prev' id="prev-link" href="../hw-compatibility.html" title="previous page">Version Compatibility</a>
     <a class='right-next' id="next-link" href="heartbeat.html" title="next page">Heartbeat</a>
 
               </div>

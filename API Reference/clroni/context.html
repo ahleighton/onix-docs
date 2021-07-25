@@ -36,8 +36,8 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/copyURLToClipboard.js"></script>
-    <script src="../../_static/default.js"></script>
-    <script src="../../_static/wavedrom.min.js"></script>
+    <script src="http://wavedrom.com/skins/default.js"></script>
+    <script src="http://wavedrom.com/wavedrom.min.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -175,7 +175,7 @@
           
             
                 <li class="">
-                    <a href="../drivers/index.html">Hardware Translation Layers</a>
+                    <a href="../drivers/index.html">Hardware Driver Translators</a>
                 </li>
             
           
@@ -476,26 +476,26 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Properties</p>
 <dl class="cs property">
-<dt id="property-oni.Context.Running">
-<span class="target" id="classoni_1_1_context_1a4d969ef951413141e2e47e4920845169"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">Running</span></code> <span class="pre">{</span> <em class="property"></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Context.Running" title="Permalink to this definition">¶</a></dt>
+<dt>
+<span class="target" id="classoni_1_1_context_1a4d969ef951413141e2e47e4920845169"></span><code class="sig-name descname"><span class="pre">bool</span> <span class="pre">Running</span></code></dt>
 <dd><p>Indicates whether or not data acquisition is running. </p>
 </dd></dl>
 
 <dl class="cs property">
-<dt id="property-oni.Context.HardwareAddress">
-<span class="target" id="classoni_1_1_context_1a428dbe9704ed59092e638ed1a7ffbfc2"></span><span class="pre">int</span> <code class="sig-name descname"><span class="pre">HardwareAddress</span></code> <span class="pre">{</span> <em class="property"></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Context.HardwareAddress" title="Permalink to this definition">¶</a></dt>
+<dt>
+<span class="target" id="classoni_1_1_context_1a428dbe9704ed59092e638ed1a7ffbfc2"></span><code class="sig-name descname"><span class="pre">int</span> <span class="pre">HardwareAddress</span></code></dt>
 <dd><p>The address of the host hardware within the acquisition computer. Determines the synchronization role of the hardware in multi-host systems. </p>
 </dd></dl>
 
 <dl class="cs property">
-<dt id="property-oni.Context.BlockReadSize">
-<span class="target" id="classoni_1_1_context_1aa2e1fe9220a2865f144731a4a3fcaa0c"></span><span class="pre">int</span> <code class="sig-name descname"><span class="pre">BlockReadSize</span></code> <span class="pre">{</span> <em class="property"></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Context.BlockReadSize" title="Permalink to this definition">¶</a></dt>
+<dt>
+<span class="target" id="classoni_1_1_context_1aa2e1fe9220a2865f144731a4a3fcaa0c"></span><code class="sig-name descname"><span class="pre">int</span> <span class="pre">BlockReadSize</span></code></dt>
 <dd><p>Number of bytes read during each driver access to the high-bandwidth read channel using <a class="reference internal" href="#classoni_1_1_context_1a2774341ba95650f63722dfbcbc2ddd77"><span class="std std-ref">Context.ReadFrame</span></a>. This option allows control over a fundamental trade-off between closed-loop response time and overall bandwidth. The minimum (default) value will provide the lowest response latency. Larger values will reduce syscall frequency and may improve processing performance for high-bandwidth data sources. This minimum size of this option is determined by <a class="reference internal" href="#classoni_1_1_context_1a30319fa039a6ef86aa120d9dc623f2c2"><span class="std std-ref">Context.MaxReadFrameSize</span></a>. </p>
 </dd></dl>
 
 <dl class="cs property">
-<dt id="property-oni.Context.BlockWriteSize">
-<span class="target" id="classoni_1_1_context_1ad225a8ed2c9ec9c9e696cfa54515b5b5"></span><span class="pre">int</span> <code class="sig-name descname"><span class="pre">BlockWriteSize</span></code> <span class="pre">{</span> <em class="property"></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Context.BlockWriteSize" title="Permalink to this definition">¶</a></dt>
+<dt>
+<span class="target" id="classoni_1_1_context_1ad225a8ed2c9ec9c9e696cfa54515b5b5"></span><code class="sig-name descname"><span class="pre">int</span> <span class="pre">BlockWriteSize</span></code></dt>
 <dd><p>Number of bytes pre-allocated for calls to <a class="reference internal" href="#classoni_1_1_context_1ac056a266ec61c27a6497c943486d399c"><span class="std std-ref">Write&lt;T&gt;(uint, T)</span></a>, <a class="reference internal" href="#classoni_1_1_context_1ab094107504bf176e6682e59303d9f5bb"><span class="std std-ref">Write&lt;T&gt;(uint, T[])</span></a>, and <a class="reference internal" href="#classoni_1_1_context_1ad67376eff7e78f3f7768df805cb76818"><span class="std std-ref">Write(uint, IntPtr, int)</span></a>. A larger size will reduce the average amount of dynamic memory allocation system calls but increase the cost of each of those calls. The minimum size of this option is determined by <a class="reference internal" href="#classoni_1_1_context_1a972bab2364c5cf1cc8493ed452375887"><span class="std std-ref">Context.MaxWriteFrameSize</span></a>. </p>
 </dd></dl>
 

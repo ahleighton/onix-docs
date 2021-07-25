@@ -36,12 +36,12 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/copyURLToClipboard.js"></script>
-    <script src="../../_static/default.js"></script>
-    <script src="../../_static/wavedrom.min.js"></script>
+    <script src="http://wavedrom.com/skins/default.js"></script>
+    <script src="http://wavedrom.com/wavedrom.min.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="API Reference" href="../../API%20Reference/index.html" />
+    <link rel="next" title="DS90UB9X Raw Device" href="ds90ub9x-raw.html" />
     <link rel="prev" title="HS64 Optical Stimulator" href="ostim-hs64.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -131,7 +131,7 @@
           
             
                 <li class="">
-                    <a href="../hw-repo-info.html">Hardware Repository Information</a>
+                    <a href="../hw-repo-info.html">Repository Information</a>
                 </li>
             
           
@@ -142,45 +142,9 @@
             
           
             
-                <li class="">
-                    <a href="../hw-setup.html">Hardware Setup Guide</a>
-                </li>
-            
-          
-            
-                <li class="">
-                    <a href="../Headstages/index.html">Headstages</a>
-                </li>
-            
-          
-            
-                <li class="">
-                    <a href="../Miniscopes/index.html">Miniscopes</a>
-                </li>
-            
-          
-            
-                <li class="">
-                    <a href="../Adapters%20%26%20EIBs/index.html">Adapters & EIBs</a>
-                </li>
-            
-          
-            
-                <li class="">
-                    <a href="../Breakout%20Boards/index.html">Breakout Boards</a>
-                </li>
-            
-          
-            
-                <li class="">
-                    <a href="../Hosts/index.html">Hosts</a>
-                </li>
-            
-          
-            
   
                 <li class="active">
-                    <a href="index.html">ONIX Device Datasheets</a>
+                    <a href="index.html">Device Datasheets</a>
                     <ul>
                     
                         <li class="">
@@ -197,6 +161,10 @@
                     
                         <li class="">
                             <a href="fmc-analog-io.html">FMC Host Analog IO Device</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="fmc-digital-io.html">FMC Host Digital IO Device</a>
                         </li>
                     
                         <li class="">
@@ -231,7 +199,41 @@
                             <a href="">TS4231 Array for V1 Base Stations</a>
                         </li>
                     
+                        <li class="">
+                            <a href="ds90ub9x-raw.html">DS90UB9X Raw Device</a>
+                        </li>
+                    
                     </ul>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Coaxial%20Headstages/index.html">Coaxial Headstages</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Miniscopes/index.html">Miniscopes</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Adapters%20%26%20EIBs/index.html">Adapters & EIBs</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Breakout%20Boards/index.html">Breakout Boards</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../PCIe%20Host/index.html">PCIe Host</a>
                 </li>
             
           
@@ -306,7 +308,7 @@
 <dd class="field-odd"><p>25</p>
 </dd>
 <dt class="field-even">ONIX Hubs</dt>
-<dd class="field-even"><p><a class="reference internal" href="../Headstages/headstage-64_1r3.html#headstage-64-1r3"><span class="std std-ref">headstage-64 v1.3</span></a>, <a class="reference internal" href="../Headstages/headstage-neuropix_1r2.html#headstage-neuropix-1r2"><span class="std std-ref">headstage-neuropix v1.2</span></a></p>
+<dd class="field-even"><p><a class="reference internal" href="../Coaxial%20Headstages/headstage-64_1r3.html#headstage-64-1r3"><span class="std std-ref">headstage-64 v1.3</span></a>, <a class="reference internal" href="../Coaxial%20Headstages/headstage-neuropix_1r2.html#headstage-neuropix-1r2"><span class="std std-ref">headstage-neuropix v1.2</span></a></p>
 </dd>
 </dl>
 <div class="section" id="description">
@@ -387,16 +389,30 @@ photodiode</p>
 for sweep classification.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Envelope codes are defined based on their width as follows:</p>
-<ul class="simple">
-<li><p>SWEEP &lt;= 50.0 μS</p></li>
-<li><p>J0 &lt;= 62.5 μS</p></li>
-<li><p>K0 &lt;= 72.9 μS</p></li>
-<li><p>J1 &lt;= 83.3 μS</p></li>
-<li><p>K1 &lt;= 93.8 μS</p></li>
-<li><p>J2 &lt;= 104.0 μS</p></li>
-<li><p>K2 &lt;= 115.0 μS</p></li>
-</ul>
-<p>Where SWEEP is a light-sheet sweep and Jx/Kx are synchronization flashes. See
+<dl class="field-list simple">
+<dt class="field-odd">Sweep</dt>
+<dd class="field-odd"><p>Width &lt;= 50.0 μS</p>
+</dd>
+<dt class="field-even">J0</dt>
+<dd class="field-even"><p>Width &lt;= 62.5 μS</p>
+</dd>
+<dt class="field-odd">K0</dt>
+<dd class="field-odd"><p>Width &lt;= 72.9 μS</p>
+</dd>
+<dt class="field-even">J1</dt>
+<dd class="field-even"><p>Width &lt;= 83.3 μS</p>
+</dd>
+<dt class="field-odd">K1</dt>
+<dd class="field-odd"><p>Width &lt;= 93.8 μS</p>
+</dd>
+<dt class="field-even">J2</dt>
+<dd class="field-even"><p>Width &lt;= 104.0 μS</p>
+</dd>
+<dt class="field-odd">K2</dt>
+<dd class="field-odd"><p>Width &lt;= 115.0 μS</p>
+</dd>
+</dl>
+<p>Where Sweep is a light-sheet pass and Jx/Kx are synchronization flashes. See
 the <a class="reference external" href="https://github.com/nairol/LighthouseRedox/blob/master/docs/Light%20Emissions.md">Lighthouse Redox Project</a>
 for more information.</p>
 </div>
@@ -420,7 +436,7 @@ error.</p>
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="ostim-hs64.html" title="previous page">HS64 Optical Stimulator</a>
-    <a class='right-next' id="next-link" href="../../API%20Reference/index.html" title="next page"> API Reference</a>
+    <a class='right-next' id="next-link" href="ds90ub9x-raw.html" title="next page">DS90UB9X Raw Device</a>
 
               </div>
               

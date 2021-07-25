@@ -36,12 +36,12 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/copyURLToClipboard.js"></script>
-    <script src="../../_static/default.js"></script>
-    <script src="../../_static/wavedrom.min.js"></script>
+    <script src="http://wavedrom.com/skins/default.js"></script>
+    <script src="http://wavedrom.com/wavedrom.min.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Example Bonsai Workflows" href="../Bonsai.ONIX%20Examples/index.html" />
+    <link rel="next" title="BNO055Device" href="BNO055Device.html" />
     <link rel="prev" title="ONIContext" href="ONIContext.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -147,6 +147,10 @@
                             <a href="">HeartbeatDevice</a>
                         </li>
                     
+                        <li class="">
+                            <a href="BNO055Device.html">BNO055Device</a>
+                        </li>
+                    
                     </ul>
                 </li>
             
@@ -215,7 +219,7 @@
                 
   <div class="section" id="heartbeatdevice">
 <span id="bonsai-heartbeatdev"></span><h1>HeartbeatDevice<a class="headerlink" href="#heartbeatdevice" title="Permalink to this headline">¶</a></h1>
-<p>A Bonsai Source that wraps a <a class="reference internal" href="../../Hardware%20Guide/Datasheets/heartbeat.html#onidatasheet-heartbeat"><span class="std std-ref">Heartbeat</span></a> device.</p>
+<p>A Bonsai <em>Source</em> that wraps a <a class="reference internal" href="../../Hardware%20Guide/Datasheets/heartbeat.html#onidatasheet-heartbeat"><span class="std std-ref">Heartbeat</span></a> device.</p>
         <div class="bonsai-workflow-container">
     <div class="workflow-filler"></div>
     <div class="workflow-download"><img class="copy-img" src="../../_static/download.svg" onclick="getTextFromURL('../../_static/workflows/Heartbeat.bonsai', true)" width=18px download/></div>
@@ -228,14 +232,32 @@
 </div>
 <div class="section" id="outputs">
 <h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
-<p>A single <code class="docutils literal notranslate"><span class="pre">HearbeatFrame</span></code> every time one is produced by hardware. This type is
-a direct wrapper around the Device To Host Data Frame specified on the
+<p>A single <code class="docutils literal notranslate"><span class="pre">HearbeatDataFrame</span></code> that is produced periodically by hardware. This
+type is a wrapper around the <em>Device To Host Data Frame</em> specified on the
 <a class="reference internal" href="../../Hardware%20Guide/Datasheets/heartbeat.html#onidatasheet-heartbeat"><span class="std std-ref">Heartbeat</span></a> device datasheet.</p>
 </div>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p>Configuration of <code class="docutils literal notranslate"><span class="pre">Heartbeat</span></code> is performed using its property pane. Parameter
-explanations are provided there.</p>
+<p>Configuration of <code class="docutils literal notranslate"><span class="pre">HeartbeatDevice</span></code> is performed using its property pane which
+contains the followin options.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EnableStream</p></td>
+<td><p>boolean</p></td>
+<td><p>Enable the device data stream</p></td>
+</tr>
+<tr class="row-odd"><td><p>BeatHz</p></td>
+<td><p>uint</p></td>
+<td><p>Rate at which beats are produced</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -252,7 +274,7 @@ explanations are provided there.</p>
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="ONIContext.html" title="previous page">ONIContext</a>
-    <a class='right-next' id="next-link" href="../Bonsai.ONIX%20Examples/index.html" title="next page">Example Bonsai Workflows</a>
+    <a class='right-next' id="next-link" href="BNO055Device.html" title="next page">BNO055Device</a>
 
               </div>
               

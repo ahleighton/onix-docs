@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>headstage-64 v1.3 &#8212; ONIX Docs 0.0.0 documentation</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copyURLToClipboard.js"></script>
+    <script src="http://wavedrom.com/skins/default.js"></script>
+    <script src="http://wavedrom.com/wavedrom.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="headstage-neuropix v1.2" href="headstage-neuropix_1r2.html" />
+    <link rel="prev" title="Coaxial Headstage Commutators" href="commutators.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../../index.html">
+    
+      <img src="../../_static/onix_open_ephys_logo.svg" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../About/index.html">About</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../index.html"> Hardware Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../API%20Reference/index.html"> API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../Software%20Guide/index.html"> Software Guide</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/open-ephys/onix-docs" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/openephys" target="_blank" rel="noopener">
+              <span><i class="fab fa-twitter-square"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+          
+            
+                <li class="">
+                    <a href="../hw-repo-info.html">Repository Information</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../hw-compatibility.html">Version Compatibility</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Datasheets/index.html">Device Datasheets</a>
+                </li>
+            
+          
+            
+  
+                <li class="active">
+                    <a href="index.html">Coaxial Headstages</a>
+                    <ul>
+                    
+                        <li class="">
+                            <a href="serialization.html">Coaxial Data Serialization & Power</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="tethers.html">Making Coaxial Tethers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="commutators.html">Coaxial Headstage Commutators</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="">headstage-64 v1.3</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="headstage-neuropix_1r2.html">headstage-neuropix v1.2</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Miniscopes/index.html">Miniscopes</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Adapters%20%26%20EIBs/index.html">Adapters & EIBs</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../Breakout%20Boards/index.html">Breakout Boards</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../PCIe%20Host/index.html">PCIe Host</a>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#coaxial-link" class="nav-link">Coaxial Link</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#electrophysiology" class="nav-link">Electrophysiology</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#d-position-tracking" class="nav-link">3D Position Tracking</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#d-orientation-tracking" class="nav-link">3D Orientation Tracking</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#neural-stimulation" class="nav-link">Neural Stimulation</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#optical-stimulation" class="nav-link">Optical Stimulation</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#electical-stimulation" class="nav-link">Electical Stimulation</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#schematic" class="nav-link">Schematic</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#gerber-files" class="nav-link">Gerber Files</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#bill-of-materials" class="nav-link">Bill of Materials</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#fpga-bottom-connector-pinouts" class="nav-link">FPGA & Bottom Connector Pinouts</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/onix-docs/edit/master/source/Hardware Guide/Coaxial Headstages/headstage-64_1r3.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="headstage-64-v1-3">
+<span id="headstage-64-1r3"></span><h1>headstage-64 v1.3<a class="headerlink" href="#headstage-64-v1-3" title="Permalink to this headline">¶</a></h1>
+<p><strong>headstage-64 v1.3</strong> is an ONI-compatible, serialized, multifunction headstage
+for small animals. This headstage is designed to function with
+<a class="reference internal" href="../Adapters%20%26%20EIBs/eib-64_1r3.html#eib-64-1r3"><span class="std std-ref">eib-64 v1.3</span></a> for <a class="reference external" href="https://open-ephys.org/shuttledrive">tetrode microdrives</a>. Alternatively it can be used with
+other passive probes (e.g. silicon arrays, flexible eeg arrays, etc) using
+<a class="reference internal" href="../Adapters%20%26%20EIBs/omnetics-adapter-64_1r0.html#omnetics-adapter-64-1r0"><span class="std std-ref">omnetics-adapter-64 v1.0</span></a> or similar.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This is a picture of revision 1.1!</p>
+</div>
+<img alt="../../_images/headstage-64.png" class="align-center" src="../../_images/headstage-64.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to double check your headstage revision by looking at the
+silkscreen on the bottom of the headstage. You should see <code class="docutils literal notranslate"><span class="pre">Rev1.3</span></code>. If not,
+refer the appropriate revision’s documentation.</p>
+</div>
+<p>headstage-64 v1.3 is compatible with the following ONIX hardware</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../Adapters%20%26%20EIBs/eib-64_1r2.html#eib-64-1r2"><span class="std std-ref">eib-64 v1.2</span></a></p></li>
+<li><p><a class="reference internal" href="../Adapters%20%26%20EIBs/eib-64-large_1r0.html#eib-64-large-1r0"><span class="std std-ref">eib-64-large v1.0</span></a></p></li>
+<li><p><a class="reference internal" href="../Adapters%20%26%20EIBs/omnetics-adapter-64_1r0.html#omnetics-adapter-64-1r0"><span class="std std-ref">omnetics-adapter-64 v1.0</span></a></p></li>
+<li><p><a class="reference internal" href="../Breakout%20Boards/test-board-64_1r2.html#test-board-64-1r2"><span class="std std-ref">test-board-64 v1.2</span></a></p></li>
+<li><p><a class="reference internal" href="../Breakout%20Boards/breakout_1r4.html#breakout-1r4"><span class="std std-ref">breakout v1.4</span></a></p></li>
+<li><p><a class="reference internal" href="../PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a></p></li>
+</ol>
+<div class="section" id="coaxial-link">
+<h2>Coaxial Link<a class="headerlink" href="#coaxial-link" title="Permalink to this headline">¶</a></h2>
+<p>For details on ONI-compiant data serialiation and headstage gateware, have a
+look at the <a class="reference internal" href="serialization.html#serialization"><span class="std std-ref">Coaxial Data Serialization &amp; Power</span></a> page, which describes how ONI-compliant
+headstages operatate in general terms. Within this context, headstage-64 v1.3 has
+the following coaxial link properties:</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 35%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FPGA</p></td>
+<td><p>Intel 10M08DFV81</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Serializer</p></td>
+<td><p>TI DS90UB933</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Coax Voltage</p></td>
+<td><p>5.0</p></td>
+<td><p>6.3*</p></td>
+<td><p>Volts</p></td>
+</tr>
+<tr class="row-odd"><td><p>PCLK Frequency</p></td>
+<td><p>42</p></td>
+<td></td>
+<td><p>MHz</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>*Do not exceed 6.3 VDC at the coaxial input to the headstage. Make
+sure you make this measurement at the headstage to account for a potential
+voltage drop in the tether. Exceeding this voltage can permanently damage the
+headstage.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Have a look at the <a class="reference internal" href="tethers.html#tethers"><span class="std std-ref">Making Coaxial Tethers</span></a> page for more detials on mirco-coax
+headstage tethers</p>
+</div>
+<p>The following devices are accessible over the coaxial link:</p>
+<ol class="arabic simple">
+<li><p>64 ephys channels and 3 auxiliary channels sampled at 30 kHz per channel</p></li>
+<li><p>Real-time, mm-precision 3D-position tracking using Steam VR basestations (60
+Hz)</p></li>
+<li><p>9DOF absolute head orientation tracking (100 Hz)</p></li>
+<li><p>An electrical stimulator (current controlled, +/-15V compliance, automatic electrode
+discharge)</p></li>
+<li><p>2x optical stimulators (800 mA per channel)</p></li>
+</ol>
+</div>
+<div class="section" id="electrophysiology">
+<h2>Electrophysiology<a class="headerlink" href="#electrophysiology" title="Permalink to this headline">¶</a></h2>
+<p>headstage-64 v1.3 uses a 64-channel, BGA-packaged <a class="reference external" href="http://intantech.com/">Intan RHD2164</a> bioamplifier chip. This chip provides:</p>
+<ul class="simple">
+<li><p>64 high-bandwidth electrode channels which are exposed via a mezzanine connector on the
+bottom of the headstage and can be used to record from most types of passive
+probes (e.g. tetrodes, silicon probe arrays, tungsten microwires, steel EEG
+wires, etc)</p></li>
+<li><p>3 auxiliary channels</p>
+<ul>
+<li><p>AUX 1 and 2 are pinned out on the bottom of the headstage to an unpopulated
+mezzanine connector and solder-able test points</p></li>
+<li><p>Channel 3 is tied to the electrical stimulator’s current measurement
+circuit via a selectable solder jumper on the bottom of the board. This
+jumper can be desoldered and instead a series resistor added to allow
+low-frequency LFP recordings as per pg. 26 of the RHD2000 datasheet.</p></li>
+</ul>
+</li>
+</ul>
+<p>Each of these channels is sampled at 30 kHz.</p>
+</div>
+<div class="section" id="d-position-tracking">
+<h2>3D Position Tracking<a class="headerlink" href="#d-position-tracking" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO: Move this into its own page</p>
+</div>
+<p>headstage-64 v1.3 has four <a class="reference external" href="https://store.steampowered.com/steamvr">SteamVR</a>
+receivers for 3D position tracking.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These receivers are compatible with both V1 and V2 (“index” branded)
+basestations. Although the firmware we supply for the headstage can be used
+to obtain 3D position from kinds of basestation, we consider V1
+basestations deprecated and cannot guarantee future functionality.</p>
+</div>
+<p>Assuming you are using <a class="reference external" href="https://store.steampowered.com/app/1059570/Valve_Index_Base_Station/">V2
+basestations</a>,
+to set up tracking,</p>
+<ol class="arabic simple">
+<li><p>Mount each of the basestations so that they have a clear line of sight to as
+much of the behavioral space as possible. For a relatively flat arena, the
+simplest configuration is to mount two basestations directly above the
+behavioral space inline and separated by 0.5 to 1 meters. For more complex
+environments more than 2 basestations are required to get full coverage, any
+configuration is possible so long 2 basestations have a line of site to the
+headstage and are no more than 4 meters away. For this, there are lots of
+options for ready-made, adjustable basestation mounts availble on Amazon and
+elsewhere.</p></li>
+<li><p>Serial into each of the basestations using the USB connection on the back
+and set up a terminal connection using <code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">/dev/ttyACM0</span> <span class="pre">115200</span></code> or
+similar</p></li>
+<li><p>Once connected you can hit Tab to see commands</p></li>
+<li><p>Set the mode of of each base staiton to a different value using
+<code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">n</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the desired mode (1-16). The only requirement is
+that each basestation have a unique mode.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a basestation loses power, it will reset to mode 1. Its best to
+just leave the basestations plugged in and untouched to minimize the need to
+for re-calibration and mode programming</p>
+</div>
+<ol class="arabic simple">
+<li><p>TODO: obtain the position and orientation of each basestations</p></li>
+</ol>
+</div>
+<div class="section" id="d-orientation-tracking">
+<h2>3D Orientation Tracking<a class="headerlink" href="#d-orientation-tracking" title="Permalink to this headline">¶</a></h2>
+<p>headstage-64 v1.3 has a <a class="reference external" href="https://www.bosch-sensortec.com/products/smart-sensors/bno055.html">BNO055</a> 9-axis
+inertial measurement unit that provides the absolute orientation of the
+headstage. This device produces orientation (and other) measurements are 100
+Hz.</p>
+</div>
+<div class="section" id="neural-stimulation">
+<h2>Neural Stimulation<a class="headerlink" href="#neural-stimulation" title="Permalink to this headline">¶</a></h2>
+<p>headstage-64 v1.3 provides onboard electrical and optical stimulation. Stimulus
+trains can be parameterized in a similar way to the master-8 or pulse pal.
+Electrical and optical stimulus trains cannot be delivered simultaneously.
+If there is a conflict, electrical stimuluation will take priority and optical
+stimulus triggers will be ignored.</p>
+<p>To achieve the shortest latency, electrical and optical stimulation can be triggered
+using the GPIO1 serializer output. Because both stimulators share this trigger line,
+it is important to only enable one of the devices (using its ENABLE register) prior
+to toggling this pin.</p>
+<div class="section" id="optical-stimulation">
+<h3>Optical Stimulation<a class="headerlink" href="#optical-stimulation" title="Permalink to this headline">¶</a></h3>
+<p>Optical stimulation is provided by a dual-channel, high-current LED driver.
+This driver can be used for LEDs or laser diodes. It provides 800-mA per
+channel.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p>Can I parallel the Cathode connections to increase max current?</p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>Yes. The maximum peak current in 1.6 Amps. However, if you deliver this
+current for a significant amount of time, the headstage will shutdown due
+to an over-temperture condition. The optical stimulator is only appropriate
+for low duty-cycle pulse-type stimulation.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="electical-stimulation">
+<h3>Electical Stimulation<a class="headerlink" href="#electical-stimulation" title="Permalink to this headline">¶</a></h3>
+<p>The electrical stimulation cicuit is an improved Howland current pump followed by
+an precision current measurement circuit. The current pump is supplied by +/-15V
+rails and can supply up to +/- 2.5 mA. The output current is defined as:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ISTIM = (VDAC  - 2.5)/1000.
+e.g.
+VDAC = 2.5   -&gt; ISTIM = 0
+VDAC = 5.0   -&gt; ISTIM = 2.5 mA
+VDAC = 0.0   -&gt; ISTIM = -2.5mA
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Imeas = 400 * ISTIM + 1.25V
+e.g.
+ISTIM = 0      -&gt; IMEAS = 1.25V
+ISTIM = 2.5mA  -&gt; IMEAS = 2.25V
+ISTIM = -2.5mA -&gt; IMEAS = 0.25V
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="schematic">
+<h2>Schematic<a class="headerlink" href="#schematic" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/headstage-64_schematic.png" class="align-center" src="../../_images/headstage-64_schematic.png" />
+</div>
+<div class="section" id="gerber-files">
+<h2>Gerber Files<a class="headerlink" href="#gerber-files" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/headstage-64_gerbers.png" class="img-fluid" src="../../_images/headstage-64_gerbers.png" />
+</div>
+<div class="section" id="bill-of-materials">
+<h2>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The interactive BOM is <a class="reference external" href="../../_static/boms/headstage-64_1r3_bom.html">here</a></p></li>
+<li><p>The complete BOM (including vendor part numbers) is located on <a class="reference external" href="https://docs.google.com/spreadsheets/d/1F-KWcdvH_63iXjZf0cgCfDiFX6XXW3qw6rlR8DZrFpQ/edit#gid=138167638">this google
+sheet</a></p></li>
+</ul>
+</div>
+<div class="section" id="fpga-bottom-connector-pinouts">
+<h2>FPGA &amp; Bottom Connector Pinouts<a class="headerlink" href="#fpga-bottom-connector-pinouts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The FPGA pinout is located on <a class="reference external" href="https://docs.google.com/spreadsheets/d/1oJoQ89dJNL9LIiTrRnwJ_9KGiLzJ53Tju5Lfchuvsb0/edit#gid=2100166621">this Google sheet</a></p></li>
+<li><p>The headstage connector pinout (ADC input mapping, stimulation connections,
+etc) is located on <a class="reference external" href="https://docs.google.com/spreadsheets/d/11wRDYOqHN5lPb03yUdfXfK0zvaDYsVetplaNK-R90Gg/edit#gid=663991061">this Google sheet</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="commutators.html" title="previous page">Coaxial Headstage Commutators</a>
+    <a class='right-next' id="next-link" href="headstage-neuropix_1r2.html" title="next page">headstage-neuropix v1.2</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
