@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview &#8212; ONIX Docs 0.0.0 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copyURLToClipboard.js"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Setup" href="setup.html" />
+    <link rel="prev" title="Breakout Board" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/onix_open_ephys_logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../About/index.html">
+  About
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Hardware Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../API%20Reference/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Software%20Guide/index.html">
+  Software Guide
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/open-ephys/onix-docs" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/openephys" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Datasheets/index.html">
+   Device Datasheets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/heartbeat.html">
+     Heartbeat
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/load-test.html">
+     Load Test Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/memory-usage.html">
+     Memory Usage Monitor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-analog-io.html">
+     FMC Host Analog IO Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-digital-io.html">
+     FMC Host Digital IO Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-clock-out.html">
+     FMC Host Clock Output Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-link-control.html">
+     FMC Link Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/bno055.html">
+     BNO055
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/rhd2164.html">
+     RHD2164
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/neuropixels-v1.html">
+     Neuropixels V1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/estim-hs64.html">
+     HS64 Electrical Stimulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/ostim-hs64.html">
+     HS64 Optical Stimulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/ts4231-v1-array.html">
+     TS4231 Array for V1 Base Stations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/ds90ub9x-raw.html">
+     DS90UB9X Raw Device
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PCIe%20Host/index.html">
+   PCIe Host
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/overview.html">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/setup-windows.html">
+     Setup Guide for Windows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/gateware-drivers.html">
+     Gateware and Device Drivers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/multi-board-sync.html">
+     Synchronizing Multiple PCIe Hosts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Breakout Board
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="setup.html">
+     Setup
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Headstages/index.html">
+   Headstages
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Headstages/serialization.html">
+     Coaxial Data Serialization &amp; Power
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Headstages/tethers.html">
+     Making Coaxial Tethers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Headstages/commutators.html">
+     Coaxial Headstage Commutators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Headstages/headstage-64.html">
+     Headstage-64
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Headstages/headstage-neuropix.html">
+     headstage-neuropix1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Miniscopes/index.html">
+   Miniscopes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Miniscopes/ucla-miniscope.html">
+     UCLA Miniscope
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Miniscopes/miniscope-v4f.html">
+     MIT/UCLA Miniscope v4F
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Adapters%20%26%20EIBs/index.html">
+   Adapters &amp; EIBs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/eib-64_1r2.html">
+     eib-64 v1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/eib-64_1r3.html">
+     eib-64 v1.3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/eib-64-large_1r0.html">
+     eib-64-large v1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/omnetics-adapter-64_1r0.html">
+     omnetics-adapter-64 v1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/nano-z-adapter-64_1r0.html">
+     nano-z-adapter-64 v1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/nano-z-adapter-64_1r1.html">
+     nano-z-adapter-64 v1.1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#features">
+   Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gateware">
+   Gateware
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/onix-docs/edit/main/source/Hardware Guide/Breakout Board/overview.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="overview">
+<span id="breakout-overview"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>ONIX Breakout Board</strong> allows bench access to the IO provided by the
+<a class="reference internal" href="../PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a>.</p>
+<div class="figure align-center" id="id2">
+<img alt="../../_images/breakout_1r5_callouts.jpg" src="../../_images/breakout_1r5_callouts.jpg" />
+<p class="caption"><span class="caption-text">ONIX Breakout Board revision 1.5.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<p>The Breakout Board provides access to the following IO:</p>
+<ul class="simple">
+<li><p>4x headstage port feed-throughs, each with a power switch</p></li>
+<li><p>3x, passive, high-speed clock feed-throughs</p></li>
+<li><p>12x passive, ESD-protected, analog feed-throughs.</p></li>
+<li><p>BNC, ribbon, or direct wire access to 12 analog inputs or outputs</p></li>
+<li><p>Ribbon cable or direct, wire-access to 8 digital outputs and 8 digital
+inputs. These are 5V compliant.</p></li>
+<li><p><a class="reference external" href="https://www.cf-hw.org/harp">HARP bus</a> controller</p></li>
+</ul>
+<p>Additionally, it has the following features:</p>
+<ul class="simple">
+<li><p>Lots of indication LEDs</p></li>
+<li><p>6 buttons for marking experimental events for communication and programming.</p></li>
+<li><p>Rugged M6 and 1/4-20 mounting holes for both metric and imperial optical
+tables</p></li>
+<li><p>19” rack compatibility</p></li>
+<li><p>Fully open-source gateware and made using an open-source FPGA toolchain
+(<a class="reference external" href="http://www.clifford.at/yosys/">yosys</a> &amp; <a class="reference external" href="https://github.com/YosysHQ/nextpnr">nextpnr</a>)</p></li>
+</ul>
+<p>This board is behaves as if it was passive. It works in coordination with a
+host board which determines its detailed functionality via its connectivity
+with the breakout board along with the firmware running on the host. For every
+host, all IO is carried through the following connections:</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Image of right-angle cabling pinout</p>
+</div>
+<p>Refer to the host documentation for a detailed description of how each of these
+signal lines are acquired.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There may be more IO present on the breakout board than is available
+on a particular host board. For instance, <a class="reference internal" href="../PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a> has two coaxial
+links, but the breakout board provides four. This is is by design. The breakout
+is compatible with all host configurations.</p>
+</div>
+</div>
+<div class="section" id="gateware">
+<h2>Gateware<a class="headerlink" href="#gateware" title="Permalink to this headline">¶</a></h2>
+<p>The breakout board contains a <a class="reference external" href="https://tinyfpga.com/bx/guide.html">TinyFPGA BX</a> (Lattice ICE40 breakout board) for
+digital input serialization, digital output deserialization, interpreting user
+input, and driving indication LEDs. The gateware can be found <a class="reference external" href="https://github.com/open-ephys/onix-breakout/tree/main/gateware">here</a> and is
+impelemented using an open-source toolchain (<a class="reference external" href="http://www.clifford.at/yosys/">Yosys</a> and <a class="reference external" href="https://github.com/YosysHQ/nextpnr">NextPnR</a>).</p>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Breakout Board</a>
+    <a class='right-next' id="next-link" href="setup.html" title="next page">Setup</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

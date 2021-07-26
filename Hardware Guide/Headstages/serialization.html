@@ -1,0 +1,864 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coaxial Data Serialization &amp; Power &#8212; ONIX Docs 0.0.0 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copyURLToClipboard.js"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Making Coaxial Tethers" href="tethers.html" />
+    <link rel="prev" title="Headstages" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/onix_open_ephys_logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../About/index.html">
+  About
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Hardware Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../API%20Reference/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Software%20Guide/index.html">
+  Software Guide
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/open-ephys/onix-docs" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/openephys" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Datasheets/index.html">
+   Device Datasheets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/heartbeat.html">
+     Heartbeat
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/load-test.html">
+     Load Test Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/memory-usage.html">
+     Memory Usage Monitor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-analog-io.html">
+     FMC Host Analog IO Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-digital-io.html">
+     FMC Host Digital IO Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-clock-out.html">
+     FMC Host Clock Output Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-link-control.html">
+     FMC Link Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/bno055.html">
+     BNO055
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/rhd2164.html">
+     RHD2164
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/neuropixels-v1.html">
+     Neuropixels V1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/estim-hs64.html">
+     HS64 Electrical Stimulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/ostim-hs64.html">
+     HS64 Optical Stimulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/ts4231-v1-array.html">
+     TS4231 Array for V1 Base Stations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/ds90ub9x-raw.html">
+     DS90UB9X Raw Device
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PCIe%20Host/index.html">
+   PCIe Host
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/overview.html">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/setup-windows.html">
+     Setup Guide for Windows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/gateware-drivers.html">
+     Gateware and Device Drivers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/multi-board-sync.html">
+     Synchronizing Multiple PCIe Hosts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Breakout%20Board/index.html">
+   Breakout Board
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Breakout%20Board/overview.html">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Breakout%20Board/setup.html">
+     Setup
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Headstages
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Coaxial Data Serialization &amp; Power
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tethers.html">
+     Making Coaxial Tethers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="commutators.html">
+     Coaxial Headstage Commutators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="headstage-64.html">
+     Headstage-64
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="headstage-neuropix.html">
+     headstage-neuropix1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Miniscopes/index.html">
+   Miniscopes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Miniscopes/ucla-miniscope.html">
+     UCLA Miniscope
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Miniscopes/miniscope-v4f.html">
+     MIT/UCLA Miniscope v4F
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Adapters%20%26%20EIBs/index.html">
+   Adapters &amp; EIBs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/eib-64_1r2.html">
+     eib-64 v1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/eib-64_1r3.html">
+     eib-64 v1.3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/eib-64-large_1r0.html">
+     eib-64-large v1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/omnetics-adapter-64_1r0.html">
+     omnetics-adapter-64 v1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/nano-z-adapter-64_1r0.html">
+     nano-z-adapter-64 v1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/nano-z-adapter-64_1r1.html">
+     nano-z-adapter-64 v1.1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#power">
+   Power
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ds90ub933-4-communication-protocols">
+   DS90UB933/4 Communication Protocols
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-serialization">
+     Data Serialization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#register-configuration">
+     Register Configuration
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/onix-docs/edit/main/source/Hardware Guide/Headstages/serialization.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="coaxial-data-serialization-power">
+<span id="serialization"></span><h1>Coaxial Data Serialization &amp; Power<a class="headerlink" href="#coaxial-data-serialization-power" title="Permalink to this headline">¶</a></h1>
+<p>The major advantage of ONI-compliant headstages is that they contain onboard
+logic for controlling and streaming from arbitrary configurations of head-borne
+devices using a unified, bidirectional data stream. In this way, data can be
+sent to host hardware (see <a class="reference internal" href="../PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a>) using modern serializer/deserialzer
+(SERDES) chips that vastly reduce the amount of wiring required for
+communication.</p>
+<p>ONIX coaxial headstages use a coaxial serializer for host communication. This chip
+provides power and bidirectional data transmission to and from from the
+headstage using a single coaxial cable (one signal wire and an outer shield).
+The coaxial cable is the only external connection to the headstage. Power (DC),
+a control “back-channel” (MHz), and a data “forward-channel” (GHz)
+occupy different portions of the RF spectrum and therefore can be resolved as
+distinct signal streams. Any high-quality 50-Ohm characteristic impedance cable
+with low loss in the GHz frequency range can be used to make this connection
+(e.g. SMA cables). However, the connection to the headstage is usually
+accomplished using specialized micro-coax cable that is extremely thin and
+flexible. We generally use cables that are 150-300 μm in diameter.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Have a look at the <a class="reference internal" href="tethers.html#tethers"><span class="std std-ref">Making Coaxial Tethers</span></a> page for more detials on mirco-coax
+headstage tethers</p>
+</div>
+<p>ONIX headstages use an FPGA to control peripheral devices and combine their
+data streams prior to serialization. For instance, <a class="reference internal" href="headstage-64.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> and
+<a class="reference internal" href="headstage-neuropix.html#headstage-neuropix1"><span class="std std-ref">headstage-neuropix1</span></a> use an <a class="reference external" href="https://www.intel.com/content/www/us/en/products/programmable/fpga/max-10.html">Intel MAX10 FPGA</a>.
+The exact FPGA is not important because every ONI-compliant headstage is uses
+very similar gateware (FPGA-based firmware) that performs three major functions</p>
+<ol class="arabic simple">
+<li><p><strong>Local Hardware Control</strong> Provides hardware controllers (SPI, I2C, etc),
+timing, and control logic for each of the sensors and actuators on the
+headstage</p></li>
+<li><p><strong>Data Streaming</strong> Provides a standard protocol for arbitrating access of
+each of the device data streams to the serializer.</p></li>
+<li><p><strong>Register Programming</strong> Provides a standard interface for bi-directional
+configuration and control of the devices on the headstage.</p></li>
+</ol>
+<div class="section" id="power">
+<h2>Power<a class="headerlink" href="#power" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned in the previous section, power is DC-coupled into the coaxial link
+at the host and recovered at the headstage via a second, inductive DC path.
+This “T-network” provides a low impedance path for the DC portion of the signal
+(power) and rejects the RF components so that they are preserved for
+communication between the SERDES pair.</p>
+<div class="figure align-center" id="id4">
+<img alt="../../_images/rf-t.png" src="../../_images/rf-t.png" />
+<p class="caption"><span class="caption-text">LC-network for combining power and data on the coaxial cable.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Its important to note that this circuit is completely passive. Therefore
+whatever voltage is supplied at the host side will end up at the input to the
+headstage. Care must be taken to make sure this voltage is appropriate.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not exceed the maximaum voltage at the coaxial input to the
+headstage. Make sure you make this measurement at the headstage to account for
+a potential voltage drop in the tether. Exceeding this voltage can permanently
+damage some headstages (<a class="reference internal" href="headstage-64.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> in particular because it
+lacks an overvoltage lockout circuit)</p>
+</div>
+<p>Further, if a long and thin coaxial tether is used, the DC resistivity of the
+wire can accumulate, resulting in a significant voltage drop across the cable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Long, thin tethers can have a significant series resistance that
+results in a voltage drop across the length of the tether. This may have to be
+compensated for by tuning the host input voltage to account for the drop. ONIX
+host boards have this ability (e.g. see <a class="reference internal" href="../PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a>).</p>
+</div>
+</div>
+<div class="section" id="ds90ub933-4-communication-protocols">
+<h2>DS90UB933/4 Communication Protocols<a class="headerlink" href="#ds90ub933-4-communication-protocols" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://www.ti.com/product/DS90UB933-Q1">DS90UB933</a>/<a class="reference external" href="https://www.ti.com/product/DS90UB934-Q1">DS90UB934</a> are a coaxial SERDES pair used on
+several ONIX headstages and host modules:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="headstage-64.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> (DS90UB933 Serilizer)</p></li>
+<li><p><a class="reference internal" href="headstage-neuropix.html#headstage-neuropix1"><span class="std std-ref">headstage-neuropix1</span></a> (DS90UB933 Serilizer)</p></li>
+<li><p><a class="reference internal" href="../PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a> (DS90UB934 Deserilizer)</p></li>
+</ul>
+<p>along with the UCLA Miniscope and its derivatives. This section describes how this
+SERDES pair is used for control of and communication with headstages.</p>
+<div class="section" id="data-serialization">
+<h3>Data Serialization<a class="headerlink" href="#data-serialization" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://www.ti.com/product/DS90UB933-Q1">DS90UB933</a> is a 100 MHz
+parallel to coaxial serializer that is typically used for streaming camera
+data. ONIX headstages use an intermediate FPGA to translate data from any
+number of heterogeneous data sources to the serializer input using the
+following simple protocol</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+signal: [
+  {name: 'pclk', wave: 'P.....|.....'},
+  {name: 'hsync', wave: '0.10..|.....', },
+  {name: 'vsync', wave: '0.....|.10..', data: ['head', 'body', 'tail', 'data']},
+  {name: 'data', wave: 'x.35..|.4x..', data: ['ID', 'frame', 'CRC', 'data']},
+],
+config: { hscale: 1},
+head: {
+    text:'DS90UB933 Serialization Protocol'
+},
+}
+</script>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>where the signal lines are defined as follows:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">plck</span></code></dt>
+<dd class="field-odd"><p>The serializer’s pixel clock, repurposed for generic data
+transmission for ONIX headstages.</p>
+</dd>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">hsync</span></code></dt>
+<dd class="field-even"><p>The horizontal synchronization signal, re-purposed on ONIX
+headstages to indicate the <code class="docutils literal notranslate"><span class="pre">data</span></code> bus contains a device ID on
+ONIX headstages</p>
+</dd>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">vsync</span></code></dt>
+<dd class="field-odd"><p>The vertical synchronization signal, re-purposed to indicate the
+<code class="docutils literal notranslate"><span class="pre">data</span></code> bus a CRC value for the preceeding packet on ONIX
+headstages</p>
+</dd>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">data</span></code></dt>
+<dd class="field-even"><p>The 12-bit data bus containing device ID, CRC value, or device data
+depending on the states of <code class="docutils literal notranslate"><span class="pre">hsync</span></code> and <code class="docutils literal notranslate"><span class="pre">vsync</span></code></p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">ID</span></code> is the device index within the host device table, <code class="docutils literal notranslate"><span class="pre">frame</span></code> is a
+device’s frame data, and <code class="docutils literal notranslate"><span class="pre">CRC</span></code> is a <a class="reference external" href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check">CRC-12</a> of the <code class="docutils literal notranslate"><span class="pre">ID</span></code> and
+<code class="docutils literal notranslate"><span class="pre">frame</span></code> elements.  See the  <a class="reference external" href="https://github.com/open-ephys/ONI">ONI Specification</a> for detailed descriptions of these
+elements meaning.</p>
+<p>These signal lines are present on the FPGA-side of both the serializer and
+deserializer, prior to headstage serialization and after host deserialization,
+respectively. This means that the serializer link is effectively “invisible”
+from the host’s perspective, and the headstage can be treated as if it was just
+a module on the host itself.</p>
+<p>During serialization, data are transmitted over the coaxial cable
+using an RF-encoding scheme called <a class="reference external" href="https://en.wikipedia.org/wiki/FPD-Link">FDP Link III</a> which embeds the clock in the data
+stream and allows for active equalization to compensate for imperfections in
+the cable. This link uses and 700 MHz carrier for high speed data and provides
+a low speed bidirectional link for sending triggers and configuration to the
+headstage.</p>
+</div>
+<div class="section" id="register-configuration">
+<h3>Register Configuration<a class="headerlink" href="#register-configuration" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://www.ti.com/product/DS90UB933-Q1">DS90UB933</a>/<a class="reference external" href="https://www.ti.com/product/DS90UB934-Q1">DS90UB934</a> SERDES pair have a I2C-based
+backchannel for bidirectional communication. This channel is used for two
+purposes in ONIX hardware.</p>
+<ol class="arabic simple">
+<li><p>Device configuration via register writing and reading. e.g. setting and
+bandwidth of the filters on the Intan chip.</p></li>
+<li><p>Flashing the headstage FPGA’s non-volatile memory with updated firmware.</p></li>
+</ol>
+<p>The <a class="reference external" href="https://github.com/open-ephys/ONI">ONI Specification</a> describes a
+register programming protocol that can be implemented using a 32-bit <a class="reference external" href="https://en.wikipedia.org/wiki/Wishbone_(computer_bus)">wishbone</a> bus:</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+signal: [
+  {name: 'clk',     wave: 'p...|..'},
+  ['Host to dev.',
+    {name: 'cyc',   wave: '01..|.0'},
+    {name: 'we',    wave: 'x1..|.x'},
+    {name: 'addr',  wave: 'x=..|.x'},
+    {name: 'wval',  wave: 'x=..|.x'},
+  ],
+ ['Dev. to host',
+    {name: 'ack',  wave: '0...|10'},
+    {name: 'err',  wave: '0...|=0'},
+    {name: 'rval', wave: 'x...|..'},
+  ],
+],
+config: { hscale: 2},
+head: {
+    text:'Register write cycle',
+},
+}
+</script>
+</div>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+signal: [
+  {name: 'clk',    wave: 'p...|..'},
+  ['Host to dev.',
+    {name: 'cyc',  wave: '01..|.0'},
+    {name: 'we',   wave: 'x0..|.x'},
+    {name: 'addr', wave: 'x=..|.x'},
+    {name: 'wval', wave: 'x...|.x'},
+  ],
+ ['Dev. to host',
+    {name: 'ack',  wave: '0...|10'},
+    {name: 'err',  wave: '0...|=0'},
+    {name: 'rval', wave: 'x...|=x'},
+  ],
+],
+config: { hscale: 2},
+head: {
+    text:'Register read cycle',
+},
+}
+</script>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>where the signal lines are defined as follows:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">cyc</span></code></dt>
+<dd class="field-odd"><p>Transaction cycle / chip select</p>
+</dd>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">we</span></code></dt>
+<dd class="field-even"><p>Write enable</p>
+</dd>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">addr</span></code></dt>
+<dd class="field-odd"><p>32-bit register address</p>
+</dd>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">wval</span></code></dt>
+<dd class="field-even"><p>32-bit write value</p>
+</dd>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">ack</span></code></dt>
+<dd class="field-odd"><p>Acknowledge</p>
+</dd>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">err</span></code></dt>
+<dd class="field-even"><p>Error</p>
+</dd>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">rval</span></code></dt>
+<dd class="field-odd"><p>32-bit read value</p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">cyc</span></code> line is typically muxed to different devices in an acqustion
+context using an auxilary 32-bit device index that is also required by the ONI
+specification. This bus needs to be transmitted over the DS90UB933/4 I2C
+backchannel to be used to configure headstage devices. We have developed a
+simple Wishbone over I2C module to accomplish this. This module uses the
+following 7-bit command words:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Diagram Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x00</p></td>
+<td><p>WE</p></td>
+<td><p>Write enable</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x01</p></td>
+<td><p>RR</p></td>
+<td><p>Read request</p></td>
+</tr>
+<tr class="row-even"><td><p>0x02</p></td>
+<td><p>R0</p></td>
+<td><p>Read enable 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x03</p></td>
+<td><p>R1</p></td>
+<td><p>Read enable 1</p></td>
+</tr>
+<tr class="row-even"><td><p>0x04</p></td>
+<td><p>R2</p></td>
+<td><p>Read enable 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x05</p></td>
+<td><p>W0</p></td>
+<td><p>Read enable 3</p></td>
+</tr>
+<tr class="row-even"><td><p>0x06</p></td>
+<td><p>W1</p></td>
+<td><p>Read enable 4</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x07</p></td>
+<td><p>S0</p></td>
+<td><p>Status 0</p></td>
+</tr>
+<tr class="row-even"><td><p>0x08</p></td>
+<td><p>S1</p></td>
+<td><p>Status 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xFF</p></td>
+<td><p>NA</p></td>
+<td><p>Invalid</p></td>
+</tr>
+</tbody>
+</table>
+<p>along with a status register for reporting the validity of read and write operations:</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+reg: [
+    {                       "bits": 1 },
+    { "name": "WBUSY",      "bits": 1 },
+    { "name": "WCOMPLETE",  "bits": 1 },
+    { "name": "WERROR",     "bits": 1 },
+    { "name": "RBUSY",      "bits": 1 },
+    { "name": "RCOMPLETE",  "bits": 1 },
+    { "name": "RERROR",     "bits": 1 },
+    { "name": "SEQERROR",   "bits": 1 }
+],
+config: {bits: 8, vflip: true, hflip: true},
+text:'Wishbone over backchannel status register',
+}
+</script>
+</div>
+<p>The coarse-grained state machine for this translation is as follows:</p>
+digraph {
+    rankdir=LR;
+    size=&quot;8,5&quot;
+    &quot;IDLE&quot; -&gt; &quot;WRITE&quot; [label = &quot;cyc,we&quot;] ;
+    &quot;IDLE&quot; -&gt; &quot;RDREQ&quot; [label = &quot;cyc,!we&quot;];
+    &quot;WRITE&quot; -&gt; &quot;WRITE&quot; [label = &quot;n &lt; 4&quot;];
+    &quot;WRITE&quot; -&gt; &quot;STAT0&quot;;
+    &quot;RDREQ&quot; -&gt; &quot;STAT0&quot;;
+    &quot;STAT0&quot; -&gt; &quot;WAIT&quot; [label = &quot;we&quot;];
+    &quot;STAT0&quot; -&gt; &quot;READ&quot; [label = &quot;!we, !err&quot;];
+    &quot;STAT0&quot; -&gt; &quot;WAIT&quot; [label = &quot;!we, err&quot;];
+    &quot;READ&quot; -&gt; &quot;READ&quot; [label = &quot;n &lt; 4&quot;];
+    &quot;READ&quot; -&gt; &quot;STAT1&quot; ;
+    &quot;STAT1&quot; -&gt; &quot;WAIT&quot; ;
+    &quot;WAIT&quot; -&gt; &quot;IDLE&quot; [label = &quot;!cyc&quot;];
+   }<p>An example write sequence on this bus is given below. The wishbone bus drives
+an I2C sequence that is interpreted on the headstage and used to recreate the
+wishbone signals locally.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+signal: [
+  {name: 'clk',    wave: 'p........................................................'},
+  ['Host to dev.',
+    {name: 'cyc',  wave: '01......................................................0', node: '.a'},
+    {name: 'we',   wave: 'x1......................................................x', node: '.b'},
+    {name: 'addr', wave: 'x=......................................................x'},
+    {name: 'wval', wave: 'x=......................................................x'},
+  ],
+
+ ['Dev. to host',
+    {name: 'ack',  wave: '0......................................................10', node: '.......................................................c'},
+    {name: 'err',  wave: '0......................................................=0', node: '.......................................................d'},
+    {name: 'rval', wave: 'x........................................................'},
+  ],
+
+
+  {name: 'sda',  wave: 'u.05.3.4.u05.3.4.u05.3.4.u05.3.4.u05.3.4.u05.3.4.05.7.x.', data:['Ser.+W', 'WE', 'Dev. Addr.',
+                                                                         'Ser.+W', 'addr [15:8]', 'addr [7:0]',
+                                                                         'Ser.+W', 'wval [31:24]', 'wval [23:16]',
+                                                                         'Ser.+W', 'wval [15:8]', 'wval [7:0]',
+                                                                         'Ser.+W', 'S0', 'reg_tx.idx',
+                                                                         'Ser.+W', 'S1', 'reg_tx.idx',
+                                                                         'Ser.+R', 'Satus'],
+   node: '..x...................................................y'},
+],
+edge: ['a~x','b~x', 'y~c', 'y~d'],
+  config: { hscale: 1},
+head: {
+    text:'Register write cycle',
+},
+}
+</script>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Headstages</a>
+    <a class='right-next' id="next-link" href="tethers.html" title="next page">Making Coaxial Tethers</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
