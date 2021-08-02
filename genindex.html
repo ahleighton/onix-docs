@@ -70,12 +70,6 @@
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="About/index.html">
-  About
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="Hardware%20Guide/index.html">
   Hardware Guide
  </a>
@@ -109,14 +103,20 @@
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/open-ephys/onix-docs" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
+            <span><i class="fab fa-github"></i></span>
             <label class="sr-only">GitHub</label>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://twitter.com/openephys" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
+            <span><i class="fab fa-twitter"></i></span>
             <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://open-ephys.slack.com" rel="noopener" target="_blank" title="Slack">
+            <span><i class="fab fa-slack"></i></span>
+            <label class="sr-only">Slack</label>
           </a>
         </li>
       </ul>
@@ -165,31 +165,15 @@
 <div class="genindex-jumpbox">
  <a href="#Symbols"><strong>Symbols</strong></a>
  | <a href="#C"><strong>C</strong></a>
+ | <a href="#I"><strong>I</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#O"><strong>O</strong></a>
+ | <a href="#W"><strong>W</strong></a>
  
 </div>
 <h2 id="Symbols">Symbols</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="About/faq.html#term-1.-What-is-Open-Ephys"><strong>1. What is Open Ephys?</strong></a>
-</li>
-      <li><a href="About/faq.html#term-2.-Is-ONIX-hardware-available-for-purchase"><strong>2. Is ONIX hardware available for purchase?</strong></a>
-</li>
-      <li><a href="About/faq.html#term-3.-Where-do-I-get-help-when-using-the-system"><strong>3. Where do I get help when using the system?</strong></a>
-</li>
-      <li><a href="About/faq.html#term-4.-Can-I-use-headstage-64-with-a-silicon-probe-instead-of-tetrodes"><strong>4. Can I use headstage-64 with a silicon probe instead of tetrodes?</strong></a>
-</li>
-      <li><a href="About/faq.html#term-5.-Can-I-use-my-older-SPI-based-Intan-headstages-with-the-system"><strong>5. Can I use my older, SPI-based Intan headstages with the system?</strong></a>
-</li>
-      <li><a href="About/faq.html#term-6.-Why-is-there-no-Open-Ephys-GUI-plugin-for-ONIX-hardware"><strong>6. Why is there no Open Ephys GUI plugin for ONIX hardware?</strong></a>
-</li>
-      <li><a href="About/faq.html#term-7.-I-have-existing-acquisition-hardware.-Can-I-can-use-your-API-and-software-to-acquire-data-from-it"><strong>7. I have existing acquisition hardware. Can I can use your API and software to acquire data from it?</strong></a>
-</li>
-      <li><a href="About/faq.html#term-8.-I-have-existing-acquisition-software.-Can-I-integrate-support-for-ONIX-hardware-using-your-API"><strong>8. I have existing acquisition software. Can I integrate support for ONIX hardware using your API?</strong></a>
-</li>
-      <li><a href="About/faq.html#term-9.-Where-is-the-firmware-gateware-source-code-located"><strong>9. Where is the firmware/gateware source code located?</strong></a>
-</li>
       <li><a href="API%20Reference/liboni/onidefs.html#c.@ctx_opts_enum">[anonymous] (C enum)</a>, <a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum">[1]</a>
 </li>
       <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EBADALLOC">[anonymous].ONI_EBADALLOC (C macro)</a>
@@ -220,8 +204,6 @@
 </li>
       <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EINVALWRITESIZE">[anonymous].ONI_EINVALWRITESIZE (C macro)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_ENOREADDEV">[anonymous].ONI_ENOREADDEV (C macro)</a>
 </li>
       <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_ENOTWRITEDEV">[anonymous].ONI_ENOTWRITEDEV (C macro)</a>
@@ -232,6 +214,8 @@
 </li>
       <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EREADFAILURE">[anonymous].ONI_EREADFAILURE (C macro)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_EREADONLY">[anonymous].ONI_EREADONLY (C macro)</a>
 </li>
       <li><a href="API%20Reference/liboni/onidefs.html#c.@oni_error_enum.ONI_ERETRIG">[anonymous].ONI_ERETRIG (C macro)</a>
@@ -278,17 +262,35 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_MAKE_VERSION">CPPONI_MAKE_VERSION (C macro)</a>
+      <li><a href="faq.html#term-Can-I-use-headstage-64-with-a-silicon-probe-instead-of-tetrodes"><strong>Can I use headstage-64 with a silicon probe instead of tetrodes?</strong></a>
 </li>
-      <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_VERSION">CPPONI_VERSION (C macro)</a>
+      <li><a href="faq.html#term-Can-I-use-my-older-SPI-based-Intan-headstages-with-the-system"><strong>Can I use my older, SPI-based Intan headstages with the system?</strong></a>
+</li>
+      <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_MAKE_VERSION">CPPONI_MAKE_VERSION (C macro)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_VERSION">CPPONI_VERSION (C macro)</a>
+</li>
       <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_VERSION_MAJOR">CPPONI_VERSION_MAJOR (C macro)</a>
 </li>
       <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_VERSION_MINOR">CPPONI_VERSION_MINOR (C macro)</a>
 </li>
       <li><a href="API%20Reference/cpponi/oni.html#c.CPPONI_VERSION_PATCH">CPPONI_VERSION_PATCH (C macro)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="faq.html#term-I-have-existing-acquisition-hardware.-Can-I-can-use-your-API-and-software-to-acquire-data-from-it"><strong>I have existing acquisition hardware. Can I can use your API and software to acquire data from it?</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="faq.html#term-I-have-existing-acquisition-software.-Can-I-integrate-support-for-ONIX-hardware-using-your-API"><strong>I have existing acquisition software. Can I integrate support for ONIX hardware using your API?</strong></a>
+</li>
+      <li><a href="faq.html#term-Is-ONIX-hardware-available-for-purchase"><strong>Is ONIX hardware available for purchase?</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -507,6 +509,24 @@
       <li><a href="API%20Reference/liboni/onix.html#c.onix_device_id_t.ONIX_TS4231V2ARR">onix_device_id_t.ONIX_TS4231V2ARR (C macro)</a>
 </li>
       <li><a href="API%20Reference/liboni/onix.html#c.onix_device_str">onix_device_str (C function)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="faq.html#term-What-does-ONIX-stand-for"><strong>What does ONIX stand for?</strong></a>
+</li>
+      <li><a href="faq.html#term-What-is-Open-Ephys"><strong>What is Open Ephys?</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="faq.html#term-Where-do-I-get-help-when-using-the-system"><strong>Where do I get help when using the system?</strong></a>
+</li>
+      <li><a href="faq.html#term-Where-is-the-firmware-gateware-source-code-located"><strong>Where is the firmware/gateware source code located?</strong></a>
+</li>
+      <li><a href="faq.html#term-Why-is-there-no-Open-Ephys-GUI-plugin-for-ONIX-hardware"><strong>Why is there no Open Ephys GUI plugin for ONIX hardware?</strong></a>
 </li>
   </ul></td>
 </tr></table>

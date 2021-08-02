@@ -71,12 +71,6 @@
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../About/index.html">
-  About
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../Hardware%20Guide/index.html">
   Hardware Guide
  </a>
@@ -110,14 +104,20 @@
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/open-ephys/onix-docs" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
+            <span><i class="fab fa-github"></i></span>
             <label class="sr-only">GitHub</label>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://twitter.com/openephys" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
+            <span><i class="fab fa-twitter"></i></span>
             <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://open-ephys.slack.com" rel="noopener" target="_blank" title="Slack">
+            <span><i class="fab fa-slack"></i></span>
+            <label class="sr-only">Slack</label>
           </a>
         </li>
       </ul>
@@ -252,7 +252,7 @@ processing library that has trouble dealing with asynchronous data streams.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Have a look at the <a class="reference external" href="https://open-ephys.github.io/gui-docs/User-Manual/Before-you-begin.html">Open Ephys GUI documentation</a>
-for some history on the GUI’s design.</p>
+for information on the GUI’s design.</p>
 </div>
 <p>This is fine when the data being processed is synchronized ephys and auxiliary
 data. However, by design, ONIX hardware makes no such guarantees about the
@@ -268,17 +268,17 @@ reason, we have dedicated the majority of our development effort toward the
 </div>
 <div class="section" id="using-the-open-ephys-gui-for-onix-data-visualization">
 <h2>Using the Open Ephys GUI for ONIX Data Visualization<a class="headerlink" href="#using-the-open-ephys-gui-for-onix-data-visualization" title="Permalink to this headline">¶</a></h2>
-<p>There are currently some areas where the Bonsai Editor <strong>doesn’t shine</strong>. One
-of the most glaring is its primitive ephys visualization capabilities. Bonsai
-provides advanced access to GPU visualization capabilities, but this has to be
-manually configured and can be a hurdle for those that just want to see if they
-have their probe in the right spot. In the future, we aim to change this
-situation, and eventually provide first-class native ephys visualization
-capabilities right in the Bonsai Editor.</p>
+<p>There are currently some areas where the Bonsai Editor doesn’t shine, at least
+out of the box. One of the most glaring is its primitive built-in ephys
+visualization capabilities. Bonsai provides advanced access to GPU
+visualization capabilities, but this has to be manually configured and can be a
+hurdle for those that just want to see if they have their probe in the right
+spot. In the future, we aim to change this situation, and eventually provide
+first-class native ephys visualization capabilities right in the Bonsai Editor.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you want to help improve Bonsai’s Ephys visualization capabilites,
-<a class="reference internal" href="../../About/support.html#support"><span class="std std-ref">get in touch</span></a>.</p>
+<a class="reference internal" href="../../support.html#support"><span class="std std-ref">get in touch</span></a>.</p>
 </div>
 <p>In the meantime, for the practicing electrophysiologist, the Open Ephys GUI
 provides superior plug-and-play ephys visualization and audio streaming

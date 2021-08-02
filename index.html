@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ONIX: Open Neuro Interface X &#8212; ONIX Docs 0.0.0 documentation</title>
+    <title>&lt;no title&gt; &#8212; ONIX Docs 0.0.0 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -36,7 +36,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="About" href="About/index.html" />
+    <link rel="next" title="Hardware Guide" href="Hardware%20Guide/index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -71,12 +71,6 @@
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="About/index.html">
-  About
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="Hardware%20Guide/index.html">
   Hardware Guide
  </a>
@@ -110,14 +104,20 @@
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/open-ephys/onix-docs" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
+            <span><i class="fab fa-github"></i></span>
             <label class="sr-only">GitHub</label>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://twitter.com/openephys" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
+            <span><i class="fab fa-twitter"></i></span>
             <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://open-ephys.slack.com" rel="noopener" target="_blank" title="Slack">
+            <span><i class="fab fa-slack"></i></span>
+            <label class="sr-only">Slack</label>
           </a>
         </li>
       </ul>
@@ -137,11 +137,15 @@
             <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <div class="bd-toc-item active">
-    
-  </div>
-</nav>
+</form><div class="card d-none d-md-block mt-4">
+    <div class="card-body">
+        <ul class="list-group list-group-flush list-unstyled quicklinks">
+            <li><a href=https://open-ephys.org><i class="fas fa-home fa-fw"></i> Open Ephys</a></li>
+            <li><a href="faq.html"><i class="fas fa-question-circle fa-fw"></i> FAQ</a></li>
+            <li><a href="support.html"><i class="fas fa-address-card fa-fw"></i> Contact</a></li>
+        </ul>
+    </div>
+</div>
             </div>
             
           
@@ -160,76 +164,45 @@
               
               <div>
                 
-  <div class="section" id="onix-open-neuro-interface-x">
-<h1>ONIX: Open Neuro Interface X<a class="headerlink" href="#onix-open-neuro-interface-x" title="Permalink to this headline">¶</a></h1>
-<p><strong>Date</strong>: Jul 26, 2021</p>
-<p><strong>Useful Links</strong>: <a class="reference external" href="https://open-ephys.org/">Open Ephys</a> | <a class="reference external" href="https://open-ephys.slack.com/">Slack Channel</a> | <a class="reference external" href="https://groups.google.com/g/open-ephys">Mailing List</a> | <a class="reference internal" href="About/faq.html#faq"><span class="std std-ref">FAQ</span></a></p>
-<img alt="_images/onix-hw-summary.jpg" class="img-fluid" src="_images/onix-hw-summary.jpg" />
-<p>This site provides documentation for ONIX (Open Neuro Interface X), the
-second-generation <a class="reference external" href="https://open-ephys.org/">Open Ephys</a> acquisition system.
-ONIX is a collection of <a class="reference external" href="https://github.com/open-ephys/ONI">Open Neuro Interface</a>-compliant tools for performing
-neuroscience experiments with freely moving animals. ONIX is the successor to
-original Open Ephys <a class="reference external" href="https://open-ephys.org/acq-board">Acquisition System</a>
-and significantly expands on its scope, performance, and compatibility with
-other open-source tools. Here you can find</p>
-<ul class="simple">
-<li><p>Technical information on ONIX hardware, programming interfaces, and software
-integration</p></li>
-<li><p>Hardware and Software Manuals</p></li>
-<li><p>Tutorials</p></li>
-<li><p>ONIX-specific knowledge and hacks</p></li>
-</ul>
-<p>For general information on Ephys techniques, have a look at the <a class="reference external" href="https://open-ephys.atlassian.net/wiki/spaces/OEW/overview?mode=global">Open Ephys
-Wiki</a></p>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex">
-            <div class="card text-center intro-card shadow">
-            <img src="_static/onix_logo.svg" class="card-img-top" alt="about ONIX action icon" height="120">
-            <div class="card-body flex-fill">
-                <h5 class="card-title">About</h5>
-                <p class="card-text">New to ONIX? Start here for basic information, FAQs, etc.</p><div class="custom-button docutils container">
-<p><a class="reference internal" href="About/support.html#support"><span class="std std-ref">Go to the about pages</span></a></p>
+  <img src="_static/onix_logo.svg"
+    width="280px"
+    alt="Paris"
+    class="title-logo"><div class="figure align-default">
+<img alt="_images/onix-hw-summary.jpg" class="with-border" src="_images/onix-hw-summary.jpg" />
 </div>
+<p>This site provides documentation for <a class="reference internal" href="_images/onix_logo.svg"><img alt="onix_image" height="19" src="_images/onix_logo.svg" /></a>, the second-generation <a class="reference external" href="https://open-ephys.org/">Open
+Ephys</a> acquisition system. ONIX is a collection of
+<a class="reference external" href="https://github.com/open-ephys/ONI">Open Neuro Interface</a>-compliant hardware
+and software for performing neuroscience experiments with freely moving
+animals. It is the successor to the original <a class="reference external" href="https://open-ephys.org">Open Ephys</a> <a class="reference external" href="https://open-ephys.org/acq-board">Acquisition System</a> and significantly expands on its scope,
+performance, and compatibility with other tools.</p>
+<br>
+<div class="card-columns">
+    <a class="reference internal" href="Hardware%20Guide/index.html#hardware-guide"><span class="std std-ref custom-card">
+    <div class="card text-center intro-card">
+        <img src="_static/noun_pcb.svg" class="card-img-top hover-zoom" alt="hardware user guide" height="100">
+        <div class="card-body flex-fill">
+            <h5 class="card-title">Hardware Guide</h5>
+            <p class="card-text">Learn about ONIX hardware.</p>
+        </div>
     </div>
+    <a class="reference internal" href="API%20Reference/index.html#api-ref"><span class="std std-ref custom-card">
+    <div class="card text-center intro-card ">
+        <img src="_static/noun_books.svg" class="card-img-top" alt="onix api references" height="100">
+        <div class="card-body flex-fill">
+            <h5 class="card-title">API Reference</h5>
+            <p class="card-text">Learn how to use the API to write your own software.</p>
+        </div>
     </div>
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex">
-    <div class="card text-center intro-card shadow">
-    <img src="_static/noun_pcb.svg" class="card-img-top" alt="hardware user guide action icon" height="120">
-    <div class="card-body flex-fill">
-        <h5 class="card-title">Hardware Guide</h5>
-        <p class="card-text">In-depth information about ONIX hardware components.</p><div class="custom-button docutils container">
-<p><a class="reference internal" href="Hardware%20Guide/index.html#hardware-guide"><span class="std std-ref">Go to the hardware guide</span></a></p>
-</div>
-    </div>
-    </div>
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex">
-    <div class="card text-center intro-card shadow">
-    <img src="_static/noun_books.svg" class="card-img-top" alt="onix api references" height="120">
-    <div class="card-body flex-fill">
-        <h5 class="card-title">API Reference</h5>
-        <p class="card-text">Learn how to use the API to create your own software.</p><div class="custom-button docutils container">
-<p><a class="reference internal" href="API%20Reference/index.html#api-ref"><span class="std std-ref">Go to the API reference</span></a></p>
-</div>
-    </div>
-    </div>
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex">
-    <div class="card text-center intro-card shadow">
-    <img src="_static/noun_macbook.svg" class="card-img-top" alt="onix software guide" height="120">
-    <div class="card-body flex-fill">
-        <h5 class="card-title">Software Guide</h5>
-        <p class="card-text">Learn about software for acquiring  data from ONIX hardware.</p><div class="custom-button docutils container">
-<p><a class="reference internal" href="Software%20Guide/index.html#software"><span class="std std-ref">Go to the software guide</span></a></p>
-</div>
-            </div>
-            </div>
+    <a class="reference internal" href="Software%20Guide/index.html#software"><span class="std std-ref custom-card">
+    <div class="card text-center intro-card">
+        <img src="_static/noun_macbook.svg" class="card-img-top" alt="onix software guide" height="100">
+        <div class="card-body flex-fill">
+            <h5 class="card-title">Software Guide</h5>
+            <p class="card-text">Learn about software for acquiring from ONIX hardware.</p>
         </div>
     </div>
 </div><div class="toctree-wrapper compound">
-</div>
 </div>
 
     <script type="text/javascript">
@@ -244,7 +217,7 @@ Wiki</a></p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='right-next' id="next-link" href="About/index.html" title="next page">About</a>
+    <a class='right-next' id="next-link" href="Hardware%20Guide/index.html" title="next page"> Hardware Guide</a>
 
               </div>
               
