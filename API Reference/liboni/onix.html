@@ -22,11 +22,13 @@
       
 
     
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -345,8 +347,8 @@ the scope of the ONI API specification. This file is not needed to use the API
 <div class="section" id="maximum-device-id">
 <h2>Maximum Device ID<a class="headerlink" href="#maximum-device-id" title="Permalink to this headline">¶</a></h2>
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.MAXDEVID">
-<span class="sig-name descname"><span class="n"><span class="pre">MAXDEVID</span></span></span><a class="headerlink" href="#c.MAXDEVID" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.MAXDEVID">
+<code class="sig-name descname"><span class="pre">MAXDEVID</span></code><a class="headerlink" href="#c.MAXDEVID" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">99999</span></code>)
 Maximum reserved <a class="reference internal" href="#c.onix_device_id_t" title="onix_device_id_t"><code class="xref c c-enum docutils literal notranslate"><span class="pre">onix_device_id_t</span></code></a> the ONIX project for compile time
 compatibility detection. This value is equivalent to
@@ -378,186 +380,186 @@ background by other, higher order devices in the list (e.g.
 <code class="xref c c-macro docutils literal notranslate"><span class="pre">ONIX_FMCANALOG1R3</span></code>).</p>
 </div>
 <dl class="c enum">
-<dt class="sig sig-object c" id="c.onix_device_id_t">
-<span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">onix_device_id_t</span></span></span><a class="headerlink" href="#c.onix_device_id_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t">
+<em class="property"><span class="pre">enum</span> </em><code class="sig-name descname"><span class="pre">onix_device_id_t</span></code><a class="headerlink" href="#c.onix_device_id_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_NULL">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_NULL</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_NULL" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_NULL">
+<code class="sig-name descname"><span class="pre">ONIX_NULL</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_NULL" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">0</span></code>)
 Placeholder device</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_INFO">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_INFO</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_INFO" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_INFO">
+<code class="sig-name descname"><span class="pre">ONIX_INFO</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_INFO" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">1</span></code>)
 Virtual device that provides status and error information</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_RHD2132">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_RHD2132</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_RHD2132" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_RHD2132">
+<code class="sig-name descname"><span class="pre">ONIX_RHD2132</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_RHD2132" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">2</span></code>)
 Intan RHD2132 bioamplifier</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_RHD2164">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_RHD2164</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_RHD2164" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_RHD2164">
+<code class="sig-name descname"><span class="pre">ONIX_RHD2164</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_RHD2164" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">3</span></code>)
 Intan RHD2162 bioamplifier</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_ESTIM">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_ESTIM</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_ESTIM" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_ESTIM">
+<code class="sig-name descname"><span class="pre">ONIX_ESTIM</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_ESTIM" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">4</span></code>)
 Electrical stimulation subcircuit</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_OSTIM">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_OSTIM</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_OSTIM" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_OSTIM">
+<code class="sig-name descname"><span class="pre">ONIX_OSTIM</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_OSTIM" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">5</span></code>)
 Optical stimulation subcircuit</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_TS4231">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_TS4231</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_TS4231" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_TS4231">
+<code class="sig-name descname"><span class="pre">ONIX_TS4231</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_TS4231" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">6</span></code>)
 Triad semiconductor TS421 optical to digital converter</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_DINPUT32">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_DINPUT32</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_DINPUT32" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_DINPUT32">
+<code class="sig-name descname"><span class="pre">ONIX_DINPUT32</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_DINPUT32" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">7</span></code>)
 32-bit digital input port</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_DOUTPUT32">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_DOUTPUT32</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_DOUTPUT32" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_DOUTPUT32">
+<code class="sig-name descname"><span class="pre">ONIX_DOUTPUT32</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_DOUTPUT32" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">8</span></code>)
 32-bit digital output port</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_BNO055">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_BNO055</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_BNO055" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_BNO055">
+<code class="sig-name descname"><span class="pre">ONIX_BNO055</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_BNO055" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">9</span></code>)
 BNO055 9-DOF IMU</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_TEST0">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_TEST0</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_TEST0" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_TEST0">
+<code class="sig-name descname"><span class="pre">ONIX_TEST0</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_TEST0" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">10</span></code>)
 A test device used for debugging</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_NEUROPIX1R0">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_NEUROPIX1R0</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_NEUROPIX1R0" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_NEUROPIX1R0">
+<code class="sig-name descname"><span class="pre">ONIX_NEUROPIX1R0</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_NEUROPIX1R0" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">11</span></code>)
 Neuropixels 1.0</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_HEARTBEAT">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_HEARTBEAT</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_HEARTBEAT" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_HEARTBEAT">
+<code class="sig-name descname"><span class="pre">ONIX_HEARTBEAT</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_HEARTBEAT" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">12</span></code>)
 Host heartbeat</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_AD51X2">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_AD51X2</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_AD51X2" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_AD51X2">
+<code class="sig-name descname"><span class="pre">ONIX_AD51X2</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_AD51X2" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">13</span></code>)
 AD51X2 digital potentiometer</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_FMCVCTRL">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_FMCVCTRL</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCVCTRL" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_FMCVCTRL">
+<code class="sig-name descname"><span class="pre">ONIX_FMCVCTRL</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCVCTRL" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">14</span></code>)
 Open Ephys FMC Host Board rev. 1.3 link voltage control subcircuit</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_AD7617">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_AD7617</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_AD7617" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_AD7617">
+<code class="sig-name descname"><span class="pre">ONIX_AD7617</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_AD7617" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">15</span></code>)
 AD7617 ADC/DAS</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_AD576X">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_AD576X</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_AD576X" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_AD576X">
+<code class="sig-name descname"><span class="pre">ONIX_AD576X</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_AD576X" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">16</span></code>)
 AD576X DAC</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_TESTREG0">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_TESTREG0</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_TESTREG0" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_TESTREG0">
+<code class="sig-name descname"><span class="pre">ONIX_TESTREG0</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_TESTREG0" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">17</span></code>)
 A test device used for testing remote register programming</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_BREAKDIG1R3">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_BREAKDIG1R3</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_BREAKDIG1R3" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_BREAKDIG1R3">
+<code class="sig-name descname"><span class="pre">ONIX_BREAKDIG1R3</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_BREAKDIG1R3" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">18</span></code>)
 Open Ephys Breakout Board rev. 1.3 digital and user IO</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_FMCCLKIN1R3">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_FMCCLKIN1R3</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCCLKIN1R3" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_FMCCLKIN1R3">
+<code class="sig-name descname"><span class="pre">ONIX_FMCCLKIN1R3</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCCLKIN1R3" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">19</span></code>)
 Open Ephys FMC Host Board rev. 1.3 clock input subcircuit</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_FMCCLKOUT1R3">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_FMCCLKOUT1R3</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCCLKOUT1R3" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_FMCCLKOUT1R3">
+<code class="sig-name descname"><span class="pre">ONIX_FMCCLKOUT1R3</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCCLKOUT1R3" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">20</span></code>)
 Open Ephys FMC Host Board rev. 1.3 clock output subcircuit</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_TS4231V2ARR">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_TS4231V2ARR</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_TS4231V2ARR" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_TS4231V2ARR">
+<code class="sig-name descname"><span class="pre">ONIX_TS4231V2ARR</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_TS4231V2ARR" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">21</span></code>)
 Triad semiconductor TS421 optical to digital converter array targeting V2 base-stations</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_FMCANALOG1R3">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_FMCANALOG1R3</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCANALOG1R3" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_FMCANALOG1R3">
+<code class="sig-name descname"><span class="pre">ONIX_FMCANALOG1R3</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCANALOG1R3" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">22</span></code>)
 Open Ephys FMC Host Board rev. 1.3 analog IO subcircuit</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_FMCLINKCTRL">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_FMCLINKCTRL</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCLINKCTRL" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_FMCLINKCTRL">
+<code class="sig-name descname"><span class="pre">ONIX_FMCLINKCTRL</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCLINKCTRL" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">23</span></code>)
 Open Ephys FMC Host Board coaxial headstage link control circuit</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_DS90UB9RAW">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_DS90UB9RAW</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_DS90UB9RAW" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_DS90UB9RAW">
+<code class="sig-name descname"><span class="pre">ONIX_DS90UB9RAW</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_DS90UB9RAW" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">24</span></code>)
 Raw DS90UB9x deserializer</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_MAXDEVICEID">
-<span class="sig-name descname"><span class="n"><span class="pre">ONIX_MAXDEVICEID</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_MAXDEVICEID" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_id_t.ONIX_MAXDEVICEID">
+<code class="sig-name descname"><span class="pre">ONIX_MAXDEVICEID</span></code><a class="headerlink" href="#c.onix_device_id_t.ONIX_MAXDEVICEID" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>(<a class="reference internal" href="#c.MAXDEVID" title="MAXDEVID"><code class="xref c c-macro docutils literal notranslate"><span class="pre">MAXDEVID</span></code></a>)
 Final reserved device ID. Always on bottom</p>
 </dd></dl>
@@ -568,8 +570,8 @@ Final reserved device ID. Always on bottom</p>
 <div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <dl class="c function">
-<dt class="sig sig-object c" id="c.onix_device_str">
-<span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onix_device_str</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">dev_id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.onix_device_str" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.onix_device_str">
+<em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">onix_device_str</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">dev_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.onix_device_str" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns a human-readable description from a given <a class="reference internal" href="#c.onix_device_id_t" title="onix_device_id_t"><code class="xref c c-enum docutils literal notranslate"><span class="pre">onix_device_id_t</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -624,7 +626,7 @@ be “Unknown device” if the device is not a member of
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
 </p>
     </div>
     

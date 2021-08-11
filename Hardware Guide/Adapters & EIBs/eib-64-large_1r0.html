@@ -22,11 +22,13 @@
       
 
     
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -142,11 +144,28 @@
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Datasheets/index.html">
-   Device Datasheets
+  <a class="reference internal" href="../Concepts/index.html">
+   Hardware Concepts
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Concepts/oni.html">
+     ONI vs. ONIX
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Datasheets/index.html">
+   Device Datasheets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -227,8 +246,8 @@
   <a class="reference internal" href="../PCIe%20Host/index.html">
    PCIe Host
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -259,8 +278,8 @@
   <a class="reference internal" href="../Breakout%20Board/index.html">
    Breakout Board
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -281,8 +300,8 @@
   <a class="reference internal" href="../Headstages/index.html">
    Headstages
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -302,14 +321,26 @@
      Coaxial Headstage Commutators
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Headstages/headstage-64.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Headstages/headstage-64/index.html">
      Headstage-64
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Headstages/headstage-64/test-board-64.html">
+       Test Board for Headstage-64
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Headstages/headstage-neuropix.html">
-     headstage-neuropix1
+     Neuropixels-1.0 Headstage
     </a>
    </li>
   </ul>
@@ -318,8 +349,8 @@
   <a class="reference internal" href="../Miniscopes/index.html">
    Miniscopes
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -340,8 +371,8 @@
   <a class="reference internal" href="index.html">
    Adapters &amp; EIBs
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -445,7 +476,7 @@
 <span id="eib-64-large-1r0"></span><h1>eib-64-large v1.0<a class="headerlink" href="#eib-64-large-v1-0" title="Permalink to this headline">¶</a></h1>
 <p><strong>eib-64-large v1.0</strong> is a 64-channel electrode interface board (EIB) with
 electrical and optical stimulation. Designed for large animal (e.g. rat)
-tetrode electrophysiology and is compatible with <a class="reference internal" href="../Headstages/headstage-64.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> and is
+tetrode electrophysiology and is compatible with <a class="reference internal" href="../Headstages/headstage-64/index.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> and is
 designed to be used with the rat variant of the <a class="reference external" href="https://open-ephys.org/shuttledrive">shuttle-drive</a>.</p>
 <div class="section" id="bill-of-materials">
 <h2>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h2>
@@ -499,7 +530,7 @@ Usage instructions are provided in the <a class="reference external" href="https
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
 </p>
     </div>
     

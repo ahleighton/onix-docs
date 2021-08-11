@@ -22,11 +22,13 @@
       
 
     
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -142,11 +144,28 @@
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Datasheets/index.html">
-   Device Datasheets
+  <a class="reference internal" href="../Concepts/index.html">
+   Hardware Concepts
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Concepts/oni.html">
+     ONI vs. ONIX
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Datasheets/index.html">
+   Device Datasheets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -227,8 +246,8 @@
   <a class="reference internal" href="../PCIe%20Host/index.html">
    PCIe Host
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -259,8 +278,8 @@
   <a class="reference internal" href="../Breakout%20Board/index.html">
    Breakout Board
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -281,8 +300,8 @@
   <a class="reference internal" href="index.html">
    Headstages
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -302,14 +321,26 @@
      Coaxial Headstage Commutators
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="headstage-64.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="headstage-64/index.html">
      Headstage-64
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="headstage-64/test-board-64.html">
+       Test Board for Headstage-64
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="headstage-neuropix.html">
-     headstage-neuropix1
+     Neuropixels-1.0 Headstage
     </a>
    </li>
   </ul>
@@ -318,8 +349,8 @@
   <a class="reference internal" href="../Miniscopes/index.html">
    Miniscopes
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -340,8 +371,8 @@
   <a class="reference internal" href="../Adapters%20%26%20EIBs/index.html">
    Adapters &amp; EIBs
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -473,8 +504,8 @@ flexible. We generally use cables that are 150-300 μm in diameter.</p>
 headstage tethers</p>
 </div>
 <p>ONIX headstages use an FPGA to control peripheral devices and combine their
-data streams prior to serialization. For instance, <a class="reference internal" href="headstage-64.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> and
-<a class="reference internal" href="headstage-neuropix.html#headstage-neuropix1"><span class="std std-ref">headstage-neuropix1</span></a> use an <a class="reference external" href="https://www.intel.com/content/www/us/en/products/programmable/fpga/max-10.html">Intel MAX10 FPGA</a>.
+data streams prior to serialization. For instance, <a class="reference internal" href="headstage-64/index.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> and
+<a class="reference internal" href="headstage-neuropix.html#headstage-neuropix1"><span class="std std-ref">Neuropixels-1.0 Headstage</span></a> use an <a class="reference external" href="https://www.intel.com/content/www/us/en/products/programmable/fpga/max-10.html">Intel MAX10 FPGA</a>.
 The exact FPGA is not important because every ONI-compliant headstage is uses
 very similar gateware (FPGA-based firmware) that performs three major functions</p>
 <ol class="arabic simple">
@@ -505,7 +536,7 @@ headstage. Care must be taken to make sure this voltage is appropriate.</p>
 <p>Do not exceed the maximaum voltage at the coaxial input to the
 headstage. Make sure you make this measurement at the headstage to account for
 a potential voltage drop in the tether. Exceeding this voltage can permanently
-damage some headstages (<a class="reference internal" href="headstage-64.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> in particular because it
+damage some headstages (<a class="reference internal" href="headstage-64/index.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> in particular because it
 lacks an overvoltage lockout circuit)</p>
 </div>
 <p>Further, if a long and thin coaxial tether is used, the DC resistivity of the
@@ -523,8 +554,8 @@ host boards have this ability (e.g. see <a class="reference internal" href="../P
 <p>The <a class="reference external" href="https://www.ti.com/product/DS90UB933-Q1">DS90UB933</a>/<a class="reference external" href="https://www.ti.com/product/DS90UB934-Q1">DS90UB934</a> are a coaxial SERDES pair used on
 several ONIX headstages and host modules:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="headstage-64.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> (DS90UB933 Serilizer)</p></li>
-<li><p><a class="reference internal" href="headstage-neuropix.html#headstage-neuropix1"><span class="std std-ref">headstage-neuropix1</span></a> (DS90UB933 Serilizer)</p></li>
+<li><p><a class="reference internal" href="headstage-64/index.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> (DS90UB933 Serilizer)</p></li>
+<li><p><a class="reference internal" href="headstage-neuropix.html#headstage-neuropix1"><span class="std std-ref">Neuropixels-1.0 Headstage</span></a> (DS90UB933 Serilizer)</p></li>
 <li><p><a class="reference internal" href="../PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a> (DS90UB934 Deserilizer)</p></li>
 </ul>
 <p>along with the UCLA Miniscope and its derivatives. This section describes how this
@@ -854,7 +885,7 @@ head: {
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
 </p>
     </div>
     

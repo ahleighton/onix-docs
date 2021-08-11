@@ -22,11 +22,13 @@
       
 
     
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -331,24 +333,24 @@
 <span id="api-ref"></span><h1><a class="reference internal" href="../_images/noun_books.svg"><img alt="api_image" height="60" src="../_images/noun_books.svg" /></a> API Reference<a class="headerlink" href="#api-image-api-reference" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>ONIX APIs are high-performance software interfaces for host computer
-interaction with ONIX hardware. ONIX API implementations are compliant with the
-<a class="reference external" href="https://github.com/open-ephys/ONI">Open Neuro Interface Specification</a>.
-These APIs are simple and have minimal external dependencies. Therefore, they
-are aimed at the creation of higher level language bindings and/or integration
+<p>The ONIX API, <a class="reference internal" href="liboni/index.html#liboni"><span class="std std-ref">liboni</span></a>, is a high-performance software interface for
+interaction with ONIX, and other ONI-compliant, hardware. The API is compliant
+with the <a class="reference external" href="https://github.com/open-ephys/ONI">Open Neuro Interface Specification</a>. It has minimal external dependencies and
+is aimed at the creation of higher level language bindings and/or integration
 into existing acquisition software.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="liboni/index.html#liboni"><span class="std std-ref">liboni</span></a> is an ANSI-C implementation of the <a class="reference external" href="https://github.com/jonnew/ONI">ONI API Specificaiton</a> It contains functions for configuring
+<li><p><a class="reference internal" href="liboni/index.html#liboni"><span class="std std-ref">liboni</span></a> is an ANSI-C implementation of the <a class="reference external" href="https://github.com/jonnew/ONI">ONI API Specificaiton</a>. It contains functions for configuring
 hardware, streaming data to and from hardware, and controlling hardware
 during operation.</p></li>
-<li><p><a class="reference internal" href="cpponi/index.html#cpponi"><span class="std std-ref">cpponi</span></a> are C++ bindings for <a class="reference internal" href="liboni/index.html#liboni"><span class="std std-ref">liboni</span></a>.</p></li>
-<li><p><a class="reference internal" href="clroni/index.html#clroni"><span class="std std-ref">clroni</span></a> are CLR/.NET bindings for <a class="reference internal" href="liboni/index.html#liboni"><span class="std std-ref">liboni</span></a>.</p></li>
-<li><p><a class="reference internal" href="drivers/index.html#drivers"><span class="std std-ref">Hardware Driver Translators</span></a> are device drivers that can be used with ONIX APIs to control
-hardware.</p></li>
+<li><p><a class="reference internal" href="cpponi/index.html#cpponi"><span class="std std-ref">cpponi</span></a> is C++ bindings for <a class="reference internal" href="liboni/index.html#liboni"><span class="std std-ref">liboni</span></a>.</p></li>
+<li><p><a class="reference internal" href="clroni/index.html#clroni"><span class="std std-ref">clroni</span></a> is CLR/.NET bindings for <a class="reference internal" href="liboni/index.html#liboni"><span class="std std-ref">liboni</span></a>.</p></li>
+<li><p><a class="reference internal" href="drivers/index.html#drivers"><span class="std std-ref">Hardware Driver Translators</span></a> describes device drivers that can be used with ONIX APIs to
+control hardware.</p></li>
 </ul>
 <div class="section" id="source-code">
 <h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
-<p>The API source code is available here: <a class="reference external" href="https://github.com/jonnew/liboni">https://github.com/jonnew/liboni</a>.</p>
+<p>The API (and bindings) source code is available here:
+<a class="reference external" href="https://github.com/jonnew/liboni">https://github.com/jonnew/liboni</a>.</p>
 </div>
 </div>
 
@@ -388,7 +390,7 @@ hardware.</p></li>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
 </p>
     </div>
     

@@ -22,11 +22,13 @@
       
 
     
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -354,26 +356,26 @@
 <h2>Version<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="https://semver.org/">https://semver.org/</a> for a complete explanation of these macro definitions.</p>
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.CPPONI_VERSION_MAJOR">
-<span class="sig-name descname"><span class="n"><span class="pre">CPPONI_VERSION_MAJOR</span></span></span><a class="headerlink" href="#c.CPPONI_VERSION_MAJOR" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.CPPONI_VERSION_MAJOR">
+<code class="sig-name descname"><span class="pre">CPPONI_VERSION_MAJOR</span></code><a class="headerlink" href="#c.CPPONI_VERSION_MAJOR" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>MAJOR version for incompatible API changes</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.CPPONI_VERSION_MINOR">
-<span class="sig-name descname"><span class="n"><span class="pre">CPPONI_VERSION_MINOR</span></span></span><a class="headerlink" href="#c.CPPONI_VERSION_MINOR" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.CPPONI_VERSION_MINOR">
+<code class="sig-name descname"><span class="pre">CPPONI_VERSION_MINOR</span></code><a class="headerlink" href="#c.CPPONI_VERSION_MINOR" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>MINOR version for added functionality that is backwards compatible</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.CPPONI_VERSION_PATCH">
-<span class="sig-name descname"><span class="n"><span class="pre">CPPONI_VERSION_PATCH</span></span></span><a class="headerlink" href="#c.CPPONI_VERSION_PATCH" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.CPPONI_VERSION_PATCH">
+<code class="sig-name descname"><span class="pre">CPPONI_VERSION_PATCH</span></code><a class="headerlink" href="#c.CPPONI_VERSION_PATCH" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>PATCH version for backwards compatible bug fixes</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.CPPONI_MAKE_VERSION">
-<span class="sig-name descname"><span class="n"><span class="pre">CPPONI_MAKE_VERSION</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">major</span></span>, <span class="n"><span class="pre">minor</span></span>, <span class="n"><span class="pre">patch</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.CPPONI_MAKE_VERSION" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.CPPONI_MAKE_VERSION">
+<code class="sig-name descname"><span class="pre">CPPONI_MAKE_VERSION</span></code><span class="sig-paren">(</span><em><span class="pre">major</span></em>, <em><span class="pre">minor</span></em>, <em><span class="pre">patch</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.CPPONI_MAKE_VERSION" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Defined as</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">MAJOR</span> <span class="o">*</span> <span class="mi">10000</span> <span class="o">+</span> <span class="n">MINOR</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">PATCH</span>
 </pre></div>
@@ -382,8 +384,8 @@
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.CPPONI_VERSION">
-<span class="sig-name descname"><span class="n"><span class="pre">CPPONI_VERSION</span></span></span><a class="headerlink" href="#c.CPPONI_VERSION" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.CPPONI_VERSION">
+<code class="sig-name descname"><span class="pre">CPPONI_VERSION</span></code><a class="headerlink" href="#c.CPPONI_VERSION" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Compile-time API version. Defined as</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">CPPONI_MAKE_VERSION</span><span class="p">(</span><span class="n">CPPONI_VERSION_MAJOR</span> <span class="n">CPPONI_VERSION_MINOR</span><span class="p">,</span> <span class="n">CPPONI_VERSION_PATCH</span><span class="p">).</span>
 </pre></div>
@@ -391,8 +393,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni7versionEv">
-<span id="_CPPv3N3oni7versionEv"></span><span id="_CPPv2N3oni7versionEv"></span><span id="oni::version"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni7versionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni7versionEv">
+<span id="_CPPv3N3oni7versionEv"></span><span id="_CPPv2N3oni7versionEv"></span><span id="oni::version"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">tuple</span><span class="pre">&lt;</span><span class="pre">int</span><span class="pre">,</span> <span class="pre">int</span><span class="pre">,</span> <span class="pre">int</span><span class="pre">&gt;</span> <code class="sig-prename descclassname"><span class="pre">oni</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">version</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni7versionEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the <code class="docutils literal notranslate"><span class="pre">cpponi</span></code> version.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -405,14 +407,14 @@
 <div class="section" id="errors">
 <h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni7error_tE">
-<span id="_CPPv3N3oni3oni7error_tE"></span><span id="_CPPv2N3oni3oni7error_tE"></span><span id="oni::oni::error_t"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">error_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">exception</span></span><a class="headerlink" href="#_CPPv4N3oni3oni7error_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni3oni7error_tE">
+<span id="_CPPv3N3oni3oni7error_tE"></span><span id="_CPPv2N3oni3oni7error_tE"></span><span id="oni::oni::error_t"></span><em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">oni</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">error_t</span></code> <span class="pre">:</span> <em class="property"><span class="pre">public</span></em> <span class="pre">std</span><span class="pre">::</span><span class="pre">exception</span><a class="headerlink" href="#_CPPv4N3oni3oni7error_tE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><a class="reference external" href="https://en.cppreference.com/w/cpp/error/exception">std::exception</a>
 wrapper for liboni <a class="reference internal" href="../liboni/onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a>. These exceptions are thrown
 from cpponi in lieu of C return codes.</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni7error_t7error_tEi">
-<span id="_CPPv3N3oni3oni7error_t7error_tEi"></span><span id="_CPPv2N3oni3oni7error_t7error_tEi"></span><span id="oni::oni::error_t::error_t__i"></span><span class="sig-name descname"><span class="n"><span class="pre">error_t</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">errnum</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni7error_t7error_tEi" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni3oni7error_t7error_tEi">
+<span id="_CPPv3N3oni3oni7error_t7error_tEi"></span><span id="_CPPv2N3oni3oni7error_t7error_tEi"></span><span id="oni::oni::error_t::error_t__i"></span><code class="sig-name descname"><span class="pre">error_t</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">errnum</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni7error_t7error_tEi" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructor. Not generally needed for cpponi use since
 <a class="reference internal" href="#_CPPv4N3oni3oni7error_tE" title="oni::oni::error_t"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">oni::error_t</span></code></a> is constructed and thrown from within cpponi and
 only need to be handled by the host application.</p>
@@ -425,8 +427,8 @@ return value of an Underlying liboni function.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni7error_t4whatEv">
-<span id="_CPPv3NK3oni3oni7error_t4whatEv"></span><span id="_CPPv2NK3oni3oni7error_t4whatEv"></span><span id="oni::oni::error_t::whatC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">what</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni7error_t4whatEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK3oni3oni7error_t4whatEv">
+<span id="_CPPv3NK3oni3oni7error_t4whatEv"></span><span id="_CPPv2NK3oni3oni7error_t4whatEv"></span><span id="oni::oni::error_t::whatC"></span><em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">what</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em> <em class="property"><span class="pre">noexcept</span></em> <em class="property"><span class="pre">override</span></em><a class="headerlink" href="#_CPPv4NK3oni3oni7error_t4whatEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Wrapper for <a class="reference internal" href="../liboni/oni.html#c.oni_error_str" title="oni_error_str"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_error_str()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -441,14 +443,14 @@ return value of an Underlying liboni function.</p>
 <div class="section" id="devices">
 <h2>Devices<a class="headerlink" href="#devices" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp type">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni8device_tE">
-<span id="_CPPv3N3oni3oni8device_tE"></span><span id="_CPPv2N3oni3oni8device_tE"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">device_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">oni_device_t</span></span><a class="headerlink" href="#_CPPv4N3oni3oni8device_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni3oni8device_tE">
+<span id="_CPPv3N3oni3oni8device_tE"></span><span id="_CPPv2N3oni3oni8device_tE"></span><em class="property"><span class="pre">using</span> </em><code class="sig-prename descclassname"><span class="pre">oni</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">device_t</span></code> <span class="pre">=</span> <span class="pre">oni_device_t</span><a class="headerlink" href="#_CPPv4N3oni3oni8device_tE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Type alias for <a class="reference internal" href="../liboni/oni.html#c.oni_device_t" title="oni_device_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_device_t</span></code></a>.</p>
 </dd></dl>
 
 <dl class="cpp type">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni12device_map_tE">
-<span id="_CPPv3N3oni3oni12device_map_tE"></span><span id="_CPPv2N3oni3oni12device_map_tE"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">device_map_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">oni_dev_idx_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3oni3oni8device_tE" title="oni::oni::device_t"><span class="n"><span class="pre">device_t</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N3oni3oni12device_map_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni3oni12device_map_tE">
+<span id="_CPPv3N3oni3oni12device_map_tE"></span><span id="_CPPv2N3oni3oni12device_map_tE"></span><em class="property"><span class="pre">using</span> </em><code class="sig-prename descclassname"><span class="pre">oni</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">device_map_t</span></code> <span class="pre">=</span> <span class="pre">std</span><span class="pre">::</span><span class="pre">unordered_map</span><span class="pre">&lt;</span><span class="pre">oni_dev_idx_t</span><span class="pre">,</span> <span class="pre">oni</span><span class="pre">::</span><a class="reference internal" href="#_CPPv4N3oni3oni8device_tE" title="oni::oni::device_t"><span class="pre">device_t</span></a><span class="pre">&gt;</span><a class="headerlink" href="#_CPPv4N3oni3oni12device_map_tE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><a class="reference internal" href="#_CPPv4N3oni3oni8device_tE" title="oni::oni::device_t"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">oni::device_t</span></code></a> table type. <a class="reference external" href="https://en.cppreference.com/w/cpp/container/unordered_map">std::unordered_map</a> replaces
 a minimal internal hash table used in liboni and allows fast device lookup based on
 device index.</p>
@@ -458,15 +460,15 @@ device index.</p>
 <div class="section" id="frames">
 <h2>Frames<a class="headerlink" href="#frames" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni7frame_tE">
-<span id="_CPPv3N3oni3oni7frame_tE"></span><span id="_CPPv2N3oni3oni7frame_tE"></span><span id="oni::oni::frame_t"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">frame_t</span></span></span><a class="headerlink" href="#_CPPv4N3oni3oni7frame_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni3oni7frame_tE">
+<span id="_CPPv3N3oni3oni7frame_tE"></span><span id="_CPPv2N3oni3oni7frame_tE"></span><span id="oni::oni::frame_t"></span><em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">oni</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">frame_t</span></code><a class="headerlink" href="#_CPPv4N3oni3oni7frame_tE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><a class="reference external" href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>-capable wrapper
 for <a class="reference internal" href="../liboni/oni.html#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a>. User programs generally should not call the
 frame_t constructor directly but deal with frames created by a
 <a class="reference internal" href="#_CPPv4N3oni3oni9context_tE" title="oni::oni::context_t"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">oni::context_t</span></code></a></p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni7frame_t4timeEv">
-<span id="_CPPv3NK3oni3oni7frame_t4timeEv"></span><span id="_CPPv2NK3oni3oni7frame_t4timeEv"></span><span id="oni::oni::frame_t::timeC"></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">time</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni7frame_t4timeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK3oni3oni7frame_t4timeEv">
+<span id="_CPPv3NK3oni3oni7frame_t4timeEv"></span><span id="_CPPv2NK3oni3oni7frame_t4timeEv"></span><span id="oni::oni::frame_t::timeC"></span><span class="pre">uint64_t</span> <code class="sig-name descname"><span class="pre">time</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK3oni3oni7frame_t4timeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Underlying <a class="reference internal" href="../liboni/oni.html#c.oni_frame_t.time" title="oni_frame_t.time"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t.time</span></code></a></p>
@@ -475,8 +477,8 @@ frame_t constructor directly but deal with frames created by a
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni7frame_t12device_indexEv">
-<span id="_CPPv3NK3oni3oni7frame_t12device_indexEv"></span><span id="_CPPv2NK3oni3oni7frame_t12device_indexEv"></span><span id="oni::oni::frame_t::device_indexC"></span><span class="n"><span class="pre">oni_dev_idx_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">device_index</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni7frame_t12device_indexEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK3oni3oni7frame_t12device_indexEv">
+<span id="_CPPv3NK3oni3oni7frame_t12device_indexEv"></span><span id="_CPPv2NK3oni3oni7frame_t12device_indexEv"></span><span id="oni::oni::frame_t::device_indexC"></span><span class="pre">oni_dev_idx_t</span> <code class="sig-name descname"><span class="pre">device_index</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK3oni3oni7frame_t12device_indexEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Underlying <a class="reference internal" href="../liboni/oni.html#c.oni_frame_t.dev_idx" title="oni_frame_t.dev_idx"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t.dev_idx</span></code></a></p>
@@ -485,10 +487,10 @@ frame_t constructor directly but deal with frames created by a
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv">
-<span id="_CPPv3I0ENK3oni3oni7frame_t4dataEv"></span><span id="_CPPv2I0ENK3oni3oni7frame_t4dataEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">raw_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv" title="oni::oni::frame_t::data::raw_t"><span class="n"><span class="pre">raw_t</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv" title="Permalink to this definition">¶</a><br /></dt>
-<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni7frame_t4dataEv">
-<span id="_CPPv3NK3oni3oni7frame_t4dataEv"></span><span id="_CPPv2NK3oni3oni7frame_t4dataEv"></span><span id="oni::oni::frame_t::dataC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv" title="oni::oni::frame_t::data::raw_t"><span class="n"><span class="pre">raw_t</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni7frame_t4dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv">
+<span id="_CPPv3I0ENK3oni3oni7frame_t4dataEv"></span><span id="_CPPv2I0ENK3oni3oni7frame_t4dataEv"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">raw_t</span></code><span class="pre">&gt;</span><br /><span class="pre">std</span><span class="pre">::</span><span class="pre">span</span><span class="pre">&lt;</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv" title="oni::oni::frame_t::data::raw_t"><span class="pre">raw_t</span></a><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK3oni3oni7frame_t4dataEv">
+<span id="_CPPv3NK3oni3oni7frame_t4dataEv"></span><span id="_CPPv2NK3oni3oni7frame_t4dataEv"></span><span id="oni::oni::frame_t::dataC"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">vector</span><span class="pre">&lt;</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv" title="oni::oni::frame_t::data::raw_t"><span class="pre">raw_t</span></a><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK3oni3oni7frame_t4dataEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A type-cast view (or copy if stdlib &lt; C++20) of the underlying
@@ -509,14 +511,14 @@ function reverts to returning a <a class="reference external" href="https://en.c
 <div class="section" id="context">
 <h2>Context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_tE">
-<span id="_CPPv3N3oni3oni9context_tE"></span><span id="_CPPv2N3oni3oni9context_tE"></span><span id="oni::oni::context_t"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">context_t</span></span></span><a class="headerlink" href="#_CPPv4N3oni3oni9context_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni3oni9context_tE">
+<span id="_CPPv3N3oni3oni9context_tE"></span><span id="_CPPv2N3oni3oni9context_tE"></span><span id="oni::oni::context_t"></span><em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">oni</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">context_t</span></code><a class="headerlink" href="#_CPPv4N3oni3oni9context_tE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><a class="reference external" href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>-capable wrapper
 for a liboni <a class="reference internal" href="../liboni/oni.html#oni-h-acquisition-context"><span class="std std-ref">Acquisition Context</span></a> as well as the majority of
 functions within the liboni API.</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_t9context_tEPKci">
-<span id="_CPPv3N3oni3oni9context_t9context_tEPKci"></span><span id="_CPPv2N3oni3oni9context_t9context_tEPKci"></span><span id="oni::oni::context_t::context_t__cCP.i"></span><span class="sig-name descname"><span class="n"><span class="pre">context_t</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">driver_name</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">host_idx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni9context_t9context_tEPKci" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni3oni9context_t9context_tEPKci">
+<span id="_CPPv3N3oni3oni9context_t9context_tEPKci"></span><span id="_CPPv2N3oni3oni9context_t9context_tEPKci"></span><span id="oni::oni::context_t::context_t__cCP.i"></span><code class="sig-name descname"><span class="pre">context_t</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">driver_name</span></em>, <span class="pre">int</span> <em><span class="pre">host_idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni9context_t9context_tEPKci" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructor. Creates and initializes the underlying
 <a class="reference internal" href="../liboni/oni.html#oni-h-acquisition-context"><span class="std std-ref">Acquisition Context</span></a>.</p>
 <dl class="field-list simple">
@@ -550,8 +552,8 @@ context cannot be allocated.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_t9context_tERR9context_t">
-<span id="_CPPv3N3oni3oni9context_t9context_tERR9context_t"></span><span id="_CPPv2N3oni3oni9context_t9context_tERR9context_t"></span><span id="oni::oni::context_t::context_t__context_tRR"></span><span class="sig-name descname"><span class="n"><span class="pre">context_t</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3oni3oni9context_t9context_tERR9context_t" title="oni::oni::context_t::context_t"><span class="n"><span class="pre">context_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3oni3oni9context_t9context_tERR9context_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni3oni9context_t9context_tERR9context_t">
+<span id="_CPPv3N3oni3oni9context_t9context_tERR9context_t"></span><span id="_CPPv2N3oni3oni9context_t9context_tERR9context_t"></span><span id="oni::oni::context_t::context_t__context_tRR"></span><code class="sig-name descname"><span class="pre">context_t</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3oni3oni9context_t9context_tERR9context_t" title="oni::oni::context_t::context_t"><span class="pre">context_t</span></a> <span class="pre">&amp;</span><span class="pre">&amp;</span><em><span class="pre">rhs</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4N3oni3oni9context_t9context_tERR9context_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Move constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -561,8 +563,8 @@ context cannot be allocated.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_taSERR9context_t">
-<span id="_CPPv3N3oni3oni9context_taSERR9context_t"></span><span id="_CPPv2N3oni3oni9context_taSERR9context_t"></span><span id="oni::oni::context_t::assign-operator__context_tRR"></span><a class="reference internal" href="#_CPPv4N3oni3oni9context_tE" title="oni::oni::context_t"><span class="n"><span class="pre">context_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3oni3oni9context_tE" title="oni::oni::context_t"><span class="n"><span class="pre">context_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3oni3oni9context_taSERR9context_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni3oni9context_taSERR9context_t">
+<span id="_CPPv3N3oni3oni9context_taSERR9context_t"></span><span id="_CPPv2N3oni3oni9context_taSERR9context_t"></span><span id="oni::oni::context_t::assign-operator__context_tRR"></span><a class="reference internal" href="#_CPPv4N3oni3oni9context_tE" title="oni::oni::context_t"><span class="pre">context_t</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">operator=</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3oni3oni9context_tE" title="oni::oni::context_t"><span class="pre">context_t</span></a> <span class="pre">&amp;</span><span class="pre">&amp;</span><em><span class="pre">rhs</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4N3oni3oni9context_taSERR9context_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Move assignment operator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -572,8 +574,8 @@ context cannot be allocated.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti">
-<span id="_CPPv3I0ENK3oni3oni9context_t7get_optEi"></span><span id="_CPPv2I0ENK3oni3oni9context_t7get_optEi"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">opt_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><a class="reference internal" href="#_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti" title="oni::oni::context_t::get_opt::opt_t"><span class="n"><span class="pre">opt_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_opt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">option</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti">
+<span id="_CPPv3I0ENK3oni3oni9context_t7get_optEi"></span><span id="_CPPv2I0ENK3oni3oni9context_t7get_optEi"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">opt_t</span></code><span class="pre">&gt;</span><br /><a class="reference internal" href="#_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti" title="oni::oni::context_t::get_opt::opt_t"><span class="pre">opt_t</span></a> <code class="sig-name descname"><span class="pre">get_opt</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">option</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get a context option.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -594,8 +596,8 @@ description for valid opt_t types.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I0EN3oni3oni9context_t7set_optEviRK5opt_t">
-<span id="_CPPv3I0EN3oni3oni9context_t7set_optEiRK5opt_t"></span><span id="_CPPv2I0EN3oni3oni9context_t7set_optEiRK5opt_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">opt_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_opt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">option</span></span>, <a class="reference internal" href="#_CPPv4I0EN3oni3oni9context_t7set_optEviRK5opt_t" title="oni::oni::context_t::set_opt::opt_t"><span class="n"><span class="pre">opt_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">optval</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3oni3oni9context_t7set_optEviRK5opt_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I0EN3oni3oni9context_t7set_optEviRK5opt_t">
+<span id="_CPPv3I0EN3oni3oni9context_t7set_optEiRK5opt_t"></span><span id="_CPPv2I0EN3oni3oni9context_t7set_optEiRK5opt_t"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">opt_t</span></code><span class="pre">&gt;</span><br /><span class="pre">void</span> <code class="sig-name descname"><span class="pre">set_opt</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">option</span></em>, <a class="reference internal" href="#_CPPv4I0EN3oni3oni9context_t7set_optEviRK5opt_t" title="oni::oni::context_t::set_opt::opt_t"><span class="pre">opt_t</span></a> <em class="property"><span class="pre">const</span></em> <span class="pre">&amp;</span><em><span class="pre">optval</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3oni3oni9context_t7set_optEviRK5opt_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set a context option.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -607,8 +609,8 @@ description for valid opt_t types.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I0ENK3oni3oni9context_t14get_driver_optE5opt_ti">
-<span id="_CPPv3I0ENK3oni3oni9context_t14get_driver_optEi"></span><span id="_CPPv2I0ENK3oni3oni9context_t14get_driver_optEi"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">opt_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><a class="reference internal" href="#_CPPv4I0ENK3oni3oni9context_t14get_driver_optE5opt_ti" title="oni::oni::context_t::get_driver_opt::opt_t"><span class="n"><span class="pre">opt_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_driver_opt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">option</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK3oni3oni9context_t14get_driver_optE5opt_ti" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I0ENK3oni3oni9context_t14get_driver_optE5opt_ti">
+<span id="_CPPv3I0ENK3oni3oni9context_t14get_driver_optEi"></span><span id="_CPPv2I0ENK3oni3oni9context_t14get_driver_optEi"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">opt_t</span></code><span class="pre">&gt;</span><br /><a class="reference internal" href="#_CPPv4I0ENK3oni3oni9context_t14get_driver_optE5opt_ti" title="oni::oni::context_t::get_driver_opt::opt_t"><span class="pre">opt_t</span></a> <code class="sig-name descname"><span class="pre">get_driver_opt</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">option</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4I0ENK3oni3oni9context_t14get_driver_optE5opt_ti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get a driver option.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -620,8 +622,8 @@ description for valid opt_t types.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I0EN3oni3oni9context_t14set_driver_optEviRK5opt_t">
-<span id="_CPPv3I0EN3oni3oni9context_t14set_driver_optEiRK5opt_t"></span><span id="_CPPv2I0EN3oni3oni9context_t14set_driver_optEiRK5opt_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">opt_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_driver_opt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">option</span></span>, <a class="reference internal" href="#_CPPv4I0EN3oni3oni9context_t14set_driver_optEviRK5opt_t" title="oni::oni::context_t::set_driver_opt::opt_t"><span class="n"><span class="pre">opt_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">optval</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3oni3oni9context_t14set_driver_optEviRK5opt_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I0EN3oni3oni9context_t14set_driver_optEviRK5opt_t">
+<span id="_CPPv3I0EN3oni3oni9context_t14set_driver_optEiRK5opt_t"></span><span id="_CPPv2I0EN3oni3oni9context_t14set_driver_optEiRK5opt_t"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">opt_t</span></code><span class="pre">&gt;</span><br /><span class="pre">void</span> <code class="sig-name descname"><span class="pre">set_driver_opt</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">option</span></em>, <a class="reference internal" href="#_CPPv4I0EN3oni3oni9context_t14set_driver_optEviRK5opt_t" title="oni::oni::context_t::set_driver_opt::opt_t"><span class="pre">opt_t</span></a> <em class="property"><span class="pre">const</span></em> <span class="pre">&amp;</span><em><span class="pre">optval</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3oni3oni9context_t14set_driver_optEviRK5opt_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set a driver option.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -633,8 +635,8 @@ description for valid opt_t types.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t">
-<span id="_CPPv3N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t"></span><span id="_CPPv2N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t"></span><span id="oni::oni::context_t::read_reg__oni_dev_idx_t.oni_reg_addr_t"></span><span class="n"><span class="pre">oni_reg_val_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_reg</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">oni_dev_idx_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dev_idx</span></span>, <span class="n"><span class="pre">oni_reg_addr_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t">
+<span id="_CPPv3N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t"></span><span id="_CPPv2N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t"></span><span id="oni::oni::context_t::read_reg__oni_dev_idx_t.oni_reg_addr_t"></span><span class="pre">oni_reg_val_t</span> <code class="sig-name descname"><span class="pre">read_reg</span></code><span class="sig-paren">(</span><span class="pre">oni_dev_idx_t</span> <em><span class="pre">dev_idx</span></em>, <span class="pre">oni_reg_addr_t</span> <em><span class="pre">addr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Read a device register.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -646,8 +648,8 @@ description for valid opt_t types.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t">
-<span id="_CPPv3N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t"></span><span id="_CPPv2N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t"></span><span id="oni::oni::context_t::write_reg__oni_dev_idx_t.oni_reg_addr_t.oni_reg_val_t"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write_reg</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">oni_dev_idx_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dev_idx</span></span>, <span class="n"><span class="pre">oni_reg_addr_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span>, <span class="n"><span class="pre">oni_reg_val_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t">
+<span id="_CPPv3N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t"></span><span id="_CPPv2N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t"></span><span id="oni::oni::context_t::write_reg__oni_dev_idx_t.oni_reg_addr_t.oni_reg_val_t"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">write_reg</span></code><span class="sig-paren">(</span><span class="pre">oni_dev_idx_t</span> <em><span class="pre">dev_idx</span></em>, <span class="pre">oni_reg_addr_t</span> <em><span class="pre">addr</span></em>, <span class="pre">oni_reg_val_t</span> <em><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Write a device register.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -659,8 +661,8 @@ description for valid opt_t types.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni9context_t10device_mapEv">
-<span id="_CPPv3NK3oni3oni9context_t10device_mapEv"></span><span id="_CPPv2NK3oni3oni9context_t10device_mapEv"></span><span id="oni::oni::context_t::device_mapC"></span><a class="reference internal" href="#_CPPv4N3oni3oni12device_map_tE" title="oni::oni::device_map_t"><span class="n"><span class="pre">device_map_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">device_map</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni9context_t10device_mapEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK3oni3oni9context_t10device_mapEv">
+<span id="_CPPv3NK3oni3oni9context_t10device_mapEv"></span><span id="_CPPv2NK3oni3oni9context_t10device_mapEv"></span><span id="oni::oni::context_t::device_mapC"></span><a class="reference internal" href="#_CPPv4N3oni3oni12device_map_tE" title="oni::oni::device_map_t"><span class="pre">device_map_t</span></a> <code class="sig-name descname"><span class="pre">device_map</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4NK3oni3oni9context_t10device_mapEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Convenience function to examine the context’s current device table as a
 <a class="reference external" href="https://en.cppreference.com/w/cpp/container/unordered_map">std::unordered_map</a> from
 table index to device instance. The raw device table can still be
@@ -681,8 +683,8 @@ acquired using <a class="reference internal" href="#_CPPv4I0ENK3oni3oni9context_
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni9context_t10read_frameEv">
-<span id="_CPPv3NK3oni3oni9context_t10read_frameEv"></span><span id="_CPPv2NK3oni3oni9context_t10read_frameEv"></span><span id="oni::oni::context_t::read_frameC"></span><a class="reference internal" href="#_CPPv4N3oni3oni7frame_tE" title="oni::oni::frame_t"><span class="n"><span class="pre">frame_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_frame</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni9context_t10read_frameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK3oni3oni9context_t10read_frameEv">
+<span id="_CPPv3NK3oni3oni9context_t10read_frameEv"></span><span id="_CPPv2NK3oni3oni9context_t10read_frameEv"></span><span id="oni::oni::context_t::read_frameC"></span><a class="reference internal" href="#_CPPv4N3oni3oni7frame_tE" title="oni::oni::frame_t"><span class="pre">frame_t</span></a> <code class="sig-name descname"><span class="pre">read_frame</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK3oni3oni9context_t10read_frameEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Read a <a class="reference internal" href="#_CPPv4N3oni3oni7frame_tE" title="oni::oni::frame_t"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">frame_t</span></code></a> data from the acquisition context.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -705,8 +707,8 @@ prevent overflow of the acquisition hardware buffer.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I0ENK3oni3oni9context_t5writeEv6size_tNSt4spanIK6data_tEE">
-<span id="_CPPv3I0ENK3oni3oni9context_t5writeE6size_tNSt4spanIK6data_tEE"></span><span id="_CPPv2I0ENK3oni3oni9context_t5writeE6size_tNSt4spanIK6data_tEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dev_idx</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0ENK3oni3oni9context_t5writeEv6size_tNSt4spanIK6data_tEE" title="oni::oni::context_t::write::data_t"><span class="n"><span class="pre">data_t</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK3oni3oni9context_t5writeEv6size_tNSt4spanIK6data_tEE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I0ENK3oni3oni9context_t5writeEv6size_tNSt4spanIK6data_tEE">
+<span id="_CPPv3I0ENK3oni3oni9context_t5writeE6size_tNSt4spanIK6data_tEE"></span><span id="_CPPv2I0ENK3oni3oni9context_t5writeE6size_tNSt4spanIK6data_tEE"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">data_t</span></code><span class="pre">&gt;</span><br /><span class="pre">void</span> <code class="sig-name descname"><span class="pre">write</span></code><span class="sig-paren">(</span><span class="pre">size_t</span> <em><span class="pre">dev_idx</span></em>, <span class="pre">std</span><span class="pre">::</span><span class="pre">span</span><span class="pre">&lt;</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I0ENK3oni3oni9context_t5writeEv6size_tNSt4spanIK6data_tEE" title="oni::oni::context_t::write::data_t"><span class="pre">data_t</span></a><span class="pre">&gt;</span> <em><span class="pre">data</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4I0ENK3oni3oni9context_t5writeEv6size_tNSt4spanIK6data_tEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Write data to a device. This function wraps an entire
 <a class="reference internal" href="../liboni/oni.html#c.oni_create_frame" title="oni_create_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_create_frame()</span></code></a>, <a class="reference internal" href="../liboni/oni.html#c.oni_write_frame" title="oni_write_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_write_frame()</span></code></a>, and
 <a class="reference internal" href="../liboni/oni.html#c.oni_destroy_frame" title="oni_destroy_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_destroy_frame()</span></code></a> function call cycle.</p>
@@ -787,7 +789,7 @@ Otherwise, this function reverts to returning a <a class="reference external" hr
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
 </p>
     </div>
     
