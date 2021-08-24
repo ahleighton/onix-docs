@@ -216,11 +216,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="neuropixels-v1.html">
-     Neuropixels V1
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="estim-hs64.html">
      HS64 Electrical Stimulator
     </a>
@@ -233,6 +228,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="ts4231-v1-array.html">
      TS4231 Array for V1 Base Stations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="neuropixels-v1.html">
+     Neuropixels V1
     </a>
    </li>
    <li class="toctree-l2">
@@ -507,14 +507,14 @@ for a headstage to be used.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The maximum DC voltage that can be produced by this device far exceeds the
-absolute maximum ratings for most headstages. Although they typically will
+<p>The maximum DC voltage that can be produced by this device may exceed the
+absolute maximum ratings for some headstages. Although they typically will
 have some form input overvoltage protection, the user should be careful to
 keep the voltage within a functional range.</p>
 </div>
 </div>
 <div class="section" id="register-programming">
-<h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-fmc-link-control-reg"></span><h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Address</p></th>
@@ -554,9 +554,10 @@ keep the voltage within a functional range.</p>
 <td><p>DESPWR</p></td>
 <td><p>R/W</p></td>
 <td><p>Immediate</p></td>
-<td><p>0</p></td>
+<td><p>1</p></td>
 <td><p>None</p></td>
-<td><p>Set link deserializer PDB state, 0 = deserializer power off else on.  Does not affect port voltage!</p></td>
+<td><p>Set link deserializer PDB state, 0 = deserializer power off else on.
+Does not affect port voltage.</p></td>
 </tr>
 <tr class="row-odd"><td><p>0x03</p></td>
 <td><p>PORTVOLTAGE</p></td>
@@ -597,7 +598,7 @@ voltage will be applied after POR.</p></td>
 </table>
 </div>
 <div class="section" id="device-to-host-data-frames">
-<h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-fmc-link-control-d2h"></span><h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
 <p>Each frame transmitted to the host is structured as follows:</p>
 
 <div style="overflow-x:auto">

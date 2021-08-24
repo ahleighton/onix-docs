@@ -38,7 +38,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Neuropixels V1" href="neuropixels-v1.html" />
+    <link rel="next" title="HS64 Electrical Stimulator" href="estim-hs64.html" />
     <link rel="prev" title="BNO055" href="bno055.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -216,11 +216,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="neuropixels-v1.html">
-     Neuropixels V1
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="estim-hs64.html">
      HS64 Electrical Stimulator
     </a>
@@ -233,6 +228,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="ts4231-v1-array.html">
      TS4231 Array for V1 Base Stations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="neuropixels-v1.html">
+     Neuropixels V1
     </a>
    </li>
    <li class="toctree-l2">
@@ -511,7 +511,7 @@
 chip</a>.</p>
 </div>
 <div class="section" id="register-programming">
-<h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-rhd2164-reg"></span><h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="managed-registers">
 <h3>Managed Registers<a class="headerlink" href="#managed-registers" title="Permalink to this headline">¶</a></h3>
 <p>Managed register access is provided at offset 0x10000.</p>
@@ -751,7 +751,7 @@ rate which may be hard-coded. See hub documentation for details.</p>
 </div>
 </div>
 <div class="section" id="device-to-host-data-frames">
-<h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-rhd2164-d2h"></span><h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
 <p>Each frame transmitted to the host consists of a 64 ephys + 3 auxiliary channel
 round robbin sample:</p>
 
@@ -841,10 +841,10 @@ round robbin sample:</p>
 }
 </script>
 </div>
-<p>All voltages are usigned, 16-bit integers.</p>
+<p>All voltages are unsigned, 16-bit integers.</p>
 </div>
 <div class="section" id="host-to-device-data-frames">
-<h2>Host To Device Data Frames<a class="headerlink" href="#host-to-device-data-frames" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-rhd2164-h2d"></span><h2>Host To Device Data Frames<a class="headerlink" href="#host-to-device-data-frames" title="Permalink to this headline">¶</a></h2>
 <p>This device does not accept input frames. All write attempts will fail with an
 error.</p>
 </div>
@@ -863,7 +863,7 @@ error.</p>
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="bno055.html" title="previous page">BNO055</a>
-    <a class='right-next' id="next-link" href="neuropixels-v1.html" title="next page">Neuropixels V1</a>
+    <a class='right-next' id="next-link" href="estim-hs64.html" title="next page">HS64 Electrical Stimulator</a>
 
               </div>
               

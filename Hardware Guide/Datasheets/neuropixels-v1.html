@@ -38,8 +38,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="HS64 Electrical Stimulator" href="estim-hs64.html" />
-    <link rel="prev" title="RHD2164" href="rhd2164.html" />
+    <link rel="next" title="DS90UB9X Raw Device" href="ds90ub9x-raw.html" />
+    <link rel="prev" title="TS4231 Array for V1 Base Stations" href="ts4231-v1-array.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -215,11 +215,6 @@
      RHD2164
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Neuropixels V1
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="estim-hs64.html">
      HS64 Electrical Stimulator
@@ -233,6 +228,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="ts4231-v1-array.html">
      TS4231 Array for V1 Base Stations
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Neuropixels V1
     </a>
    </li>
    <li class="toctree-l2">
@@ -510,7 +510,7 @@
 <p>The <strong>Neuropixels V1 Device</strong> acquires data from <a class="reference external" href="https://www.neuropixels.org/">Neuropixels V1 probes</a>.</p>
 </div>
 <div class="section" id="register-programming">
-<h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-neuropixels-v1-reg"></span><h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="managed-registers">
 <h3>Managed Registers<a class="headerlink" href="#managed-registers" title="Permalink to this headline">¶</a></h3>
 <p>Managed register access is provided at offset 0x8000.</p>
@@ -713,7 +713,7 @@ available through IMEC.</p>
 </div>
 </div>
 <div class="section" id="device-to-host-data-frames">
-<h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-neuropixels-v1-d2h"></span><h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
 <p>Each frame transmitted to the host consists of a single Neuropixels V1 “Super
 Frame” containing all 384 AP channels and a single set of 32 LFP channels.
 Twelve of Super Frames are required to construct a single “Ultra Frame” which
@@ -843,8 +843,8 @@ error.</p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="rhd2164.html" title="previous page">RHD2164</a>
-    <a class='right-next' id="next-link" href="estim-hs64.html" title="next page">HS64 Electrical Stimulator</a>
+    <a class='left-prev' id="prev-link" href="ts4231-v1-array.html" title="previous page">TS4231 Array for V1 Base Stations</a>
+    <a class='right-next' id="next-link" href="ds90ub9x-raw.html" title="next page">DS90UB9X Raw Device</a>
 
               </div>
               

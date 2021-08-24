@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="HeartbeatDevice" href="HeartbeatDevice.html" />
-    <link rel="prev" title="Bonsai.ONIX Reference" href="index.html" />
+    <link rel="prev" title="Installation" href="Installation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -153,6 +153,11 @@
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Installation.html">
+     Installation
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      ONIContext
@@ -164,8 +169,38 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="AnalogIODevice.html">
+     AnalogIODevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="DigitalIODevice.html">
+     DigitalIODevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ClockOutput.html">
+     ClockOutputDevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="HeadstagePortControlDevice.html">
+     HeadstagePortControlDevice
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="BNO055Device.html">
      BNO055Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="RHD2164Device.html">
+     RHD2164Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="NeuropixelsV1.html">
+     NeuropixelsV1Device
     </a>
    </li>
   </ul>
@@ -208,19 +243,21 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inputs">
-   Inputs
+  <a class="reference internal nav-link" href="#purpose">
+   Purpose
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#outputs">
-   Outputs
+  <a class="reference internal nav-link" href="#configuration-gui">
+   Configuration GUI
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#configuration">
-   Configuration
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#settings-menu">
+     Settings Menu
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -252,46 +289,104 @@
                 
   <div class="section" id="onicontext">
 <span id="bonsai-onicontext"></span><h1>ONIContext<a class="headerlink" href="#onicontext" title="Permalink to this headline">¶</a></h1>
-<p>A Bonsai <em>Source</em> that manages the acquisition context and allows basic
+<p>A <a class="reference external" href="https://bonsai-rx.org/docs/editor/#toolbox">Bonsai source</a> that manages a
+<a class="reference internal" href="../../API%20Reference/liboni/oni.html#oni-h-acquisition-context"><span class="std std-ref">Acquisition Context</span></a> context and allows basic
 acquisition parameterization. There must be at least one of these in every
 workflow that uses ONIX hardware.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Outputs</dt>
+<dd class="field-even"><p>A single <code class="docutils literal notranslate"><span class="pre">ONIContextTask</span></code> followed by <a class="reference external" href="http://reactivex.io/documentation/operators/empty-never-throw.html">Never</a>.</p>
+</dd>
+</dl>
         <div class="bonsai-workflow-container">
     <div class="workflow-filler"></div>
     <div class="workflow-download"><img class="copy-img" src="../../_static/download.svg" onclick="getTextFromURL('../../_static/workflows/ONIContext.bonsai', true)" width=18px download/></div>
-    <div class="workflow-copy"><img class="copy-img" src="../../_static/copy.svg" onclick="getTextFromURL('../../_static/workflows/ONIContext.bonsai')" width=18px /></div>
+    <div class="workflow-copy"><img class="copy-img" src="../../_static/copy.svg" onclick="getTextFromURL('../../_static/bonsai/workflows/ONIContext.bonsai')" width=18px /></div>
     <div class="workflow-name"><b>ONIContext.bonsai</b></div>
-    <div class="workflow-image"><img src="../../_static/workflows/ONIContext.svg" alt="ONIContext" /></div>
-</div><div class="section" id="inputs">
-<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
-<p>None</p>
+    <div class="workflow-image"><img src="../../_static/bonsai/workflows/ONIContext.svg" alt="ONIContext" /></div>
+</div><div class="section" id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Bonsai.ONIX</span></code>’s design mirrors the that of the <a class="reference external" href="https://github.com/open-ephys/ONI">Open Neuro Interface
+specification</a>. Control of and
+acquisition from ONIX hardware is handled by a combination of two or more
+nodes: an <a class="reference internal" href="#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> and potentially many <strong>Device</strong> nodes which
+it manages (e.g. <a class="reference internal" href="HeartbeatDevice.html#bonsai-heartbeatdev"><span class="std std-ref">HeartbeatDevice</span></a>, <a class="reference internal" href="AnalogIODevice.html#bonsai-analogiodev"><span class="std std-ref">AnalogIODevice</span></a>, etc.). Some
+facts about the <a class="reference internal" href="#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> node is useful for understanding how
+to use it.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/bonsai-library-architecture.jpg"><img alt="../../_images/bonsai-library-architecture.jpg" src="../../_images/bonsai-library-architecture.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> is responsible for communicating with hardware and the informing
+devices, identified using their DeviceAddress, that they have new data.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="outputs">
-<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
-<p>A single <code class="docutils literal notranslate"><span class="pre">ONIContextTask</span></code> followed by <a class="reference external" href="http://reactivex.io/documentation/operators/empty-never-throw.html">Never</a>.</p>
+<ul class="simple">
+<li><p>An <a class="reference internal" href="#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> manages a global <strong>Device Table</strong>. When it is
+placed in a workflow, all device nodes will automatically have access to to
+this table without requiring an explicit connection in the workflow.</p></li>
+<li><p>When acquisition is started, the <a class="reference internal" href="#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> node will produce a
+single <code class="docutils literal notranslate"><span class="pre">ONIContextTask</span></code> and then nothing. This “task” runs in the background
+until the workflow is stopped.</p></li>
+<li><p>When the workflow is running, the <code class="docutils literal notranslate"><span class="pre">ONIContextTask</span></code> uses a dedicated thread
+to read from the host hardware. It then passes data into a blocking queue
+which is read by a second thread that is responsible for informing individual
+device nodes that they have new samples.</p></li>
+<li><p>Device nodes are essentially filters for the data stream produced by
+<a class="reference internal" href="#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a>. Device nodes will accept samples that match their
+<strong>DeviceAddress</strong>. This is why each Device node has an DeviceAddress
+parameter that unambiguously identifies them them in a Device Table.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Every Bonsai workflow must include at least a single
+<a class="reference internal" href="#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> which manages a single device table. If multiple
+pieces of host acquisition hardware (e.g. multiple <a class="reference internal" href="../../Hardware%20Guide/PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a>) are
+present in a single computer, then each will need its own
+<a class="reference internal" href="#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> to manage it.</p>
 </div>
-<div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">ONIContext</span></code> configuration is performed using a GUI provided in the
+</div>
+<div class="section" id="configuration-gui">
+<h2>Configuration GUI<a class="headerlink" href="#configuration-gui" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> configuration is performed using a GUI provided in the
 Bonsai.ONIX.Design library. It can be opened by double clicking on the
-<code class="docutils literal notranslate"><span class="pre">ONIContext</span></code> node if Bonsai.ONIX.Design has been installed.</p>
+<a class="reference internal" href="#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> node if Bonsai.ONIX.Design has been installed.</p>
 <img alt="../../_images/ONIContext_configuration.png" class="align-center" src="../../_images/ONIContext_configuration.png" />
 <p>This GUI gives access to basic ONI Context configuration such as</p>
+<ul class="simple">
+<li><p><strong>Driver</strong>: The device driver used to control the Host hardware.</p></li>
+<li><p><strong>Hardware Slot</strong>: The physical slot of the Host hardware in the computer.</p></li>
+<li><p><strong>Read Block Size</strong>: The number of bytes read per call to the kernel driver.
+Larger numbers will increase overall bandwidth and decrease response latency.</p></li>
+<li><p><strong>Write Block Size</strong>: The number of bytes pre-allocated to make output data
+frames with.</p></li>
+</ul>
+<p>as well as the complete device table. Devices within the table are available
+for configuration using the properties pane on the right side of the form.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Changes to device registers using the <a class="reference internal" href="#bonsai-onicontext"><span class="std std-ref">ONIContext</span></a> GUI will
+not be saved in the workflow file. To save device register values to file,
+device configuration must be performed using dedicated device nodes.</p>
+</div>
+<div class="section" id="settings-menu">
+<h3>Settings Menu<a class="headerlink" href="#settings-menu" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Settings</strong> drop down menu also provides several advanced hardware
+configuration options:</p>
 <ul>
-<li><p>Driver</p></li>
-<li><p>Hardware Slot</p></li>
-<li><p>Read Block Size</p></li>
-<li><p>Write Block Size</p></li>
-<li><p>ONIX-specific hub options such as access to raw deserializer data streams:</p>
+<li><p><strong>Settings ➞  Hubs…</strong> ONIX-specific hub options such as access
+to raw deserializer data streams:</p>
 <blockquote>
 <div><img alt="../../_images/ONIContext_hub-configuration.png" class="align-center" src="../../_images/ONIContext_hub-configuration.png" />
 </div></blockquote>
 </li>
+<li><p><strong>Settings ➞  Host Sync…</strong> Multi-host hardware sychronization configuration.</p>
+<blockquote>
+<div><img alt="../../_images/ONIContext_host-sync.png" class="align-center" src="../../_images/ONIContext_host-sync.png" />
+</div></blockquote>
+</li>
 </ul>
-<p>as well as the complete device table. Devices within the table are available
-for immediate configuration. Note that changes to device registers using the
-<code class="docutils literal notranslate"><span class="pre">ONIContext</span></code> GUI will not be saved in the workflow file. To save device
-register values to file, device configuration must be performed using dedicated
-device nodes.</p>
+</div>
 </div>
 </div>
 
@@ -307,7 +402,7 @@ device nodes.</p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Bonsai.ONIX Reference</a>
+    <a class='left-prev' id="prev-link" href="Installation.html" title="previous page">Installation</a>
     <a class='right-next' id="next-link" href="HeartbeatDevice.html" title="next page">HeartbeatDevice</a>
 
               </div>

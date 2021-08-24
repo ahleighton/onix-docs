@@ -216,11 +216,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Datasheets/neuropixels-v1.html">
-     Neuropixels V1
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../Datasheets/estim-hs64.html">
      HS64 Electrical Stimulator
     </a>
@@ -233,6 +228,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../Datasheets/ts4231-v1-array.html">
      TS4231 Array for V1 Base Stations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/neuropixels-v1.html">
+     Neuropixels V1
     </a>
    </li>
    <li class="toctree-l2">
@@ -440,6 +440,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-c-runtime">
+   Install C++ Runtime
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#install-device-driver">
    Install Device Driver
   </a>
@@ -499,12 +504,12 @@ adequate power to operate the host board.</p>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The RGB LED has three color states.</p>
-</div>
 <ul class="simple">
 <li><p>Blue: Ready to go.</p></li>
 <li><p>Yellow: Acquisition stopped.</p></li>
 <li><p>Pink: Acquisition running.</p></li>
 </ul>
+</div>
 </div></blockquote>
 </li>
 </ol>
@@ -574,6 +579,12 @@ computer</p>
 </div></blockquote>
 </li>
 </ol>
+</div>
+<div class="section" id="install-c-runtime">
+<h2>Install C++ Runtime<a class="headerlink" href="#install-c-runtime" title="Permalink to this headline">¶</a></h2>
+<p>Windows does not ship with a C++ runtime. Before using ONIX on windows, you
+will need to install <a class="reference external" href="https://aka.ms/vs/16/release/vc_redist.x64.exe">Microsoft Visual C++ Redistributable for Visual Studio
+2015, 2017 and 2019</a>.</p>
 </div>
 <div class="section" id="install-device-driver">
 <h2>Install Device Driver<a class="headerlink" href="#install-device-driver" title="Permalink to this headline">¶</a></h2>

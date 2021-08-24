@@ -216,11 +216,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="neuropixels-v1.html">
-     Neuropixels V1
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="estim-hs64.html">
      HS64 Electrical Stimulator
     </a>
@@ -233,6 +228,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="ts4231-v1-array.html">
      TS4231 Array for V1 Base Stations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="neuropixels-v1.html">
+     Neuropixels V1
     </a>
    </li>
    <li class="toctree-l2">
@@ -500,7 +500,7 @@ count. It is useful for generating keep-alive signal for various communication
 channels.</p>
 </div>
 <div class="section" id="register-programming">
-<h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-heartbeat-reg"></span><h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Address</p></th>
@@ -548,7 +548,7 @@ channels.</p>
 </table>
 </div>
 <div class="section" id="device-to-host-data-frames">
-<h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-heartbeat-d2h"></span><h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
 <p>Each frame transmitted to the host is structured as follows:</p>
 
 <div style="overflow-x:auto">
@@ -567,7 +567,7 @@ channels.</p>
 </div>
 </div>
 <div class="section" id="host-to-device-data-frames">
-<h2>Host To Device Data Frames<a class="headerlink" href="#host-to-device-data-frames" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-heartbeat-h2d"></span><h2>Host To Device Data Frames<a class="headerlink" href="#host-to-device-data-frames" title="Permalink to this headline">¶</a></h2>
 <p>This device does not accept input frames. All write attempts will fail with an
 error.</p>
 </div>

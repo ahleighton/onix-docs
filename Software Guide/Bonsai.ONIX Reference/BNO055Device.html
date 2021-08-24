@@ -38,8 +38,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Example Bonsai Workflows" href="../Bonsai.ONIX%20Examples/index.html" />
-    <link rel="prev" title="HeartbeatDevice" href="HeartbeatDevice.html" />
+    <link rel="next" title="RHD2164Device" href="RHD2164Device.html" />
+    <link rel="prev" title="HeadstagePortControlDevice" href="HeadstagePortControlDevice.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -154,6 +154,11 @@
   </label>
   <ul class="current">
    <li class="toctree-l2">
+    <a class="reference internal" href="Installation.html">
+     Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="ONIContext.html">
      ONIContext
     </a>
@@ -163,9 +168,39 @@
      HeartbeatDevice
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="AnalogIODevice.html">
+     AnalogIODevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="DigitalIODevice.html">
+     DigitalIODevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ClockOutput.html">
+     ClockOutputDevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="HeadstagePortControlDevice.html">
+     HeadstagePortControlDevice
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      BNO055Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="RHD2164Device.html">
+     RHD2164Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="NeuropixelsV1.html">
+     NeuropixelsV1Device
     </a>
    </li>
   </ul>
@@ -208,16 +243,6 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inputs">
-   Inputs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#outputs">
-   Outputs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#configuration">
    Configuration
   </a>
@@ -252,26 +277,30 @@
                 
   <div class="section" id="bno055device">
 <span id="bonsai-bno055dev"></span><h1>BNO055Device<a class="headerlink" href="#bno055device" title="Permalink to this headline">¶</a></h1>
-<p>A Bonsai <em>Source</em> that wraps a <a class="reference internal" href="../../Hardware%20Guide/Datasheets/bno055.html#onidatasheet-bno055"><span class="std std-ref">BNO055</span></a> device.</p>
+<p>A <a class="reference external" href="https://bonsai-rx.org/docs/editor/#toolbox">Bonsai source</a>  that wraps a
+<a class="reference internal" href="../../Hardware%20Guide/Datasheets/bno055.html#onidatasheet-bno055"><span class="std std-ref">BNO055</span></a> device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Outputs</dt>
+<dd class="field-even"><p>A single <code class="docutils literal notranslate"><span class="pre">BNO055DataFrame</span></code> that is produced periodically by
+hardware. This type is a wrapper around the <a class="reference internal" href="../../Hardware%20Guide/Datasheets/bno055.html#onidatasheet-bno055-d2h"><span class="std std-ref">Device To Host
+Data Frame</span></a> specified on the
+<a class="reference internal" href="../../Hardware%20Guide/Datasheets/bno055.html#onidatasheet-bno055"><span class="std std-ref">BNO055</span></a> device datasheet.</p>
+</dd>
+</dl>
         <div class="bonsai-workflow-container">
     <div class="workflow-filler"></div>
     <div class="workflow-download"><img class="copy-img" src="../../_static/download.svg" onclick="getTextFromURL('../../_static/workflows/BNO055.bonsai', true)" width=18px download/></div>
-    <div class="workflow-copy"><img class="copy-img" src="../../_static/copy.svg" onclick="getTextFromURL('../../_static/workflows/BNO055.bonsai')" width=18px /></div>
+    <div class="workflow-copy"><img class="copy-img" src="../../_static/copy.svg" onclick="getTextFromURL('../../_static/bonsai/workflows/BNO055.bonsai')" width=18px /></div>
     <div class="workflow-name"><b>BNO055.bonsai</b></div>
-    <div class="workflow-image"><img src="../../_static/workflows/BNO055.svg" alt="BNO055" /></div>
-</div><div class="section" id="inputs">
-<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
-<p>None</p>
-</div>
-<div class="section" id="outputs">
-<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
-<p>A single <code class="docutils literal notranslate"><span class="pre">BNO055DataFrame</span></code> that is produced periodically by hardware. This
-type is a wrapper around the <em>Device To Host Data Frame</em> specified on the
-<a class="reference internal" href="../../Hardware%20Guide/Datasheets/bno055.html#onidatasheet-bno055"><span class="std std-ref">BNO055</span></a> device datasheet.</p>
-</div>
-<div class="section" id="configuration">
+    <div class="workflow-image"><img src="../../_static/bonsai/workflows/BNO055.svg" alt="BNO055" /></div>
+</div><div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p>This device hard-codes all of the configuration required to operate with the following properties:</p>
+<p>Configuration is performed using the property pane which contains the following
+options. This device hard-codes all of the configuration required to operate
+with the following properties:</p>
 <ul class="simple">
 <li><p>100 Hz update rate</p></li>
 <li><p>Full on-chip sensor fusion (“NDOF” mode)</p></li>
@@ -307,8 +336,8 @@ type is a wrapper around the <em>Device To Host Data Frame</em> specified on the
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="HeartbeatDevice.html" title="previous page">HeartbeatDevice</a>
-    <a class='right-next' id="next-link" href="../Bonsai.ONIX%20Examples/index.html" title="next page">Example Bonsai Workflows</a>
+    <a class='left-prev' id="prev-link" href="HeadstagePortControlDevice.html" title="previous page">HeadstagePortControlDevice</a>
+    <a class='right-next' id="next-link" href="RHD2164Device.html" title="next page">RHD2164Device</a>
 
               </div>
               
