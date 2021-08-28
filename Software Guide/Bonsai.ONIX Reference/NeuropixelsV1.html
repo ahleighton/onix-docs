@@ -253,33 +253,33 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gui">
-     GUI
+    <a class="reference internal nav-link" href="#configuration-gui">
+     Configuration GUI
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uploading-imec-calibration-data">
-       Uploading IMEC Calibration Data
+      <a class="reference internal nav-link" href="#importing-imec-calibration-data">
+       Importing IMEC Calibration Data
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#selecting-electrodes">
-       Selecting Electrodes
+      <a class="reference internal nav-link" href="#configuring-the-probe">
+       Configuring the Probe
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#changing-probe-parameters">
-       Changing Probe Parameters
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uploading">
-       Uploading
+      <a class="reference internal nav-link" href="#uploading-to-the-probe">
+       Uploading to the Probe
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#saving-configurations">
        Saving Configurations
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loading-configurations">
+       Loading Configurations
       </a>
      </li>
     </ul>
@@ -347,7 +347,7 @@ dropped.</p></li>
 </div><div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>Configuration is performed using a combination of the property pane and a
-dedicated configuratoin GUI.</p>
+dedicated configuration GUI.</p>
 <div class="section" id="property-pane">
 <h3>Property Pane<a class="headerlink" href="#property-pane" title="Permalink to this headline">¶</a></h3>
 <p>Parameters available through the property pane are as follows:</p>
@@ -361,7 +361,7 @@ dedicated configuratoin GUI.</p>
 <tbody>
 <tr class="row-even"><td><p>EnableStream</p></td>
 <td><p>boolean</p></td>
-<td><p>The numbEnable the device data stream</p></td>
+<td><p>Enable the device data stream</p></td>
 </tr>
 <tr class="row-odd"><td><p>BlockSize</p></td>
 <td><p>integer</p></td>
@@ -378,41 +378,166 @@ for the probe to function properly.</p></td>
 </tr>
 <tr class="row-odd"><td><p>NueuropixelsV1Configuration</p></td>
 <td><p>N/A</p></td>
-<td><p>Editing this parameter will open the configuration GUI, just like
+<td><p>Editing this parameter will open the Configuration GUI, just like
 double clicking on the node.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="gui">
-<h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
-<p>The GUI is opened by double clicking on the NeuropixelsV1Device node when
-editing the workflow or clicking the ellipsis next to the
-<code class="docutils literal notranslate"><span class="pre">NueuropixelsV1Configuration</span></code> parameter option in the property pane.</p>
-<blockquote>
-<div><div class="figure align-left">
-<img alt="../../_images/neuropixelsv1_configuration-gui-callouts.png" src="../../_images/neuropixelsv1_configuration-gui-callouts.png" />
+<div class="section" id="configuration-gui">
+<h3>Configuration GUI<a class="headerlink" href="#configuration-gui" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Neuropixels 1.0 Configuration GUI</strong>, which is a part of the
+<code class="docutils literal notranslate"><span class="pre">Bonsai.ONIX.Design</span></code> library, is opened by double clicking on the
+NeuropixelsV1Device node when editing the workflow or clicking the ellipsis
+next to the <code class="docutils literal notranslate"><span class="pre">NueuropixelsV1Configuration</span></code> parameter option in the property
+pane.</p>
+<div class="figure align-left" id="id2">
+<img alt="The Neuropixels 1.0 configuration GUI." src="../../_images/neuropixelsv1_configuration-gui-callouts.png" />
+<p class="caption"><span class="caption-text">The Neuropixels 1.0 configuration GUI.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>The Neuropixels 1.0 configuration GUI.</p>
+<div class="section" id="importing-imec-calibration-data">
+<h4>Importing IMEC Calibration Data<a class="headerlink" href="#importing-imec-calibration-data" title="Permalink to this headline">¶</a></h4>
+<p>Neuropixels 1.0 probes are shipped with two calibration files that must be
+uploaded to the probe for proper operation. For example, the calibration files
+for probe 19051023592 are:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/4b973ca38bc8c21811c16db51a2a1eac/19051023592_ADCCalibration.csv"><code class="xref download docutils literal notranslate"><span class="pre">19051023592_ADCCalibration.csv</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/ff0fc23ddbcc028e5e3fd8ce63ccd80a/19051023592_gainCalValues.csv"><code class="xref download docutils literal notranslate"><span class="pre">19051023592_gainCalValues.csv</span></code></a></p></li>
+</ul>
+<p>The calibration files for your probe will have “19051023592” replaced with your
+probe’s serial number. These files contain parameters that are used to correct
+probe-specific ADC zero-crossing nonlinearities, set on-chip biases, and
+linearize individual electrode responses.  For a complete explanation of the
+content of these files, please consult the <a class="reference external" href="https://www.neuropixels.org/support">Neuropixels documentation site</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Failure to upload IMEC-provided calibration and gain correction
+files will result in data that is not standardized and therefore not
+comparable with other Neuropixels 1.0 recordings.</p>
+</div>
+<p>To load the IMEC calibration files for your probe, follow these steps:</p>
+<ol class="arabic">
+<li><p>Select <strong>Load Calibration</strong> from the <strong>File</strong> menu.</p>
+<blockquote>
+<div><img alt="Load IMEC calibration selected" class="align-left" src="../../_images/neuropixelsv1_load-calibration_cropped.png" />
 </div></blockquote>
+</li>
+<li><p>On the file selection dialog, navigate to the folder containing the
+calibration files with serial numbers matching the currently attached probe.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/neuropixelsv1_select-calibration_annotated.png"><img alt="Navigate to IMEC calibration files with matching serial numbers" class="align-left" src="../../_images/neuropixelsv1_select-calibration_annotated.png" style="width: 404.59999999999997px; height: 264.59999999999997px;" /></a>
+</div></blockquote>
+</li>
+<li><p>The <strong>Channels</strong> and <strong>ADCs</strong> tabs will now show proper calibration
+parameters.</p>
+<blockquote>
+<div><img alt="The ADC tab with the correct IMEC calibration parameters populated" class="align-left" src="../../_images/neuropixelsv1_adcs-tab.png" />
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="configuring-the-probe">
+<h4>Configuring the Probe<a class="headerlink" href="#configuring-the-probe" title="Permalink to this headline">¶</a></h4>
+<p>The easiest way to select active electrodes is by using the GUI on the
+<strong>Probe</strong> tab. This simple user interface lets you pan around the probe, zoom
+in and out, and set the properties of individual electrodes or groups of them.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mouse action</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Left click + drag</p></td>
+<td><p>Block select</p></td>
+</tr>
+<tr class="row-odd"><td><p>Middle click + drag</p></td>
+<td><p>Pan</p></td>
+</tr>
+<tr class="row-even"><td><p>Right click</p></td>
+<td><p>Open electrode configuration context menu</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scroll forward</p></td>
+<td><p>Zoom in</p></td>
+</tr>
+<tr class="row-even"><td><p>Scroll backward</p></td>
+<td><p>Zoom out</p></td>
+</tr>
+</tbody>
+</table>
+<p>Active electrodes are colored blue, inactive are white, and selected electrodes
+are orange. Groups of electrodes can be selected by left clicking and dragging.
+Once highlighted, their properties can be changed using right click to open the
+configuration context menu.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/neuropixelsv1_adjust-electrode-parameters-with-gui.png"><img alt="Probe GUI with right click to edit electrode parameters" class="align-center" src="../../_images/neuropixelsv1_adjust-electrode-parameters-with-gui.png" style="width: 582.18px; height: 334.18px;" /></a>
+</div></blockquote>
+<p>Aside form the Probe tab, the <strong>Channels</strong> tab can be used to examine and tune
+the probe parameters. If you want to apply a from one electrode to the entire
+probe, right-click it and select <strong>Apply to column</strong>.</p>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
-<p>Fill these in</p>
+<p>Image of apply all dialog</p>
 </div>
-<div class="section" id="uploading-imec-calibration-data">
-<h4>Uploading IMEC Calibration Data<a class="headerlink" href="#uploading-imec-calibration-data" title="Permalink to this headline">¶</a></h4>
 </div>
-<div class="section" id="selecting-electrodes">
-<h4>Selecting Electrodes<a class="headerlink" href="#selecting-electrodes" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="uploading-to-the-probe">
+<h4>Uploading to the Probe<a class="headerlink" href="#uploading-to-the-probe" title="Permalink to this headline">¶</a></h4>
+<p>To upload your configuration to the probe, click the <strong>Upload</strong> button in the
+bottom left of the GUI. A progress bar will indicate the upload progress.</p>
+<img alt="Uploading the configuration to the probe" class="align-center" src="../../_images/neuropixelsv1_upload-process.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To ensure that this process has occurred correctly, the <strong>Perform Read
+Check</strong> option can be selected from the <strong>Settings</strong> menu:</p>
+<img alt="Selecting the perform read check option" class="align-center" src="../../_images/neuropixelsv1_read-check_cropped.png" />
+<p>If this option is checked, then the upload will occur two times. The first
+will load the configuration and the second will do a comparison of the
+values stored on the probe to the redundant upload and report an error if
+there is a mismatch. This option is active by default.</p>
 </div>
-<div class="section" id="changing-probe-parameters">
-<h4>Changing Probe Parameters<a class="headerlink" href="#changing-probe-parameters" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uploading">
-<h4>Uploading<a class="headerlink" href="#uploading" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="saving-configurations">
 <h4>Saving Configurations<a class="headerlink" href="#saving-configurations" title="Permalink to this headline">¶</a></h4>
+<p>Complete probe configurations can be saved in easy to parse JSON or XML
+formats. These fikes contain complete information about the state of a given
+probe. This includes all calibration file information, active electrodes, gains
+etc, and therefore can be useful metadata during analysis.</p>
+<ol class="arabic">
+<li><p>Select <strong>Export…</strong> from the <strong>File</strong> menu;</p>
+<blockquote>
+<div><img alt="The configuraiton GUI with export selected" class="align-left" src="../../_images/neuropixelsv1_export_cropped.png" />
+</div></blockquote>
+</li>
+<li><p>Choose if JSON or XML should be used in the file selection dialog and save:</p>
+<blockquote>
+<div><img alt="File dialog to indicate where configuration should be saved." class="align-left" src="../../_images/neuropixelsv1_export-select-format_cropped.png" />
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="loading-configurations">
+<h4>Loading Configurations<a class="headerlink" href="#loading-configurations" title="Permalink to this headline">¶</a></h4>
+<p>Configuration files can be imported to, for instance, recall a pattern of
+active electrodes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You can import the configuration data from a previous probe, for
+instance to re-create a custom electrode layout. However, you will need to
+replace the calibration parameters from the previous probe with the current
+one before using it.</p>
+</div>
+<ol class="arabic">
+<li><p>Select <strong>Import</strong> from the <strong>File</strong> menu:</p>
+<blockquote>
+<div><img alt="The configuraiton GUI with import selected" class="align-left" src="../../_images/neuropixelsv1_import_cropped.png" />
+</div></blockquote>
+</li>
+<li><p>Select a previously exported configuration file:</p>
+<blockquote>
+<div><img alt="File dialog to find configuration to load" class="align-left" src="../../_images/neuropixelsv1_import-select-file.png" />
+</div></blockquote>
+</li>
+</ol>
 </div>
 </div>
 </div>

@@ -290,29 +290,9 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#source-code">
-   Source Code
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scope-and-external-dependencies">
-   Scope and External Dependencies
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#license">
-   License
-  </a>
- </li>
-</ul>
-
+    
 </nav>
               </div>
               
@@ -341,24 +321,16 @@
                 
   <div class="section" id="liboni">
 <span id="id1"></span><h1>liboni<a class="headerlink" href="#liboni" title="Permalink to this headline">¶</a></h1>
-<p>C implementation of the <a class="reference external" href="https://github.com/open-ephys/ONI">Open Neuro Interface API Specification</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Source Code</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/open-ephys/liboni/tree/main/api/liboni">github.com/open-ephys/liboni</a></p>
+</dd>
+<dt class="field-even">License</dt>
+<dd class="field-even"><p><a class="reference external" href="https://en.wikipedia.org/wiki/MIT_License">MIT</a></p>
+</dd>
+</dl>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="onidefs.html">onidefs.h</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oni.html">oni.h</a></li>
-<li class="toctree-l1"><a class="reference internal" href="onidriver.html">onidriver.h</a></li>
-<li class="toctree-l1"><a class="reference internal" href="onix.html">onix.h</a></li>
-<li class="toctree-l1"><a class="reference internal" href="build.html">Building liboni</a></li>
-<li class="toctree-l1"><a class="reference internal" href="liboni-example.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="making-drivers.html">Writing Drivers</a></li>
-</ul>
 </div>
-<div class="section" id="source-code">
-<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
-<p>Source code is available in the <a class="reference external" href="https://github.com/jonnew/liboni/tree/main/api/liboni">liboni git repository</a>.</p>
-</div>
-<div class="section" id="scope-and-external-dependencies">
-<h2>Scope and External Dependencies<a class="headerlink" href="#scope-and-external-dependencies" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">liboni</span></code> is a C library that implements the <a class="reference external" href="https://github.com/open-ephys/ONI">ONI API Specification</a>. It is written in C to facilitate cross
 platform and cross-language use. It is composed of the following files:</p>
 <ol class="arabic simple">
@@ -381,7 +353,7 @@ device driver translation layer (<a class="reference internal" href="onidriver.h
 fulfills the requirements of the ONI Host Interconnect Specification. Our API
 implementation contains drivers for</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://github.com/KastnerRG/riffa">RIFFA</a> is a free and open-source,
+<li><p><a class="reference external" href="https://github.com/KastnerRG/riffa">RIFFA</a> is a free and open-source
 FPGA IP core and device driver that allows the ONI communication channels to
 be implemented using the PCIe bus. <strong>ONIX PCIe-based hardware uses RIFFA.</strong></p></li>
 <li><p><a class="reference external" href="http://xillybus.com/">Xillybus</a> is a proprietary FPGA IP cores and free
@@ -389,7 +361,6 @@ and open source device drivers to allow the communication channels to be
 implemented using the PCIe bus. The licensing terms for the FPGA core are
 extremely unclear, although “trial” use is allowed. Use at your own risk.</p></li>
 <li><p>FTDI USB3.0: Planned</p></li>
-<li><p>Opal-Kelly USB3.0: Planned</p></li>
 </ol>
 <p>From the API’s perspective, hardware communication abstracted to IO system
 calls (<code class="docutils literal notranslate"><span class="pre">open</span></code>, <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">write</span></code>, etc.) on file descriptors. File
@@ -399,11 +370,6 @@ channels).  Importantly, the low-level synchronization, resource allocation,
 and logic required to use the hardware communication backend is implicit to
 <code class="docutils literal notranslate"><span class="pre">liboni</span></code> API function calls. Orchestration of the communication backend is
 not directly managed by the library user.</p>
-</div>
-<div class="section" id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/MIT_License">MIT</a></p>
-</div>
 </div>
 
     <script type="text/javascript">
