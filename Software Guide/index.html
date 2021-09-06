@@ -38,7 +38,7 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bonsai.ONIX Reference" href="Bonsai.ONIX%20Reference/index.html" />
+    <link rel="next" title="Bonsai" href="Bonsai/index.html" />
     <link rel="prev" title="Xillybus" href="../API%20Reference/drivers/xillybus.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -144,8 +144,8 @@
   <div class="bd-toc-item active">
     <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="Bonsai.ONIX%20Reference/index.html">
-   Bonsai.ONIX Reference
+  <a class="reference internal" href="Bonsai/index.html">
+   Bonsai
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -154,67 +154,67 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Bonsai.ONIX%20Reference/Installation.html">
+    <a class="reference internal" href="Bonsai/Installation.html">
      Installation
     </a>
    </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="Bonsai/GettingStarted.html">
+     Getting Started
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Bonsai.ONIX%20Reference/ONIContext.html">
+    <a class="reference internal" href="Bonsai/ONIContext.html">
      ONIContext
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Bonsai.ONIX%20Reference/HeartbeatDevice.html">
+    <a class="reference internal" href="Bonsai/HeartbeatDevice.html">
      HeartbeatDevice
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Bonsai.ONIX%20Reference/AnalogIODevice.html">
+    <a class="reference internal" href="Bonsai/AnalogIODevice.html">
      AnalogIODevice
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Bonsai.ONIX%20Reference/DigitalIODevice.html">
+    <a class="reference internal" href="Bonsai/DigitalIODevice.html">
      DigitalIODevice
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Bonsai.ONIX%20Reference/ClockOutput.html">
+    <a class="reference internal" href="Bonsai/ClockOutputDevice.html">
      ClockOutputDevice
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Bonsai.ONIX%20Reference/HeadstagePortControlDevice.html">
+    <a class="reference internal" href="Bonsai/HeadstagePortControlDevice.html">
      HeadstagePortControlDevice
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Bonsai.ONIX%20Reference/BNO055Device.html">
+    <a class="reference internal" href="Bonsai/BNO055Device.html">
      BNO055Device
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Bonsai.ONIX%20Reference/RHD2164Device.html">
+    <a class="reference internal" href="Bonsai/RHD2164Device.html">
      RHD2164Device
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Bonsai.ONIX%20Reference/NeuropixelsV1.html">
+    <a class="reference internal" href="Bonsai/NeuropixelsV1Device.html">
      NeuropixelsV1Device
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="Bonsai.ONIX%20Examples/index.html">
-   Example Bonsai Workflows
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1">
@@ -266,26 +266,25 @@
               <div>
                 
   <div class="section" id="software-logo-software-guide">
-<span id="software"></span><h1><a class="reference internal" href="../_images/noun_macbook.svg"><img alt="software_logo" height="60" src="../_images/noun_macbook.svg" /></a> Software Guide<a class="headerlink" href="#software-logo-software-guide" title="Permalink to this headline">¶</a></h1>
+<span id="software"></span><h1><img alt="software_logo" height="60" src="../_images/noun_macbook.svg" /> Software Guide<a class="headerlink" href="#software-logo-software-guide" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 <p>ONIX uses <a class="reference external" href="https://bonsai-rx.org/">Bonsai</a> for data acquisition. Bonsai is
-extremely good at dealing with the asynchronous and heterogeneous data that
-ONIX hardware produces.</p>
+very good at dealing with the asynchronous and heterogeneous data that ONIX
+hardware produces.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>The <a class="reference internal" href="Bonsai.ONIX%20Reference/index.html#bonsai-onixref"><span class="std std-ref">Bonsai.ONIX Reference</span></a> provides detailed information about the Bonsai
-library.</p></li>
-<li><p>See <a class="reference internal" href="Bonsai.ONIX%20Examples/index.html#bonsai-examples"><span class="std std-ref">Example Bonsai Workflows</span></a> for example Bonsai workflows.</p></li>
+<li><p>The <a class="reference internal" href="Bonsai/index.html#bonsai-onixref"><span class="std std-ref">Bonsai</span></a> pages provide detailed information about the
+ONIX Bonsai library.</p></li>
 <li><p>The <a class="reference internal" href="Open%20Ephys%20GUI/index.html#open-ephys-gui"><span class="std std-ref">Open Ephys GUI</span></a> page provides information on using the <a class="reference external" href="https://open-ephys.org/gui">Open
 Ephys GUI</a> with ONIX hardware.</p></li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you want to incorporate ONIX hardware functionality into your
-acquisition software, please <a class="reference internal" href="../support.html#support"><span class="std std-ref">get in touch</span></a>. It’s not as
-hard as you might think :).</p>
+<p>If you want to use ONIX hardware with your acquisition software,
+please <a class="reference internal" href="../support.html#support"><span class="std std-ref">get in touch</span></a>. It’s not as hard as you might think
+:).</p>
 </div>
 </div>
 
@@ -302,7 +301,7 @@ hard as you might think :).</p>
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="../API%20Reference/drivers/xillybus.html" title="previous page">Xillybus</a>
-    <a class='right-next' id="next-link" href="Bonsai.ONIX%20Reference/index.html" title="next page">Bonsai.ONIX Reference</a>
+    <a class='right-next' id="next-link" href="Bonsai/index.html" title="next page">Bonsai</a>
 
               </div>
               

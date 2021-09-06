@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HeartbeatDevice &#8212; Open Ephys ONIX  documentation</title>
+    <title>RHD2164Device &#8212; Open Ephys ONIX  documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -38,8 +38,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="AnalogIODevice" href="AnalogIODevice.html" />
-    <link rel="prev" title="ONIContext" href="ONIContext.html" />
+    <link rel="next" title="NeuropixelsV1Device" href="NeuropixelsV1Device.html" />
+    <link rel="prev" title="BNO055Device" href="BNO055Device.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -145,7 +145,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
-   Bonsai.ONIX Reference
+   Bonsai
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -158,13 +158,25 @@
      Installation
     </a>
    </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="GettingStarted.html">
+     Getting Started
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ONIContext.html">
      ONIContext
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="HeartbeatDevice.html">
      HeartbeatDevice
     </a>
    </li>
@@ -179,7 +191,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ClockOutput.html">
+    <a class="reference internal" href="ClockOutputDevice.html">
      ClockOutputDevice
     </a>
    </li>
@@ -193,28 +205,16 @@
      BNO055Device
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="RHD2164Device.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      RHD2164Device
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="NeuropixelsV1.html">
+    <a class="reference internal" href="NeuropixelsV1Device.html">
      NeuropixelsV1Device
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Bonsai.ONIX%20Examples/index.html">
-   Example Bonsai Workflows
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1">
@@ -256,7 +256,7 @@
                 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/open-ephys/onix-docs/edit/main/source/Software Guide/Bonsai.ONIX Reference/HeartbeatDevice.rst">
+    <a href="https://github.com/open-ephys/onix-docs/edit/main/source/Software Guide/Bonsai/RHD2164Device.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -275,30 +275,34 @@
               
               <div>
                 
-  <div class="section" id="heartbeatdevice">
-<span id="bonsai-heartbeatdev"></span><h1>HeartbeatDevice<a class="headerlink" href="#heartbeatdevice" title="Permalink to this headline">¶</a></h1>
-<p>A <a class="reference external" href="https://bonsai-rx.org/docs/editor/#toolbox">Bonsai source</a> that wraps a
-<a class="reference internal" href="../../Hardware%20Guide/Datasheets/heartbeat.html#onidatasheet-heartbeat"><span class="std std-ref">Heartbeat</span></a> device.</p>
+  <div class="section" id="rhd2164device">
+<span id="bonsai-rhd2164dev"></span><h1>RHD2164Device<a class="headerlink" href="#rhd2164device" title="Permalink to this headline">¶</a></h1>
+<p>A <a class="reference external" href="https://bonsai-rx.org/docs/editor/#toolbox">Bonsai source</a>  that wraps a
+<a class="reference internal" href="../../Hardware%20Guide/Datasheets/rhd2164.html#onidatasheet-rhd2164"><span class="std std-ref">RHD2164</span></a> device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs</dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 <dt class="field-even">Outputs</dt>
-<dd class="field-even"><p>A single <code class="docutils literal notranslate"><span class="pre">HearbeatDataFrame</span></code> that is produced periodically by
-hardware. This type is a wrapper around the <a class="reference internal" href="../../Hardware%20Guide/Datasheets/heartbeat.html#onidatasheet-heartbeat-d2h"><span class="std std-ref">Device To Host Data
-Frame</span></a> specified on the
-<a class="reference internal" href="../../Hardware%20Guide/Datasheets/heartbeat.html#onidatasheet-heartbeat"><span class="std std-ref">Heartbeat</span></a> device datasheet.</p>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">RHD2164DataFrame</span></code> that contains one or more samples from all
+64 analog inputs and auxiliary channels.</p>
+<ul class="simple">
+<li><p>This type is a buffered set of the <a class="reference internal" href="../../Hardware%20Guide/Datasheets/rhd2164.html#onidatasheet-rhd2164-d2h"><span class="std std-ref">Device To Host Data Frame</span></a> specified on the
+<a class="reference internal" href="../../Hardware%20Guide/Datasheets/rhd2164.html#onidatasheet-rhd2164"><span class="std std-ref">RHD2164</span></a> device datasheet.</p></li>
+<li><p>The number of samples in each output is determined by the
+<code class="docutils literal notranslate"><span class="pre">BlockSize</span></code> parameter</p></li>
+</ul>
 </dd>
 </dl>
         <div class="bonsai-workflow-container">
     <div class="workflow-filler"></div>
-    <div class="workflow-download"><img class="copy-img" src="../../_static/download.svg" onclick="getTextFromURL('../../_static/bonsai/workflows/Heartbeat.bonsai', true)" width=18px download/></div>
-    <div class="workflow-copy"><img class="copy-img" src="../../_static/copy.svg" onclick="getTextFromURL('../../_static/bonsai/workflows/Heartbeat.bonsai')" width=18px /></div>
-    <div class="workflow-name"><b>Heartbeat.bonsai</b></div>
-    <div class="workflow-image"><img src="../../_static/bonsai/workflows/Heartbeat.svg" alt="Heartbeat" /></div>
+    <div class="workflow-download"><img class="copy-img" src="../../_static/download.svg" onclick="getTextFromURL('../../_static/bonsai/workflows/RHD2164.bonsai', true)" width=18px download/></div>
+    <div class="workflow-copy"><img class="copy-img" src="../../_static/copy.svg" onclick="getTextFromURL('../../_static/bonsai/workflows/RHD2164.bonsai')" width=18px /></div>
+    <div class="workflow-name"><b>RHD2164.bonsai</b></div>
+    <div class="workflow-image"><img src="../../_static/bonsai/workflows/RHD2164.svg" alt="RHD2164" /></div>
 </div><div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p>Configuration is performed using its property pane which contains the following
+<p>Configuration is performed using the property pane which contains the following
 options.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -310,11 +314,48 @@ options.</p>
 <tbody>
 <tr class="row-even"><td><p>EnableStream</p></td>
 <td><p>boolean</p></td>
-<td><p>Enable the device data stream</p></td>
+<td><p>The numbEnable the device data stream</p></td>
 </tr>
-<tr class="row-odd"><td><p>BeatHz</p></td>
-<td><p>uint</p></td>
-<td><p>Rate at which beats are produced in Hz.</p></td>
+<tr class="row-odd"><td><p>BlockSize</p></td>
+<td><p>integer</p></td>
+<td><p>The number of 64-channel ephys + auxiliary channel samples that are
+included in each RHD2164DataFrame. Larger numbers result in less
+overhead at the cost of larger buffering latencies.</p></td>
+</tr>
+<tr class="row-even"><td><p>AnalogHighCutoff</p></td>
+<td><p>enum</p></td>
+<td><p>Select a high-frequency cutoff from allowable options. This filtering
+is performed prior to analog to digital conversion.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AnalogLowCutoff</p></td>
+<td><p>enum</p></td>
+<td><p>Select a low-frequency cutoff from allowable options. This filtering is
+performed prior to analog to digital conversion.</p></td>
+</tr>
+<tr class="row-even"><td><p>DSPCuttoff</p></td>
+<td><p>enum</p></td>
+<td><p>Select the low-frequency cutoff for the integrated digtial offset
+removal filter. This fitering is performed following analog to digital
+conversion.</p></td>
+</tr>
+<tr class="row-odd"><td><p>EphysDataFormat</p></td>
+<td><p>enum</p></td>
+<td><p>The format of the ephys samples within the  RHD2164DataFrame.</p>
+<ul class="simple">
+<li><p>Unsigned: raw 16-bit unsigned integer conversion results.</p></li>
+<li><p>TwosCompliment: raw 16-bit signed integer conversion results.</p></li>
+<li><p>MicroVolts: 32-bit floating-point voltages.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>AuxDataFormat</p></td>
+<td><p>enum</p></td>
+<td><p>The format of the auxiliary samples within the  RHD2164DataFrame.</p>
+<ul class="simple">
+<li><p>Unsigned: raw 16-bit unsigned integer conversion results.</p></li>
+<li><p>Volts: 32-bit floating-point voltages.</p></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -333,8 +374,8 @@ options.</p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="ONIContext.html" title="previous page">ONIContext</a>
-    <a class='right-next' id="next-link" href="AnalogIODevice.html" title="next page">AnalogIODevice</a>
+    <a class='left-prev' id="prev-link" href="BNO055Device.html" title="previous page">BNO055Device</a>
+    <a class='right-next' id="next-link" href="NeuropixelsV1Device.html" title="next page">NeuropixelsV1Device</a>
 
               </div>
               

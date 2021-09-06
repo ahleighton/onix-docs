@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DigitalIODevice &#8212; Open Ephys ONIX  documentation</title>
+    <title>AnalogIODevice &#8212; Open Ephys ONIX  documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -38,8 +38,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ClockOutputDevice" href="ClockOutput.html" />
-    <link rel="prev" title="AnalogIODevice" href="AnalogIODevice.html" />
+    <link rel="next" title="DigitalIODevice" href="DigitalIODevice.html" />
+    <link rel="prev" title="HeartbeatDevice" href="HeartbeatDevice.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -145,7 +145,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
-   Bonsai.ONIX Reference
+   Bonsai
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -158,6 +158,18 @@
      Installation
     </a>
    </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="GettingStarted.html">
+     Getting Started
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ONIContext.html">
      ONIContext
@@ -168,18 +180,18 @@
      HeartbeatDevice
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="AnalogIODevice.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      AnalogIODevice
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="DigitalIODevice.html">
      DigitalIODevice
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ClockOutput.html">
+    <a class="reference internal" href="ClockOutputDevice.html">
      ClockOutputDevice
     </a>
    </li>
@@ -199,22 +211,10 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="NeuropixelsV1.html">
+    <a class="reference internal" href="NeuropixelsV1Device.html">
      NeuropixelsV1Device
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Bonsai.ONIX%20Examples/index.html">
-   Example Bonsai Workflows
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1">
@@ -256,7 +256,7 @@
                 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/open-ephys/onix-docs/edit/main/source/Software Guide/Bonsai.ONIX Reference/DigitalIODevice.rst">
+    <a href="https://github.com/open-ephys/onix-docs/edit/main/source/Software Guide/Bonsai/AnalogIODevice.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -275,35 +275,45 @@
               
               <div>
                 
-  <div class="section" id="digitaliodevice">
-<span id="bonsai-digitaliodev"></span><h1>DigitalIODevice<a class="headerlink" href="#digitaliodevice" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="analogiodevice">
+<span id="bonsai-analogiodev"></span><h1>AnalogIODevice<a class="headerlink" href="#analogiodevice" title="Permalink to this headline">¶</a></h1>
 <p>A <a class="reference external" href="https://bonsai-rx.org/docs/editor/#toolbox">Bonsai source</a> that wraps a
-<a class="reference internal" href="../../Hardware%20Guide/Datasheets/fmc-digital-io.html#onidatasheet-fmc-digital-io"><span class="std std-ref">FMC Host Digital IO Device</span></a> device.</p>
+<a class="reference internal" href="../../Hardware%20Guide/Datasheets/fmc-analog-io.html#onidatasheet-fmc-analog-io"><span class="std std-ref">FMC Host Analog IO Device</span></a> device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs</dt>
-<dd class="field-odd"><p>An <code class="docutils literal notranslate"><span class="pre">int</span></code> that sets the output port state</p>
+<dd class="field-odd"><p>A 12xN <a class="reference external" href="https://www.fuget.org/packages/OpenCV.Net/3.4.0-build001/lib/netstandard2.0/OpenCV.Net.dll/OpenCV.Net/Mat">OpenCV.Net.Mat</a></p>
 <ul class="simple">
-<li><p>The 8 least significant bits of the integer input are used to set
-the output port state.</p></li>
+<li><p>Each column contains 12 analog values, one for each channel.</p></li>
+<li><p>If a channel is set to an input, this will have no effect.</p></li>
+<li><p>Data is immediately consumed by hardware. If N &gt; 1, then samples
+will be produced as quickly as hardware allows.</p></li>
+<li><p>The matrix must contain elements with <a class="reference external" href="https://www.fuget.org/packages/OpenCV.Net/3.4.0-build001/lib/netstandard2.0/OpenCV.Net.dll/OpenCV.Net/Depth">Depth.S16</a>
+when
+the <code class="docutils literal notranslate"><span class="pre">DataType</span></code> parameter is set to is “S16” and either <a class="reference external" href="https://www.fuget.org/packages/OpenCV.Net/3.4.0-build001/lib/netstandard2.0/OpenCV.Net.dll/OpenCV.Net/Depth">Depth.F32
+or Depth.F64</a>
+when <code class="docutils literal notranslate"><span class="pre">DataType</span></code> is set to “Volts”.</p></li>
+<li><p>When the <code class="docutils literal notranslate"><span class="pre">DataType</span></code> parameter is set to is “S16”, analog output voltages
+are encoded in offset binary, with 0 resulting in -10V and 65355
+resulting in +10V.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Outputs</dt>
-<dd class="field-even"><p>An <code class="docutils literal notranslate"><span class="pre">DigitalInputDataFrame</span></code> that contains digital input, button, and
-headstage power switch state</p>
+<dd class="field-even"><p>An <code class="docutils literal notranslate"><span class="pre">AnalogInputDataFrame</span></code> that contains analog samples and sample
+timing information.</p>
 <ul class="simple">
-<li><p>A sample is produced only when a change in port, button, or
-headstage power switch state occurs</p></li>
-<li><p>This type is a wrapper around the <a class="reference internal" href="../../Hardware%20Guide/Datasheets/fmc-digital-io.html#onidatasheet-fmc-digital-io-d2h"><span class="std std-ref">Device To Host Data Frame</span></a> specified on the
-<a class="reference internal" href="../../Hardware%20Guide/Datasheets/fmc-digital-io.html#onidatasheet-fmc-digital-io"><span class="std std-ref">FMC Host Digital IO Device</span></a> device datasheet.</p></li>
+<li><p>This type is a buffered set of <a class="reference internal" href="../../Hardware%20Guide/Datasheets/heartbeat.html#onidatasheet-heartbeat-d2h"><span class="std std-ref">Device To Host Data Frames</span></a>.</p></li>
+<li><p>The number of samples in each output is determined by the
+<code class="docutils literal notranslate"><span class="pre">BlockSize</span></code> parameter</p></li>
+<li><p>Analog voltages are packaged into 12xBlockSize <a class="reference external" href="https://www.fuget.org/packages/OpenCV.Net/3.4.0-build001/lib/netstandard2.0/OpenCV.Net.dll/OpenCV.Net/Mat">OpenCV.Net.Mat</a></p></li>
 </ul>
 </dd>
 </dl>
         <div class="bonsai-workflow-container">
     <div class="workflow-filler"></div>
-    <div class="workflow-download"><img class="copy-img" src="../../_static/download.svg" onclick="getTextFromURL('../../_static/bonsai/workflows/DigitalIO.bonsai', true)" width=18px download/></div>
-    <div class="workflow-copy"><img class="copy-img" src="../../_static/copy.svg" onclick="getTextFromURL('../../_static/bonsai/workflows/DigitalIO.bonsai')" width=18px /></div>
-    <div class="workflow-name"><b>DigitalIO.bonsai</b></div>
-    <div class="workflow-image"><img src="../../_static/bonsai/workflows/DigitalIO.svg" alt="DigitalIO" /></div>
+    <div class="workflow-download"><img class="copy-img" src="../../_static/download.svg" onclick="getTextFromURL('../../_static/bonsai/workflows/AnalogIO.bonsai', true)" width=18px download/></div>
+    <div class="workflow-copy"><img class="copy-img" src="../../_static/copy.svg" onclick="getTextFromURL('../../_static/bonsai/workflows/AnalogIO.bonsai')" width=18px /></div>
+    <div class="workflow-name"><b>AnalogIO.bonsai</b></div>
+    <div class="workflow-image"><img src="../../_static/bonsai/workflows/AnalogIO.svg" alt="AnalogIO" /></div>
 </div><div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>Configuration is performed using the property pane which contains the following
@@ -320,10 +330,30 @@ options.</p>
 <td><p>boolean</p></td>
 <td><p>Enable the device data stream</p></td>
 </tr>
-<tr class="row-odd"><td><p>LEDBrightness</p></td>
-<td><p>double</p></td>
-<td><p>The brightness of the breakout board indication LEDs. 0 = off, 100 =
-full brightness.</p></td>
+<tr class="row-odd"><td><p>BlockSize</p></td>
+<td><p>uint</p></td>
+<td><p>The number of samples that are included in each AnalogInputFrame.
+Larger numbers result in less overhead at the cost of larger buffering
+latencies.</p></td>
+</tr>
+<tr class="row-even"><td><p>DataType</p></td>
+<td><p>enum</p></td>
+<td><p>The format of the analog data consumed and produced by this node.</p>
+<ul class="simple">
+<li><p>S16: raw 16-bit signed integer conversion results or DAC values.</p></li>
+<li><p>Volts: 32-bit floating-point voltages.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>InputRange&lt;Channel&gt;</p></td>
+<td><p>enum</p></td>
+<td><p>The analog input over which the 14-bit ADC conversion is applied.
+Smaller values have higher resolution.</p></td>
+</tr>
+<tr class="row-even"><td><p>Direction&lt;Channel&gt;</p></td>
+<td><p>enum</p></td>
+<td><p>The direction of the channel. If set to Output, the measured voltage is
+automatically looped back through the analog input.</p></td>
 </tr>
 </tbody>
 </table>
@@ -342,8 +372,8 @@ full brightness.</p></td>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="AnalogIODevice.html" title="previous page">AnalogIODevice</a>
-    <a class='right-next' id="next-link" href="ClockOutput.html" title="next page">ClockOutputDevice</a>
+    <a class='left-prev' id="prev-link" href="HeartbeatDevice.html" title="previous page">HeartbeatDevice</a>
+    <a class='right-next' id="next-link" href="DigitalIODevice.html" title="next page">DigitalIODevice</a>
 
               </div>
               
