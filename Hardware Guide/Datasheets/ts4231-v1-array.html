@@ -492,7 +492,7 @@ and optical signal. The host computer must perform the mathematics in order to
 calculate positional information using these data.</p>
 </div>
 <div class="section" id="register-programming">
-<h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-ts4231-v1-array-reg"></span><h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Address</p></th>
@@ -524,7 +524,7 @@ calculate positional information using these data.</p>
 </table>
 </div>
 <div class="section" id="device-to-host-data-frames">
-<h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-ts4231-v1-array-d2h"></span><h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
 <p>Each frame transmitted to the host is structured as follows:</p>
 
 <div style="overflow-x:auto">
@@ -541,7 +541,7 @@ calculate positional information using these data.</p>
 
       {bits: 32, name: "Envelope Width (Hub Clock Cycles)", type: 5},
 
-      {bits: 16, name: "Classified Envelope Code", type: 6}
+      {bits: 16, name: "Envelope Code", type: 6}
 
     ],
     config: {bits: 256, lanes: 8, vflip: true, hflip: true, fontsize: 11}
