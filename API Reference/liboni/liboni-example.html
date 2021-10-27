@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Examples &#8212; Open Ephys ONIX  documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,10 +23,10 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/blank.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -41,7 +41,10 @@
     <link rel="next" title="Writing Drivers" href="making-drivers.html" />
     <link rel="prev" title="Building liboni" href="build.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -374,8 +377,8 @@
 <p>The following examples demonstrate common uses of <code class="docutils literal notranslate"><span class="pre">liboni</span></code>. They generally
 omit checking return codes, which should be done when the library is used in
 for real world applications. For instance:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">rc</span> <span class="o">=</span> <span class="n">oni_function</span><span class="p">(...);</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">rc</span><span class="p">)</span> <span class="k">goto</span> <span class="n">fail</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oni_function</span><span class="p">(...);</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="k">goto</span><span class="w"> </span><span class="n">fail</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="section" id="acquisition-context-creation">
@@ -391,8 +394,8 @@ attempts to connect to the hardware (open communication channels), and,
 finally, obtain a device table that maps the acquisition hierarchy governed by
 the context. So, for instance, to create an initialize an acquisition context
 to govern a PCIe acquisition card using the <a class="reference external" href="https://github.com/KastnerRG/riffa">RIFFA</a> driver, you would use</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ctx</span> <span class="o">=</span> <span class="n">oni_create_ctx</span><span class="p">(</span><span class="s">&quot;riffa&quot;</span><span class="p">);</span> <span class="c1">// &quot;riffa&quot; is the driver name</span>
-<span class="n">oni_init_ctx</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// 0 is the host index. You can use -1 to get default slot</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oni_create_ctx</span><span class="p">(</span><span class="s">&quot;riffa&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;riffa&quot; is the driver name</span>
+<span class="n">oni_init_ctx</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0 is the host index. You can use -1 to get default slot</span>
 </pre></div>
 </div>
 <p>If the driver translation library <code class="docutils literal notranslate"><span class="pre">onilibrary_&lt;drv_name&gt;.&lt;so/dll&gt;</span></code> cannot be
@@ -421,8 +424,8 @@ initialized context.  Doing so will return an error.</p>
 headstage is plugged in or turned on), a context reset must be issued which to
 instruct the initialized context to re-evaluate its device table. This can be
 done via</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span> <span class="n">reset</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ONI_OPT_RESET</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">reset</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">reset</span><span class="p">));</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_RESET</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">reset</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">reset</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -430,7 +433,7 @@ done via</p>
 <span id="liboni-example-ctx-destruction"></span><h2>Closing an Acquisition Context<a class="headerlink" href="#closing-an-acquisition-context" title="Permalink to this headline">¶</a></h2>
 <p>When an acquisition context is no longer needed, it must be disposed to prevent
 memory leaks. This is accomplished via</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_destroy_ctx</span><span class="p">(</span><span class="n">ctx</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_destroy_ctx</span><span class="p">(</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which will free all resources used by the API and underlying device driver and
@@ -442,24 +445,24 @@ close system-level descriptors providing links to hardware.</p>
 table to see the devices that host has access to. To examine the device table,
 we query the context for the number of devices in the table, allocate enough
 space to hold the table, and then populate it:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span> <span class="n">num_devs</span><span class="p">;</span>
-<span class="kt">size_t</span> <span class="n">num_devs_sz</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">num_devs</span><span class="p">);</span>
-<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ONI_OPT_NUMDEVICES</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num_devs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num_devs_sz</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">num_devs</span><span class="p">;</span><span class="w"></span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">num_devs_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">num_devs</span><span class="p">);</span><span class="w"></span>
+<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_NUMDEVICES</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">num_devs</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">num_devs_sz</span><span class="p">);</span><span class="w"></span>
 
-<span class="kt">size_t</span> <span class="n">devices_sz</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">oni_device_t</span><span class="p">)</span> <span class="o">*</span> <span class="n">num_devs</span><span class="p">;</span>
-<span class="n">oni_device_t</span> <span class="o">*</span><span class="n">devices</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">devices</span><span class="p">,</span> <span class="n">devices_sz</span><span class="p">);</span>
-<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ONI_OPT_DEVICETABLE</span><span class="p">,</span> <span class="n">devices</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">devices_sz</span><span class="p">);</span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">devices_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">oni_device_t</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">num_devs</span><span class="p">;</span><span class="w"></span>
+<span class="n">oni_device_t</span><span class="w"> </span><span class="o">*</span><span class="n">devices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">devices</span><span class="p">,</span><span class="w"> </span><span class="n">devices_sz</span><span class="p">);</span><span class="w"></span>
+<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_DEVICETABLE</span><span class="p">,</span><span class="w"> </span><span class="n">devices</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">devices_sz</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This will return an array of <code class="docutils literal notranslate"><span class="pre">oni_device_t</span></code> structs where <code class="docutils literal notranslate"><span class="pre">oni_device_t</span></code> is
 defined as:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
-    <span class="n">oni_size_t</span> <span class="n">idx</span><span class="p">;</span>           <span class="c1">// Complete rsv.rsv.hub.idx device table index</span>
-    <span class="n">oni_dev_id_t</span> <span class="n">id</span><span class="p">;</span>          <span class="c1">// Device ID number (see oedevices.h)</span>
-    <span class="n">oni_size_t</span> <span class="n">read_size</span><span class="p">;</span>     <span class="c1">// Device data read size per frame in bytes</span>
-    <span class="n">oni_size_t</span> <span class="n">write_size</span><span class="p">;</span>    <span class="c1">// Device data write size per frame in bytes</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">idx</span><span class="p">;</span><span class="w">           </span><span class="c1">// Complete rsv.rsv.hub.idx device table index</span>
+<span class="w">    </span><span class="n">oni_dev_id_t</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">          </span><span class="c1">// Device ID number (see oedevices.h)</span>
+<span class="w">    </span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">read_size</span><span class="p">;</span><span class="w">     </span><span class="c1">// Device data read size per frame in bytes</span>
+<span class="w">    </span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">write_size</span><span class="p">;</span><span class="w">    </span><span class="c1">// Device data write size per frame in bytes</span>
 
-<span class="p">}</span> <span class="n">oni_device_t</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">oni_device_t</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition attention">
@@ -481,8 +484,8 @@ in the device table with <em>at least</em> the following properties:</p>
 <li><p>A datasheet that describes access to these registers</p></li>
 </ol>
 <p>Device registers can be read as follows:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_reg_val_t</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">oni_read_reg</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">dev_idx</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">val</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_reg_val_t</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">oni_read_reg</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">dev_idx</span><span class="p">,</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">val</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">dev_idx</span></code> is the fully specified device table index (hub.index) found
@@ -492,8 +495,8 @@ pointer to a register to be filled during the read. This function will return
 an error if the context is in an inappropriate state (e.g. not initialized),
 the specified device is not in the device table, or the register is write-only.
 Registers can be written as follows:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_reg_val_t</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-<span class="n">oni_write_reg</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">dev_idx</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_reg_val_t</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
+<span class="n">oni_write_reg</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">dev_idx</span><span class="p">,</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>where the function arguments have the same definitions as <code class="docutils literal notranslate"><span class="pre">oni_read_reg</span></code>.
@@ -529,26 +532,26 @@ found on real-time operating system). On a normal computer, these buffers can
 be set manually to optimize the bandwidth/latency trade off. For example, to
 set the buffer read and write sizes to 1024 and 8192 bytes respectively, use
 <code class="docutils literal notranslate"><span class="pre">oni_set_opt</span></code>:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span> <span class="n">block_size</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">;</span>
-<span class="kt">size_t</span> <span class="n">block_size_sz</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">block_size</span><span class="p">);</span>
-<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ONI_OPT_BLOCKREADSIZE</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span> <span class="n">block_size_sz</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span><span class="w"></span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">block_size_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">block_size</span><span class="p">);</span><span class="w"></span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_BLOCKREADSIZE</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="n">block_size_sz</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">block_size</span> <span class="o">=</span> <span class="mi">8192</span><span class="p">;</span>
-<span class="n">block_size_sz</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">block_size</span><span class="p">);</span>
-<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ONI_OPT_BLOCKWRITESIZE</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span> <span class="n">block_size_sz</span><span class="p">);</span>
+<span class="n">block_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8192</span><span class="p">;</span><span class="w"></span>
+<span class="n">block_size_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">block_size</span><span class="p">);</span><span class="w"></span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_BLOCKWRITESIZE</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="n">block_size_sz</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>If you attempt to set the buffer size to less than the minimal required in a
 particular context, these functions will return an error. To examine the buffer
 sizes, use <code class="docutils literal notranslate"><span class="pre">oni_get_opt</span></code> as follows</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span> <span class="n">block_size</span><span class="p">;</span>
-<span class="kt">size_t</span> <span class="n">block_size_sz</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">block_size</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">block_size</span><span class="p">;</span><span class="w"></span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">block_size_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">block_size</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ONI_OPT_BLOCKREADSIZE</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block_size_sz</span><span class="p">);</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Block read size: %u bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_BLOCKREADSIZE</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size_sz</span><span class="p">);</span><span class="w"></span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Block read size: %u bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">block_size</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ONI_OPT_BLOCKWRITESIZE</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block_size_sz</span><span class="p">);</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Write pre-allocation size: %u bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_BLOCKWRITESIZE</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size_sz</span><span class="p">);</span><span class="w"></span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Write pre-allocation size: %u bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">block_size</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -557,8 +560,8 @@ sizes, use <code class="docutils literal notranslate"><span class="pre">oni_get_
 <p>Prior to reading and writing to/from the high bandwidth data streams,
 acquisition must be started. To do this, write 1 to the <code class="docutils literal notranslate"><span class="pre">ONI_OPT_RUNNING</span></code>
 context option:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ONI_OPT_RUNNING</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">reg</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">oni_size_t</span><span class="p">));</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_RUNNING</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">oni_size_t</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition attention">
@@ -571,15 +574,15 @@ data production.</p>
 <p>To reset the main system clock counter (frame timer) at any point during or
 prior to starting acquisition, write 1 to the <code class="docutils literal notranslate"><span class="pre">ONI_OPT_RESETACQCOUNTER</span></code>
 context option:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ONI_OPT_RESETACQCOUNTER</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">reg</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">oni_size_t</span><span class="p">));</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_RESETACQCOUNTER</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">oni_size_t</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Often, the start of data acquisition should precisely co-occur with a clock
 reset. To perform both a clock reset and acquisition start in perfect sync,
 write 2 to the <code class="docutils literal notranslate"><span class="pre">ONI_OPT_RESETACQCOUNTER</span></code> context option:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// NOTE: this changed to 2 compared to previous example</span>
-<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ONI_OPT_RESETACQCOUNTER</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">reg</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">oni_size_t</span><span class="p">));</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// NOTE: this changed to 2 compared to previous example</span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_RESETACQCOUNTER</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">oni_size_t</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This will reset the clock and automatically start acquisition (set
@@ -590,12 +593,12 @@ write 2 to the <code class="docutils literal notranslate"><span class="pre">ONI_
 <p><a class="reference internal" href="oni.html#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a>’s are minimal packets containing metadata and raw binary
 data blocks from a single device within the device table. A
 <a class="reference internal" href="onidefs.html#c.oni_size_t" title="oni_size_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_size_t</span></code></a> is defined as</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">oni_frame</span> <span class="p">{</span>
-    <span class="k">const</span> <span class="kt">uint64_t</span> <span class="n">dev_idx</span><span class="p">;</span>  <span class="c1">// Device index that produced or accepts the frame</span>
-    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">data_sz</span><span class="p">;</span>  <span class="c1">// Size in bytes of data buffer</span>
-    <span class="k">const</span> <span class="kt">uint64_t</span> <span class="n">time</span><span class="p">;</span>     <span class="c1">// Frame time (ACQCLKHZ)</span>
-    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>           <span class="c1">// Raw data block</span>
-<span class="p">};</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">oni_frame</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">dev_idx</span><span class="p">;</span><span class="w">  </span><span class="c1">// Device index that produced or accepts the frame</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">data_sz</span><span class="p">;</span><span class="w">  </span><span class="c1">// Size in bytes of data buffer</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">time</span><span class="p">;</span><span class="w">     </span><span class="c1">// Frame time (ACQCLKHZ)</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">;</span><span class="w">           </span><span class="c1">// Raw data block</span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">dev_idx</span></code> is the fully qualified device index within the device table
@@ -605,13 +608,13 @@ is a pointer to the raw data block. A single frames can be read from an
 acquisition context after it is started (see <a class="reference internal" href="#start-ctx"><span class="std std-ref">Starting Acquisition</span></a>) using repeated
 calls to <code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code> as follows:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Read a frame</span>
-<span class="n">oni_frame_t</span> <span class="o">*</span><span class="n">frame</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-<span class="n">oni_read_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">frame</span><span class="p">);</span>
+<span class="n">oni_frame_t</span><span class="w"> </span><span class="o">*</span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="n">oni_read_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">frame</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// Perform desired operations with frame</span>
 
 <span class="c1">// Dispose of frame</span>
-<span class="n">oni_destroy_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
+<span class="n">oni_destroy_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>In the preceding example, <code class="docutils literal notranslate"><span class="pre">frame</span></code> is initialized to <code class="docutils literal notranslate"><span class="pre">NULL</span></code> because a call
@@ -637,19 +640,19 @@ frequently enough such that hardware buffers do not overflow.</p>
 <p>Writing frames to an appropriate device in the device table follows similar
 steps to reading frames.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Required elements to create frame</span>
-<span class="n">oni_frame_t</span> <span class="o">*</span><span class="n">frame</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-<span class="kt">size_t</span> <span class="n">dev_idx</span> <span class="o">=</span> <span class="mi">256</span><span class="p">;</span>
-<span class="kt">size_t</span> <span class="n">data_sz</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// or 16, 24, 32, etc</span>
-<span class="kt">char</span> <span class="n">data</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+<span class="n">oni_frame_t</span><span class="w"> </span><span class="o">*</span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">dev_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span><span class="p">;</span><span class="w"></span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">data_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="c1">// or 16, 24, 32, etc</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">};</span><span class="w"></span>
 
 <span class="c1">// Create a frame</span>
-<span class="n">oni_create_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">frame</span><span class="p">,</span> <span class="n">dev_idx</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">data_sz</span><span class="p">);</span>
+<span class="n">oni_create_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">frame</span><span class="p">,</span><span class="w"> </span><span class="n">dev_idx</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">data_sz</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// Write the frame</span>
-<span class="n">oni_write_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">frame</span><span class="p">);</span>
+<span class="n">oni_write_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// Dispose the frame</span>
-<span class="n">oni_destroy_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
+<span class="n">oni_destroy_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>First, a frame is created using a call to <code class="docutils literal notranslate"><span class="pre">oni_create_frame</span></code> (analogous to
@@ -683,26 +686,26 @@ their data field following a frame write</p>
 <p>The following example shows a single frame being used for two writes with a
 change in the data field in between writes:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Required elements to create frame</span>
-<span class="n">oni_frame_t</span> <span class="o">*</span><span class="n">frame</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-<span class="kt">size_t</span> <span class="n">dev_idx</span> <span class="o">=</span> <span class="mi">256</span><span class="p">;</span>
-<span class="kt">size_t</span> <span class="n">data_sz</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// or 16, 24, 32, etc</span>
-<span class="kt">char</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+<span class="n">oni_frame_t</span><span class="w"> </span><span class="o">*</span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">dev_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span><span class="p">;</span><span class="w"></span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">data_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="c1">// or 16, 24, 32, etc</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">};</span><span class="w"></span>
 
 <span class="c1">// Create a frame</span>
-<span class="n">oni_create_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">frame</span><span class="p">,</span> <span class="n">dev_idx</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">data_sz</span><span class="p">);</span>
+<span class="n">oni_create_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">frame</span><span class="p">,</span><span class="w"> </span><span class="n">dev_idx</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">data_sz</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// Write the frame</span>
-<span class="n">oni_write_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">frame</span><span class="p">);</span>
+<span class="n">oni_write_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// Reuse the same frame</span>
-<span class="kt">char</span> <span class="n">new_data</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">};</span>
-<span class="n">memcpy</span><span class="p">(</span><span class="n">frame</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span> <span class="n">new_data</span><span class="p">,</span> <span class="n">data_sz</span><span class="p">);</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">new_data</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">};</span><span class="w"></span>
+<span class="n">memcpy</span><span class="p">(</span><span class="n">frame</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">new_data</span><span class="p">,</span><span class="w"> </span><span class="n">data_sz</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// Write the frame with new_data</span>
-<span class="n">oni_write_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">frame</span><span class="p">);</span>
+<span class="n">oni_write_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// Dispose the frame</span>
-<span class="n">oni_destroy_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
+<span class="n">oni_destroy_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -725,12 +728,23 @@ change in the data field in between writes:</p>
               </div>
               
               
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="build.html" title="previous page">Building liboni</a>
-    <a class='right-next' id="next-link" href="making-drivers.html" title="next page">Writing Drivers</a>
-
-              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="build.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Building liboni</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="making-drivers.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Writing Drivers</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
               
           </main>
           
@@ -738,20 +752,19 @@ change in the data field in between writes:</p>
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="footer mt-5 mt-md-0">
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br/>
+    &copy; Copyright 2010-2021, Open Ephys &amp; Contributors.<br>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br>
 </p>
     </div>
     
