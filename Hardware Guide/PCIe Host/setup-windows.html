@@ -276,11 +276,6 @@
      UCLA Miniscope
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Miniscopes/miniscope-v4f.html">
-     MIT/UCLA Miniscope v4F
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -477,19 +472,16 @@
 <ol class="arabic">
 <li><p>Power off the computer.</p></li>
 <li><p>Plug the PCIe host board into an available PCIe slot</p>
-<blockquote>
-<div><div class="admonition note">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You do not need to plug the ATX power supply into connector on
 the board (although doing so won’t hurt). The PCIe slot itself provides
 adequate power to operate the host board.</p>
 </div>
-</div></blockquote>
 </li>
 <li><p>Boot the computer.</p></li>
 <li><p>The RGB LED in the center of the module should be blue.</p>
-<blockquote>
-<div><div class="admonition note">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The RGB LED has three color states.</p>
 <ul class="simple">
@@ -498,7 +490,6 @@ adequate power to operate the host board.</p>
 <li><p>Pink: Acquisition running.</p></li>
 </ul>
 </div>
-</div></blockquote>
 </li>
 </ol>
 </div>
@@ -515,47 +506,42 @@ will not be required.</p>
 <li><p>Download the <a class="reference download internal" download="" href="../../_downloads/03c81562bec3fe6a9a4c0a7786acb870/OpenEphysTestDriver.cer"><code class="xref download docutils literal notranslate"><span class="pre">OpenEphysTestDriver.cer</span></code></a> testing certificate and double
 click it.</p></li>
 <li><p>On the dialog, select <strong>Install Certificate</strong>.</p>
-<blockquote>
-<div><div class="figure align-left">
+<div class="figure align-left">
 <img alt="../../_images/install-certificate.png" src="../../_images/install-certificate.png" />
 </div>
-</div></blockquote>
 </li>
 <li><p>It is recommended to select <strong>Current User</strong> certificate storage option.</p>
-<blockquote>
-<div><div class="figure align-left">
+<div class="figure align-left">
 <img alt="../../_images/certificate-import-current-user.png" src="../../_images/certificate-import-current-user.png" />
 </div>
-</div></blockquote>
 </li>
 <li><p>For ease of management, it is recommended to manually select a certificate
 storage and chose <strong>Personal</strong>.</p>
-<blockquote>
-<div><div class="figure align-left">
+<div class="figure align-left">
 <img alt="../../_images/certificate-import-personal-storage.png" src="../../_images/certificate-import-personal-storage.png" />
 </div>
-</div></blockquote>
 </li>
 <li><p>Open the Windows Start Menu and type <strong>cmd</strong> to find the command prompt
 application. Right click it and chose <strong>Run as Administrator</strong>.</p>
-<blockquote>
-<div><div class="figure align-left">
+<div class="figure align-left">
 <img alt="../../_images/cmd-run-as-admin.png" src="../../_images/cmd-run-as-admin.png" />
 </div>
-</div></blockquote>
 </li>
 <li><p>Execute the following command: <code class="docutils literal notranslate"><span class="pre">bcdedit</span> <span class="pre">/set</span> <span class="pre">testsigning</span> <span class="pre">on</span></code></p>
-<blockquote>
-<div><div class="figure align-left">
+<div class="figure align-left">
 <img alt="../../_images/windows-test-mode-command.png" src="../../_images/windows-test-mode-command.png" />
 </div>
-</div></blockquote>
 </li>
-<li><p>Restart the computer (A regular reboot is required. A complete power cycle might not set the option).</p></li>
-<li><p>You should see now some text at the bottom right of the Desktop indicating that
-Windows is operating in testing mode:</p>
-<blockquote>
-<div><div class="figure align-left">
+<li><p>Restart the computer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A regular reboot is required. A complete power cycle might not set
+the option.</p>
+</div>
+</li>
+<li><p>You should see now some text at the bottom right of the Desktop indicating
+that Windows is operating in testing mode:</p>
+<div class="figure align-left">
 <img alt="../../_images/windows-test-mode-text.png" src="../../_images/windows-test-mode-text.png" />
 </div>
 <div class="admonition note">
@@ -564,7 +550,6 @@ Windows is operating in testing mode:</p>
 <span class="pre">testsigning</span> <span class="pre">off</span></code> in an administrator command prompt again and reboot the
 computer</p>
 </div>
-</div></blockquote>
 </li>
 </ol>
 </div>
@@ -587,11 +572,9 @@ need to be compiled from source.</p>
 Select <strong>install</strong> from the context menu.</p></li>
 <li><p>Open the start menu and type <strong>device manager</strong> and click to open. You shoul
 see <strong>RIFFA</strong> in the device tree.</p>
-<blockquote>
-<div><div class="figure align-left">
+<div class="figure align-left">
 <img alt="../../_images/package-manager-riffa.png" src="../../_images/package-manager-riffa.png" />
 </div>
-</div></blockquote>
 </li>
 </ol>
 </div>
@@ -601,11 +584,9 @@ see <strong>RIFFA</strong> in the device tree.</p>
 <li><p>If you don’t have Bonsai on your computer, visit <a class="reference external" href="https://bonsai-rx.org/">https://bonsai-rx.org/</a> and
 install the latest release.</p></li>
 <li><p>Open Bonsai. At the start menu, select <strong>Manage Packages</strong>.</p>
-<blockquote>
-<div><div class="figure align-left">
+<div class="figure align-left">
 <img alt="../../_images/bonsai-start-menu.png" src="../../_images/bonsai-start-menu.png" />
 </div>
-</div></blockquote>
 </li>
 <li><p>Select <strong>Community Packages</strong> as the package source.</p></li>
 <li><p>Search for <strong>Bonsai.ONIX</strong>.</p></li>

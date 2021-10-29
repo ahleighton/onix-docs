@@ -276,11 +276,6 @@
      UCLA Miniscope
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Miniscopes/miniscope-v4f.html">
-     MIT/UCLA Miniscope v4F
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -411,9 +406,36 @@
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#which-coaxial-cable">
+   Which Coaxial Cable?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assembly-guide">
+   Assembly Guide
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#headstage-side">
+     Headstage Side
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#host-commutator-side">
+     Host/Commutator Side
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -442,11 +464,246 @@
                 
   <div class="section" id="making-coaxial-tethers">
 <span id="tethers"></span><h1>Making Coaxial Tethers<a class="headerlink" href="#making-coaxial-tethers" title="Permalink to this headline">¶</a></h1>
-<p>ONIX headstages communicate with host hardware using a coaxial link. This page
-describes some methods for creating ultra-light and flexible coaxial tethers.</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Document.</p>
+<p>ONIX headstages communicate with host hardware using a <a class="reference external" href="https://en.wikipedia.org/wiki/Nominal_impedance#50_%CE%A9_and_75_%CE%A9">50-Ohm</a>
+<a class="reference external" href="https://en.wikipedia.org/wiki/Coaxial_cable">coaxial cable</a>. Because these
+tethers only have two conductors, replacing them or making tethers of custom
+lengths is quite simple. This page describes methods for creating light and
+flexible coaxial headstage tethers.</p>
+<div class="section" id="which-coaxial-cable">
+<h2>Which Coaxial Cable?<a class="headerlink" href="#which-coaxial-cable" title="Permalink to this headline">¶</a></h2>
+<p>Any suitable 50-Ohm coaxial cable can be used to make a tether. These
+instructions use Axon Cable PCX40K10AK. The cable should be light, flexible
+(silicone or thin FEP insulation), thin (less than 1 mm in diameter), and made
+by a reputable supplier that can supply information on the cable’s electrical
+characteristics. Most important are its <a href="#id1"><span class="problematic" id="id2">`</span></a>DC Resistance
+&lt;<a class="reference external" href="https://en.wikipedia.org/wiki/Electrical_resistivity_and_conductivity">https://en.wikipedia.org/wiki/Electrical_resistivity_and_conductivity</a>&gt;`__and
+<a href="#id3"><span class="problematic" id="id4">`</span></a>RF Loss** in the 1 GHz regime.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the actual quantities matter, and <strong>smaller values are
+better</strong>, the major hurdle is simply finding a supplier that will clearly
+characterize them as this an indication of quality. We have used cables
+from Axon Cable and <a class="reference external" href="http://www.coonerwire.com/mini-coax/">cooner wire</a>
+with good results.</p>
+</div>
+<dl class="field-list">
+<dt class="field-odd">DC Resistance</dt>
+<dd class="field-odd"><p>For DC signals, resistance is proportional to the inner
+conductor’s resistivity and cross-sectional and inversely proportional
+to its length. Larger DC resistance will cause a higher voltage drop in
+the cable and require increase compensation at the voltage source. DC
+resistance is a strict function of the cable’s size and smaller cables
+will have higher resistance.</p>
+<div class="figure align-default" id="id5">
+<img alt="A piece of resistive material with electrical contacts on both ends.  By User:Omegatron - Created by User:Omegatron using the GIMP, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1699802" src="../../_images/resistivity_geometry.png" style="width: 235.5px; height: 212.0px;" />
+<p class="caption"><span class="caption-text">A piece of resistive material with electrical contacts on both
+ends. <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=1699802">https://commons.wikimedia.org/w/index.php?curid=1699802</a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+<dt class="field-even">RF Loss</dt>
+<dd class="field-even"><p>For radio-frequency signals, frequency-dependent resistance
+(“loss”) is determined by the <a class="reference external" href="https://en.wikipedia.org/wiki/Skin_effect">skin effect</a> rather than conductor
+cross sectional area. Higher loss at a particular frequency will limit
+the length of cable over which signals can be reliably sent and
+received. RF loss is a complicated function of the cable’s design.
+Minimizing RF loss while maintaing uniform characteristic impedance
+characteristics is and engineering challenge and requires precision
+manufacturing.</p>
+<div class="figure align-default" id="id6">
+<img alt="For alternating current, the current density decreases exponentially from the surface towards the inside. https://commons.wikimedia.org/w/index.php?curid=4453931" height="240" src="../../_images/skin_depth.svg" width="260" /><p class="caption"><span class="caption-text">For alternating current, the current density decreases exponentially
+from the surface towards the inside.
+<a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=4453931">https://commons.wikimedia.org/w/index.php?curid=4453931</a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="assembly-guide">
+<h2>Assembly Guide<a class="headerlink" href="#assembly-guide" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="headstage-side">
+<h3>Headstage Side<a class="headerlink" href="#headstage-side" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>Required Tools and Materials</dt><dd><ul class="simple">
+<li><p>Solder jig: A copper-clad board with X.FL connectors soldered to it
+to that holds the X.FL socket(s) in place during soldering.</p></li>
+<li><p>5-minute epoxy (Bob Smith Industries brand works well)</p></li>
+<li><p>Small and sharp wire cutters</p></li>
+<li><p>Fine forceps (e.g. Dumont #5) for stripping the cable</p></li>
+<li><p>Soldering iron with a fine tip (0.2 mm diameter or smaller) and accurate temperature control</p></li>
+<li><p>Fine solder (0.5 mm or thinner diameter)</p></li>
+<li><p>No clean flux paste (e.g MG chemicals 8341)</p></li>
+<li><p>A microscope is <em>highly</em> recommended for soldering and manipulation
+of stripped cable segments.</p></li>
+</ul>
+</dd>
+<dt>Cable Components</dt><dd><ul class="simple">
+<li><p>Coaxial cable segment (these instructions uses Axon Cable PCX40K10AK)</p></li>
+<li><p>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</p></li>
+<li><p>2 mm segment of 1.5 mm OD, 0.5 mm ID silicone tubing for strain relief. The
+easiest and cheapest way to get this is by striping the silicon jacket
+from a  24 AWG flexible hookup wire.</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic">
+<li><p>Press the X.FL sockets onto the base board. We’ve found that this is the
+most convenient method for holding these tiny pieces in place during
+soldering and gluing.</p>
+<img alt="X.FL connector soldering jig." class="align-center" src="../../_images/xfl-jig.jpg" style="width: 60%;" />
+</li>
+</ol>
+<dl>
+<dt>_</dt><dd><img alt="X.FL socket pressed onto mating connector on the jig." class="align-center" src="../../_images/hs-end_1.jpg" style="width: 50%;" />
+</dd>
+</dl>
+<ol class="arabic">
+<li><p>Set the soldering iron to ~260 C. Using a fine soldering iron tip
+(~0.2mm or smaller), melt the plastic on the back side of the X.FL sockets
+to cover the holes in the plastic. This is required to prevent epoxy
+applied in later steps from getting into the connector.</p>
+<img alt="X.FL with back holes melted closed." class="align-center" src="../../_images/hs-end_2.jpg" style="width: 50%;" />
+</li>
+<li><p>Return the iron to soldering temperature (~370 C). Apply a dab of flux the
+contacts on the X.FL socket. Tin the two outer ground contacts on the socket
+along with the center pin connector.</p></li>
+<li><p>Slide the 2mm silicone tube over the end of the cable segment and push away
+from the tip for later use.</p>
+<img alt="2mm silicon tube over coaxial cable." class="align-center" src="../../_images/hs-end_3.jpg" style="width: 50%;" />
+</li>
+<li><p>Use the forceps to strip about 4-5 mm of the outer jacket from one end of
+the coaxial cable segment. This can be done by pinching the tip of the cable
+with the forceps and pulling it. This step may require some practice to get
+right.</p>
+<img alt="Stripping the coax with fine forceps." class="align-center" src="../../_images/hs-end_4.jpg" style="width: 50%;" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are not able to cleanly remove the outer insulation from
+the coaxial cable on the first try, just cut the tip off and start
+over. Clean insulaiton removal makes everything easier.</p>
+</div>
+</li>
+<li><p>Split the outer conductors into two bundles that pushed to either side of
+the cable. Use the forceps to strip the inner conductor in the same way as
+before. Tin the two outer-conductor bundles and the inner conductor.</p>
+<img alt="Stripped coax." class="align-center" src="../../_images/hs-end_5and6.png" style="width: 100%;" />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Ensure that there are no stray wires after this process as
+they can can cause shorts when the cable is soldered to the socket.</p>
+</div>
+</li>
+<li><p>Solder the cable to the X.FL socket. Ensure that the outer connectors are
+not making contact with the inner conductor, e.g. by being placed directly
+over the center of the X.FL socket.</p>
+<img alt="Coax soldered to the X.FL socket." class="align-center" src="../../_images/hs-end_7.jpg" style="width: 50%;" />
+</li>
+<li><p>Trim the lead excess using the small wire cutters.</p>
+<img alt="Coax soldered to the X.FL socket with leads trimmed." class="align-center" src="../../_images/hs-end_8.jpg" style="width: 50%;" />
+</li>
+<li><p>Mix and apply 5-minute epoxy to over the back of the X.FL socket. The epoxy
+should completely cover the solder joint and extend ~1 mm onto the cable
+itself.</p>
+<img alt="Coax soldered to the X.FL socket epoxy applied." class="align-center" src="../../_images/hs-end_9.jpg" style="width: 50%;" />
+</li>
+<li><p>Before the epoxy begins to cure, slide the 2 mm silicone tubing sement into
+the epoxy, rotating a bit to ensure the inner portion and outer edge of the
+silicone tube get a layer of epoxy.</p>
+<img alt="Coax soldered to the X.FL socket epoxy applied." class="align-center" src="../../_images/hs-end_10.jpg" style="width: 50%;" />
+</li>
+<li><p>Allow the epoxy to cure and then remove the X.FL socket from the jig.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Typically, the jig will have multiple X.FL connectors so that several tethers to be made in parallel.</p>
+<img alt="8 tethers being made in parallel." class="align-center" src="../../_images/hs-end-parallel.jpg" style="width: 70%;" />
+</div>
+</div>
+<div class="section" id="host-commutator-side">
+<h3>Host/Commutator Side<a class="headerlink" href="#host-commutator-side" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>Required Tools and Materials</dt><dd><ul class="simple">
+<li><p>5-minute epoxy (Bob Smith Industries brand works well)</p></li>
+<li><p>Small wire cutters</p></li>
+<li><p>Fine forceps for stripping the cable</p></li>
+<li><p>Soldering iron with a fine tip and accurate temperature control</p></li>
+<li><p>Fine solder (0.5 mm or thinner diameter)</p></li>
+<li><p>A microscope is <em>highly</em> recommended for soldering and manipulation
+of stripped cable segments.</p></li>
+<li><p>Hot air gun or hot air rework station.</p></li>
+</ul>
+</dd>
+<dt>Cable Components</dt><dd><blockquote>
+<div><ul class="simple">
+<li><p>Coaxial cable segment</p></li>
+<li><p>SMA plug to reverse-polarity SMA plug adapter</p></li>
+<li><p>20 mm segment of 1.5 mm OD, 0.5 mm ID silicone tubing for strain relief. The
+easiest and cheapest way to get this is by striping the silicon jacket
+from a  24 AWG flexible hookup wire.</p></li>
+<li><p>15 mm segment of 2.5 mm OD, 1.5 mm ID silicone tubing for strain relief. The
+easiest and cheapest way to get this is by striping the silicon jacket
+from a  20 AWG flexible hookup wire.</p></li>
+<li><p>12 mm segment of 6.35 mm OD, 3:1 shrink ratio, adhesive lined heat-shrink
+tubing for strain relief. We have found that NTE 47-23248-BK works well.</p></li>
+</ul>
+</div></blockquote>
+<img alt="SMA adapter." class="align-center" src="../../_images/host-end_1.jpg" style="width: 50%;" />
+</dd>
+</dl>
+<ol class="arabic">
+<li><p>Place the SMA plug adapter on the work surface with the reverse polarity end
+pointing up. It can be helpful to screw the adapter into a mating SMA
+receptacle to hold it still during soldering. Tin the inner conductor and a
+portion of the outer edge of SMA adapter.</p>
+<img alt="Tinned SMA adapter." class="align-center" src="../../_images/host-end_2.jpg" style="width: 50%;" />
+</li>
+<li><p>Slip all three strain relief tubes over the coaxial cable.</p>
+<img alt="Coaxial cable with strain relief tubing." class="align-center" src="../../_images/host-end_3.jpg" style="width: 100%;" />
+</li>
+<li><p>Use the fine forceps to pinch and strip about 5mm of the outer jacket from
+the from the end of the cable.</p>
+<img alt="Stripping the coax with fine forceps." class="align-center" src="../../_images/hs-end_4.jpg" style="width: 50%;" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are not able to cleanly remove the outer insulation from
+the coaxial cable on the first try, just cut the tip off and start
+over. Clean insulaiton removal makes everything easier.</p>
+</div>
+</li>
+<li><p>Separate the outer conductor wires into a single bundle and strip the
+insulation from the inner conductor.</p>
+<img alt="Coaxial cable outer and inner conductor separated." class="align-center" src="../../_images/host-end_4.jpg" style="width: 50%;" />
+</li>
+<li><p>Tin the outer and inner conductors.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Ensure that there are no stray wires after this process as
+they can can cause shorts when the cable is soldered to the socket.</p>
+</div>
+</li>
+<li><p>Solder the cable onto the SMA adapter</p>
+<img alt="Coaxial cable outer soldered onto the SMA adapter." class="align-center" src="../../_images/host-end_5.jpg" style="width: 50%;" />
+</li>
+<li><p>Mix and apply 5-minute epoxy to the well provided by the coax adapter to
+completely cover the solder joint. Put enough expoxy in the well such that
+it rises well above the edge and his held in place due to surface tension.</p>
+<img alt="Coaxial cable outer soldered onto the SMA adapter with epoxy." class="align-center" src="../../_images/host-end_6.jpg" style="width: 50%;" />
+</li>
+<li><p>Before the epoxy cures, move the 20 mm segment into the solder blob. Move up
+and down to ensure that the bottom portion of the silicon tube is covered in
+epoxy. Repeat this process for the 15 mm segment.</p>
+<img alt="Coaxial cable outer soldered onto the SMA adapter with thin silicone tube." class="align-center" src="../../_images/host-end_7.jpg" style="width: 50%;" />
+</li>
+<li><p>Slip the final heat shrink tube over the base of the SMA adapter. Wait for
+the epoxy to cure.</p>
+<img alt="Coaxial cable outer soldered onto the SMA adapter with heatshrink tube." class="align-center" src="../../_images/host-end_8.jpg" style="width: 50%;" />
+</li>
+<li><p>Using the hot air gun (set to ~250 C), activate the heat shrink tubing
+starting at the base of the connector and working up toward the top. The
+seal is complete when the adhesive lining begins to come out of the top of
+the heatshrink tubing.</p>
+<img alt="Completed host-side of coaxial cable." class="align-center" src="../../_images/host-end_9.jpg" style="width: 50%;" />
+</li>
+</ol>
+</div>
 </div>
 </div>
 

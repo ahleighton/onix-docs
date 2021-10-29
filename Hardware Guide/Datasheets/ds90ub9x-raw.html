@@ -276,11 +276,6 @@
      UCLA Miniscope
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Miniscopes/miniscope-v4f.html">
-     MIT/UCLA Miniscope v4F
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -497,7 +492,7 @@
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>DS90UB9X Raw Device</strong> can be used to receive raw data from and control
 <a class="reference external" href="https://www.ti.com/product/DS90UB934-Q1">DS90UB9x</a> SERDES pairs. This
-device is useful for acquiring data from headstages that use <a class="reference external" href="https://www.ti.com/product/DS90UB933-Q1">DS90UB9x3</a> serializers, which are physically
+device is useful for acquiring data from instruments that use <a class="reference external" href="https://www.ti.com/product/DS90UB933-Q1">DS90UB9x3</a> serializers, which are physically
 compatible with ONIX host hardware, but do not implement <a class="reference internal" href="../Headstages/serialization.html#serialization"><span class="std std-ref">ONIX Serization
 protocol</span></a>. For example, third party devices such as <a class="reference external" href="http://miniscope.org/index.php/Main_Page">UCLA
 Miniscope</a> and its derivatives.</p>
@@ -590,8 +585,9 @@ Miniscope</a> and its derivatives.</p>
 <td><p>On Reset</p></td>
 <td><p>0</p></td>
 <td><p>None</p></td>
-<td><p>The LSB determines if HSYNC and VSYNC are included in the data word
-along with parallel port state</p>
+<td><p>The LSB determines if HSYNC and VSYNC bits are included in the data
+word along with parallel port state. If included, bit 13 is HSYNC and
+bit 14 is VSYNC.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>0x0: not included</p></li>
@@ -601,6 +597,25 @@ along with parallel port state</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>0x8006</p></td>
+<td><p>SYNCBITS</p></td>
+<td><p>R/W</p></td>
+<td><p>On Reset</p></td>
+<td><p>0</p></td>
+<td><p>None</p></td>
+<td><p>If enabled, mark bit 15 of all data words in a frame after a choosen
+sync edge. Note that words in a frame still respect TRIGGER and GATE
+properties. Therefore this property provides a means to mark the first
+frame in a multi-frame sample (e.g. the first row in a camera image).</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Bit 0: not included</p></li>
+<li><p>Bit 1: ‘0’ = HSYNC, ‘1’ = VSYNC</p></li>
+<li><p>Bit 2: ‘0’ = Rising edge, ‘1’ = Falling edge</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>0x8007</p></td>
 <td><p>GPIO_DIR</p></td>
 <td><p>R/W</p></td>
 <td><p>On Reset</p></td>
@@ -615,7 +630,7 @@ along with parallel port state</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td><p>0x8007</p></td>
+<tr class="row-even"><td><p>0x8008</p></td>
 <td><p>GPIO_VAL</p></td>
 <td><p>R/W</p></td>
 <td><p>On Reset</p></td>
@@ -626,6 +641,22 @@ along with parallel port state</p>
 <div><ul class="simple">
 <li><p>0b0: Low</p></li>
 <li><p>0b1: High</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>0x8009</p></td>
+<td><p>GPIO_VAL</p></td>
+<td><p>R</p></td>
+<td><p>On DS90UBX LOCK or PASS pin state change</p></td>
+<td><p>N/A</p></td>
+<td><p>None</p></td>
+<td><p>Access the DS90UBX LOCK and PASS pin state to determine if the SERDES
+is operating normally.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Bit 0: DS90UBX LOCK pin state</p></li>
+<li><p>Bit 1: DS90UBX PASS pin state</p></li>
 </ul>
 </div></blockquote>
 </td>

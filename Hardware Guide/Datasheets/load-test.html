@@ -277,11 +277,6 @@
      UCLA Miniscope
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Miniscopes/miniscope-v4f.html">
-     MIT/UCLA Miniscope v4F
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -467,7 +462,7 @@
               <div>
                 
   <div class="section" id="load-test-device">
-<span id="onidatasheet-load-test"></span><h1>Load Test Device<a class="headerlink" href="#load-test-device" title="Permalink to this headline">¶</a></h1>
+<span id="onidatasheet-loadtest"></span><h1>Load Test Device<a class="headerlink" href="#load-test-device" title="Permalink to this headline">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Authors</dt>
 <dd class="field-odd"><p>Jonathan P. Newman</p>
@@ -479,16 +474,16 @@
 <dd class="field-odd"><p>27</p>
 </dd>
 <dt class="field-even">ONIX Hubs</dt>
-<dd class="field-even"><p>This device is used for testing purposes during developments.</p>
+<dd class="field-even"><p>This device is used for real-world bandwidth and latency testing.</p>
 </dd>
 </dl>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Load Test</strong> device produces data at user-settable size and rate to stress
-test various communication links.</p>
+<p>The <strong>Load Test</strong> device that produces data at user-settable size and rate to
+stress test various communication links and test closed-loop response latency.</p>
 </div>
 <div class="section" id="register-programming">
-<h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
+<span id="onidatasheet-loadtest-reg"></span><h2>Register Programming<a class="headerlink" href="#register-programming" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Address</p></th>
@@ -533,29 +528,42 @@ test various communication links.</p>
 <td><p>The frequency parameter, CLK_HZ, used in the calculation of CLK_DIV.</p></td>
 </tr>
 <tr class="row-odd"><td><p>0x03</p></td>
-<td><p>FRAME_WORDS</p></td>
+<td><p>DT0H16_WORDS</p></td>
 <td><p>R/W</p></td>
 <td><p>On Reset</p></td>
-<td><p>1</p></td>
+<td><p>0</p></td>
 <td><p>None</p></td>
-<td><p>Number of repetitions of 16-bit unsigned integer 42 sent with each
-frame.</p></td>
+<td><p>The number of incrementing 16-bit integers sent in each frame.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The maximum value of DT0H16_WORDS depends of CLK_HZ and
+CLK_DIV. There needs to be enough clock cycles to satisfy</p>
+<div class="math notranslate nohighlight">
+\[DT0H16\_WORDS &lt;= CLK\_HZ / CLK\_DIV - 9\]</div>
+<p>Setting DTOH16_WORDS above this value will result in a <em>decreased</em>
+device to host load as samples will be skipped.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>0x04</p></td>
+<td><p>HTOD32_WORDS</p></td>
+<td><p>R/W</p></td>
+<td><p>On Reset</p></td>
+<td><p>0</p></td>
+<td><p>None</p></td>
+<td><p>The number of 32-bit word dummy data in in each Host To Device frame.
+Write frames always start with a single 64-bit unsisigned integer,
+which is looped subtracted from the Hub Clock Counter when it is
+received to produce a Hub Clock Delta that is looped back into the
+device to host data frame for testing loop latency. All other data is
+ingored.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The maximum value of <code class="docutils literal notranslate"><span class="pre">FRAME_WORDS</span></code> depends of <code class="docutils literal notranslate"><span class="pre">CLK_HZ</span></code> and <code class="docutils literal notranslate"><span class="pre">CLK_DIV</span></code>. There needs
-to be enough clock cycles to satisfy:</p>
-<div class="math notranslate nohighlight">
-\[CLK\_HZ / CLK\_DIV &gt;= FRAME\_WORDS + 5\]</div>
-<p>Exceeding this value will result in <em>decreased</em> load bandwidth as samples
-will be skipped.</p>
-</div>
 </div>
 <div class="section" id="device-to-host-data-frames">
-<h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
-<p>With <code class="docutils literal notranslate"><span class="pre">FRAME_WORDS</span></code> = 4, each frame transmitted to the host is structured as
+<span id="onidatasheet-loadtest-d2h"></span><h2>Device To Host Data Frames<a class="headerlink" href="#device-to-host-data-frames" title="Permalink to this headline">¶</a></h2>
+<p>With DT0H16_WORDS = 4, each frame transmitted to the host is structured as
 follows:</p>
 
 <div style="overflow-x:auto">
@@ -564,27 +572,74 @@ follows:</p>
     reg: [
       {bits: 64, name: "Acquisition Clock Counter", type: 0},
       {bits: 32, name: "Device Address", type: 0},
-      {bits: 32, name: "Data Size", type: 0, attr: 16},
+      {bits: 32, name: "Data Size", type: 0, attr: 24},
 
       {bits: 64, name: "Hub Clock Counter", type: 3},
 
+      {bits: 64, name: "Hub Clock Delta", type: 5},
+
       {bits: 16, name: "Frame Word 0", type: 6, atter:42},
-      {bits: 16, name: "Frame Word 1", type: 6, atter:42},
-      {bits: 16, name: "Frame Word 2", type: 6, atter:42},
-      {bits: 16, name: "Frame Word 3", type: 6, atter:42}
+      {bits: 16, name: "Frame Word 1", type: 6, atter:43},
+      {bits: 16, name: "Frame Word 2", type: 6, atter:44},
+      {bits: 16, name: "Frame Word 3", type: 6, atter:45}
 
     ],
-    config: {bits: 256, lanes: 8, vflip: true, hflip: true, fontsize: 11}
+    config: {bits: 320, lanes: 10, vflip: true, hflip: true, fontsize: 11}
 }
 </script>
 </div>
-<p>When <code class="docutils literal notranslate"><span class="pre">FRAME_WORDS</span></code> is set to a different value, the Data Size field along with
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><dl class="simple">
+<dt>Hub Clock Counter Delta</dt><dd><p>64-bit unsigned integer that the result of subtracting the Hub Clock
+Counter value from the Hub Clock Counter Loop back value in
+<a class="reference internal" href="#onidatasheet-loadtest-h2d"><span class="std std-ref">Host To Device Data Frames</span></a>. This provides a real-world, hardware
+timed measurement of closed-loop latency.</p>
+</dd>
+<dt>Frame Word N</dt><dd><p>Ignored data that can be used for host to device load testing.  When
+DT0H16_WORDS is set to a different value, the Data Size field along with
 the number of words at the end of the frame will change.</p>
+</dd>
+</dl>
+</div></blockquote>
 </div>
 <div class="section" id="host-to-device-data-frames">
-<h2>Host To Device Data Frames<a class="headerlink" href="#host-to-device-data-frames" title="Permalink to this headline">¶</a></h2>
-<p>This device does not accept input frames. All write attempts will fail with an
-error.</p>
+<span id="onidatasheet-loadtest-h2d"></span><h2>Host To Device Data Frames<a class="headerlink" href="#host-to-device-data-frames" title="Permalink to this headline">¶</a></h2>
+<p>With HTOD32_WORDS = 2, each frame transmitted to the host is structured as
+follows:</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    reg: [
+      {bits: 32, name: "Device Address", type: 0},
+      {bits: 32, name: "Data Size", type: 0, attr: 16},
+
+      {bits: 64, name: "Hub Clock Counter Loopback", type: 3},
+
+      {bits: 32, name: "Frame Word 0", type: 6, atter:42},
+      {bits: 32, name: "Frame Word 1", type: 6, atter:43},
+
+    ],
+    config: {bits: 192, lanes: 6, vflip: true, hflip: true, fontsize: 11}
+}
+</script>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><dl class="simple">
+<dt>Hub Clock Counter Loopback</dt><dd><p>64-bit unsigned integer that is subtracted from the current Hub Clock
+Counter value to produce the Hub Clock Counter Delta field in
+<a class="reference internal" href="bno055.html#onidatasheet-bno055-d2h"><span class="std std-ref">Device To Host Data Frames</span></a>.</p>
+</dd>
+<dt>Frame Word N</dt><dd><p>Ignored data that can be used for host to device load testing.</p>
+</dd>
+</dl>
+</div></blockquote>
 </div>
 </div>
 
