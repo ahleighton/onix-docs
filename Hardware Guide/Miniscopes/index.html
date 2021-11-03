@@ -38,7 +38,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="UCLA Miniscope" href="ucla-miniscope.html" />
+    <link rel="next" title="Adapters &amp; EIBs" href="../Adapters%20%26%20EIBs/index.html" />
     <link rel="prev" title="Neuropixels-1.0 Headstage" href="../Headstages/headstage-neuropix.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -261,29 +261,17 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Miniscopes
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ucla-miniscope.html">
-     UCLA Miniscope
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Adapters%20%26%20EIBs/index.html">
    Adapters &amp; EIBs
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -314,8 +302,8 @@
   <a class="reference internal" href="../Datasheets/index.html">
    ONI Datasheets
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -406,9 +394,34 @@
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ucla-miniscope-v3">
+   UCLA Miniscope V3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ucla-miniscope-v4">
+   UCLA Miniscope V4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ninscope">
+   NINScope
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#featherscope-kiloscope">
+   FeatherScope &amp; Kiloscope
+  </a>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -437,10 +450,61 @@
                 
   <div class="section" id="miniscopes">
 <span id="id1"></span><h1>Miniscopes<a class="headerlink" href="#miniscopes" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ucla-miniscope.html">UCLA Miniscope</a></li>
-</ul>
+<p>ONIX is compatible with the following head-mounted miniscopes for freely-moving
+calcium imaging:</p>
+<div class="section" id="ucla-miniscope-v3">
+<h2>UCLA Miniscope V3<a class="headerlink" href="#ucla-miniscope-v3" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Design Repository</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/daharoni/Miniscope_CMOS_Imaging_Sensor_PCB">https://github.com/daharoni/Miniscope_CMOS_Imaging_Sensor_PCB</a></p>
+</dd>
+<dt class="field-even">Documentation</dt>
+<dd class="field-even"><p><a class="reference external" href="http://miniscope.org/index.php/Guides_and_Tutorials">http://miniscope.org/index.php/Guides_and_Tutorials</a></p>
+</dd>
+<dt class="field-odd">Compatibility</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a>, <a class="reference internal" href="../Breakout%20Board/index.html#breakout"><span class="std std-ref">Breakout Board</span></a></p>
+</dd>
+<dt class="field-even">Bonsai.ONIX Node</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../Software%20Guide/Bonsai/MiniscopeV3Device.html#bonsai-miniscopev3dev"><span class="std std-ref">MiniscopeV3Device</span></a></p>
+</dd>
+</dl>
+<div class="figure align-center">
+<img alt="_static/images/miniscopes/ucla-miniscope-v3-render.jpg" src="_static/images/miniscopes/ucla-miniscope-v3-render.jpg" style="width: 37%;" />
+</div>
+</div>
+<div class="section" id="ucla-miniscope-v4">
+<h2>UCLA Miniscope V4<a class="headerlink" href="#ucla-miniscope-v4" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Design Repository</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/Aharoni-Lab/Miniscope-v4">https://github.com/Aharoni-Lab/Miniscope-v4</a></p>
+</dd>
+<dt class="field-even">Documentation</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/Aharoni-Lab/Miniscope-v4/wiki">https://github.com/Aharoni-Lab/Miniscope-v4/wiki</a></p>
+</dd>
+<dt class="field-odd">Compatibility</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a>, <a class="reference internal" href="../Breakout%20Board/index.html#breakout"><span class="std std-ref">Breakout Board</span></a></p>
+</dd>
+<dt class="field-even">Bonsai.ONIX Nodes</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../Software%20Guide/Bonsai/MiniscopeV4Device.html#bonsai-miniscopev4dev"><span class="std std-ref">MiniscopeV4Device</span></a>, <a class="reference internal" href="../../Software%20Guide/Bonsai/MiniscopeV4BNO055Device.html#bonsai-miniscopev4bno055dev"><span class="std std-ref">MiniscopeV4BNO055Device</span></a></p>
+</dd>
+</dl>
+<div class="figure align-center">
+<img alt="_static/images/miniscopes/ucla-miniscope-v4-render.png" src="_static/images/miniscopes/ucla-miniscope-v4-render.png" style="width: 37%;" />
+</div>
+</div>
+<div class="section" id="ninscope">
+<h2>NINScope<a class="headerlink" href="#ninscope" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Comming soon.</p>
+</div>
+</div>
+<div class="section" id="featherscope-kiloscope">
+<h2>FeatherScope &amp; Kiloscope<a class="headerlink" href="#featherscope-kiloscope" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>Comming soon.</p>
+</div>
 </div>
 </div>
 
@@ -463,10 +527,10 @@
             <p class="prev-next-title">Neuropixels-1.0 Headstage</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="ucla-miniscope.html" title="next page">
+    <a class='right-next' id="next-link" href="../Adapters%20%26%20EIBs/index.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">UCLA Miniscope</p>
+        <p class="prev-next-title">Adapters &amp; EIBs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
