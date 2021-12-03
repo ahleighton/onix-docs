@@ -431,6 +431,59 @@
 <p class="admonition-title">Todo</p>
 <p>High level step by step setup and testing process.</p>
 </div>
+<ol class="arabic simple">
+<li><p>Hardware list</p></li>
+</ol>
+<p>Minimum:</p>
+<ul class="simple">
+<li><p>An acquisition computer</p></li>
+<li><p>PCIe Host</p></li>
+<li><p>Headstage or Miniscope</p></li>
+</ul>
+<p>Additional devices:</p>
+<ul class="simple">
+<li><p>Breakout Board</p></li>
+<li><p>Commutator</p></li>
+<li><p>Lighthouses</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Connections</p></li>
+</ol>
+<p>Cables &amp; connections:</p>
+<img alt="Hardware Guide/_static/images/connections/connections.png" class="align-center" src="Hardware Guide/_static/images/connections/connections.png" />
+<p>Commutator
+- USB (computer) to micro-USB (commutator) cable, to power the commutator.</p>
+<p>Digital and analog I/O:
+- <a href="#id2"><span class="problematic" id="id3">`High speed digital cable &lt;https://multimedia.3m.com/mws/media/585365O/3mtm-shrunk-delta-ribbon-sdr-cable-assembly-ts2287.pdf?`_</span></a> to connect Host and Breakout Board</p>
+<p>Headstages
+- MMCX (Host) to MMCX (Breakout Board) - one cable for each headstage or clock in/output.
+- SMA (Breakout Board) to SMA (Commutator)
+- Tether: SMA (Commutator) to Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket (Headstage).
+:ref: ‘Making Coaxial Tethers’</p>
+<p>If not using the Breakout Board, you can directly connect a headstage to the Host with a tether and an SMA to MMCX adapter.</p>
+<p>Lighthouses
+- Audio (Lighthouse A) to Audio (Lighthouse B) - to synchronise lighthouses (only necessary for V1)
+- Power cables for lighthouses (x2)</p>
+<ol class="arabic simple" start="3">
+<li><p>Installing and Testing</p></li>
+</ol>
+<ul class="simple">
+<li><p>Install the PCIe board in the PC (ref to guide here)</p></li>
+<li><p>Mount 2 Base Station Lighthouses over the setup (height range)</p></li>
+</ul>
+<p>– Connect their power cables
+– Set one to A and one to B
+– Connect them using an audio to audio cable to synchronise them.
+- Mount the active commutator above the setup
+– Power it from the computer using a USB to micro-USB cable
+– Test in Bonsai?
+- Connect the Breakout Board to the Host using the high-speed digital cable
+– Test Digital IO
+– Test Buttons
+– Test Analog IO
+- Connect headstages either directly to host or through Breakout Board
+– Check link
+– Testing/ checking depending on device</p>
 </div>
 
     <script type="text/javascript">
