@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cables and Connections &#8212; Open Ephys ONIX  documentation</title>
+    <title>Connections and Cables &#8212; Open Ephys ONIX  documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -210,10 +210,10 @@
               
               <div>
                 
-  <div class="section" id="cables-and-connections">
-<span id="connection-overview"></span><h1>Cables and Connections<a class="headerlink" href="#cables-and-connections" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="connections-and-cables">
+<span id="connection-overview"></span><h1>Connections and Cables<a class="headerlink" href="#connections-and-cables" title="Permalink to this headline">¶</a></h1>
 <p>This page is meant to help you understand the various connectors and data links in the ONIX hardware.</p>
-<img alt="Hardware Guide/_static/images/connections/connections.svg" class="align-center" src="Hardware Guide/_static/images/connections/connections.svg" /><p>(not shown: USB cable connecting computer to commutator)</p>
+<img alt="../../../_images/connections.svg" class="align-center" src="../../../_images/connections.svg" /><p>(not shown: USB cable connecting computer to commutator)</p>
 <div class="section" id="commutator-link">
 <h2>Commutator link<a class="headerlink" href="#commutator-link" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -223,7 +223,7 @@
 <div class="section" id="digital-and-analog-i-o">
 <h2>Digital and Analog I/O<a class="headerlink" href="#digital-and-analog-i-o" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a href="#id1"><span class="problematic" id="id2">:ref:`High speed digital cable &lt;https://multimedia.3m.com/mws/media/585365O/3mtm-shrunk-delta-ribbon-sdr-cable-assembly-ts2287.pdf&gt;`_</span></a> to connect Host and Breakout Board.</p></li>
+<li><p><a class="reference external" href="https://multimedia.3m.com/mws/media/585365O/3mtm-shrunk-delta-ribbon-sdr-cable-assembly-ts2287.pdf">High speed digital cable</a> to connect Host and Breakout Board.</p></li>
 </ul>
 </div>
 <div class="section" id="headstage-link">
@@ -231,18 +231,18 @@
 <p>The headstage link can be formed directly with the host PCIe board, or via a commutator and/or breakout board.</p>
 <p>Connectors used for headstage link:</p>
 <ul class="simple">
-<li><p>64-channel headstage, npix headstage and miniscope: Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket connector.</p></li>
+<li><p>The <a class="reference internal" href="../../Headstages/headstage-64/index.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> &amp; <a class="reference internal" href="../../Headstages/headstage-neuropix.html#headstage-neuropix1"><span class="std std-ref">Neuropixels-1.0 Headstage</span></a>:  Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket connector.</p></li>
 <li><p>PCIe host board: MMCX connectors</p></li>
 <li><p>Breakout board: MMCX connectors (to link to PCIe host) &amp; SMA connectors (to link to commutator or headstage).</p></li>
 <li><p>Commutator: SMA connectors to link to both breakout board and headstage.</p></li>
 </ul>
 <p>Example configurations and required cables:</p>
 <ul class="simple">
-<li><p>Directly from headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to PCIe host board (<em>MMCX</em>), using a coaxial tether (:ref:’Making Coaxial Tethers’) and an SMA to MMCX adapter.</p></li>
+<li><p>Directly from headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to PCIe host board (<em>MMCX</em>), using a coaxial tether (<span class="xref std std-ref">Making Coaxial Tethers</span>) and an SMA to MMCX adapter.</p></li>
 <li><p>From headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to breakout board (<em>SMA</em>), then from breakout board (<em>MMCX</em>) to PCIe host board (<em>MMCX</em>).</p></li>
 <li><p>From headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to commutator (<em>SMA</em>), from commutator (<em>SMA</em>) to breakout board (<em>SMA</em>), then from breakout board (<em>MMCX</em>) to PCIe host board (<em>MMCX</em>).</p></li>
 <li><p>From headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to commutator (<em>SMA</em>), from commutator (<em>SMA</em>) to PCIe host board (<em>MMCX</em>).</p></li>
-<li><p>Tether: SMA (Commutator) to Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket (Headstage). :ref: ‘Making Coaxial Tethers’</p></li>
+<li><p>Tether: SMA (Commutator) to Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket (Headstage). <span class="xref std std-ref">Making Coaxial Tethers</span>.</p></li>
 </ul>
 </div>
 <div class="section" id="lighthouses">
