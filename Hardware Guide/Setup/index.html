@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>System Setup &#8212; Open Ephys ONIX  documentation</title>
+    <title>Hardware System Setup &#8212; Open Ephys ONIX  documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -148,7 +148,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   System Setup
+   Hardware System Setup
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -401,8 +401,28 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installing-and-testing">
-   Installing and Testing
+  <a class="reference internal nav-link" href="#pcie-and-computer">
+   PCIe and computer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lighthouse-base-stations">
+   Lighthouse Base Stations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commutator">
+   Commutator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#breakout-board">
+   Breakout Board
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#headstages-other-devices">
+   Headstages/other devices
   </a>
  </li>
 </ul>
@@ -433,30 +453,33 @@
               
               <div>
                 
-  <div class="section" id="system-setup">
-<span id="id1"></span><h1>System Setup<a class="headerlink" href="#system-setup" title="Permalink to this headline">¶</a></h1>
-<div class="contents local topic" id="table-of-contents">
-<p class="topic-title">Table of Contents</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#installing-and-testing" id="id2">Installing and Testing</a></p></li>
-</ul>
-</div>
+  <div class="section" id="hardware-system-setup">
+<span id="system-setup"></span><h1>Hardware System Setup<a class="headerlink" href="#hardware-system-setup" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<div class="section" id="installing-and-testing">
-<h2><a class="toc-backref" href="#id2">Installing and Testing</a><a class="headerlink" href="#installing-and-testing" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li><p>Install the PCIe board in the PC, along with relevant software, by following the <a class="reference internal" href="../PCIe%20Host/setup-windows.html#pcie-host-setup-windows"><span class="std std-ref">Setup Guide for Windows</span></a>.</p></li>
-<li><p>Mount 2 Vive Base Station Lighthouses over the setup (height range)</p></li>
-</ol>
+<div class="section" id="pcie-and-computer">
+<h2>PCIe and computer<a class="headerlink" href="#pcie-and-computer" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><p>Install the PCIe board in the PC, along with relevant software, by following the <a class="reference internal" href="../PCIe%20Host/setup-windows.html#pcie-host-setup-windows"><span class="std std-ref">Setup Guide for Windows</span></a>.</p></li>
+</ul>
+</div>
+<div class="section" id="lighthouse-base-stations">
+<h2>Lighthouse Base Stations<a class="headerlink" href="#lighthouse-base-stations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Mount 2 Vive Base Station Lighthouses over the setup.</dt><dd><ul>
 <li><p>Connect one power adaptor to each base station.</p></li>
-<li><p>Set one base station to ‘A’ and one to ‘b’ using the channel button (see the Vive manual`&lt;<a class="reference external" href="https://www.vive.com/eu/support/vive/category_howto/about-the-base-stations.html">https://www.vive.com/eu/support/vive/category_howto/about-the-base-stations.html</a>&gt;`_)</p></li>
+<li><p>Set one base station to ‘A’ and one to ‘b’ using the channel button (see the <a class="reference external" href="https://www.vive.com/eu/support/vive/category_howto/about-the-base-stations.html">Vive manual</a>)</p></li>
 <li><p>Connect the basestations to each other, using an audio to audio cable (this is to synchronise them, see <a class="reference external" href="https://www.vive.com/media/filer_public/support_zip_img/eu/www/vive/guid-cba33494-fc82-4b81-84ae-735fcd6a5876-web.png">image here</a>)</p></li>
 </ul>
-<ol class="arabic simple" start="3">
-<li><p>Mount the active commutator above the setup (you can use the same frame as the base stations).</p></li>
-</ol>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="commutator">
+<h2>Commutator<a class="headerlink" href="#commutator" title="Permalink to this headline">¶</a></h2>
+<p>Mount the active commutator above the setup (you can use the same frame as the base stations).</p>
 <ul class="simple">
 <li><p>Connect the commutator to the computer using a USB to micro-USB cable</p></li>
 </ul>
@@ -464,19 +487,32 @@
 <p class="admonition-title">Note</p>
 <p>Add how to test commutator in Bonsai?</p>
 </div>
-<ol class="arabic simple" start="4">
-<li><p>Connect the Breakout Board to the Host using the high-speed digital cable</p></li>
-</ol>
+</div>
+<div class="section" id="breakout-board">
+<h2>Breakout Board<a class="headerlink" href="#breakout-board" title="Permalink to this headline">¶</a></h2>
+<p>The breakout board can be mounted on a rack.</p>
+<p>Connect the breakout board to the PCIe host board using the high-speed digital cable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p>Test Digital IO</p></li>
 <li><p>Test Buttons</p></li>
 <li><p>Test Analog IO</p></li>
 </ul>
-<ol class="arabic simple" start="5">
-<li><p>Connect headstages either directly to host or through the breakout board</p></li>
-</ol>
-<p>The LED on the breakout board (and the PCIe board itself, if visible) should turn purple when the link is made between the headstage and the PCIe host board.
-Double-clicking on the OniContext node in Bonsai should now show an additional tab, labelled with the type of headstage.</p>
+</div>
+</div>
+<div class="section" id="headstages-other-devices">
+<h2>Headstages/other devices<a class="headerlink" href="#headstages-other-devices" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Connect the headstages either directly to host or through the breakout board (see headstage link).</dt><dd><ul>
+<li><p>The LED on the breakout board (and the PCIe board itself, if visible) should turn purple when the link is made between the headstage and the PCIe host board.</p></li>
+<li><p>Double-clicking on the OniContext node in Bonsai should now show an additional tab, labelled with the type of headstage.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 </div>
 </div>
 
