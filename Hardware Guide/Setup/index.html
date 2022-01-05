@@ -394,9 +394,51 @@
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hardware-list">
+   1) Hardware list
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connections">
+   2) Connections
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commutator">
+     Commutator
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#digital-and-analog-i-o">
+     Digital and analog I/O
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#headstages">
+     Headstages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lighthouses">
+     Lighthouses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-and-testing">
+   3) Installing and Testing
+  </a>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -424,49 +466,65 @@
               <div>
                 
   <div class="section" id="system-setup">
-<h1>System Setup<a class="headerlink" href="#system-setup" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>System Setup<a class="headerlink" href="#system-setup" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>High level step by step setup and testing process.</p>
-</div>
-<ol class="arabic simple">
-<li><p>Hardware list</p></li>
-</ol>
+<div class="section" id="hardware-list">
+<h2>1) Hardware list<a class="headerlink" href="#hardware-list" title="Permalink to this headline">¶</a></h2>
 <p>Minimum:</p>
 <ul class="simple">
 <li><p>An acquisition computer</p></li>
 <li><p>PCIe Host</p></li>
-<li><p>Headstage or Miniscope</p></li>
+<li><p>ONI-compliant device (e.g. Headstage/ Miniscope V4)</p></li>
 </ul>
 <p>Additional devices:</p>
 <ul class="simple">
 <li><p>Breakout Board</p></li>
 <li><p>Commutator</p></li>
 <li><p>Lighthouses</p></li>
+<li><p>Adapters and EIBs</p></li>
 </ul>
-<ol class="arabic simple" start="2">
-<li><p>Connections</p></li>
-</ol>
+</div>
+<div class="section" id="connections">
+<h2>2) Connections<a class="headerlink" href="#connections" title="Permalink to this headline">¶</a></h2>
 <p>Cables &amp; connections:</p>
 <img alt="../../_images/connections.png" class="align-center" src="../../_images/connections.png" />
-<p>Commutator
-- USB (computer) to micro-USB (commutator) cable, to power the commutator.</p>
-<p>Digital and analog I/O:
-- <a href="#id2"><span class="problematic" id="id3">`High speed digital cable &lt;https://multimedia.3m.com/mws/media/585365O/3mtm-shrunk-delta-ribbon-sdr-cable-assembly-ts2287.pdf?`_</span></a> to connect Host and Breakout Board</p>
-<p>Headstages
-- MMCX (Host) to MMCX (Breakout Board) - one cable for each headstage or clock in/output.
-- SMA (Breakout Board) to SMA (Commutator)
-- Tether: SMA (Commutator) to Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket (Headstage).
-:ref: ‘Making Coaxial Tethers’</p>
+<div class="section" id="commutator">
+<h3>Commutator<a class="headerlink" href="#commutator" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>USB (computer) to micro-USB (commutator) cable, to power the commutator.</p></li>
+</ul>
+</div>
+<div class="section" id="digital-and-analog-i-o">
+<h3>Digital and analog I/O<a class="headerlink" href="#digital-and-analog-i-o" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a href="#id2"><span class="problematic" id="id3">`High speed digital cable &lt;https://multimedia.3m.com/mws/media/585365O/3mtm-shrunk-delta-ribbon-sdr-cable-assembly-ts2287.pdf?`_</span></a> to connect Host and Breakout Board</p></li>
+</ul>
+</div>
+<div class="section" id="headstages">
+<h3>Headstages<a class="headerlink" href="#headstages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>MMCX (Host) to MMCX (Breakout Board) - one cable for each headstage or clock in/output.</p></li>
+<li><p>SMA (Breakout Board) to SMA (Commutator)</p></li>
+<li><p>Tether: SMA (Commutator) to Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket (Headstage).</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">ref</dt>
+<dd class="field-odd"><p>‘Making Coaxial Tethers’</p>
+</dd>
+</dl>
 <p>If not using the Breakout Board, you can directly connect a headstage to the Host with a tether and an SMA to MMCX adapter.</p>
-<p>Lighthouses
-- Audio (Lighthouse A) to Audio (Lighthouse B) - to synchronise lighthouses (only necessary for V1)
-- Power cables for lighthouses (x2)</p>
-<ol class="arabic simple" start="3">
-<li><p>Installing and Testing</p></li>
-</ol>
+</div>
+<div class="section" id="lighthouses">
+<h3>Lighthouses<a class="headerlink" href="#lighthouses" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Audio (Lighthouse A) to Audio (Lighthouse B) - to synchronise lighthouses (only necessary for V1)</p></li>
+<li><p>Power cables for lighthouses (x2)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="installing-and-testing">
+<h2>3) Installing and Testing<a class="headerlink" href="#installing-and-testing" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Install the PCIe board in the PC (ref to guide here)</p></li>
 <li><p>Mount 2 Base Station Lighthouses over the setup (height range)</p></li>
@@ -484,6 +542,7 @@
 - Connect headstages either directly to host or through Breakout Board
 – Check link
 – Testing/ checking depending on device</p>
+</div>
 </div>
 
     <script type="text/javascript">

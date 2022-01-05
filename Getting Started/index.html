@@ -163,6 +163,23 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-will-you-need-to-use-onix">
+   What will you need to use ONIX?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hardware">
+     Hardware
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#software">
+     Software
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-onix">
    What is ONIX?
   </a>
@@ -180,23 +197,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#latencies">
      3) Latencies
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-will-you-need-to-use-onix">
-   What will you need to use ONIX?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hardware">
-     Hardware
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#software">
-     Software
     </a>
    </li>
   </ul>
@@ -233,7 +233,19 @@
 <span id="getting-started"></span><h1><img alt="hw_logo" height="60" src="../_images/noun_pcb.svg" /> Getting Started<a class="headerlink" href="#hw-logo-getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>This page provides a high-level introduction to ONIX. In addition, read the hardware overview!!!!!!!!!! page to understand each individual hardware component of the system, and the software overview!!!!!!!!!!! page to get started with Bonsai.</p>
+<p>This page provides a high-level introduction to ONIX. In addition, read the <a class="reference internal" href="../Hardware%20Guide/index.html#hardware-guide"><span class="std std-ref"> Hardware Guide</span></a> to understand each individual hardware component of the system, and <a class="reference internal" href="../Software%20Guide/Bonsai/GettingStarted.html#bonsai-gettingstarted"><span class="std std-ref">Getting Started</span></a> to get started with Bonsai.</p>
+<div class="section" id="what-will-you-need-to-use-onix">
+<h2>What will you need to use ONIX?<a class="headerlink" href="#what-will-you-need-to-use-onix" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hardware">
+<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h3>
+<p>See the <a class="reference internal" href="../Hardware%20Guide/index.html#hardware-guide"><span class="std std-ref"> Hardware Guide</span></a> for a description of each of these components and how they connect to each other. See <a class="reference internal" href="../Hardware%20Guide/Setup/index.html#system-setup"><span class="std std-ref">System Setup</span></a> for how to get started once you have the hardware.</p>
+</div>
+<div class="section" id="software">
+<h3>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h3>
+<p>ONIX uses Bonsai for data acquisition.
+See <a class="reference internal" href="../Software%20Guide/Bonsai/GettingStarted.html#bonsai-gettingstarted"><span class="std std-ref">Getting Started</span></a> for how to install Bonsai and use it to acquire from ONIX.</p>
+</div>
+</div>
 <div class="section" id="what-is-onix">
 <h2>What is ONIX?<a class="headerlink" href="#what-is-onix" title="Permalink to this headline">¶</a></h2>
 <p>ONIX is an acquisition system for neuroscience, composed of various pieces of hardware that are ONI-compliant, i.e. they follow the Open Neuro Interface Specification for communication.</p>
@@ -254,28 +266,6 @@ Because the ONI specification allows communication over a single wire, ONIX uses
 <h3>3) Latencies<a class="headerlink" href="#latencies" title="Permalink to this headline">¶</a></h3>
 <p>In closed-loop experiments, data is not only acquired, but also processed and acted upon. For instance, one can provide optogenetic stimulation to a brain area every time a certain type of event is detected by an extracellular probe. The closed-loop latency of the acquisition system describes how much time passes between the initial event and the response of the system. In classic acquisition systems, this time is primarily spent on transmitting and processing acquired data, which becomes more and more challenging as the number of channels on a probe increases. A short latency allows the user to respond on the timescale of the biological event; for instance, within the integration window of a neuron.</p>
 <p>Many classic acquisition systems rely on a USB connection between the acquisition board and PC. The slower transfer characteristics of USB means that a typical closed-loop latency would be in the range of several to tens of milliseconds. This is a considerable duration for the brain, as it is notably longer than the average action potential duration of around 1 ms. ONIX has much shorter latencies, of around 150 microseconds, because the host board of ONIX is directly connected to the acquisition PC, in a PCIe slot. This means that the system can respond quickly to detected events. It also means that time is freed up for this detection itself; by reducing the overhead time, more complex analysis can be run to extract the phenomenon you are interested in.</p>
-</div>
-</div>
-<div class="section" id="what-will-you-need-to-use-onix">
-<h2>What will you need to use ONIX?<a class="headerlink" href="#what-will-you-need-to-use-onix" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="hardware">
-<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h3>
-<p>See <a class="reference internal" href="../Hardware%20Guide/index.html#hardware-guide"><span class="std std-ref"> Hardware Guide</span></a> for a description of each of these components. See <span class="xref std std-ref">System Setup</span> for how to get started once you have the hardware.</p>
-<p>At minimum you will need:
-- Host Board
-- Acquisition computer
-- ONI-compliant device (e.g. Headstage, Miniscope V4)
-- Tether (coaxial cable from host board to headstage)</p>
-<p>Other devices:
-- Breakout Board
-- Commutator
-- Lighthouses
-- Adapters and EIBs</p>
-</div>
-<div class="section" id="software">
-<h3>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h3>
-<p>ONIX uses Bonsai for data acquisition.
-See :ref: bonsai_gettingstarted: on how to install Bonsai and use it to acquire from ONIX.</p>
 </div>
 </div>
 </div>
