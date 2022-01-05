@@ -402,27 +402,27 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hardware-list">
-   1) Hardware list
+   Hardware list
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#connections">
-   2) Connections
+  <a class="reference internal nav-link" href="#cables-and-connections">
+   Cables and Connections
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#commutator">
-     Commutator
+    <a class="reference internal nav-link" href="#commutator-link">
+     Commutator link
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#digital-and-analog-i-o">
-     Digital and analog I/O
+     Digital and Analog I/O
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#headstages">
-     Headstages
+    <a class="reference internal nav-link" href="#headstage-link">
+     Headstage Link
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -434,7 +434,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installing-and-testing">
-   3) Installing and Testing
+   Installing and Testing
   </a>
  </li>
 </ul>
@@ -470,10 +470,10 @@
 <div class="toctree-wrapper compound">
 </div>
 <div class="section" id="hardware-list">
-<h2>1) Hardware list<a class="headerlink" href="#hardware-list" title="Permalink to this headline">¶</a></h2>
+<h2>Hardware list<a class="headerlink" href="#hardware-list" title="Permalink to this headline">¶</a></h2>
 <p>Minimum:</p>
 <ul class="simple">
-<li><p>An acquisition computer</p></li>
+<li><p>Acquisition computer</p></li>
 <li><p>PCIe Host</p></li>
 <li><p>ONI-compliant device (e.g. Headstage/ Miniscope V4)</p></li>
 </ul>
@@ -485,46 +485,50 @@
 <li><p>Adapters and EIBs</p></li>
 </ul>
 </div>
-<div class="section" id="connections">
-<h2>2) Connections<a class="headerlink" href="#connections" title="Permalink to this headline">¶</a></h2>
-<p>Cables &amp; connections:</p>
+<div class="section" id="cables-and-connections">
+<h2>Cables and Connections<a class="headerlink" href="#cables-and-connections" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/connections.png" class="align-center" src="../../_images/connections.png" />
-<div class="section" id="commutator">
-<h3>Commutator<a class="headerlink" href="#commutator" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="commutator-link">
+<h3>Commutator link<a class="headerlink" href="#commutator-link" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>USB (computer) to micro-USB (commutator) cable, to power the commutator.</p></li>
+<li><p>Computer (USB) to commutator (micro-USB) cable, to power the commutator &amp; provide it with 3D tracking data.</p></li>
 </ul>
 </div>
 <div class="section" id="digital-and-analog-i-o">
-<h3>Digital and analog I/O<a class="headerlink" href="#digital-and-analog-i-o" title="Permalink to this headline">¶</a></h3>
+<h3>Digital and Analog I/O<a class="headerlink" href="#digital-and-analog-i-o" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a href="#id2"><span class="problematic" id="id3">`High speed digital cable &lt;https://multimedia.3m.com/mws/media/585365O/3mtm-shrunk-delta-ribbon-sdr-cable-assembly-ts2287.pdf?`_</span></a> to connect Host and Breakout Board</p></li>
+<li><p><a href="#id2"><span class="problematic" id="id3">:ref:`High speed digital cable &lt;https://multimedia.3m.com/mws/media/585365O/3mtm-shrunk-delta-ribbon-sdr-cable-assembly-ts2287.pdf`_</span></a> to connect Host and Breakout Board.</p></li>
 </ul>
 </div>
-<div class="section" id="headstages">
-<h3>Headstages<a class="headerlink" href="#headstages" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="headstage-link">
+<h3>Headstage Link<a class="headerlink" href="#headstage-link" title="Permalink to this headline">¶</a></h3>
+<p>The headstage link can be formed directly with the host PCIe board, or via a commutator and/or breakout board.</p>
+<p>Connectors used for headstage link:</p>
 <ul class="simple">
-<li><p>MMCX (Host) to MMCX (Breakout Board) - one cable for each headstage or clock in/output.</p></li>
-<li><p>SMA (Breakout Board) to SMA (Commutator)</p></li>
-<li><p>Tether: SMA (Commutator) to Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket (Headstage).</p></li>
+<li><p>64-channel headstage, npix headstage and miniscope: Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket connector.</p></li>
+<li><p>PCIe host board: MMCX connectors</p></li>
+<li><p>Breakout board: MMCX connectors (to link to PCIe host) &amp; SMA connectors (to link to commutator or headstage).</p></li>
+<li><p>Commutator: SMA connectors to link to both breakout board and headstage.</p></li>
 </ul>
-<dl class="field-list simple">
-<dt class="field-odd">ref</dt>
-<dd class="field-odd"><p>‘Making Coaxial Tethers’</p>
-</dd>
-</dl>
-<p>If not using the Breakout Board, you can directly connect a headstage to the Host with a tether and an SMA to MMCX adapter.</p>
+<p>Example configurations and required cables:</p>
+<ul class="simple">
+<li><p>Directly from headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to PCIe host board (<em>MMCX</em>), using a coaxial tether (:ref:’Making Coaxial Tethers’) and an SMA to MMCX adapter.</p></li>
+<li><p>From headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to breakout board (<em>SMA</em>), then from breakout board (<em>MMCX</em>) to PCIe host board (<em>MMCX</em>).</p></li>
+<li><p>From headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to commutator (<em>SMA</em>), from commutator (<em>SMA</em>) to breakout board (<em>SMA</em>), then from breakout board (<em>MMCX</em>) to PCIe host board (<em>MMCX</em>).</p></li>
+<li><p>From headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to commutator (<em>SMA</em>), from commutator (<em>SMA</em>) to PCIe host board (<em>MMCX</em>).</p></li>
+<li><p>Tether: SMA (Commutator) to Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket (Headstage). :ref: ‘Making Coaxial Tethers’</p></li>
+</ul>
 </div>
 <div class="section" id="lighthouses">
 <h3>Lighthouses<a class="headerlink" href="#lighthouses" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Audio (Lighthouse A) to Audio (Lighthouse B) - to synchronise lighthouses (only necessary for V1)</p></li>
-<li><p>Power cables for lighthouses (x2)</p></li>
+<li><p>Audio (Lighthouse A) to Audio (Lighthouse B) - to synchronise lighthouses (only necessary for V1 Basestations)</p></li>
+<li><p>Power cables for lighthouses (x2, provided with lighthouses)</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="installing-and-testing">
-<h2>3) Installing and Testing<a class="headerlink" href="#installing-and-testing" title="Permalink to this headline">¶</a></h2>
+<h2>Installing and Testing<a class="headerlink" href="#installing-and-testing" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Install the PCIe board in the PC (ref to guide here)</p></li>
 <li><p>Mount 2 Base Station Lighthouses over the setup (height range)</p></li>

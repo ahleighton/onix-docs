@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ &#8212; Open Ephys ONIX  documentation</title>
+    <title>What is ONIX? &#8212; Open Ephys ONIX  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -156,9 +156,29 @@
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standards">
+   1) Standards
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tethers">
+   2) Tethers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#latencies">
+   3) Latencies
+  </a>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -166,7 +186,7 @@
                 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/open-ephys/onix-docs/edit/main/source/faq.rst">
+    <a href="https://github.com/open-ephys/onix-docs/edit/main/source/whatisonix.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -185,51 +205,27 @@
               
               <div>
                 
-  <div class="section" id="faq">
-<span id="id1"></span><h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
-<dl class="glossary simple">
-<dt id="term-What-is-ONIX">What is ONIX?<a class="headerlink" href="#term-What-is-ONIX" title="Permalink to this term">¶</a></dt><dd><p>Click <span class="xref std std-ref">what_is_onix</span> for a high-level introduction to this hardware and how it differs from classic neuroscience acquisition systems.</p>
-</dd>
-<dt id="term-What-does-ONIX-stand-for">What does ONIX stand for?<a class="headerlink" href="#term-What-does-ONIX-stand-for" title="Permalink to this term">¶</a></dt><dd><p>Open Neuro Interface X, the Open Ephys implementation of the <a class="reference external" href="https://github.com/open-ephys/ONI">Open
-Neuro Interface specification</a>.</p>
-</dd>
-<dt id="term-How-is-ONI-different-than-ONIX">How is ONI different than ONIX?<a class="headerlink" href="#term-How-is-ONI-different-than-ONIX" title="Permalink to this term">¶</a></dt><dd><p><a class="reference external" href="https://github.com/open-ephys/ONI">Open Neuro Interface</a> is a hardware and
-API specification designed to meet the needs of experimental neuroscientists.
-ONIX hardware and <a class="reference external" href="https://github.com/open-ephys/liboni">liboni</a> are
-implementations of the ONI specification.</p>
-</dd>
-<dt id="term-What-is-Open-Ephys">What is Open Ephys?<a class="headerlink" href="#term-What-is-Open-Ephys" title="Permalink to this term">¶</a></dt><dd><p>Open Ephys is a company and team of neuroscientists, engineers, and
-hackers who believe that neuroscience benefits greatly from advanced,
-well-documented, open-source hardware and software.  Have a look at the
-<a class="reference external" href="https://open-ephys.org/about-us-overview">Open Ephys Website</a> for a
-comprehensive overview of our mission and projects.</p>
-</dd>
-<dt id="term-Is-ONIX-hardware-available-for-purchase">Is ONIX hardware available for purchase?<a class="headerlink" href="#term-Is-ONIX-hardware-available-for-purchase" title="Permalink to this term">¶</a></dt><dd><p>The system is currently in a beta test phase and will be made available on
-the <a class="reference external" href="https://open-ephys.org/store">Open Ephys Store</a> following that.</p>
-</dd>
-<dt id="term-Where-do-I-get-help-when-using-the-system">Where do I get help when using the system?<a class="headerlink" href="#term-Where-do-I-get-help-when-using-the-system" title="Permalink to this term">¶</a></dt><dd><p>Have a look at the <a class="reference internal" href="support.html#support"><span class="std std-ref">Contact</span></a> page.</p>
-</dd>
-<dt id="term-Can-I-use-headstage_64-with-a-silicon-probe-instead-of-tetrodes">Can I use <a class="reference internal" href="Hardware%20Guide/Headstages/headstage-64/index.html#headstage-64"><span class="std std-ref">Headstage-64</span></a> with a silicon probe instead of tetrodes?<a class="headerlink" href="#term-Can-I-use-headstage_64-with-a-silicon-probe-instead-of-tetrodes" title="Permalink to this term">¶</a></dt><dd><p>Yes. Have a look at <a class="reference internal" href="Hardware%20Guide/Adapters%20%26%20EIBs/index.html#adapters-eibs"><span class="std std-ref">Adapters &amp; EIBs</span></a> to see if an option exists for
-your probe. If not, <a class="reference internal" href="support.html#support"><span class="std std-ref">get in touch</span></a> because making an adapter
-is quite simple.</p>
-</dd>
-<dt id="term-Can-I-use-my-older-Intan-headstages-with-the-system">Can I use my older Intan headstages with the system?<a class="headerlink" href="#term-Can-I-use-my-older-Intan-headstages-with-the-system" title="Permalink to this term">¶</a></dt><dd><p>No. ONIX headstages use serialization hardware to allow arbitrary
-mixtures of devices to exist on the headstage. This is fundamentally
-incompatible with older, SPI-based headstages. Have a look at
-<a class="reference internal" href="Hardware%20Guide/Headstages/serialization.html#serialization"><span class="std std-ref">Coaxial Data Serialization &amp; Power</span></a> for more information on why.</p>
-</dd>
-<dt id="term-Why-is-there-no-Open-Ephys-GUI-plugin-for-ONIX-hardware">Why is there no Open Ephys GUI plugin for ONIX hardware?<a class="headerlink" href="#term-Why-is-there-no-Open-Ephys-GUI-plugin-for-ONIX-hardware" title="Permalink to this term">¶</a></dt><dd><p>Have a look at the <a class="reference internal" href="Software%20Guide/Open%20Ephys%20GUI/index.html#open-ephys-gui"><span class="std std-ref">Open Ephys GUI</span></a> page.</p>
-</dd>
-<dt id="term-I-have-existing-acquisition-hardware.-Can-I-can-use-your-API-and-software-to-acquire-data-from-it">I have existing acquisition hardware. Can I can use your API and software to acquire data from it?<a class="headerlink" href="#term-I-have-existing-acquisition-hardware.-Can-I-can-use-your-API-and-software-to-acquire-data-from-it" title="Permalink to this term">¶</a></dt><dd><p>Yes, please do. Our API is explicity designed to decouple hardware
-details from software. Have a look at the <a class="reference internal" href="API%20Reference/drivers/index.html#drivers"><span class="std std-ref">Hardware Driver Translators</span></a> page for more
-information on integrating your hardware into the ONIX software stack.
-Depending on how your device communicates with the computer it may only
-take 10’s of lines of C.</p>
-</dd>
-<dt id="term-I-have-existing-acquisition-software.-Can-I-integrate-support-for-ONIX-hardware-using-your-API">I have existing acquisition software. Can I integrate support for ONIX hardware using your API?<a class="headerlink" href="#term-I-have-existing-acquisition-software.-Can-I-integrate-support-for-ONIX-hardware-using-your-API" title="Permalink to this term">¶</a></dt><dd><p>Yes, please do. Have a look at the <a class="reference internal" href="API%20Reference/index.html#api-ref"><span class="std std-ref"> API Reference</span></a> to get started. Also
-let us know if you want help.</p>
-</dd>
-</dl>
+  <div class="section" id="what-is-onix">
+<span id="id1"></span><h1>What is ONIX?<a class="headerlink" href="#what-is-onix" title="Permalink to this headline">¶</a></h1>
+<p>ONIX is an acquisition system for neuroscience, composed of various pieces of hardware that are ONI-compliant, i.e. they follow the Open Neuro Interface Specification for communication.</p>
+<p>ONIX differs from classic acquisition systems in three major points:</p>
+<div class="section" id="standards">
+<h2>1) Standards<a class="headerlink" href="#standards" title="Permalink to this headline">¶</a></h2>
+<p>All acquisition systems follow specific sets of rules that outline how data is structured and communicated between parts of the system. For instance, Intan headstages and the classic Open Ephys Board use the Serial Peripheral Interface (SPI) for communication. Many different and non-interchangeable interfaces and protocols are in use, which is why each type of probe or camera usually comes with its own specific acquisition board.</p>
+<p>ONI is an open standard that was designed as a unified protocol to communicate with a wide variety of instruments. By specifying how data should be organised but remaining agnostic to the type of data, this one interface can be used to acquire from, for instance, extracellular probes, cameras, and tracking systems.</p>
+<p>This means that the same acquisition software and hardware can now be used for a wide range of different devices, so that labs do not have to spend time and money acquiring separate acquisition systems for each extra tool they wish to add to their experiment. For those who want to develop new devices for neuroscience, using this standard means that rather than spending their time trying to get different interfaces to communicate with each other, they can focus on the specifics of the device they wish to build.</p>
+</div>
+<div class="section" id="tethers">
+<h2>2) Tethers<a class="headerlink" href="#tethers" title="Permalink to this headline">¶</a></h2>
+<p>There is a growing appreciation of experiments that examine the natural behaviours of animals. This often means using larger and more intricate (perhaps 3D) experimental setups. It also means that the animal should be impaired as little as possible by the recording setup. To achieve this it is of course important to reducing the weight of the headstage, but the weight of the tether that connects the headstage to the acquisition system is often overlooked. As the animal explores the arena, the centre of mass of the tether is rarely directly above the animal. Instead, it is off to one side, introducing a rotational force on the animal. The animal must compensate for this torque in order to keep its head up straight.
+Because the ONI specification allows communication over a single wire, ONIX uses a single coaxial cable, making ONIX tethers lighter and thinner compared to classic acquisition systems. ONIX tethers are 0.4mm in diameter.</p>
+<p>The tether must also be able to rotate as the animal does to prevent it from becoming twisted. Commutators are hardware devices that allow the tether to rotate while maintaining an electrical connection to the rest of the path to the acquisition system. As the animal moves through the arena, the ONIX commutator receives 3D tracking information from the headstage and drives  a motor to actively rotate the tether, preventing twisting.</p>
+</div>
+<div class="section" id="latencies">
+<h2>3) Latencies<a class="headerlink" href="#latencies" title="Permalink to this headline">¶</a></h2>
+<p>In closed-loop experiments, data is not only acquired, but also processed and acted upon. For instance, one can provide optogenetic stimulation to a brain area every time a certain type of event is detected by an extracellular probe. The closed-loop latency of the acquisition system describes how much time passes between the initial event and the response of the system. In classic acquisition systems, this time is primarily spent on transmitting and processing acquired data, which becomes more and more challenging as the number of channels on a probe increases. A short latency allows the user to respond on the timescale of the biological event; for instance, within the integration window of a neuron.</p>
+<p>Many classic acquisition systems rely on a USB connection between the acquisition board and PC. The slower transfer characteristics of USB means that a typical closed-loop latency would be in the range of several to tens of milliseconds. This is a considerable duration for the brain, as it is notably longer than the average action potential duration of around 1 ms. ONIX has much shorter latencies, of around 150 microseconds, because the host board of ONIX is directly connected to the acquisition PC, in a PCIe slot. This means that the system can respond quickly to detected events. It also means that time is freed up for this detection itself; by reducing the overhead time, more complex analysis can be run to extract the phenomenon you are interested in.</p>
+</div>
 </div>
 
     <script type="text/javascript">
