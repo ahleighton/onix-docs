@@ -401,38 +401,6 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hardware-list">
-   Hardware list
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cables-and-connections">
-   Cables and Connections
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#commutator-link">
-     Commutator link
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#digital-and-analog-i-o">
-     Digital and Analog I/O
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#headstage-link">
-     Headstage Link
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lighthouses">
-     Lighthouses
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installing-and-testing">
    Installing and Testing
   </a>
@@ -467,85 +435,48 @@
                 
   <div class="section" id="system-setup">
 <span id="id1"></span><h1>System Setup<a class="headerlink" href="#system-setup" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#installing-and-testing" id="id2">Installing and Testing</a></p></li>
+</ul>
+</div>
 <div class="toctree-wrapper compound">
 </div>
-<div class="section" id="hardware-list">
-<h2>Hardware list<a class="headerlink" href="#hardware-list" title="Permalink to this headline">¶</a></h2>
-<p>Minimum:</p>
-<ul class="simple">
-<li><p>Acquisition computer</p></li>
-<li><p>PCIe Host</p></li>
-<li><p>ONI-compliant device (e.g. Headstage/ Miniscope V4)</p></li>
-</ul>
-<p>Additional devices:</p>
-<ul class="simple">
-<li><p>Breakout Board</p></li>
-<li><p>Commutator</p></li>
-<li><p>Lighthouses</p></li>
-<li><p>Adapters and EIBs</p></li>
-</ul>
-</div>
-<div class="section" id="cables-and-connections">
-<h2>Cables and Connections<a class="headerlink" href="#cables-and-connections" title="Permalink to this headline">¶</a></h2>
-<img alt="../../_images/connections.png" class="align-center" src="../../_images/connections.png" />
-<div class="section" id="commutator-link">
-<h3>Commutator link<a class="headerlink" href="#commutator-link" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Computer (USB) to commutator (micro-USB) cable, to power the commutator &amp; provide it with 3D tracking data.</p></li>
-</ul>
-</div>
-<div class="section" id="digital-and-analog-i-o">
-<h3>Digital and Analog I/O<a class="headerlink" href="#digital-and-analog-i-o" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a href="#id2"><span class="problematic" id="id3">:ref:`High speed digital cable &lt;https://multimedia.3m.com/mws/media/585365O/3mtm-shrunk-delta-ribbon-sdr-cable-assembly-ts2287.pdf`_</span></a> to connect Host and Breakout Board.</p></li>
-</ul>
-</div>
-<div class="section" id="headstage-link">
-<h3>Headstage Link<a class="headerlink" href="#headstage-link" title="Permalink to this headline">¶</a></h3>
-<p>The headstage link can be formed directly with the host PCIe board, or via a commutator and/or breakout board.</p>
-<p>Connectors used for headstage link:</p>
-<ul class="simple">
-<li><p>64-channel headstage, npix headstage and miniscope: Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket connector.</p></li>
-<li><p>PCIe host board: MMCX connectors</p></li>
-<li><p>Breakout board: MMCX connectors (to link to PCIe host) &amp; SMA connectors (to link to commutator or headstage).</p></li>
-<li><p>Commutator: SMA connectors to link to both breakout board and headstage.</p></li>
-</ul>
-<p>Example configurations and required cables:</p>
-<ul class="simple">
-<li><p>Directly from headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to PCIe host board (<em>MMCX</em>), using a coaxial tether (:ref:’Making Coaxial Tethers’) and an SMA to MMCX adapter.</p></li>
-<li><p>From headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to breakout board (<em>SMA</em>), then from breakout board (<em>MMCX</em>) to PCIe host board (<em>MMCX</em>).</p></li>
-<li><p>From headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to commutator (<em>SMA</em>), from commutator (<em>SMA</em>) to breakout board (<em>SMA</em>), then from breakout board (<em>MMCX</em>) to PCIe host board (<em>MMCX</em>).</p></li>
-<li><p>From headstage (<em>Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket</em>) to commutator (<em>SMA</em>), from commutator (<em>SMA</em>) to PCIe host board (<em>MMCX</em>).</p></li>
-<li><p>Tether: SMA (Commutator) to Hirose X.FL-PR-SMT1-2(80) X.FL coaxial socket (Headstage). :ref: ‘Making Coaxial Tethers’</p></li>
-</ul>
-</div>
-<div class="section" id="lighthouses">
-<h3>Lighthouses<a class="headerlink" href="#lighthouses" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Audio (Lighthouse A) to Audio (Lighthouse B) - to synchronise lighthouses (only necessary for V1 Basestations)</p></li>
-<li><p>Power cables for lighthouses (x2, provided with lighthouses)</p></li>
-</ul>
-</div>
-</div>
 <div class="section" id="installing-and-testing">
-<h2>Installing and Testing<a class="headerlink" href="#installing-and-testing" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Installing and Testing</a><a class="headerlink" href="#installing-and-testing" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Install the PCIe board in the PC, along with relevant software, by following the <a class="reference internal" href="../PCIe%20Host/setup-windows.html#pcie-host-setup-windows"><span class="std std-ref">Setup Guide for Windows</span></a>.</p></li>
+<li><p>Mount 2 Vive Base Station Lighthouses over the setup (height range)</p></li>
+</ol>
 <ul class="simple">
-<li><p>Install the PCIe board in the PC (ref to guide here)</p></li>
-<li><p>Mount 2 Base Station Lighthouses over the setup (height range)</p></li>
+<li><p>Connect one power adaptor to each base station.</p></li>
+<li><p>Set one base station to ‘A’ and one to ‘b’ using the channel button (see the Vive manual`&lt;<a class="reference external" href="https://www.vive.com/eu/support/vive/category_howto/about-the-base-stations.html">https://www.vive.com/eu/support/vive/category_howto/about-the-base-stations.html</a>&gt;`_)</p></li>
+<li><p>Connect the basestations to each other, using an audio to audio cable (this is to synchronise them, see <a class="reference external" href="https://www.vive.com/media/filer_public/support_zip_img/eu/www/vive/guid-cba33494-fc82-4b81-84ae-735fcd6a5876-web.png">image here</a>)</p></li>
 </ul>
-<p>– Connect their power cables
-– Set one to A and one to B
-– Connect them using an audio to audio cable to synchronise them.
-- Mount the active commutator above the setup
-– Power it from the computer using a USB to micro-USB cable
-– Test in Bonsai?
-- Connect the Breakout Board to the Host using the high-speed digital cable
-– Test Digital IO
-– Test Buttons
-– Test Analog IO
-- Connect headstages either directly to host or through Breakout Board
-– Check link
-– Testing/ checking depending on device</p>
+<ol class="arabic simple" start="3">
+<li><p>Mount the active commutator above the setup (you can use the same frame as the base stations).</p></li>
+</ol>
+<ul class="simple">
+<li><p>Connect the commutator to the computer using a USB to micro-USB cable</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Add how to test commutator in Bonsai?</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Connect the Breakout Board to the Host using the high-speed digital cable</p></li>
+</ol>
+<ul class="simple">
+<li><p>Test Digital IO</p></li>
+<li><p>Test Buttons</p></li>
+<li><p>Test Analog IO</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Connect headstages either directly to host or through the breakout board</p></li>
+</ol>
+<p>The LED on the breakout board (and the PCIe board itself, if visible) should turn purple when the link is made between the headstage and the PCIe host board.
+Double-clicking on the OniContext node in Bonsai should now show an additional tab, labelled with the type of headstage.</p>
 </div>
 </div>
 
