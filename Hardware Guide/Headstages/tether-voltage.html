@@ -416,8 +416,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#measuring-the-voltage">
-   Measuring the voltage
+  <a class="reference internal nav-link" href="#measuring-headstage-voltage">
+   Measuring headstage voltage
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -464,10 +464,14 @@
 <img alt="../../_images/setting_hs_voltage_default.png" src="../../_images/setting_hs_voltage_default.png" />
 <p class="caption"><span class="caption-text">Default headstage voltage is 4.9 V</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/setting_hs_voltage_default.png" src="../../_images/setting_hs_voltage_default.png" />
+<p class="caption"><span class="caption-text">Increasing the voltage to 7V in Bonsai (measured as 5V at the headstage) allows the second headstage to connect.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <p>The voltage set in Bonsai is not identical to the voltage supplied to the headstage, as some voltage drop will occur over the coaxial cable tether that connects them. The amount of voltage drop will depend on the cable properties (e.g. thickness) and even the temperature of the cable. These very thin tethers can cause large voltage drops, so that even when the voltage setting in Bonsai seems high, the headstage is only seeing 3 or 4 Volts and becomes unreliable. Voltage should therefore always be measured on the headstage itself. The voltage setting is persistent until computer power off. It gets stored in the hardware, so even after a reboot, it will be set to the latest value.</p>
 </div>
-<div class="section" id="measuring-the-voltage">
-<h2>Measuring the voltage<a class="headerlink" href="#measuring-the-voltage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="measuring-headstage-voltage">
+<h2>Measuring headstage voltage<a class="headerlink" href="#measuring-headstage-voltage" title="Permalink to this headline">¶</a></h2>
 <p>Use a multimeter to probe the headstage at the two points marked below: the ground pin and either terminal of the large inductor on the headstage-64.</p>
 <img alt="../../_images/measure-voltage-64.png" src="../../_images/measure-voltage-64.png" />
 </div>
