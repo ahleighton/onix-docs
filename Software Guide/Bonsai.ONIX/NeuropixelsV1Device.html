@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuropixelsV1Device &#8212; Open Ephys ONIX  documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/blank.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copyURLToClipboard.js"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MiniscopeV3Device" href="MiniscopeV3Device.html" />
+    <link rel="prev" title="OpticalStimulationDevice" href="OpticalStimulationDevice.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/onix_open_ephys_logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Getting%20Started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Hardware%20Guide/index.html">
+  Hardware Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../API%20Reference/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Software Guide
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/open-ephys/onix-docs" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/openephys" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://open-ephys.slack.com" rel="noopener" target="_blank" title="Slack">
+            <span><i class="fab fa-slack"></i></span>
+            <label class="sr-only">Slack</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Bonsai.ONIX
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Installation.html">
+     Installation
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="GettingStarted.html">
+     Getting Started
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ONIContext.html">
+     ONIContext
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="HeartbeatDevice.html">
+     HeartbeatDevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="AnalogIODevice.html">
+     AnalogIODevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="DigitalIODevice.html">
+     DigitalIODevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ClockOutputDevice.html">
+     ClockOutputDevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="HeadstagePortControlDevice.html">
+     HeadstagePortControlDevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="BNO055Device.html">
+     BNO055Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="TS4231V1Device.html">
+     TS4231V1Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="RHD2164Device.html">
+     RHD2164Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ElectricalStimulationDevice.html">
+     ElectricalStimulationDevice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="OpticalStimulationDevice.html">
+     OpticalStimulationDevice
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     NeuropixelsV1Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MiniscopeV3Device.html">
+     MiniscopeV3Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MiniscopeV4Device.html">
+     MiniscopeV4Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MiniscopeV4BNO055Device.html">
+     MiniscopeV4BNO055Device
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Bonsai%20Examples/index.html">
+   Example Workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Bonsai%20Examples/Headstage64.html">
+     Headstage-64 Workflow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Bonsai%20Examples/LatencyTest.html">
+     Latency Test Workflow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Bonsai%20Examples/CameraSync.html">
+     Camera Synchronization Workflow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Bonsai%20Examples/Commutator.html">
+     Manual Commutator Workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration">
+   Configuration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#property-pane">
+     Property Pane
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuration-gui">
+     Configuration GUI
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-imec-calibration-data">
+       Importing IMEC Calibration Data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#configuring-the-probe">
+       Configuring the Probe
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uploading-to-the-probe">
+       Uploading to the Probe
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#saving-configurations">
+       Saving Configurations
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loading-configurations">
+       Loading Configurations
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/onix-docs/edit/main/source/Software Guide/Bonsai.ONIX/NeuropixelsV1Device.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="neuropixelsv1device">
+<span id="bonsai-neuropixelsv1dev"></span><h1>NeuropixelsV1Device<a class="headerlink" href="#neuropixelsv1device" title="Permalink to this headline">¶</a></h1>
+<p>A <a class="reference external" href="https://bonsai-rx.org/docs/editor/#toolbox">Bonsai source</a>  that wraps a
+<a class="reference internal" href="../../Hardware%20Guide/Datasheets/neuropixels-v1.html#onidatasheet-neuropixels-v1"><span class="std std-ref">Neuropixels V1</span></a> device.</p>
+<dl class="field-list">
+<dt class="field-odd">Inputs</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Outputs</dt>
+<dd class="field-even"><p>A single <code class="docutils literal notranslate"><span class="pre">NeuropixelsV1DataFrame</span></code> that contains one or more
+Neuropixels 1.0 “Ultraframes”. One Ultraframe contains the
+following elements:</p>
+<ul class="simple">
+<li><p>A single LFP-band sample from all 384 electrodes</p></li>
+<li><p>12 spike-band samples from all 384 electrodes</p></li>
+<li><p>A 20-bit counter that increments for each “Frame” transmitted
+by the probe. 156 frames are required to make a single
+Ultraframe. This counter can be checked to ensure no data is
+dropped.</p></li>
+</ul>
+<p>The number of Ultraframes in each output is determined by the
+<code class="docutils literal notranslate"><span class="pre">BlockSize</span></code> parameter</p>
+</dd>
+</dl>
+        <div class="bonsai-workflow-zip-container">
+    <div class="workflow-filler"></div>
+    <div class="workflow-download"><img class="copy-img" src="../../_static/download.svg" onclick="getTextFromURL('../../_static/bonsai/workflows/NeuropixelsV1.zip', true, true)" width=18px download/></div>
+    <div class="workflow-name"><b>NeuropixelsV1.bonsai</b></div>
+    <div class="workflow-image"><img src="../../_static/bonsai/workflows/NeuropixelsV1.svg" alt="NeuropixelsV1" /></div>
+</div><div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Configuration is performed using a combination of the property pane and a
+dedicated configuration GUI.</p>
+<div class="section" id="property-pane">
+<h3>Property Pane<a class="headerlink" href="#property-pane" title="Permalink to this headline">¶</a></h3>
+<p>Parameters available through the property pane are as follows:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EnableStream</p></td>
+<td><p>boolean</p></td>
+<td><p>Enable the device data stream</p></td>
+</tr>
+<tr class="row-odd"><td><p>BlockSize</p></td>
+<td><p>integer</p></td>
+<td><p>The number of Ultraframes that are included in each
+NeuropixelsV1DataFrame. Larger numbers result in less overhead at the
+cost of larger buffering latencies.</p></td>
+</tr>
+<tr class="row-even"><td><p>RequireSNMatch</p></td>
+<td><p>boolean</p></td>
+<td><p>If true, then require configuration and probe serial numbers to match
+to start acqusition. Keeping this parameter set to True is good
+practice because the correct calibration files must be loaded in order
+for the probe to function properly.</p></td>
+</tr>
+<tr class="row-odd"><td><p>NueuropixelsV1Configuration</p></td>
+<td><p>N/A</p></td>
+<td><p>Editing this parameter will open the Configuration GUI, just like
+double clicking on the node.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configuration-gui">
+<h3>Configuration GUI<a class="headerlink" href="#configuration-gui" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Neuropixels 1.0 Configuration GUI</strong>, which is a part of the
+<code class="docutils literal notranslate"><span class="pre">Bonsai.ONIX.Design</span></code> library, is opened by double clicking on the
+NeuropixelsV1Device node when editing the workflow or clicking the ellipsis
+next to the <code class="docutils literal notranslate"><span class="pre">NueuropixelsV1Configuration</span></code> parameter option in the property
+pane.</p>
+<div class="figure align-left" id="id2">
+<img alt="The Neuropixels 1.0 configuration GUI." src="../../_images/neuropixelsv1_configuration-gui-callouts.png" />
+<p class="caption"><span class="caption-text">The Neuropixels 1.0 configuration GUI.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="importing-imec-calibration-data">
+<h4>Importing IMEC Calibration Data<a class="headerlink" href="#importing-imec-calibration-data" title="Permalink to this headline">¶</a></h4>
+<p>Neuropixels 1.0 probes are shipped with two calibration files that must be
+uploaded to the probe for proper operation. For example, the calibration files
+for probe 19051023592 are:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/4b973ca38bc8c21811c16db51a2a1eac/19051023592_ADCCalibration.csv"><code class="xref download docutils literal notranslate"><span class="pre">19051023592_ADCCalibration.csv</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/ff0fc23ddbcc028e5e3fd8ce63ccd80a/19051023592_gainCalValues.csv"><code class="xref download docutils literal notranslate"><span class="pre">19051023592_gainCalValues.csv</span></code></a></p></li>
+</ul>
+<p>The calibration files for your probe will have “19051023592” replaced with your
+probe’s serial number. These files contain parameters that are used to correct
+probe-specific ADC zero-crossing nonlinearities, set on-chip biases, and
+linearize individual electrode responses.  For a complete explanation of the
+content of these files, please consult the <a class="reference external" href="https://www.neuropixels.org/support">Neuropixels documentation site</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Failure to upload IMEC-provided calibration and gain correction
+files will result in data that is not standardized and therefore not
+comparable with other Neuropixels 1.0 recordings.</p>
+</div>
+<p>To load the IMEC calibration files for your probe, follow these steps:</p>
+<ol class="arabic">
+<li><p>Select <strong>Load Calibration</strong> from the <strong>File</strong> menu.</p>
+<blockquote>
+<div><img alt="Load IMEC calibration selected" class="align-left" src="../../_images/neuropixelsv1_load-calibration_cropped.png" />
+</div></blockquote>
+</li>
+<li><p>On the file selection dialog, navigate to the folder containing the
+calibration files with serial numbers matching the currently attached probe.</p>
+<blockquote>
+<div><img alt="Navigate to IMEC calibration files with matching serial numbers" class="align-left" src="../../_images/neuropixelsv1_select-calibration_annotated.png" style="width: 404.59999999999997px; height: 264.59999999999997px;" />
+</div></blockquote>
+</li>
+<li><p>The <strong>Channels</strong> and <strong>ADCs</strong> tabs will now show proper calibration
+parameters.</p>
+<blockquote>
+<div><img alt="The ADC tab with the correct IMEC calibration parameters populated" class="align-left" src="../../_images/neuropixelsv1_adcs-tab.png" />
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="configuring-the-probe">
+<h4>Configuring the Probe<a class="headerlink" href="#configuring-the-probe" title="Permalink to this headline">¶</a></h4>
+<p>The easiest way to select active electrodes is by using the GUI on the
+<strong>Probe</strong> tab. This simple user interface lets you pan around the probe, zoom
+in and out, and set the properties of individual electrodes or groups of them.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mouse action</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Left click + drag</p></td>
+<td><p>Block select</p></td>
+</tr>
+<tr class="row-odd"><td><p>Middle click + drag</p></td>
+<td><p>Pan</p></td>
+</tr>
+<tr class="row-even"><td><p>Right click</p></td>
+<td><p>Open electrode configuration context menu</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scroll forward</p></td>
+<td><p>Zoom in</p></td>
+</tr>
+<tr class="row-even"><td><p>Scroll backward</p></td>
+<td><p>Zoom out</p></td>
+</tr>
+</tbody>
+</table>
+<p>Active electrodes are colored blue, inactive are white, and selected electrodes
+are orange. Groups of electrodes can be selected by left clicking and dragging.
+Once highlighted, their properties can be changed using right click to open the
+configuration context menu.</p>
+<blockquote>
+<div><img alt="Probe GUI with right click to edit electrode parameters" class="align-center" src="../../_images/neuropixelsv1_adjust-electrode-parameters-with-gui.png" style="width: 582.18px; height: 334.18px;" />
+</div></blockquote>
+<p>Aside form the Probe tab, the <strong>Channels</strong> tab can be used to examine and tune
+the probe parameters. If you want to apply a from one electrode to the entire
+probe, right-click it and select <strong>Apply to column</strong>.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Image of apply all dialog</p>
+</div>
+</div>
+<div class="section" id="uploading-to-the-probe">
+<h4>Uploading to the Probe<a class="headerlink" href="#uploading-to-the-probe" title="Permalink to this headline">¶</a></h4>
+<p>To upload your configuration to the probe, click the <strong>Upload</strong> button in the
+bottom left of the GUI. A progress bar will indicate the upload progress.</p>
+<img alt="Uploading the configuration to the probe" class="align-center" src="../../_images/neuropixelsv1_upload-process.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To ensure that this process has occurred correctly, the <strong>Perform Read
+Check</strong> option can be selected from the <strong>Settings</strong> menu:</p>
+<img alt="Selecting the perform read check option" class="align-center" src="../../_images/neuropixelsv1_read-check_cropped.png" />
+<p>If this option is checked, then the upload will occur two times. The first
+will load the configuration and the second will do a comparison of the
+values stored on the probe to the redundant upload and report an error if
+there is a mismatch. This option is active by default.</p>
+</div>
+</div>
+<div class="section" id="saving-configurations">
+<h4>Saving Configurations<a class="headerlink" href="#saving-configurations" title="Permalink to this headline">¶</a></h4>
+<p>Complete probe configurations can be saved in easy to parse JSON or XML
+formats. These fikes contain complete information about the state of a given
+probe. This includes all calibration file information, active electrodes, gains
+etc, and therefore can be useful metadata during analysis.</p>
+<ol class="arabic">
+<li><p>Select <strong>Export…</strong> from the <strong>File</strong> menu;</p>
+<blockquote>
+<div><img alt="The configuraiton GUI with export selected" class="align-left" src="../../_images/neuropixelsv1_export_cropped.png" />
+</div></blockquote>
+</li>
+<li><p>Choose if JSON or XML should be used in the file selection dialog and save:</p>
+<blockquote>
+<div><img alt="File dialog to indicate where configuration should be saved." class="align-left" src="../../_images/neuropixelsv1_export-select-format_cropped.png" />
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="loading-configurations">
+<h4>Loading Configurations<a class="headerlink" href="#loading-configurations" title="Permalink to this headline">¶</a></h4>
+<p>Configuration files can be imported to, for instance, recall a pattern of
+active electrodes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You can import the configuration data from a previous probe, for
+instance to re-create a custom electrode layout. However, you will need to
+replace the calibration parameters from the previous probe with the current
+one before using it.</p>
+</div>
+<ol class="arabic">
+<li><p>Select <strong>Import</strong> from the <strong>File</strong> menu:</p>
+<blockquote>
+<div><img alt="The configuraiton GUI with import selected" class="align-left" src="../../_images/neuropixelsv1_import_cropped.png" />
+</div></blockquote>
+</li>
+<li><p>Select a previously exported configuration file:</p>
+<blockquote>
+<div><img alt="File dialog to find configuration to load" class="align-left" src="../../_images/neuropixelsv1_import-select-file.png" />
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="OpticalStimulationDevice.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">OpticalStimulationDevice</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="MiniscopeV3Device.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MiniscopeV3Device</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2010-2022, Open Ephys &amp; Contributors.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

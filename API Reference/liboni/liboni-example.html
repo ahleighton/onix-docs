@@ -77,6 +77,12 @@
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Getting%20Started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../Hardware%20Guide/index.html">
   Hardware Guide
  </a>
@@ -456,7 +462,7 @@ space to hold the table, and then populate it:</p>
 </div>
 <p>This will return an array of <code class="docutils literal notranslate"><span class="pre">oni_device_t</span></code> structs where <code class="docutils literal notranslate"><span class="pre">oni_device_t</span></code> is
 defined as:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">idx</span><span class="p">;</span><span class="w">           </span><span class="c1">// Complete rsv.rsv.hub.idx device table index</span>
 <span class="w">    </span><span class="n">oni_dev_id_t</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">          </span><span class="c1">// Device ID number (see oedevices.h)</span>
 <span class="w">    </span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">read_size</span><span class="p">;</span><span class="w">     </span><span class="c1">// Device data read size per frame in bytes</span>
@@ -593,7 +599,7 @@ write 2 to the <code class="docutils literal notranslate"><span class="pre">ONI_
 <p><a class="reference internal" href="oni.html#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a>’s are minimal packets containing metadata and raw binary
 data blocks from a single device within the device table. A
 <a class="reference internal" href="onidefs.html#c.oni_size_t" title="oni_size_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_size_t</span></code></a> is defined as</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">oni_frame</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">oni_frame</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">dev_idx</span><span class="p">;</span><span class="w">  </span><span class="c1">// Device index that produced or accepts the frame</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">data_sz</span><span class="p">;</span><span class="w">  </span><span class="c1">// Size in bytes of data buffer</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">time</span><span class="p">;</span><span class="w">     </span><span class="c1">// Frame time (ACQCLKHZ)</span>

@@ -1,0 +1,662 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usage &#8212; Open Ephys ONIX  documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/blank.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copyURLToClipboard.js"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3D-Tracking Lighthouses" href="../Lighthouses/index.html" />
+    <link rel="prev" title="Setup" href="setup.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/onix_open_ephys_logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Getting%20Started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Hardware Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../API%20Reference/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Software%20Guide/index.html">
+  Software Guide
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://open-ephys.org">Open Ephys<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/open-ephys/onix-docs" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/openephys" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://open-ephys.slack.com" rel="noopener" target="_blank" title="Slack">
+            <span><i class="fab fa-slack"></i></span>
+            <label class="sr-only">Slack</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PCIe%20Host/index.html">
+   PCIe Host
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/overview.html">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/setup-windows.html">
+     Setup Guide for Windows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/gateware-drivers.html">
+     Gateware and Device Drivers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PCIe%20Host/multi-board-sync.html">
+     Synchronizing Multiple PCIe Hosts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Breakout%20Board/index.html">
+   Breakout Board
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Breakout%20Board/setup.html">
+     Setup
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Headstages/index.html">
+   Headstages
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Headstages/setup.html">
+     Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Headstages/serialization.html">
+     Coaxial Data Serialization &amp; Power
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Headstages/tethers.html">
+     Making Coaxial Tethers
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Headstages/headstage-64/index.html">
+     Headstage-64
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Headstages/headstage-64/test-board-64.html">
+       Test Board for Headstage-64
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Headstages/headstage-neuropix.html">
+     Neuropixels-1.0 Headstage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Headstages/tether-voltage.html">
+     Tethered Headstage Voltages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miniscopes/index.html">
+   Miniscopes
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Coaxial Commutators
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="setup.html">
+     Setup
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lighthouses/index.html">
+   3D-Tracking Lighthouses
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lighthouses/setup.html">
+     Setup
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Adapters%20%26%20EIBs/index.html">
+   Adapters &amp; EIBs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/eib-64.html">
+     EIB-64
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/eib-64-large.html">
+     EIB-64L
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/omnetics-adapter-64.html">
+     64-Channel Omnetics Adpater
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Adapters%20%26%20EIBs/nano-z-adapter-64.html">
+     64-Channel Nano-Z Adapter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Datasheets/index.html">
+   ONI Datasheets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/heartbeat.html">
+     Heartbeat
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/load-test.html">
+     Load Test Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/memory-usage.html">
+     Memory Usage Monitor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-analog-io.html">
+     FMC Host Analog IO Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-digital-io.html">
+     FMC Host Digital IO Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-clock-out.html">
+     FMC Host Clock Output Device
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/fmc-link-control.html">
+     FMC Link Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/bno055.html">
+     BNO055
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/rhd2164.html">
+     RHD2164
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/estim-hs64.html">
+     HS64 Electrical Stimulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/ostim-hs64.html">
+     HS64 Optical Stimulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/ts4231-v1-array.html">
+     TS4231 Array for V1 Base Stations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/neuropixels-v1.html">
+     Neuropixels V1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Datasheets/ds90ub9x-raw.html">
+     DS90UB9X Raw Device
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Connections%20%26%20Cables/index.html">
+   Connections and Cables
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#led">
+   LED
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#buttons">
+   Buttons
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remote-control-interface">
+   Remote control interface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-settings">
+   Saving settings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#firmware">
+   Firmware
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/onix-docs/edit/main/source/Hardware Guide/Commutators/usage.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="usage">
+<span id="commutator-usage"></span><h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>The commutator is powered over USB. It can be controlled using the buttons on
+the front panel or by receiving commands from the computer over USB.</p>
+<div class="section" id="led">
+<h2>LED<a class="headerlink" href="#led" title="Permalink to this headline">¶</a></h2>
+<p>The LED tells you about the commutator state:</p>
+<ol class="arabic simple">
+<li><p>Flashing red (<em>Charging</em>): commutator is charging internal super-capacitors.
+All controls and motor operation are locked. Wait until this process
+completes to use the device. It can take up to 30 seconds.</p></li>
+<li><p>Solid red (<em>Disabled</em>): commutator is disabled. Motor is turned off and will not
+turn or respond to button presses or external commands.</p></li>
+<li><p>Green (<em>Enabled</em>): commutator is enabled and permits both remote and manual
+(button) turn control. Buttons take precedence over remote commands.</p></li>
+</ol>
+<p>The LED can be turned off by pressing and holding it &gt; 500 msec. It can be
+turned back on by pressing it.</p>
+</div>
+<div class="section" id="buttons">
+<h2>Buttons<a class="headerlink" href="#buttons" title="Permalink to this headline">¶</a></h2>
+<p>The front panel has four buttons.</p>
+<img alt="../../_images/commutator_front_labelled.png" class="align-center" src="../../_images/commutator_front_labelled.png" style="width: 70%;" />
+<dl class="field-list simple">
+<dt class="field-odd">Stop/Go</dt>
+<dd class="field-odd"><p>Press to toggle commutator enable/disable.</p>
+<ul class="simple">
+<li><p><em>Disabled</em> (LED is red): All motor output will halt instantly, and motor
+driver is powered down. Pressing directional buttons in the stopped state
+will not work. All target turns provided via remote calls will be
+cleared, such that re-enabling the motor will not result in the commutator
+re-engaging an old target position. In this state, pressing and holding
+the Stop/Go button for &gt; 0.5 second, or sending the approriate remote
+command will enable the device.</p></li>
+<li><p><em>Enabled</em> (LED  green): When in the <em>enabled</em> state, the LED will be
+green and the motor can be turned via button presses or RPCs . In this
+state, pressing the Stop/Go button will instantly disable the device.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Directional</dt>
+<dd class="field-even"><p>Press to manually control the motor rotation in the direction indicated on
+each button when the commutator is <em>Enabled</em>. These inputs take
+precedence over and override ongoing remote motor control.  When
+pressed, all target turns provided via remote control will be
+cleared, such that releasing them will not result in the
+commutator re-engaging an old target position. Remote commands
+sent when a button is being pressed are ignored.</p>
+</dd>
+<dt class="field-odd">LED</dt>
+<dd class="field-odd"><p>Pressing the LED turns it off (e.g for cases where it presents an
+unwanted visual stimulus). Pressing it again turns it back on.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="remote-control-interface">
+<h2>Remote control interface<a class="headerlink" href="#remote-control-interface" title="Permalink to this headline">¶</a></h2>
+<p>When manual buttons are not being pressed, the commutator accepts JSON-encoded
+commands over its serial interface. Here are examples of all commands that can
+be sent:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{enable : true}     // Enable commutator (default = false)
+{led : false}       // Turn off RGB LED (default = true)
+{speed : 250}       // Set turn speed to 250 RPM (default = 50 RPM, valid ∈ (0, 500] RPM)
+{turn : 1.1}        // 1.1 turns CW
+{turn : -1.1}       // 1.1 turns CCW
+
+// Example multi-command. Any combo can be used.
+// In this case:
+// 1. Turn LED off
+// 1. Set speed to 25 RPM
+// 2. Excecute 1.1 turns CC
+// Ordering of commands does not matter
+{led: false, speed: 25, turn : -1.1}
+</pre></div>
+</div>
+<p>The communator state can be read using the <code class="code docutils literal notranslate"><span class="pre">{print:}</span></code> command  which will
+return a JSON object containing control and motor parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Have a look at the <a class="reference internal" href="../../Software%20Guide/Bonsai%20Examples/Commutator.html#bonsai-commutator"><span class="std std-ref">Manual Commutator Workflow</span></a> for a basic example of
+how the commutator can be controlled from the computer. Additionally, the
+<a class="reference internal" href="../../Software%20Guide/Bonsai%20Examples/Headstage64.html#bonsai-headstage64"><span class="std std-ref">Headstage-64 Workflow</span></a> shows how the commutator can be controlled using
+the headstage IMU for torque-free commutation during free-moving
+experiments.</p>
+</div>
+</div>
+<div class="section" id="saving-settings">
+<h2>Saving settings<a class="headerlink" href="#saving-settings" title="Permalink to this headline">¶</a></h2>
+<p>All control and speed parameters, whether changed via the remote or manual
+interface, are saved in non-volatile memory each time they are changed. The
+device will start in the same state it was last used.</p>
+</div>
+<div class="section" id="firmware">
+<h2>Firmware<a class="headerlink" href="#firmware" title="Permalink to this headline">¶</a></h2>
+<p>The controller firmware runs on a <a class="reference external" href="https://www.pjrc.com/store/teensy32.html">Teensy
+3.2</a>. To compile this firmware and
+program the microcontroller, you need the following dependencies:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a></p></li>
+<li><p><a class="reference external" href="https://www.pjrc.com/teensy/td_download.html">Teensyduino add-on</a></p></li>
+<li><p><a class="reference external" href="https://www.airspayce.com/mikem/arduino/AccelStepper/">AccelStepper</a></p></li>
+<li><p><a class="reference external" href="https://arduinojson.org/">Arduino JSON</a></p></li>
+</ul>
+<p>The firmware can be uploaded to the device using the <a class="reference external" href="https://www.arduino.cc/en/Main/Software">Arduino
+IDE</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will need to add the <a class="reference external" href="https://www.pjrc.com/teensy/teensyduino.html">Teensyduino add-on</a> to the Arduino IDE to program
+the Teensy. When installing Teensyduino, you should opt to install all of the
+bundled libraries as well. This takes care of installing <code class="code docutils literal notranslate"><span class="pre">AccelStepper</span></code>
+library rather than having to install it manually. ArduinoJSON can be
+installed through the Arduino IDE’s package manager.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="setup.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Setup</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Lighthouses/index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3D-Tracking Lighthouses</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2010-2022, Open Ephys &amp; Contributors.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

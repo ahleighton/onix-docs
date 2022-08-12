@@ -38,6 +38,8 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="What is ONIX?" href="whatisonix.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -74,7 +76,13 @@
       
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
+    <li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../Hardware%20Guide/index.html">
   Hardware Guide
  </a>
@@ -143,7 +151,14 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    
+    <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="whatisonix.html">
+   What is ONIX?
+  </a>
+ </li>
+</ul>
+
   </div>
 </nav>
             </div>
@@ -163,18 +178,18 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#understand-the-system">
-   Understand the system
+  <a class="reference internal nav-link" href="#understanding-the-system">
+   Understanding the system
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hardware">
-   Hardware
+  <a class="reference internal nav-link" href="#setting-up-onix">
+   Setting up ONIX
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software">
-   Software
+  <a class="reference internal nav-link" href="#using-onix">
+   Using ONIX
   </a>
  </li>
 </ul>
@@ -209,28 +224,62 @@
 <span id="getting-started"></span><h1><img alt="hw_logo" height="60" src="../_images/noun_pcb.svg" /> Getting Started<a class="headerlink" href="#hw-logo-getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<div class="section" id="understand-the-system">
-<h2>Understand the system<a class="headerlink" href="#understand-the-system" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="understanding-the-system">
+<h2>Understanding the system<a class="headerlink" href="#understanding-the-system" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Read <a class="reference internal" href="whatisonix.html#what-is-onix"><span class="std std-ref">‘What is ONIX?’</span></a> for a high-level introduction to this hardware and how it differs from classic neuroscience acquisition systems.</p></li>
+<li><p>Read <a class="reference internal" href="whatisonix.html#what-is-onix"><span class="std std-ref">‘What is ONIX?’</span></a> for a high-level introduction to
+this hardware and how it differs from classic neuroscience acquisition
+systems.</p></li>
 <li><p>Our <a class="reference internal" href="../faq.html#faq"><span class="std std-ref">FAQ</span></a> contains answers to general questions about the system.</p></li>
-<li><p>See the <a class="reference internal" href="../Hardware%20Guide/index.html#hardware-guide"><span class="std std-ref"> Hardware Guide</span></a> for a description of ONIX hardware components and decide which you will need.</p></li>
-<li><p>Read <a class="reference internal" href="../Hardware%20Guide/Setup/Connections%20and%20Cables.html#connection-overview"><span class="std std-ref">Connections and Cables</span></a> to see how the hardware devices are connected.</p></li>
+<li><p>See the <a class="reference internal" href="../Hardware%20Guide/index.html#hardware-guide"><span class="std std-ref"> Hardware Guide</span></a> for a description of each ONIX hardware component and decide which you will need.</p></li>
 </ul>
 </div>
-<div class="section" id="hardware">
-<h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setting-up-onix">
+<h2>Setting up ONIX<a class="headerlink" href="#setting-up-onix" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Check that you have all the necessary hardware. A full ONIX setup consists of:</p>
+<p><strong>Devices</strong></p>
 <ul class="simple">
-<li><p>Get the hardware: At the very least, you will need the PCIe host board, an acquisition computer, and an ONI-compliant device (such as a headstage or Miniscope). Make sure you also acquire the relevant <a class="reference internal" href="../Hardware%20Guide/Setup/Connections%20and%20Cables.html#connection-overview"><span class="std std-ref">cables and tethers</span></a>.</p></li>
-<li><p>Install the PCIe host board and get the computer ready using the <a class="reference internal" href="../Hardware%20Guide/PCIe%20Host/setup-windows.html#pcie-host-setup-windows"><span class="std std-ref">Setup Guide for Windows</span></a>.</p></li>
-<li><p>See <a class="reference internal" href="../Hardware%20Guide/Setup/index.html#system-setup"><span class="std std-ref">Hardware System Setup</span></a> for how to set up the rest of the hardware.</p></li>
+<li><p><a class="reference internal" href="../Hardware%20Guide/PCIe%20Host/index.html#pcie-host"><span class="std std-ref">PCIe Host</span></a></p></li>
+<li><p>Acquisition computer</p></li>
+<li><p><a class="reference internal" href="../Hardware%20Guide/Breakout%20Board/index.html#breakout"><span class="std std-ref">Breakout Board</span></a></p></li>
+<li><p>ONI-compliant device (such as a <a class="reference internal" href="../Hardware%20Guide/Headstages/index.html#headstages"><span class="std std-ref">headstage</span></a> or
+<span class="xref std std-ref">miniscope</span>)</p></li>
+<li><p><span class="xref std std-ref">Commutator &lt;commutators</span></p></li>
+<li><p>2x <a class="reference internal" href="../Hardware%20Guide/Lighthouses/index.html#lighthouses"><span class="std std-ref">lighthouse base stations</span></a></p></li>
 </ul>
+<p><strong>Cables</strong> <a class="reference internal" href="../Hardware%20Guide/Connections%20%26%20Cables/index.html#cable-list"><span class="std std-ref">(All cables are listed here)</span></a>.</p>
+<ul class="simple">
+<li><p>PCIe host board to Breakout board (headstage link) cable (MMCX to MMCX)</p></li>
+<li><p>PCIe host board to Breakout board (Digital and Analog I/O link) cable (SDR to
+SDR 26 POS)</p></li>
+<li><p>Headstage Tethers, coaxial, 0.38 mm OD</p></li>
+<li><p>Commutator power &amp; data cable (USB A to Micro B)</p></li>
+<li><p>Breakout board to Commutator cable (headstage link; SMA to SMA)</p></li>
+<li><p>Lighthouse synchronization cable (3.5 mm Stereo Jack Plug to Plug)</p></li>
+</ul>
+</li>
+<li><p>Install the PCIe host board and configure the acquisition computer by
+following the <a class="reference internal" href="../Hardware%20Guide/PCIe%20Host/setup-windows.html#pcie-host-setup-windows"><span class="std std-ref">Setup Guide for Windows</span></a>.</p></li>
+<li><p><a class="reference internal" href="../Hardware%20Guide/Lighthouses/setup.html#lighthouse-setup"><span class="std std-ref">Mount and connect the 3D-Tracking Lighthouses</span></a></p></li>
+<li><p><a class="reference internal" href="../Hardware%20Guide/Commutators/setup.html#commutator-setup"><span class="std std-ref">Mount and connect the commutator</span></a></p></li>
+<li><p><a class="reference internal" href="../Hardware%20Guide/Breakout%20Board/setup.html#breakout-setup"><span class="std std-ref">Connect the Breakout Board to the PCIe host board</span></a>.</p></li>
+<li><p>Connect a headstage, Miniscope V4 or other ONI compliant recording device by
+<a class="reference internal" href="../Hardware%20Guide/Headstages/setup.html#headstage-setup"><span class="std std-ref">following these steps</span></a>. Be sure to read <a class="reference internal" href="../Hardware%20Guide/Headstages/tether-voltage.html#tether-voltage"><span class="std std-ref">this
+page on the voltage supplied to the headstage</span></a> to prevent
+damaging your headstage.</p></li>
+<li><p>Test the installation.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Bonsai workflows for testing each component</p>
 </div>
-<div class="section" id="software">
-<h2>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>ONIX uses Bonsai for data acquisition. See the <a class="reference internal" href="../Software%20Guide/Bonsai/GettingStarted.html#bonsai-gettingstarted"><span class="std std-ref">Getting Started</span></a> page to learn how to install Bonsai and use it to acquire from ONIX.</p></li>
-</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="using-onix">
+<h2>Using ONIX<a class="headerlink" href="#using-onix" title="Permalink to this headline">¶</a></h2>
+<p>ONIX uses Bonsai for data acquisition. See the <a class="reference internal" href="../Software%20Guide/Bonsai.ONIX/GettingStarted.html#bonsai-gettingstarted"><span class="std std-ref">Getting Started</span></a>
+page to learn how to install Bonsai and use it to acquire from ONIX.</p>
 </div>
 </div>
 
@@ -245,7 +294,21 @@
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">&lt;no title&gt;</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="whatisonix.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">What is ONIX?</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
               
           </main>
